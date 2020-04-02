@@ -1,14 +1,14 @@
 #### Description:
 ##### Prerequisites:
-1.As an Administrator, type PowerShell in the start menu. Right-click Windows PowerShell, then select Run as Administrator.
+1. As an Administrator, type PowerShell in the start menu. Right-click Windows PowerShell, then select Run as Administrator.
 Click Yes at the UAC prompt.
 
-2.Type the following within PowerShell and then press Enter:\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Install-Module MicrosoftTeams**
+2. Type the following within PowerShell and then press Enter:\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**`Install-Module MicrosoftTeams`**
   
-3.Type Y at the prompt.Press Enter.
+3. Type Y at the prompt.Press Enter.
 
-4.If you are prompted for an untrusted repository,then type A (Yes to All) and press Enter.The module will now install. 
+4. If you are prompted for an untrusted repository,then type A (Yes to All) and press Enter.The module will now install. 
 
 To run the script please provide the global administrator credentials or Teams admin credentials.
 
