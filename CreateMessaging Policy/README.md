@@ -10,11 +10,11 @@ Click Yes at the UAC prompt.
  
 4. If you are prompted for an untrusted repository,then type A (Yes to All) and press Enter.The module will now install. 
 
-Please fallow below steps to create the Messaging policy for restricting  Private Chat
-1)	Click on this link install the SFB online connecter https://www.microsoft.com/en-us/download/details.aspx?id=39366
+Please fallow the below steps to create _Messaging policy_ for restricting Private Chat
+1)	Install [SFB online connector](https://www.microsoft.com/en-us/download/details.aspx?id=39366)
 2)	Run the Given Create Script.ps1 with Administrator rights. Provide the Global admin credentials, 
 3)	Provide the policy Name which you want to create.
-4)	Run the Createmessaingpolicy.ps1 provide Created policy name and user
+4)	Run the **Createmessaingpolicy.ps1** ,provide policy name and user Name.
 
 
 
