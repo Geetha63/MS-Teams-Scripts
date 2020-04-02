@@ -4,7 +4,7 @@
 Click Yes at the UAC prompt.
 
 2. Type the following within PowerShell and then press Enter:\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'**Install-Module MicrosoftTeams**'
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**`Install-Module MicrosoftTeams`**
   
 3. Type Y at the prompt.Press Enter.
 
