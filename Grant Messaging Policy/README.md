@@ -12,8 +12,9 @@ Click Yes at the UAC prompt.
 
 Please fallow the below steps to Grant Messaging policy for restricting Private Chat
 1)	Install [SFB online connecter](https://www.microsoft.com/en-us/download/details.aspx?id=39366)
-2)	Provide the policy Name which you want to create.
-3)	Run the `Grantmessaingpolicy.ps1`,provide Created policy name and user name.
+2)	Run the `Grantmessaingpolicy.ps1`
+3) 	Provide the paremeters `policyName` and `username`
+
 
 
 
