@@ -12,8 +12,8 @@ Click Yes at the UAC prompt.
 
 Please fallow the below steps to create _Messaging policy_ for restricting Private Chat
 1)	Install [SFB online connector](https://www.microsoft.com/en-us/download/details.aspx?id=39366)
-2)	Run the **Createmessaingpolicy.ps1**.
-3) Provide the parameters policy name and user name.
+2)	Run the `**Createmessaingpolicy.ps1**`
+3) Provide the parameters `policyname` and `username`
 
 
 
