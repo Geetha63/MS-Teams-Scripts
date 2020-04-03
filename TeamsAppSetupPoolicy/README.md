@@ -45,9 +45,9 @@ Right-click Windows PowerShell, then select Run as Administrator. Click Yes at t
 To run the script please provide the global administrator credentials or Teams admin credentials.
 
 1. For single user use `TeamsAppsetuppolicy-SingleUser`
- Run the script, provide the parameters
- PolicName: 
- UserName:
+  Run the script, provide the parameters
+  PolicName: 
+  UserName:
 
 Provide the details like below screenshot.
 
@@ -58,13 +58,14 @@ Supply credentials
 ![Credentials](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/TeamsAppSetupPolicy-Credentialspage.png)
 
 It will assign the policy to user.
+                           ........................................
 
 2. For Bulk users use `TeamsAppsetuppolicy - Bulk users`
    Provide the input in `Input.csv file`
 
-| User  | PolicyName |\
-| User1 | Policy1    |\
-| User2 | Policy2    |
+ | User  | PolicyName |\
+ | User1 | Policy1    |\
+ | User2 | Policy2    |
 
 
 Run the `TeamsAppsetuppolicy - Bulk users` script
