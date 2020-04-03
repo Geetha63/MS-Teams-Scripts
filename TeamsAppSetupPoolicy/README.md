@@ -5,7 +5,7 @@ Creating a New Teams App Setup Policy and Assigning a Teams App Setup Policy to 
 ##### Prerequisites:
 
 
-Creating the policy by following below steps:
+Follow the below steps to create new Teams App Setup Policy:
 
 [Login into the Teams Admin centre](https://admin.teams.microsoft.com)
 
@@ -46,8 +46,8 @@ To run the script please provide the global administrator credentials or Teams a
                 .......................
 
 For single user use `TeamsAppsetuppolicy-SingleUser`
-  Run the script, provide the parameters
-  PolicName: 
+  Run the script, provide the parameters\
+  PolicyName:\
   UserName:
 
 Provide the details like below screenshot.
