@@ -3,9 +3,9 @@
 1. As an Administrator, type PowerShell in the start menu. Right-click Windows PowerShell, then select Run as Administrator.
 Click Yes at the UAC prompt.
 
-        Keep the Below details in info.json file\
-            "client_Id":  "please paste App provider application id here"\
-            "Client_Secret":  "please paste App provided client secret here"\
+        Keep the Below details in info.json file
+            "client_Id":  "please paste App provider application id here"
+            "Client_Secret":  "please paste App provided client secret here"
             "Tenantid":  "please provide requester tenant id here"
 
 **Note**: Client id and client secret will be same for every tenant. Only tenant id must be changed to requester tenant id
