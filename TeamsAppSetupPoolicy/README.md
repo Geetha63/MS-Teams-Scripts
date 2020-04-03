@@ -57,7 +57,8 @@ Supply credentials
 
 ![Credentials](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/TeamsAppSetupPolicy-Credentialspage.png)
 
-It will assign the policy to user.
+It will assign the policy to user.\
+
                            ........................................
 
 2. For Bulk users use `TeamsAppsetuppolicy - Bulk users`
