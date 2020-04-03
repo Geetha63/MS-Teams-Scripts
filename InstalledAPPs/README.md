@@ -1,4 +1,7 @@
 #### Description:
+
+   This script retrieve the list of apps installed for Users in the tenant.
+
 ##### Prerequisites:
 1. As an Administrator, type PowerShell in the start menu. Right-click Windows PowerShell, then select Run as Administrator.
 Click Yes at the UAC prompt.
