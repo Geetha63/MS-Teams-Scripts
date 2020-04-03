@@ -9,7 +9,7 @@ Creating the policy by following below steps:
 
 [Login into the Teams Admin centre](https://admin.teams.microsoft.com)
 
-Click on Teams apps  Setup policies
+Click on Teams apps&rightarrow;Setup policies
 
 ![SetupPolicy](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/TeamsAppSetupPolicy-setuppoliocy.png)
 
@@ -65,6 +65,7 @@ For Bulk users use `TeamsAppsetuppolicy - Bulk users`
 Provide the input in `Input.csv file`
 
  | User  | PolicyName |\
+ ________|____________|\
  | User1 | Policy1    |\
  | User2 | Policy2    |
 
