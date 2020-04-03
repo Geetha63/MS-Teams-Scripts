@@ -3,12 +3,12 @@
 1. As an Administrator, type PowerShell in the start menu. Right-click Windows PowerShell, then select Run as Administrator.
 Click Yes at the UAC prompt.
 
-    Keep the Below details in info.json file\
-         "client_Id":  "please paste App provider application id here"\
-         "Client_Secret":  "please paste App provided client secret here"\
-         "Tenantid":  "please provide requester tenant id here"
+        Keep the Below details in info.json file\
+            "client_Id":  "please paste App provider application id here"\
+            "Client_Secret":  "please paste App provided client secret here"\
+            "Tenantid":  "please provide requester tenant id here"
 
-Note: Client id and client secret will be same for every tenant. Only tenant id must be changed to requester tenant id
+**Note**: Client id and client secret will be same for every tenant. Only tenant id must be changed to requester tenant id
 
 Run the script it will open webpage for grant permissions.
 
@@ -22,7 +22,7 @@ Once you are login it will shows the below image for Grant permissions for the a
 ![GrantPermission](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/GrantPermissions.png)
 ![GrantPermission](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/GrantPermissions2.png)
 
-**Click accept**
+**Click Accept**
 
 If you provided correct credentials it will through success status `admin_consent = True`
 
