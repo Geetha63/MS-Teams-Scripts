@@ -13,7 +13,9 @@ Note: Client id and client secret will be same for every tenant. Only tenant id 
 Run the script it will open webpage for grant permissions.
 
 Please login with your tenant _USER ID_ and _PASSWORD_.
+
 ![Signin](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/Siginin.png)
+
 
 Once you are login it will shows the 
 
