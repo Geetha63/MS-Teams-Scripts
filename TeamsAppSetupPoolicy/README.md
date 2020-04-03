@@ -64,9 +64,9 @@ It will assign the policy to user.\
 For Bulk users use `TeamsAppsetuppolicy - Bulk users`
 Provide the input in `Input.csv file`
 
-      | User     | PolicyName    |\
-      |----------|------------   |\
-      | User1    | Policy1       |\
+      | User     | PolicyName    |
+      |----------|------------   |
+      | User1    | Policy1       |
       | User2    | Policy2       |
 
 
