@@ -1,14 +1,14 @@
 #### Description:
 
-You can restrict Office 365 Group creation to the members of a particular security group.\
+You can restrict Office 365 Group creation to the members of a particular security group.
 
 Office 365 Global admins can create Groups via any means, such as the Microsoft 365 admin center, Planner, Teams, Exchange, and SharePoint Online.
 
 System should have the Azureadpreview module `Install-Module azureadpreview`
 
 ##### Input:
-In Input file:
-Save file in .xlsx formate
+Import _Input.xlsx_ file as an input which contains Groupname and AllowGroupCreation,Please refer example table
+
 
  | Groupname    | AllowGroupCreation    |
  |--------------|--------------------   |
@@ -16,7 +16,7 @@ Save file in .xlsx formate
  | Group2       | False                 |
 
 
-Groupname(The name of created O365security Group)
+Groupname: The name of created O365security Group
 
 AllowGroupCreation: Do You want to allow this group to create Teams True/False
 
