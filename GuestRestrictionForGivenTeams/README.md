@@ -2,18 +2,18 @@
 
 This script will restrict the guest users in Teams by applying restriction for O365 Group.Script will take the input from current folder and create output in current folder (keep the info.json file in same folder where you are running the script)
 
-Powershell 3.0 or more should be there.
+Powershell 3.0 or more should be available.
 
 Right-click Windows PowerShell, then select Run as Administrator. Click Yes at the UAC prompt.
 
 Prepare input.csv file in below format and keep it in current location where script is running 
 
-![Input]()
+![Input](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/InkedGuestrestrictionForGivenTeams-Input_LI.jpg)
 
-  Keep the Below details in info.json file
-            "client_Id":  "please paste App provider application id here"
-            "Client_Secret":  "please paste App provided client secret here"
-            "Tenantid":  "please provide requester tenant id here"
+    Keep the Below details in info.json file
+             "client_Id":  "please paste App provider application id here" \
+              "Client_Secret":  "please paste App provided client secret here" \
+              "Tenantid":  "please provide requester tenant id here"
 
 
 **Note**: Client id and client secret will be same for every tenant. Only tenant id must be changed to requester tenant id
