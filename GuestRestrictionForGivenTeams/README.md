@@ -11,8 +11,8 @@ Prepare input.csv file in below format and keep it in current location where scr
 ![Input](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/InkedGuestrestrictionForGivenTeams-Input_LI.jpg)
 
     Keep the Below details in info.json file
-             "client_Id":  "please paste App provider application id here" \
-              "Client_Secret":  "please paste App provided client secret here" \
+             "client_Id":  "please paste App provider application id here" 
+              "Client_Secret":  "please paste App provided client secret here" 
               "Tenantid":  "please provide requester tenant id here"
 
 
