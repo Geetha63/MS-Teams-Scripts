@@ -107,7 +107,7 @@ if ($proceed -eq 'Y')
             $file = New-Object psobject
             $file | add-member -MemberType NoteProperty -Name UserName $memberUPN
             $file | add-member -MemberType NoteProperty -Name Userid $member
-            $file | export-csv license.csv -NoTypeInformation -Append
+            $file | export-csv output.csv -NoTypeInformation -Append
         }
     }
     }
