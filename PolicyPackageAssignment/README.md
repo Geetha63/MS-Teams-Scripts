@@ -15,7 +15,13 @@ This script will check the user license. After script execution Teacher license 
 
 **Note**: Client id and client secret will be same for every tenant. Only tenant id must be changed to requester tenant id
 
+<<<<<<< HEAD
 To run the script please provide the global administrator credentials or Teams admin credentials to `connect-microsoftteams`
+=======
+Run the script 
+
+Please provide the global administrator credentials or Teams admin credentials to coneect  to `connect-microsoftteams` 
+>>>>>>> beb3250da352591d468513eacb3f121f52a39843
 
 It will open webpage for grant permissions.
 
@@ -36,7 +42,7 @@ If you have provided the correct credentials it will give success status `admin_
 
 Now press Y to proceed further in script.
 
-Once the script executed , it generates the `output.csv` file contains no license users.
+Once the script executed , it generates the `license.csv` file contains no license users.
 
 Sample Output:
 
