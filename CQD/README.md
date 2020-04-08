@@ -14,4 +14,25 @@ Give the input file as shownn below. Keep this file in current location(Input.cs
 
  Ex:
 
- !
+ ![Example](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CQD-Example.png)
+
+ ##### CQDDimensions.txt
+
+ Choose the dimensions from this document for your requirement
+
+ ##### CQDMeasures.txt
+
+ Choose the Measures from this document for your requirement
+
+ ##### CQD.ps1
+
+ This executable Script File
+
+ Edit the CQD.ps1 file and keep the CQD_Input.csv file location then run the script.
+
+ Output:
+
+ ![Output](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CQD-output.png)
+
+
+
