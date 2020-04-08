@@ -1,6 +1,7 @@
 #### Description:
 
-This script will check the user license. After script execution Teacher license users will be assigned with “Education Teacher”.Student license users assigned with  “Education_SecondaryStudent” policy packages.
+This script will check each Tenant user license. In license script will check Teams subscription of any one license. If it is in disabled mode script will enable. If user don’t have any of teams license it will print the user name in output file.
+
 
 ##### Prerequisites:
 
@@ -15,7 +16,10 @@ This script will check the user license. After script execution Teacher license 
 
 **Note**: Client id and client secret will be same for every tenant. Only tenant id must be changed to requester tenant id
 
-To run the script please provide the global administrator credentials or Teams admin credentials to `connect-microsoftteams`
+Run the script
+
+It will execute `connect-msolservice` command. Provide admin credentials.
+
 
 It will open webpage for grant permissions.
 
@@ -36,9 +40,9 @@ If you have provided the correct credentials it will give success status `admin_
 
 Now press Y to proceed further in script.
 
-Once the script executed , it generates the `output.csv` file contains no license users.
+Once the script executed , it generates the `Nolicense.csv` file contains no license users.
 
 Sample Output:
 
-|UserName  | Userid  |
-|----------|---------|
+|UserName  | Userid  | Status |
+|----------|---------|--------|
