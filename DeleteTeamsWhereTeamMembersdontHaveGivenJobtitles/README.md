@@ -2,7 +2,9 @@
 
 This script check the each Team members job title, if at least one job title does not match to given job titles , Script will delete those teams and sent an email to owners of the team.
 
-1.	As an Administrator, type PowerShell in the start menu. Right-click on Windows PowerShell, then select Run as Administrator. Click Yes at the UAC prompt.
+##### Prerequisites:
+
+1. As an Administrator, type PowerShell in the start menu. Right-click on Windows PowerShell, then select Run as Administrator. Click Yes at the UAC prompt.
 
 
         Keep the Below details in info.json file
