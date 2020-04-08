@@ -38,7 +38,7 @@ If you have provided the correct credentials it will give success status `admin_
 
 Now press Y to proceed further in script.
 
-Once the script executed , it generates the `output.csv` file contains no license users.
+Once the script executed , it generates the `licesnse.csv` file contains no license users.
 
 Sample Output:
 
