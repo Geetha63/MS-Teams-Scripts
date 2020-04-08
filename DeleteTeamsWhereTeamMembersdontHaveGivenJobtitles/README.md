@@ -5,7 +5,8 @@ This script check the each Team members job title, if at least one job title doe
 1.	As an Administrator, type PowerShell in the start menu. Right-click on Windows PowerShell, then select Run as Administrator. Click Yes at the UAC prompt.
 
 
-    Keep the Below details in info.json file
+        Keep the Below details in info.json file
+    
                 "client_Id": "please paste App provider application id here" 
                  "Client_Secret": "please paste App provided client secret here" 
                 "Tenantid": "please provide requester tenant id here"
