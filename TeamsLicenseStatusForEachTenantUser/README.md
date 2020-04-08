@@ -1,6 +1,6 @@
 #### Description:
 
-This script will check each Tenant user license. In license script will check Teams subscription of any one license. If it is in disabled mode script will enable. If user don’t have any of teams license it will print the user name in output file.
+This script will check each Tenant user license. It will also check MicrosotTeams subscription. If it is in disabled mode script will enable. If user don’t have any of teams license it will print the user name in output file.
 
 
 ##### Prerequisites:
