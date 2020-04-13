@@ -1,6 +1,6 @@
 #### Description:
 
-Retrieve the MicrosoftTeams user log-ins for your tenant
+Retrieve the MicrosoftTeams user sign-ins for your tenant
 
 1. As an Administrator, type PowerShell in the start menu. Right-click on Windows PowerShell, then select Run as Administrator. Click Yes at the UAC prompt.
 
@@ -36,12 +36,12 @@ Now press Y to proceed further in script.
 
 Script will create 3 files. 
 
-_Apps.csv_ is the final output file having Teams applications for each user.
+_Signinoutput.csv_ is the final output file having Teams applications for each user.
 
 Logininoutput:
 
- | UserUPN	| CreatedDateTime	| AppDisplayName	| IsInteractive |	DeviceDetail |
- |----------|-------------------|-------------------|---------------|----------------|
+ | UserUPN	| CreatedDateTime	| resourceDisplayName | AppDisplayName	| IsInteractive |	DeviceDetail |
+ |----------|-------------------|---------------------|------------------|--------------|----------------|
 
 
 
