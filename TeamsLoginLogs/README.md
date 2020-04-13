@@ -34,7 +34,7 @@ If you have provided the correct credentials it will give success status `admin_
 
 Now press Y to proceed further in script.
 
-Script will excute the _loginstatusoutput.csv_ output file
+Script will generate the _loginstatusoutput.csv_ output file
 
 Logininoutput:
 
