@@ -20,7 +20,7 @@ It will Prompt for below details please provide the details
 
 Groupname: \
 OwnerPrincipalName: \
-AppName: \
+AppName: 
 
  It will open webpage for grant permissions
 
