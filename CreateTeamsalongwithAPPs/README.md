@@ -1,7 +1,7 @@
 #### Description:
 
 
-Create  MicrosoftTeams along with APP in your organization.
+Create  MicrosoftTeams along with APP for your tenant
 
 1. As an Administrator, type PowerShell in the start menu. Right-click on Windows PowerShell, then select Run as Administrator. Click Yes at the UAC prompt.
 
