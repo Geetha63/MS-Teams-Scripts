@@ -34,9 +34,7 @@ If you have provided the correct credentials it will give success status `admin_
 
 Now press Y to proceed further in script.
 
-Script will create 3 files. 
-
-_Apps.csv_ is the final output file having Teams applications for each user.
+Script will excute the _loginstatusoutput.csv_ output file
 
 Logininoutput:
 
