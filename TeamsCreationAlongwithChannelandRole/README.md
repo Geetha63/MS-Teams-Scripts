@@ -22,7 +22,7 @@ Run the script  \
 Provide the global administrator credentials or Teams admin credentials.
 
 
-Script will export the created Teams details of microsoft Teams in your tenant with following details to a `output.csv` file.\
+Script will export the created Teams details of microsoft Teams in your tenant with following details to a `output.csv` file.
 
 | TeamName |TeamId | channelName |channelId |TeamOwner | Team Member |
 |----------|-------|-------------|----------|----------|-------------|
