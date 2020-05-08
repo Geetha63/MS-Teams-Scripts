@@ -20,8 +20,8 @@ Script has all the avaialble policies to user listed below, please provide the r
 
 Please fallow the below steps to apply the policy:
 1)	Install [SFB online connector](https://www.microsoft.com/en-us/download/details.aspx?id=39366)
-2)	Run the `**UserPolicyAssignment`
-3) Keep the UserPricipleName in Input.Csv file.
+2)  Keep the UserPricipleName in Input.Csv file.
+3)	Run the `**UserPolicyAssignment**`
 
 
 
