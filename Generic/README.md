@@ -1,4 +1,21 @@
 #### Description:
+Assign policy script will work for assigning custom policies to per-user scope and bulk users.
+Script has all the avaialble policies to user listed below, please provide the input which policy you want to apply.
+
+                      1- TeamsAppSetupPolicy 
+                      2- TeamsMeetingPolicy 
+                      3- TeamsCallingPolicy
+                      4- TeamsMessagingPolicy 
+                      5- BroadcastMeetingPolicy
+                      6- TeamsCallParkPolicy
+                      7- CallerIdPolicy 
+                      8- TeamsEmergencyCallingPolicy 
+                      9- TeamsEmergencyCallRoutingPolicy
+                      10-VoiceRoutingPolicy 
+                      11-TeamsAppPermissionPolicy 
+                      12-TeamsDailPlan
+
+
 ##### Prerequisites:
 1. As an Administrator, type PowerShell in the start menu. Right-click Windows PowerShell, then select Run as Administrator.
 Click Yes at the UAC prompt.
