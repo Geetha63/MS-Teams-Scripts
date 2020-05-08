@@ -1,6 +1,6 @@
 #### Description:
 Assign policy script will work for assigning custom policies to per-user scope and bulk users.
-Script has all the avaialble policies to user listed below, please provide the input which policy you want to apply.
+Script has all the avaialble policies to user listed below, please provide the  requried input from 1 to 12 to apply the policy. 
 
                       1- TeamsAppSetupPolicy 
                       2- TeamsMeetingPolicy 
