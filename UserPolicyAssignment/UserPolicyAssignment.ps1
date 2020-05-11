@@ -1,9 +1,9 @@
-﻿<#
+
 Import-Module SkypeOnlineConnector
 $userCredential = Get-Credential
 $sfbSession = New-CsOnlineSession -Credential $userCredential
 Import-PSSession $sfbSession
-#>
+
 $Input = import-csv "Input.csv"
 $UserPricipleNames = $Input.UserPricipleName
 $count = $Input.Count
