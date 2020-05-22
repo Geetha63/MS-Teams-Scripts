@@ -1,5 +1,5 @@
 ### Description:
-Script returns owner,member of a team and channels of a team by providing the required input 1 or 2.\
+Script returns owner,member of a team and channels of a team by providing the required input 1 or 2.
 
 	1- To get the TeamsOwnerandMember details of a team in tenant
 	2- To get the availale channels in each Team
