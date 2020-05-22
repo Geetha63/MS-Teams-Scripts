@@ -1,6 +1,5 @@
 ### Description:
-Script returns owner,member of a team and channels of a team by providing the required input 1 or 2.
-
+Script returns owner,member of a team and channels of a team by providing the required input 1 or 2.\
 	1- To get the TeamsOwnerandMember details of a team in tenant
 	2- To get the availale channels in each Team
 
@@ -17,16 +16,13 @@ Click Yes at the UAC prompt.
 4. If you are prompted for an untrusted repository,then type A (Yes to All) and press Enter.The module will now install. 
 5. Run the script,please provide the global administrator credentials or Teams admin credentials.
 
-This script will export details of microsoft Teams in your tenant with following details to a .csv file.\
-Team Displayname,Teamid,Team owner,member
-
-Input=1:\
+If input=1:\
 First it will get the available Teams in the tenat\
 For each Team it will fetch the Owner and members of the team\
 output contain **_Team Name_, _Team id_, _Team Owner_,_Team member_**\
 **Teamoutput.csv** will store in the current folder
 
-Input=2:\
+If input=2:\
 First it will get the available Teams in the tenat\
 For each Team it will fetch the Teamid,TeamDisplayname and ChannelName of the team\
 output contain **_Teamid_, _TeamDisplayname_, _ChannelName_**\
