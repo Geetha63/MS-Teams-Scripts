@@ -10,7 +10,7 @@ Click Yes at the UAC prompt.
 
 4. If you are prompted for an untrusted repository,then type A (Yes to All) and press Enter.The module will now install. 
 
-To run the script please provide the global administrator credentials or Teams admin credentials.
+Run the script please provide the global administrator credentials or Teams admin credentials.
 
 
 This script will provide the teams details where user as owner for the team in your organization.
