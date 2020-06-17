@@ -1,8 +1,10 @@
 #### Description:
 
-Use the Microsoft Teams activity reports to get insights into the Microsoft Teams user activity in your organization.Specifies the length of time over which the report is aggregated. The supported values for {period_value} are: D7, D30, D90, and D180. 
+Use the Microsoft Teams activity reports to get insights into the Microsoft Teams user activity in your organization.Period specifies the length of time over which the report is aggregated. The supported values for {period_value} are: D7, D30, D90, and D180. 
 
-Retrieve the MicrosoftTeams user log-ins for your tenant
+![Reference](https://docs.microsoft.com/en-us/graph/api/resources/microsoft-teams-user-activity-reports?view=graph-rest-1.0)
+
+###Prerequisites:
 
 1. As an Administrator, type PowerShell in the start menu. Right-click on Windows PowerShell, then select Run as Administrator. Click Yes at the UAC prompt.
 
@@ -36,12 +38,8 @@ If you have provided the correct credentials it will give success status `admin_
 
 Now press Y to proceed further in script.
 
-Script will generate the _loginstatusoutput.csv_ output file
+Script will generate the TeamsUserActivity reports for provided input
 
-Logininoutput:
-
- | UserUPN	| CreatedDateTime	| AppDisplayName	| IsInteractive |	DeviceDetail |
- |----------|-------------------|-------------------|---------------|----------------|
 
 
 
