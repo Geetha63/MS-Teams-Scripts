@@ -4,7 +4,7 @@ Use the Microsoft Teams activity reports to get insights into the Microsoft Team
 
 Reference[Microsoft Teams user activity reports](https://docs.microsoft.com/en-us/graph/api/resources/microsoft-teams-user-activity-reports?view=graph-rest-1.0)
 
-###Prerequisites:
+### Prerequisites:
 
 1. As an Administrator, type PowerShell in the start menu. Right-click on Windows PowerShell, then select Run as Administrator. Click Yes at the UAC prompt.
 
