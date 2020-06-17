@@ -2,7 +2,7 @@
 
 Use the Microsoft Teams activity reports to get insights into the Microsoft Teams user activity in your organization.Period specifies the length of time over which the report is aggregated. The supported values for {period_value} are: D7, D30, D90, and D180. 
 
-Reference[Reference](https://docs.microsoft.com/en-us/graph/api/resources/microsoft-teams-user-activity-reports?view=graph-rest-1.0)
+Reference[Microsoft Teams user activity reports](https://docs.microsoft.com/en-us/graph/api/resources/microsoft-teams-user-activity-reports?view=graph-rest-1.0)
 
 ###Prerequisites:
 
