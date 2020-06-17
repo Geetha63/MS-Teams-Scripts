@@ -84,7 +84,7 @@ elseif($proceed -eq '3')
  do
 {
 
-$ProceedNext = Read-host "Do you want to apply any policy Y to continue"
+$ProceedNext = Read-host "To Generate TeamUserActivity report, enter Y to continue"
 if ($ProceedNext -eq "Y" ) 
         { 
         Get-Result 
