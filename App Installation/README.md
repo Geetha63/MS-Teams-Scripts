@@ -1,6 +1,9 @@
 #### Description:
 
-   This script retrieve the list of apps installed for Users in the tenant.
+  Script is to Add TeamsApp to Teams or Tenant by providing the parameters $OwnerPrincipalName,$AppNameAppName and selecting the input 
+  
+  Inout 1 for add App to Team ,enter the Team name to add add App to team
+  Input 2 for add App to Tenant, script will fectch the Teams in tenant and adds given App to Teams
 
 ##### Prerequisites:
 1. As an Administrator, type PowerShell in the start menu. Right-click Windows PowerShell, then select Run as Administrator.
@@ -32,10 +35,9 @@ If you provided correct credentials it will through success status `admin_consen
 ![Admin Consent](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/AdminConsent.png)
 
 Now press Y to proceed further in script.
-Script will create 3files. 
-`Apps.csv` is the final output file having Teams applications for each user.
+Please provide the parameters $OwnerPrincipalName,$AppName
 
-Output file:
+
 
 | ID | Displayname |UserPrincipalName | InstalledApps |
 
