@@ -1,6 +1,6 @@
 #### Description:
 
-To limit the SharePoint storage limit
+To modify the SharePoint storage limit
 
 ### Storage
 
@@ -10,7 +10,7 @@ Each team in Microsoft Teams has a team site in SharePoint Online, and each chan
 
 Please fallow the below steps to modify the Sharepoint storage limit
 1)	Install [sharepoint-online](https://docs.microsoft.com/en-us/powershell/sharepoint/sharepoint-online/connect-sharepoint-online?view=sharepoint-ps)
-2)	Run the `**SharePoint storage limit.ps1**`
+2)	Run the **`SharePoint storage limit.ps1`**
 3) Provide the parameters `$SiteName`,`$StorageQuota` and `$StorageQuotaWarningLevel`
 
 
