@@ -1,4 +1,3 @@
-﻿ #This script copies user from the tenant and the applications installed for those users in Teams into csv file.
 # Keep tenant id in info.json file
 
 param(
