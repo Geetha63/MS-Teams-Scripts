@@ -27,6 +27,7 @@ Please login with your tenant _USER ID_ and _PASSWORD_.
 Once you are login it will shows the below image for Grant permissions for the app to perform the operations
 
 ![GrantPermission](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/GrantPermissions.png)
+
 ![GrantPermission](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/GrantPermissions2.png)
 
 **Click Accept**
