@@ -6,17 +6,18 @@
   
   Input 2 for add App to Tenant, script will fectch the Teams in tenant and adds given App to Teams
   
-  #### Inputs:
+  ### Inputs 
   
     Client_Id
     Client_Secret
     Tenant_Id
     $OwnerPrincipalName
     $AppName
+    UserId and Password: Teams Administrator/Global Administrator
     
 
-##### Prerequisites:
-1. As an Administrator, type PowerShell in the start menu. Right-click Windows PowerShell, then select Run as Administrator.
+
+1. As an Administrator, type PowerShell in the start menu. Right-click on Windows PowerShell, then select Run as Administrator.
 Click Yes at the UAC prompt.
 
 **Note**: Client id and client secret will be same for every tenant. Only tenant id must be changed to requester tenant id
