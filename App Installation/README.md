@@ -2,14 +2,12 @@
 
   Script is to Add TeamsApp to Teams or Tenant by providing the parameters $OwnerPrincipalName,$AppName and selecting the input 
   
-  Input 1 for add App to Team ,enter the Team name to add add App to team
+  Input 1 for add App to Team ,enter the Team name to add App to team
   
   Input 2 for add App to Tenant, script will fectch the Teams in tenant and adds given App to Teams
   
   ### Inputs 
   
-    Client_Id
-    Client_Secret
     Tenant_Id
     $OwnerPrincipalName
     $AppName
