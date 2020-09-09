@@ -8,12 +8,16 @@
   
   ### Inputs 
   
-    Tenant_Id
+    Tenant_Id 
+    ![Find your tenant ID](9https://docs.microsoft.com/en-us/onedrive/find-your-office-365-tenant-id#:~:text=In%20this%20article,your%20organization%20name%20or%20domain.)
     $OwnerPrincipalName
     $AppName
     UserId and Password: Teams Administrator/Global Administrator
     
-
+  ### Example 
+  
+    To install Notepad, please provide App displayname Notepad for parameter $AppName, Notepad will be installed after successful running of the script 
+    
 
 1. As an Administrator, type PowerShell in the start menu. Right-click on Windows PowerShell, then select Run as Administrator.
 Click Yes at the UAC prompt.
@@ -40,3 +44,7 @@ If you provided correct credentials it will through success status `admin_consen
 ![Admin Consent](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/AdminConsent.png)
 
 Now press Y to proceed further in script.
+
+#### Expected Output
+Notepad has been installed  
+
