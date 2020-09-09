@@ -18,9 +18,8 @@
   
   UserId and Password: Teams Administrator/Global Administrator
     
-  ### Example 
-    To install Notepad, please provide App displayname Notepad for parameter $AppName, Notepad will be installed after successful running of the script 
-    
+ ### Process to run the script
+ 
 
 1. As an Administrator, type PowerShell in the start menu. Right-click on Windows PowerShell, then select Run as Administrator.
 Click Yes at the UAC prompt.
@@ -46,7 +45,11 @@ If you provided correct credentials it will through success status `admin_consen
 
 ![Admin Consent](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/AdminConsent.png)
 
-Now press Y to proceed further in script.
+Now press Y to proceed further in script
+
+ ### Example 
+    To install Notepad, please provide App displayname Notepad for parameter $AppName, Notepad will be installed after successful running of the script 
+    
 
 #### Expected Output
 Notepad has been installed  
