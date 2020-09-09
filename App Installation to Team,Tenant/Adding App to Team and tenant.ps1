@@ -1,15 +1,14 @@
-# Keep tenant id in info.json file
+
 
 param(
       [Parameter(Mandatory=$true)][System.String]$OwnerPrincipalName,
-      [Parameter(Mandatory=$true)][System.String]$AppName
+      [Parameter(Mandatory=$true)][System.String]$AppName,
+      [Parameter(Mandatory=$true)][System.String]$Tenantid,
+      [Parameter(Mandatory=$true)][System.String]$client_Id,
+      [Parameter(Mandatory=$true)][System.String]$Client_Secret
       )
+      
      
-#creating token id
-$input = get-content info.json| ConvertFrom-Json
-$Client_Secret = $input.Client_Secret
-$client_Id = $input.client_Id
-$Tenantid = $input.Tenantid
 
 #Grant Adminconsent 
 $Grant= 'https://login.microsoftonline.com/common/adminconsent?client_id='
@@ -91,7 +90,7 @@ $Appbody = '{
 }'
     $AddAppsuri = "https://graph.microsoft.com/v1.0/teams/" +$groupid+ "/installedApps"
     $Apps = Invoke-RestMethod -Headers $Header -Uri $AddAppsuri -body $Appbody -Method post -ContentType 'application/json'
-    write-host "app has been installed to " $displayname 
+    write-host $displayname "has been installed" 
 
 }
             
