@@ -1,19 +1,22 @@
-#### Description:
+#### APP Installation:
 
   Script is to Add TeamsApp to Teams or Tenant by providing the parameters $OwnerPrincipalName,$AppName and selecting the input 
   
   Input 1 for add App to Team ,enter the Team name to add add App to team
   
   Input 2 for add App to Tenant, script will fectch the Teams in tenant and adds given App to Teams
+  
+  #### Inputs:
+    Client_Id
+    Client_Secret
+    Tenant_Id
+    $OwnerPrincipalName
+    $AppName
+    
 
 ##### Prerequisites:
 1. As an Administrator, type PowerShell in the start menu. Right-click Windows PowerShell, then select Run as Administrator.
 Click Yes at the UAC prompt.
-
-        Keep the Below details in info.json file
-            "client_Id":  "please paste App provider application id here"
-            "Client_Secret":  "please paste App provided client secret here"
-            "Tenantid":  "please provide requester tenant id here"
 
 **Note**: Client id and client secret will be same for every tenant. Only tenant id must be changed to requester tenant id
 
