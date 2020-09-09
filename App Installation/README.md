@@ -1,4 +1,4 @@
-#APP Installation:
+# APP Installation:
 
   Script is to Add TeamsApp to Teams or Tenant by providing the parameters $OwnerPrincipalName,$AppName and selecting the input 
   
@@ -7,6 +7,7 @@
   Input 2 for add App to Tenant, script will fectch the Teams in tenant and adds given App to Teams
   
   #### Inputs:
+  
     Client_Id
     Client_Secret
     Tenant_Id
