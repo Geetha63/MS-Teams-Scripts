@@ -6,16 +6,13 @@
   
   Input 2 for add App to Tenant, script will fectch the Teams in tenant and adds given App to Teams
   
-  ### Inputs 
-    Tenant_Id 
-    
-    [Find your tenant ID](https://docs.microsoft.com/en-us/onedrive/find-your-office-365-tenant-id#:~:text=In%20this%20article,your%20organization%20name%20or%20domain.)
-    
-    $OwnerPrincipalName
-    
-    $AppName
-    
-    UserId and Password: Teams Administrator/Global Administrator
+  ### Inputs
+  
+  Tenant_Id 
+  [Find your tenant ID](https://docs.microsoft.com/en-us/onedrive/find-your-office-365-tenant-id#:~:text=In%20this%20article,your%20organization%20name%20or%20domain.)
+  $OwnerPrincipalName
+  $AppName
+  UserId and Password: Teams Administrator/Global Administrator
     
   ### Example 
     To install Notepad, please provide App displayname Notepad for parameter $AppName, Notepad will be installed after successful running of the script 
