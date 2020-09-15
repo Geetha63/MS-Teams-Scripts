@@ -16,13 +16,11 @@ Type:	                               Boolean
 Position:	                           Named
 - - -
 Default value:                         None
-___________
+- - -
 Accept pipeline input:	              False
-
-----------------------------------------------
+* * *
 Accept wildcard characters:	          False
-
-----------------------------------------------
+* * *
 
 ### Inputs
 Provide the parameters
