@@ -13,13 +13,13 @@ Determines whether a user is allowed to chat. Set this to TRUE to allow a user t
 
 Type:	                               Boolean 
 
-----------------------------------------------
+* * *
 Position:	                           Named
 
----------------------------------------------
+- - -
 Default value:                         None
 
----------------------------------------------
+___________
 Accept pipeline input:	              False
 
 ----------------------------------------------
