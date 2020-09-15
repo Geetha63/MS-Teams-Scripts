@@ -5,7 +5,7 @@ The New-CsTeamsMessagingPolicy script enable administrators to control user Team
 
 ### Example
 
-  New-CsTeamsMessagingPolicy -Identity "StudentMessagingPolicy" -AllowUserChat $false
+    New-CsTeamsMessagingPolicy -Identity "StudentMessagingPolicy" -AllowUserChat $false
 
 ### Parameter
 -AllowUserChat
