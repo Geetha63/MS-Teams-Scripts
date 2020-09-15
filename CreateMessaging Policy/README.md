@@ -11,15 +11,15 @@ The New-CsTeamsMessagingPolicy script enable administrators to control user Team
 
 Determines whether a user is allowed to chat. Set this to TRUE to allow a user to chat across private chat, group chat and in meetings. Set this to FALSE to prohibit all chat
 
-Type:	                                Boolean 
-    * * *
-Position:	                             Named
+Type:	                               Boolean 
+ * * *
+Position:	                           Named
 - - -
 Default value:                         None
 - - -
-Accept pipeline input:	              False
+Accept pipeline input:	               False
 * * *
-Accept wildcard characters:	          False
+Accept wildcard characters:	           False
 * * *
 
 ### Inputs
