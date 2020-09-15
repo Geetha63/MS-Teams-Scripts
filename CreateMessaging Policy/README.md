@@ -4,7 +4,6 @@
 The New-CsTeamsMessagingPolicy script enable administrators to control user TeamsMessagingPolicy,determines whether a user is allowed to chat. Set this to TRUE to allow a user to chat across private chat, group chat and in meetings. Set this to FALSE to prohibit all chat. 
 
 ### Example
-
     New-CsTeamsMessagingPolicy -Identity "StudentMessagingPolicy" -AllowUserChat $false
 
 ### Parameter
