@@ -5,27 +5,23 @@ The New-CsTeamsMessagingPolicy script enable administrators to control user Team
 
 ### Example
 
-New-CsTeamsMessagingPolicy -Identity "StudentMessagingPolicy" -AllowUserChat $false
+  New-CsTeamsMessagingPolicy -Identity "StudentMessagingPolicy" -AllowUserChat $false
 
 ### Parameter
 -AllowUserChat
 
 Determines whether a user is allowed to chat. Set this to TRUE to allow a user to chat across private chat, group chat and in meetings. Set this to FALSE to prohibit all chat.
 
------------------------------------------------------------------------------------------------
-Type:                        	      |                            Boolean
------------------------------------------------------------------------------------------------
-
-Position:                  	         |                           Named nnnnnnnn nnnnn
------------------------------------------------------------------------------------------------
-
-Default value:             	  None   
------------------------------------------------------------------------------------------------
-
-Accept pipeline input:     	  False  
------------------------------------------------------------------------------------------------
-
-Accept wildcard characters:	  False  
+Type:	                 Boolean
+----------------------------------------
+Position:	Named
+-----------------------------------------
+Default value:	None
+------------------------------------------------
+Accept pipeline input:	False
+----------------------------------------------
+Accept wildcard characters:	False
+----------------------------------------------
 
 
 
