@@ -12,15 +12,21 @@ New-CsTeamsMessagingPolicy -Identity "StudentMessagingPolicy" -AllowUserChat $fa
 
 Determines whether a user is allowed to chat. Set this to TRUE to allow a user to chat across private chat, group chat and in meetings. Set this to FALSE to prohibit all chat.
 
-Type                      	Boolean
+
+Type:                        	Boolean
 --------------------------------------
-Position                  	Named  
+
+Position:                  	  Named 
 --------------------------------------
-Default value             	None   
+
+Default value:             	  None   
 --------------------------------------
-Accept pipeline input     	False  
+
+Accept pipeline input:     	  False  
 --------------------------------------
-Accept wildcard characters	False  
+
+Accept wildcard characters:	  False  
+
 
 
 ##### prerequisite 
