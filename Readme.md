@@ -1,6 +1,6 @@
 # Microsoft Teams Powershell Scripts
 
-This branch contains sample **Powershell** [here](https://github.com/Geetha63/MS-Teams-Scripts) scripts
+This branch contains sample **Powershell** [scripts](https://github.com/Geetha63/MS-Teams-Scripts) 
 
 ## Getting the Scripts
 
