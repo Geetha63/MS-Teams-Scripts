@@ -23,10 +23,12 @@ To run the script please install the [SFB online connector](https://www.microsof
 ![User Policy](https://github.com/SwathiGugulot/Sample/blob/master/userpolisyAssignimage.PNG) \
 In the list of policies ,Provided Input number 2 to apply TeamsMeetingPolicy to user/users
 # Input 
- Keep the UserPricipleName in Input.Csv file.\
+ Keep the UserPricipleName in Input.Csv file
  
-# Expected Output
-The selected policy will assigned to the user.
+ ![Example](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/Userpolicyassignment.PNG)
+ 
+# Output
+Custom policy assigned to user
 
 
 
