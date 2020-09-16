@@ -18,15 +18,14 @@ To run the script please install the [SFB online connector](https://www.microsof
                       10-VoiceRoutingPolicy 
                       11-TeamsAppPermissionPolicy 
                       12-TeamsDailPlan
-- Select one policy from the above list to assign the user.
 
 # Example
 ![User Policy](https://github.com/SwathiGugulot/Sample/blob/master/userpolisyAssignimage.PNG) \
-In the list of policies ,if you select one policy that will assign to provided user.
+In the list of policies ,Provided Input number 2 to apply TeamsMeetingPolicy to user/users
 # Input 
- Provide the UserPricipleName in Input.Csv file.\
- example:- UserPricipleName:'john@blrdev.onmicrosoft.com' 
-# Output
+ Keep the UserPricipleName in Input.Csv file.\
+ 
+# Expected Output
 The selected policy will assigned to the user.
 
 
