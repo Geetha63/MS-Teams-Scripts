@@ -5,7 +5,7 @@ Script will fetch the Teams owner and members details
 
 # Prerequisite
 
-    **`Install-Module MicrosoftTeams`** ![link](https://www.powershellgallery.com/packages/MicrosoftTeams/1.0.6)
+    **`Install-Module MicrosoftTeams`**[link](https://www.powershellgallery.com/packages/MicrosoftTeams/1.0.6)
 
 # Procedure
 
