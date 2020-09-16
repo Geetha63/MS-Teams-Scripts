@@ -13,8 +13,8 @@ Scripts are written in Powershell , To use the Scripts
 
 ## Scripts list
 
-No  | Script Name    | Description         | Link to script                                   |                     
-|---|----------------|---------------------|* * *                                             |
+No  | Script Name    | Description         | Link to script   |                     
+|---|----------------|---------------------|* * *             |
 |  1|APP Installation|Script is to Adding TeamsApp to Teams or to the perticular user.| [Link](https://github.com/Geetha63/MS-Teams-Scripts/tree/master/App%20Installation) |
 |2| Call Quality Dashboard|Script will provide CQD data output using given input parameters.|[Link](https://github.com/Geetha63/MS-Teams-Scripts/tree/master/CQD)
 |3|CQD All Streams Count|Script will capture the total Stream count, Audio, Video, Video based screen share, AppSharing counts by given StartDate and EndDate.|[Link](https://github.com/Geetha63/MS-Teams-Scripts/tree/master/CQDAllStreamsCount)
