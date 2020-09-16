@@ -4,16 +4,15 @@
 Script will fetch the Teams owner and members details
 
 # Prerequisite
- Type the following within PowerShell command prompt and then press enter
 
-    **`Install-Module MicrosoftTeams`** [link](https://www.powershellgallery.com/packages/MicrosoftTeams/1.0.6)
+    **`Install-Module MicrosoftTeams`**  [link](https://www.powershellgallery.com/packages/MicrosoftTeams/1.0.6)
 
 # Procedure
 
 1. As an Administrator, type PowerShell in the start menu.Right-click Windows PowerShell,then select Run as Administrator.
 Click Yes at the UAC prompt.
 
-2.Type the following within PowerShell command prompt and then press enter\
+2. Type the following within PowerShell command prompt and then press enter\
 
     **`Install-Module MicrosoftTeams`** 
     
@@ -27,7 +26,7 @@ Click Yes at the UAC prompt.
   1. To connet the MicrosoftTeams will prompt you for credentials, provide the adminstrative credentials.
   2. It will get the available Teams in the tenant
   3. After getting the available teams in tanant,script will fetch the Owner and members of each team\
- Then exports the details of Teams in your tenant to a .csv file.
+ Then exports the details of Teams in your tenant to a .csv file,**Output.csv** will store in the current folder.
 # Example 
  ```bash
  Get-Teamuser -GroupId 5e4aac3a-2547-4645-bb56-dafdb8733ccd -Role Member
@@ -36,6 +35,6 @@ Click Yes at the UAC prompt.
  Get-Teamuser -GroupId 5e4aac3a-2547-4645-bb56-dafdb8733ccd -Role Owner 
  ```
 # Output
- The details of each team will stores in a .csv file with below details\
-  **_Team Name_, _Team id_, _Team Owner_,_Team member_**\
-**Output.csv** will store in the current folder.
+ The details of each team will stores in a .csv file with below details
+  |Team Name| Team id|Team Owner|Team member|
+
