@@ -27,7 +27,7 @@ In the list of policies ,Provided Input number 2 to apply TeamsMeetingPolicy to 
  
  ![Example](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/Userpolicyassignment.PNG)
  
-# EOutput
+# Output
 Custom policy assigned to user
 
 
