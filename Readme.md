@@ -7,8 +7,8 @@ This branch contains sample **Powershell** [scripts](https://github.com/Geetha63
 Scripts are written in Powershell , To use the Scripts
 
 ```bash
-    Copy the script
-    Paste the script into Windows Powershell,run it accordingly
+    Copy and paste the script into Windows Powershell,run it accordingly
+   
 ```
 
 ## Scripts list
