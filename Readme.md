@@ -1,13 +1,14 @@
-## Overview
+# Microsoft Teams Powershell Scripts
+_____________
 
-This branch contains samples scripts for the **Powershell** [here](https://github.com/Geetha63/MS-Teams-Scripts). 
+This branch contains sample **Powershell** [here](https://github.com/Geetha63/MS-Teams-Scripts) scripts
 
 ## Getting the Scripts
 
 Scripts are written in Powershell , To use the Scripts
 
 ```bash
-    Copy the script which ever you want.
+    Copy the script
     Paste it in Windows Powershell and then run it accordingly.
 ```
 
