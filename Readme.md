@@ -8,7 +8,7 @@ Scripts are written in Powershell , To use the Scripts
 
 ```bash
     Copy the script
-    Paste it in Windows Powershell and then run it accordingly
+    Paste the script in Windows Powershell,run it accordingly
 ```
 
 ## Scripts list
