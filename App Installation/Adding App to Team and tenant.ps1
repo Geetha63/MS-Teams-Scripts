@@ -1,5 +1,3 @@
-
-
 param(
       [Parameter(Mandatory=$true)][System.String]$OwnerPrincipalName,
       [Parameter(Mandatory=$true)][System.String]$AppName,
