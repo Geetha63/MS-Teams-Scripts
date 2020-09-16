@@ -1,7 +1,7 @@
 # Create New-CsTeamsMessagingPolicy
 
 ### Description
-The New-CsTeamsMessagingPolicy script enable administrators to control user TeamsMessagingPolicy,determines whether a user is allowed to chat. Set this to TRUE to allow a user to chat across private chat, group chat and in meetings. Set this to FALSE to prohibit all chat. 
+The New-CsTeamsMessagingPolicy script enable administrators to control user TeamsMessagingPolicy,determines whether a user is allowed to chat. Set this to TRUE to allow a user to chat across private chat.Set this to FALSE to prohibit private chat. 
 
 ### Example
     New-CsTeamsMessagingPolicy -Identity "StudentMessagingPolicy" -AllowUserChat $false
@@ -29,7 +29,7 @@ Accept wildcard characters:	           False
 Provide the parameter
 `policyname` Ex:StudentMessagingPolicy
 
-##### How to run the script
+#### How to run the script
 
 1. As an Administrator, type PowerShell in the start menu. Right-click on Windows PowerShell, then select Run as Administrator.
 Click Yes at the UAC prompt
