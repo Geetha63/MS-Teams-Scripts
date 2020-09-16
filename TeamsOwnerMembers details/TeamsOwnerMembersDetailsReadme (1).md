@@ -5,7 +5,7 @@ Script will fetch the Teams owner and members details
 
 # Prerequisite
 
-    **`Install-Module MicrosoftTeams`**  [link](https://www.powershellgallery.com/packages/MicrosoftTeams/1.0.6)
+    **`Install-Module MicrosoftTeams`** ![link](https://www.powershellgallery.com/packages/MicrosoftTeams/1.0.6)
 
 # Procedure
 
@@ -35,6 +35,7 @@ Click Yes at the UAC prompt.
  Get-Teamuser -GroupId 5e4aac3a-2547-4645-bb56-dafdb8733ccd -Role Owner 
  ```
 # Output
- The details of each team will stores in a .csv file with below details
-  |Team Name| Team id|Team Owner|Team member|
+ The details of each team will stores in a .csv file with below details 
+ 
+ |Team Name| Team id|Team Owner|Team member|
 
