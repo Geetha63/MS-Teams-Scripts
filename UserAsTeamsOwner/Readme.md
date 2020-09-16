@@ -1,7 +1,14 @@
 # User As Teams Owner
 # Description:
- Script will provides the teams details where user as owner for the team in your organization. 
-1. As an Administrator, type PowerShell in the start menu. Right-click Windows PowerShell, then select Run as Administrator.
+ Script will provide the teams details where user as owner of a team in your organization
+ 
+# Prerequisite 
+
+ **`Install-Module MicrosoftTeams`** [Link](https://www.powershellgallery.com/packages/MicrosoftTeams/1.0.6)
+ 
+# Procedure
+
+1. As an Administrator, type PowerShell in the start menu. Right-click on Windows PowerShell, then select Run as Administrator.
 Click Yes at the UAC prompt.
 
 2. Type the following within PowerShell and then press enter.\
@@ -27,5 +34,6 @@ Click Yes at the UAC prompt.
 # Input 
 User :'John megh'
 # Output
- The details of teams will stores in output.csv file.
+ Script will export details of user as owner of microsoft Teams in your tenant with following details to a output.csv file.\
+|Team Owner| Team Displayname|Teamid|
 
