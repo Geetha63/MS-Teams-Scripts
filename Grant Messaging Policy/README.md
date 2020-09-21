@@ -1,3 +1,5 @@
+# Grant New-CsTeamsMessagingPolicy
+
 # Description
 Script will assign a teams messaging policy at the per-user scope
 
@@ -5,7 +7,7 @@ Script will assign a teams messaging policy at the per-user scope
   Grant-CsTeamsMessagingPolicy -identity "Ken Myer" -PolicyName StudentMessagingPolicy
 
 # Parameter
-`-Identity`
+**`-Identity`**
 
 Indicates the Identity of the user account the policy should be assigned to. User Identities can be specified using one of four formats: 1) the user's SIP address; 2) the user principal name (UPN); 3) the user's domain name and logon name, in the form domain\logon (for example, litwareinc\kenmyer); and, 4) the user's Active Directory display name (for example, Ken Myer). User Identities can also be referenced by using the user's Active Directory distinguished name.
 
@@ -19,7 +21,7 @@ Accept pipeline input:	False
 * * *
 Accept wildcard characters:	False
 
-`-PolicyName`
+**`-PolicyName`**
 
 The name of the custom policy that is being assigned to the user. To remove a specific assignment and fall back to the default tenant policy, you can assign to $Null.
 
@@ -41,16 +43,9 @@ Provide the parameters
 `$policyname` Ex:StudentMessagingPolicy
 `$user` Ex:davidchew@contoso.com
 
-#### How to run the script
+### How to run the script
 
 1. As an Administrator, type PowerShell in the start menu. Right-click on Windows PowerShell, then select Run as Administrator.
 Click Yes at the UAC prompt
 
-2)	Run the **`Grant New-CsTeamsMessagingPolicy.ps1`**
-
-
-
-
-
-
-
+2. Run the **`Grant New-CsTeamsMessagingPolicy.ps1`**
