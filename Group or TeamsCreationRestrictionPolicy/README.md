@@ -1,4 +1,4 @@
-# Group or TeamsCreationRestrictionPolicy-Bulk
+# Group or TeamsCreationRestrictionPolicy
 
 # Description:
 
@@ -13,13 +13,10 @@ System should have the Azureadpreview module [`Install-Module azureadpreview`](h
 Restricting HR group members from creating Teams or Groups
 
 # Input:
-Import _Input.xlsx_ file as an input which contains Groupname and AllowGroupCreation,Please refer example table
 
+$Groupname
 
- | Groupname    | AllowGroupCreation    |
- |--------------|--------------------   |
- | Group1       | True                  |
- | Group2       | False                 |
+$AllowGroupCreation
 
 # Parameters:
 Groupname: The name of created O365security Group
