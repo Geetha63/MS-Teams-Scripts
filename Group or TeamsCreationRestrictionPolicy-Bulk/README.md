@@ -46,4 +46,4 @@ Script will restrict or allow the group users based on AllowGroupCreation input
 # Output
 
 The last line of the script will display the updated settings:
-[output](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/Restricting%20group%20creation.png)
+![output](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/Restricting%20group%20creation.png)
