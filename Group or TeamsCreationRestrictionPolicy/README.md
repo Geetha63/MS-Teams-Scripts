@@ -14,9 +14,9 @@ Restricting HR group members from creating Teams or Groups
 
 # Input:
 
-$Groupname
+$Groupname Ex:HR
 
-$AllowGroupCreation
+$AllowGroupCreation Ex:False
 
 # Parameters:
 Groupname: The name of created O365security Group
