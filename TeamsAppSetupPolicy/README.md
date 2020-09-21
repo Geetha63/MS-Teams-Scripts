@@ -53,7 +53,8 @@ For single user use `TeamsAppsetuppolicy-SingleUser`
   
   PolicyName 
   
-    Example:apptest236\
+    Example:apptest236
+    
   UserName 
   
     Example:davidchew@contoso.com
