@@ -1,17 +1,32 @@
-#### Description:
+# Group or TeamsCreationRestrictionPolicy-Bulk
+
+# Description:
 
 You can restrict Office 365 Group creation to the members of a particular security group.
 
 Office 365 Global admins can create Groups via any means, such as the Microsoft 365 admin center, Planner, Teams, Exchange, and SharePoint Online.
 
-System should have the Azureadpreview module `Install-Module azureadpreview`
+System should have the Azureadpreview module [`Install-Module azureadpreview`](https://docs.microsoft.com/en-us/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview#installing-the-azure-ad-module)
 
-###### Parameters Definitions:
+# Example
+
+Restricting HR group members from creating Teams or Groups
+
+# Input:
+Import _Input.xlsx_ file as an input which contains Groupname and AllowGroupCreation,Please refer example table
+
+
+ | Groupname    | AllowGroupCreation    |
+ |--------------|--------------------   |
+ | Group1       | True                  |
+ | Group2       | False                 |
+
+# Parameters:
 Groupname: The name of created O365security Group
 
-AllowGroupCreation: You want to allow this group of users to create Teams True/False
+AllowGroupCreation: Do You want to allow this group to create Teams True/False
 
-##### Prerequisites:
+# Prerequisites:
 
 As an Administrator, type PowerShell in the start menu. 
 
@@ -19,18 +34,19 @@ Right-click Windows PowerShell, then select Run as Administrator. Click Yes at t
 1.	Type the following within PowerShell and then press Enter:
 
      `Install-Module AzureAd`
-     
+
 2.	Type Y at the prompt.Press Enter
 
-3.	If you are prompted for an untrusted repository,then type A (Yes to All) and press Enter.The module will now install.
+3.	If you are prompted for an untrusted repository,then type A (Yes to All) and press Enter.The module will now install
 
-To run the script please provide the global administrator credentials or AzureAD admin credentials 
+# How to run the script:
+To run the script you will need to either download it or copy and paste the script into Powershell
 
-Provide the parameters GroupName and AllowGroupCreation.
+Provide the global administrator credentials or AzureAD admin credentials when it prompts
 
-You want to allow this group of users to create Teams: True/False
+Script will restrict or allow the group users based on AllowGroupCreation input
 
-Script will restrict or allow the group users based on AllowGroupCreation input.
+# Output:
 
-
-
+The last line of the script will display the updated settings:
+![output](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/Restricting%20group%20creation.png)
