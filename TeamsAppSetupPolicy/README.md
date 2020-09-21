@@ -5,8 +5,7 @@
 
 Creating a New Teams App Setup Policy and Assigning a Teams App Setup Policy to Users
 
-#Prerequisites:
-
+# Prerequisites:
 
 Follow the below steps to create new Teams App Setup Policy:
 
@@ -49,7 +48,9 @@ To run the script please provide the global administrator credentials or Teams a
                 .......................
 
 For single user use `TeamsAppsetuppolicy-SingleUser`
-  Run the script, provide the parameters\
+  Run the script, provide the inputs\
+  # Inputs:
+  
   PolicyName:\
   UserName:
 
@@ -67,6 +68,8 @@ It will assign the policy to user.\
 For Bulk users use `TeamsAppsetuppolicy - Bulk users`
 Provide the input in `Input.csv file`
 
+# Input
+
       | User     | PolicyName    |
       |----------|------------   |
       | User1    | Policy1       |
@@ -79,5 +82,6 @@ Provide the administrator credentials
 
 ![Credentials](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/TeamsAppSetupPolicy-Credentialspage.png)
 
+# Output
 
 Policy will assign to respective users.
