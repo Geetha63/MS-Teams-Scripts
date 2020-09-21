@@ -51,8 +51,12 @@ For single user use `TeamsAppsetuppolicy-SingleUser`
   Run the script, provide the inputs\
   # Inputs:
   
-  PolicyName Ex:apptest236\
-  UserName Ex:davidchew@contoso.com
+  PolicyName 
+  
+    Example:apptest236\
+  UserName 
+  
+    Example:davidchew@contoso.com
 
 # Example
 
