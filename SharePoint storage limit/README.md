@@ -10,11 +10,10 @@ You must be a SharePoint Online administrator or Global Administrator and be a s
 
 Each team in Microsoft Teams has a team site in SharePoint Online, and each channel in a team gets a folder within the default team site document library. Files shared within a conversation are automatically added to the document library, and permissions and file security options set in SharePoint are automatically reflected within Teams.
 
-# Example 
+# Example
+ Set-SPOSite -Identity https://contoso.sharepoint.com/sites/HrTeam -StorageQuota 1500 -StorageQuotaWarningLevel 1400
 
- To set the HR site storage limit to 1500 MB and storage quota warning level to 1400 MB 
-
- Set-SPOSite -Identity https://contoso.sharepoint.com /sites/HrTeam -StorageQuota 1500 -StorageQuotaWarningLevel 1400
+Example updates the HR site storage limit to 1500 MB and storage quota warning level to 1400 MB 
 
 # Inputs
 
