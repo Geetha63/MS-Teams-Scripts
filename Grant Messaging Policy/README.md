@@ -2,10 +2,11 @@
 Script will assign a teams messaging policy at the per-user scope
 
 # Example
-Grant-CsTeamsMessagingPolicy -identity "Ken Myer" -PolicyName StudentMessagingPolicy
+  Grant-CsTeamsMessagingPolicy -identity "Ken Myer" -PolicyName StudentMessagingPolicy
 
 # Parameter
 `-Identity`
+
 Indicates the Identity of the user account the policy should be assigned to. User Identities can be specified using one of four formats: 1) the user's SIP address; 2) the user principal name (UPN); 3) the user's domain name and logon name, in the form domain\logon (for example, litwareinc\kenmyer); and, 4) the user's Active Directory display name (for example, Ken Myer). User Identities can also be referenced by using the user's Active Directory distinguished name.
 
 Type:	UserIdParameter
@@ -19,6 +20,7 @@ Accept pipeline input:	False
 Accept wildcard characters:	False
 
 `-PolicyName`
+
 The name of the custom policy that is being assigned to the user. To remove a specific assignment and fall back to the default tenant policy, you can assign to $Null.
 
 Type:	String
