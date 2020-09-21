@@ -1,3 +1,6 @@
+# TeamsAppSetupPolicy
+
+
 #### Description:
 
 Creating a New Teams App Setup Policy and Assigning a Teams App Setup Policy to Users
@@ -50,7 +53,7 @@ For single user use `TeamsAppsetuppolicy-SingleUser`
   PolicyName:\
   UserName:
 
-Provide the details like below screenshot.
+# Example
 
 ![DetailsScreenshot](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/TeamsAppSetupPolicy-Deatilsscreenshot.png)
 
