@@ -37,13 +37,16 @@ Right-click Windows PowerShell, then select Run as Administrator. Click Yes at t
 
 2.	Type Y at the prompt.Press Enter
 
-3.	If you are prompted for an untrusted repository,then type A (Yes to All) and press Enter.The module will now install.
+3.	If you are prompted for an untrusted repository,then type A (Yes to All) and press Enter.The module will now install
 
-To run the script please provide the global administrator credentials or AzureAD admin credentials 
+# How to run the script:
+To run the script you will need to either download it or copy and paste the script into Powershell
+
+Provide the global administrator credentials or AzureAD admin credentials when it prompts
 
 Script will restrict or allow the group users based on AllowGroupCreation input
 
-# Output
+# Output:
 
 The last line of the script will display the updated settings:
 ![output](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/Restricting%20group%20creation.png)
