@@ -1,11 +1,11 @@
 # TeamsAppSetupPolicy
 
 
-#### Description:
+# Description:
 
 Creating a New Teams App Setup Policy and Assigning a Teams App Setup Policy to Users
 
-##### Prerequisites:
+#Prerequisites:
 
 
 Follow the below steps to create new Teams App Setup Policy:
@@ -40,7 +40,7 @@ As an Administrator, type PowerShell in the start menu.
 Right-click Windows PowerShell, then select Run as Administrator. Click Yes at the UAC prompt.
 1.	Type the following within PowerShell and then press Enter:
 
-     `Install-Module MicrosoftTeams`
+     [`Install-Module MicrosoftTeams`](https://docs.microsoft.com/en-us/microsoftteams/teams-powershell-install)
 2.	Type Y at the prompt.Press Enter
 
 3.	If you are prompted for an untrusted repository,then type A (Yes to All) and press Enter.The module will now install.
@@ -81,7 +81,3 @@ Provide the administrator credentials
 
 
 Policy will assign to respective users.
-
-
-
-
