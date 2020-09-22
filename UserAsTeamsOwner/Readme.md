@@ -18,10 +18,10 @@ Click Yes at the UAC prompt.
 
 4. If you are prompted for an untrusted repository,then type A (Yes to All) and press Enter.The module will now install. 
 
-- Script will prompt you for input user,provide the input to proceed.
-- To connect to microsoftteams provide the global administrator credentials or Teams admin credentials.
-- Script will get the teams details where user as owner for the team in your organization. 
-- Exports details to a output.csv file.
+   - Script will prompt you for input user,provide the input to proceed.
+   - To connect to microsoftteams provide the global administrator credentials or Teams admin credentials.
+   - Script will get the teams details where user as owner for the team in your organization. 
+   - Exports details to a output.csv file.
 
 # Example 
  ```bash
