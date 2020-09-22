@@ -28,7 +28,7 @@ For each Team it will fetch the Owner and members of the team
 
 Script will export **Teamoutput.csv** in the current folder contains feilds
 
-| **_Team Name_| _Team id_| _Team Owner_|_Team member_**|
+| _Team Name_ | _Team id_ | _Team Owner_ | _Team member_ |
 
 # If input=2
 
@@ -39,4 +39,4 @@ For each Team it will fetch the Teamid,TeamDisplayname and ChannelName of the te
 
 Script will export the **Channeloutput.csv** in the current folder
 
-Output contain **|_Teamid_| _TeamDisplayname_| _ChannelName_|**
+Output contain | _Teamid_ | _TeamDisplayname_ | _ChannelName_ |
