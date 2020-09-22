@@ -1,6 +1,6 @@
 # TeamsCreationAlongwithChannelandRole
 
-# Description:
+# Description
 
 Script is to create Teams along with channel and role
 
@@ -8,7 +8,7 @@ Provide the input data `TeamName` `ChannelName` `Owner` `Member` and `Visibility
 
 Script will generate the `output.csv` file which holds the details of created TeamName,TeamOwner,Member,ChannelName,Channelid.
 
-# Prerequisites:
+# Prerequisites
 
 1. As an Administrator, type PowerShell in the start menu. Right-click on Windows PowerShell, then select Run as Administrator.
 Click Yes at the UAC prompt.
@@ -20,7 +20,7 @@ Click Yes at the UAC prompt.
 
 4. If you are prompted for an untrusted repository,then type A (Yes to All) and press Enter.The module will now install. 
 
-# Input
+# Inputs
 
   DisplayName,ChannelName,Owner,Member,Visibility
   
