@@ -1,6 +1,7 @@
 #### Description:
 
-This script will provide CQD data output using given input parameters.
+This script will provide total stream count including Audio,video,Appsharing
+provide input 2-for CQD Report of Given time
 
 ##### CQD_Input.csv:
 
