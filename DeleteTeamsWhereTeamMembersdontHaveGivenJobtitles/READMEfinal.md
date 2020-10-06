@@ -18,7 +18,7 @@ If user has build the App previously, script will skip the App creation
         
  # Procedure to run the script
  
-   To excute DeleteTeamsWhereTeamMembersdontHaveGivenJobtitles download/copy and paste the script into powersell
+   To excute `DeleteTeamsWhereTeamMembersdontHaveGivenJobtitles` download/copy and paste the script into powersell
         
    Provide the input parameters Username,password,Jobtitle and hit enter to proceed further on the script
         
