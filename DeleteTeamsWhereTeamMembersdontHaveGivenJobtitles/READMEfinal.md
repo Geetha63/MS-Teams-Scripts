@@ -10,11 +10,11 @@ If user has build the App previously, script will skip the App creation
 
 # Inputs
 
-        Username
+   Username Ex: davidc@contoso.com
         
-        Password
+   Password 
         
-        Jobtitle
+   Jobtitle Ex: Manager
         
  # Procedure to run the script
  
@@ -28,9 +28,8 @@ If user has build the App previously, script will skip the App creation
         
    Provide admin credentials i.e user ID and password 
         
-   press enter to continue
+   Press enter to continue
         
  # Output
  
- Will receive popup information of deleted teams and it will send email behalf of mail sender
- 
+ Will receive pop up information of deleted teams also it will send an email behalf of mail sender
