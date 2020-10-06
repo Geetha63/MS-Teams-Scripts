@@ -9,6 +9,7 @@ Script will auto create the Azure App and grant the permissions to perform the o
 If user has build the App previously, script will skip the App creation 
 
 # Inputs
+
         Username
         
         Password
@@ -17,17 +18,17 @@ If user has build the App previously, script will skip the App creation
         
  # Procedure to run the script
  
-     To excute DeleteTeamsWhereTeamMembersdontHaveGivenJobtitles download/copy and paste the script into powersell
+   To excute DeleteTeamsWhereTeamMembersdontHaveGivenJobtitles download/copy and paste the script into powersell
         
-     Provide the input parameters Username,password,Jobtitle and hit enter to proceed further on the script
+   Provide the input parameters Username,password,Jobtitle and hit enter to proceed further on the script
         
-     Now script will redirect to web page for login
+   Now script will redirect to web page for login
         
-     ![Signin](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/Siginin.png)
+   ![Signin](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/Siginin.png)
         
-     Provide admin credentials i.e user ID and password 
+   Provide admin credentials i.e user ID and password 
         
-     press enter to continue
+   press enter to continue
         
  # Output
  
