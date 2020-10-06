@@ -32,4 +32,4 @@ If user has build the App previously, script will skip the App creation
         
  # Output
  
- Will receive pop up information of deleted teams also it will send an email behalf of mail sender
+ Will receive pop up information of deleted teams,also it will send an email behalf of mail sender
