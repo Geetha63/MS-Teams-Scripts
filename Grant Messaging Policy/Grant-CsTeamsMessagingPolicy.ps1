@@ -11,4 +11,4 @@ param(
  Import-PSSession $sfbSession
 
 Grant-CsTeamsMessagingPolicy -Identity "$User" -PolicyName "$PolicyName"
-write-host "$User is eing assigned the $PolicyName"
+write-host "$User is being assigned the $PolicyName"
