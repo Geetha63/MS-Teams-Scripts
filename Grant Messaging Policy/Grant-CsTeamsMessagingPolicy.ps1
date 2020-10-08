@@ -1,4 +1,3 @@
-﻿
 param(
       [Parameter(Mandatory=$true)][System.String]$User,
       [Parameter(Mandatory=$true)][System.String]$PolicyName         
@@ -12,3 +11,4 @@ param(
  Import-PSSession $sfbSession
 
 Grant-CsTeamsMessagingPolicy -Identity "$User" -PolicyName "$PolicyName"
+write-host "$User is eing assigned the $PolicyName"
