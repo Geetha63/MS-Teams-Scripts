@@ -6,7 +6,7 @@ The New-CsTeamsMessagingPolicy script enable administrators to control user Team
 # Example
     New-CsTeamsMessagingPolicy -Identity "StudentMessagingPolicy" -AllowUserChat $false
 
-# Parameter
+# Parameters
 `-AllowUserChat`
 
 Determines whether a user is allowed to chat. Set this to TRUE to allow a user to chat across private chat. Set this to FALSE to prohibit private chat
@@ -35,3 +35,6 @@ Provide the parameter
 Click Yes at the UAC prompt
 
 2)	Run the **`Create New-CsTeamsMessagingPolicy.ps1`**
+
+# Output
+AllowUserChat is set to False
