@@ -9,12 +9,10 @@ Office 365 Global admins can create Groups via any means, such as the Microsoft 
 System should have the Azureadpreview module [`Install-Module azureadpreview`](https://docs.microsoft.com/en-us/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview#installing-the-azure-ad-module)
 
 # Example
-
 Restricting HR group members from creating Teams or Groups
 
 # Inputs
 Import _Input.xlsx_ file as an input which contains Groupname and AllowGroupCreation,Please refer example table
-
 
  | Groupname    | AllowGroupCreation    |
  |--------------|--------------------   |
@@ -27,9 +25,7 @@ Groupname: The name of created O365security Group
 AllowGroupCreation: Do You want to allow this group to create Teams True/False
 
 # Prerequisites
-
 As an Administrator, type PowerShell in the start menu. 
-
 Right-click Windows PowerShell, then select Run as Administrator. Click Yes at the UAC prompt.
 1.	Type the following within PowerShell and then press Enter:
 
