@@ -8,7 +8,7 @@ Script will assign a teams messaging policy at the per-user scope,to run the scr
 # Example
   Grant-CsTeamsMessagingPolicy -identity "Ken Myer" -PolicyName StudentMessagingPolicy
 
-# Parameter
+# Parameters
 **`-Identity`**
 
 Indicates the Identity of the user account the policy should be assigned to. User Identities can be specified using one of four formats: 1) the user's SIP address; 2) the user principal name (UPN); 3) the user's domain name and logon name, in the form domain\logon (for example, litwareinc\kenmyer); and, 4) the user's Active Directory display name (for example, Ken Myer). User Identities can also be referenced by using the user's Active Directory distinguished name.
@@ -37,17 +37,20 @@ Accept pipeline input:	False
 * * *
 Accept wildcard characters:	False
 
-### Prerequisite
+# Prerequisite
 1)	Install [SFB online connector](https://www.microsoft.com/en-us/download/details.aspx?id=39366)
 
-### Inputs
+# Inputs
 Provide the parameters
 `$policyname` Ex:StudentMessagingPolicy
 `$user` Ex:davidchew@contoso.com
 
-### How to run the script
+# How to run the script
 
 1. As an Administrator, type PowerShell in the start menu. Right-click on Windows PowerShell, then select Run as Administrator.
 Click Yes at the UAC prompt
 
 2. Run the **`Grant New-CsTeamsMessagingPolicy.ps1`**
+
+# Output
+davidchew@contoso.com is being assigned the StudentMessagingPolicy
