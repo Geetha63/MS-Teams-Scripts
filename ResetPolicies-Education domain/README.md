@@ -3,19 +3,19 @@
 # Description
 Script is to create below custom policies to set all access to teachers and restrict to students in an orgnization
 
-#teams policies
+  Teams policies
 
-#Meetings Policies
+  Meetings Policies
 
-#meeting Settings
+  meeting Settings
 
-#messaging policies
+  messaging policies
 
-#Assignment policy
+  Assignment policy
 
-#OrgWide settings
+  OrgWide settings
 
-#apps
+  apps
 
 # Prerequisite
 1)	Install [SFB online connector](https://www.microsoft.com/en-us/download/details.aspx?id=39366)
