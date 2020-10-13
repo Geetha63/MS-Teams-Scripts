@@ -1,24 +1,12 @@
-# Group or TeamsCreationRestrictionPolicy
+# Add Teachers to Distribution list-Education domain
 
 # Description
-You can restrict Office 365 Group creation to the members of a particular security group.
+Script will serach and filter teachers in tenant using license parameter and adds to the *All teachers* distribution list
 
-Office 365 Global admins can create Groups via any means, such as the Microsoft 365 admin center, Planner, Teams, Exchange, and SharePoint Online.
-
-System should have the Azureadpreview module [`Install-Module azureadpreview`](https://docs.microsoft.com/en-us/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview#installing-the-azure-ad-module)
-
-# Example
-Restricting HR group members from creating Teams or Groups
+System should have the Azureadpreview module [`Install-Module azureadpreview`](https://docs.microsoft.com/en-us/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview#installing-the-azure-ad-module) to exceute the script
 
 # Inputs
-$Groupname Ex:HR
-
-$AllowGroupCreation Ex:False
-
-# Parameters
-Groupname: The name of created O365security Group
-
-AllowGroupCreation: Do You want to allow this group to create Teams True/False
+Global admin or Azure AD admin credentails 
 
 # Prerequisites
 As an Administrator, type PowerShell in the start menu. 
@@ -37,8 +25,5 @@ To run the script you will need to either download it or copy and paste the scri
 
 Provide the global administrator credentials or AzureAD admin credentials when it prompts
 
-Script will restrict or allow the group users based on AllowGroupCreation input
-
 # Output
-The last line of the script will display the updated settings:
-![output](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/Restricting%20group%20creation.png)
+Script will provide the count of teachers who has the teachers license and count of total number of teachers
