@@ -14,7 +14,7 @@ Exchange Online and AzureAD module
 # How to run the script
 As an Administrator, type PowerShell in the start menu. Right-click on Windows PowerShell, then select Run as Administrator. Click Yes at the UAC prompt
 
-To run the script you will need to either download it or copy and paste the script into Powershell 
+Run the script 
 
 Provide the global administrator credentials or AzureAD and ExchangeOnline admin credentials when it prompts
 
