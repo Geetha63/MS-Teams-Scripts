@@ -1,4 +1,4 @@
-# Creating and assigning address policy-Education domain
+# Create and assign address book policy-Education domain
 
 # Description
 
