@@ -57,17 +57,17 @@ Accept wildcard characters:	False
 
 `-Rank`
 
-The rank of the policy assignment, relative to other group policy assignments for the same policy type.
-- - -
-Type:	String
-- - -
-Position:	Named
-- - -
-Default value:	None
-- - -
-Accept pipeline input:	False
-- - -
-Accept wildcard characters:	False
+ The rank of the policy assignment, relative to other group policy assignments for the same policy type.
+ - - -
+ Type:	String
+ - - -
+ Position:	Named
+ - - -
+ Default value:	None
+ - - -
+ Accept pipeline input:	False
+ - - -
+ Accept wildcard characters:	False
 
 # Prerequisites
 As an Administrator, type PowerShell in the start menu. 
