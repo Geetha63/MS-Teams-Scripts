@@ -1,5 +1,11 @@
 ﻿#Setting custom Attribute for students  
+
+$credential= get-credential
+Connect-AzureAD -Credential $credential
+Connect-ExchangeOnline -credential $credential
+
 $group = Get-AzureADGroup -SearchString "Students of" -All $true
+
 foreach ($group in $group){
 $school= $group.displayname
 $school = $school -replace("students of","")
