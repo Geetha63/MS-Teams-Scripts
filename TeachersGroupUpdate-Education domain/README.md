@@ -1,7 +1,7 @@
-# Add Teachers to Distribution list-Education domain
+# TeachersGroupUpdate-Education domain
 
 # Description
-Script will serach and filter teachers in tenant using license parameter and adds to the *All teachers* distribution list
+Script will check the users who has teacher license are added to the **All teachers** distribution list, if any users are not added, script will add that particular users to DL.
 
 System should have the Azureadpreview module [`Install-Module azureadpreview`](https://docs.microsoft.com/en-us/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview#installing-the-azure-ad-module) to exceute the script
 
@@ -28,4 +28,4 @@ Provide the global administrator credentials or AzureAD admin credentials when i
 Hit enter to continue
 
 # Output
-Script will provide the count of teachers who has the teacher license and count of teachers in DL
+Script will provide the count of teachers who has the teacher license and count of teachers in Distribution List
