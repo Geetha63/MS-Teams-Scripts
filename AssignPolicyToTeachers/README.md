@@ -5,29 +5,29 @@ Script will search for **All Teachers** distribution list in tenant and assign p
 
 GroupPolicyAssignment is used to assign a policy to a security group or distribution list. The policy assignment will then be propagated to the members of the group (even if members are added to the group later) in accordance with the rules for group policy inheritance
 
-System should have the Azureadpreview module [`Install-Module azureadpreview`](https://docs.microsoft.com/en-us/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview#installing-the-azure-ad-module) and ['Install-Module MicrosoftTeams`](https://www.powershellgallery.com/packages/MicrosoftTeams/1.0.6)
+System should have the Azureadpreview module [`Install-Module azureadpreview`](https://docs.microsoft.com/en-us/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview#installing-the-azure-ad-module) and [`Install-Module MicrosoftTeams`](https://www.powershellgallery.com/packages/MicrosoftTeams/1.0.6)
 
 # Inputs
 Global admin or AzureAD and MicrosoftTeams admin credentails 
 
 # Parameters
 
--GroupId
+`-GroupId`
 
-The ID of a batch policy assignment operation
-- - -
-Type:	String
-- - -
-Position:	Named
-- - -
-Default value:	None
-- - -
-Accept pipeline input:	False
-- - -
-Accept wildcard characters:	False
-- - -
+ The ID of a batch policy assignment operation
+ - - -
+ Type:	String
+ - - -
+ Position:	Named
+ - - -
+ Default value:	None
+ - - -
+ Accept pipeline input:	False
+ - - -
+ Accept wildcard characters:	False
+ - - -
 
--PolicyName
+`-PolicyName`
 
 The name of the policy to be assigned
 - - -
@@ -41,7 +41,7 @@ Accept pipeline input:	False
 - - -
 Accept wildcard characters:	False
 
--PolicyType
+`-PolicyType`
 
 The type of the policy to be assigned
 - - -
@@ -55,7 +55,7 @@ Accept pipeline input:	False
 - - -
 Accept wildcard characters:	False
 
--Rank
+`-Rank`
 
 The rank of the policy assignment, relative to other group policy assignments for the same policy type.
 - - -
