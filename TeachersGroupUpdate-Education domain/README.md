@@ -1,7 +1,7 @@
 # TeachersGroupUpdate-Education domain
 
 # Description
-Script will check the users who has teacher license are added to the **All teachers** distribution list, if any users are not added, script will add that particular users to DL.
+Script will update the **All teachers** distribution list members,it checks the users who has teacher license are added to the **All teachers** distribution list are not, if any users are not added, script will add that particular users to DL.
 
 System should have the Azureadpreview module [`Install-Module azureadpreview`](https://docs.microsoft.com/en-us/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview#installing-the-azure-ad-module) to exceute the script
 
