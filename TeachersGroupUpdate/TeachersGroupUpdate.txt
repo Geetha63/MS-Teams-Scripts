@@ -1,6 +1,0 @@
-Open powershell by run as administrator.
-Script pop will ask for userid and password to connect Azure ad.
-provide the details press enter to continue.
-
-script will search user license. if user have teacher license it will added to 
-distribution group.
