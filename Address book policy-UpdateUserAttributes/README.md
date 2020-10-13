@@ -1,31 +1,25 @@
-# TeachersGroupUpdate-Education domain
+# Address book policy-UpdateUserAttributes
 
 # Description
-Script will update the **All teachers** distribution list members,it checks the users who has teacher license are added to the **All teachers** distribution list are not, if any users are not added, script will add that particular users to DL.
+Script will check all groups of teachers,students and removes the part “students of” or “teachers of” and then it will update the user custom attribute with the school name,this way we can have both teachers,students of the same school can share the same attribute value
 
-System should have the Azureadpreview module [`Install-Module azureadpreview`](https://docs.microsoft.com/en-us/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview#installing-the-azure-ad-module) to exceute the script
+System should have the Azureadpreview module [`Install-Module azureadpreview`](https://docs.microsoft.com/en-us/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview#installing-the-azure-ad-module) and [`Exchange Online`](https://docs.microsoft.com/en-us/powershell/module/exchange/connect-exchangeonline?view=exchange-ps) to exceute the script
 
 # Inputs
-Global admin or Azure AD admin credentails 
+Global admin or Azure AD admin and ExchangeOnline admin credentails
 
 # Prerequisites
-As an Administrator, type PowerShell in the start menu. 
-
-Right-click Windows PowerShell, then select Run as Administrator. Click Yes at the UAC prompt.
-1.	Type the following within PowerShell and then press Enter:
-
-     `Install-Module AzureAd`
-
-2.	Type Y at the prompt.Press Enter
-
-3.	If you are prompted for an untrusted repository,then type A (Yes to All) and press Enter.The module will now install
+Exchange Online and AzureAD module
 
 # How to run the script
-To run the script you will need to either download it or copy and paste the script into Powershell
+As an Administrator, type PowerShell in the start menu. Right-click on Windows PowerShell, then select Run as Administrator. Click Yes at the UAC prompt
 
-Provide the global administrator credentials or AzureAD admin credentials when it prompts
+To run the script you will need to either download it or copy and paste the script into Powershell 
+
+Provide the global administrator credentials or AzureAD and ExchangeOnline admin credentials when it prompts
 
 Hit enter to continue
 
-# Output
-Script will provide the count of teachers who has the teacher license and count of teachers in Distribution List
+# Expected output
+User custom attributes are updated 
+
