@@ -3,12 +3,18 @@
 # Description
 Script is to create below custom policies to set all access to teachers and restrict to students in an orgnization
 
-#teams policies \n
-#Meetings Policies \n
-#meeting Settings \n
-#messaging policies \n
-#Assignment policy \n
-#OrgWide settings \n
+#teams policies
+
+#Meetings Policies
+
+#meeting Settings
+
+#messaging policies
+
+#Assignment policy
+
+#OrgWide settings
+
 #apps
 
 # Prerequisite
