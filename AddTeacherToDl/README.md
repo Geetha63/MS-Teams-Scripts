@@ -25,5 +25,7 @@ To run the script you will need to either download it or copy and paste the scri
 
 Provide the global administrator credentials or AzureAD admin credentials when it prompts
 
+Hit enter to continue
+
 # Output
 Script will provide the count of teachers who has the teacher license and count of total number of teachers
