@@ -1,44 +1,84 @@
-#### Description:
+# DeleteTeamsWhereTeamMembersdontHaveGivenJobtitles
 
-This script check the each Team members job title, if at least one job title does not match to given job titles , Script will delete those teams and sent an email to owners of the team.
+# Description
 
-##### Prerequisites:
+This script checks the each Team member job title, if at least one job title does not match to given job titles,Script will delete those teams.It will generate the ouput.csv file in current folder and sent an email to deleted team owners.
 
-1. As an Administrator, type PowerShell in the start menu. Right-click on Windows PowerShell, then select Run as Administrator. Click Yes at the UAC prompt.
+This is Graph API script, to excute the script user needs to create an Azure App and provide the necessary permisssons 
 
+[How to create Azure App](https://docs.microsoft.com/en-us/graph/auth-register-app-v2)
 
-        Keep the Below details in info.json file
-                 "client_Id": "please paste App provider application id here" 
-                 "Client_Secret": "please paste App provided client secret here" 
-                 "Tenantid": "please provide requester tenant id here"
-                
+[How to apply permissions](https://docs.microsoft.com/en-us/graph/notifications-integration-app-registration)
 
-**Note**: Client id and client secret will be same for every tenant. Only tenant id must be changed to requester tenant id
+### Requried Permissions
 
-Please provide the parameter mailsender address from which you wnat to send an email to Teamsowner.
+Group.ReadWrite.All
+ 
+Directory.AccessAsUser.All
 
-Run the script it will open webpage for grant permissions.
+Mail.Send
 
-Please login with your tenant _USER ID_ and _PASSWORD_.
+# Example
 
-![Signin](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/Siginin.png)
+mailsener AdeleV@contoso.com
 
-Once you are login it will shows the below image for Grant permissions for the app to perform the operations
+keepjobtitles Manager,Hr,Associate 
 
-![GrantPermission](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/GrantPermissions.png)
-![GrantPermission](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/GrantPermissions2.png)
+script will delete HR Team if anyone of team member jobtitle does not match and script will send an email to HR team owner behalf of mailsender(AdeleV@contoso.com)
 
-**Click Accept**
+# Parameters
 
-If you have provided the correct credentials it will give success status `admin_consent = True`
+ `mailsender`
+ 
+   User Principal Name(for example: AdeleV@contoso.com) to send an email to Teams owner of deleted Teams 
+   
+   Type: string 
 
-![Admin Consent](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/AdminConsent.png)
+ `KeepJobtitles`
+ 
+   Designation of the employe(for example: Manager)
+   
+   Type: string 
+      
 
-Now press Y to proceed further in script.
+# Inputs
+   
+   client_Id
+   
+   Client_Secret
+   
+   Tenantid
+   
+   mailsender
+   
+   KeepJobtitles
+        
+ # Procedure to run the script
+ 
+   To excute `DeleteTeamsWhereTeamMembersdontHaveGivenJobtitles` download/copy and paste the script into powersell
+        
+   Provide the input parameters mailsender,client_Id,Client_Secret,Tenantid,KeepJobtitles and hit enter to proceed further on the script
+        
+   Now script will redirect to web page for login
+        
+   ![Signin](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/Siginin.png)
+        
+   Provide admin credentials i.e user ID and password 
+        
+   Press enter to continue
+   
+   Once you are login it will shows the below image for Grant permissions for the app to perform the operations
 
-Once the script executed below `output.csv` file will generate.
+ ![GrantPermission](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/GrantPermissions.png)
+ 
+ ![GrantPermission](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/GrantPermissions2.png)
+ 
+ **Click Accept**
 
-Sample Output:
-
- | DeletedTeam |OwnerName  |
- |-------------|-----------|
+ If you have provided the correct credentials it will give success status `admin_consent = True`
+       
+ # Output
+ 
+ Script will export the output.csv file which contains list of deleted Teams along with owners,also it will send an email to Teams owner behalf of mail sender
+ 
+ |DeletedTeam|TeamsOwner|

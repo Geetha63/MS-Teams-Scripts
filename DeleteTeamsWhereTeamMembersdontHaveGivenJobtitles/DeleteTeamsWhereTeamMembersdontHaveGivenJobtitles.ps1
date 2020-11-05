@@ -1,18 +1,15 @@
 ﻿#this script will Delete the all teams except given job titles match
-#keep the word phrases line number 68
-#for best practice run the script quote line no 70 & 71
+#Provide job title phrases separate by , 
+#for best practice run the script quote delete cmdlet
 #keep the tenant id in info.json and save it in current folder.
 
 param(
-      [Parameter(Mandatory=$true)][System.String]$mailsender
+      [Parameter(Mandatory=$true)][System.String]$mailsender,
+      [Parameter(Mandatory=$true)][System.String]$client_Id,
+      [Parameter(Mandatory=$true)][System.String]$Client_Secret,
+      [Parameter(Mandatory=$true)][System.String]$Tenantid,
+      [Parameter(Mandatory=$true)][System.String]$KeepJobtitles
      )
-
-
-#creating token id
-$input = get-content info.json | ConvertFrom-Json
-$Client_Secret = $input.Client_Secret
-$client_Id = $input.client_Id
-$Tenantid = $input.Tenantid
 
 #Grant Adminconsent 
 $Grant= 'https://login.microsoftonline.com/common/adminconsent?client_id='
@@ -65,7 +62,7 @@ if ($proceed -eq 'Y')
                         
             foreach($member in $members.value)
             {
-                if( "President", "testuser"  -contains $member.jobTitle)
+                if( "$KeepJobtitles"  -contains $member.jobTitle)
                     {
                         $keepTeam = $true
                     }
@@ -87,7 +84,7 @@ if ($proceed -eq 'Y')
 
                     $file = New-Object psobject
                     $file | add-member -MemberType NoteProperty -Name DeletedTeam $DeletedTeam.displayName
-                    $file | add-member -MemberType NoteProperty -Name Teams_Owner $owners
+                    $file | add-member -MemberType NoteProperty -Name TeamsOwner $owners
                     $file | export-csv output.csv -NoTypeInformation -Append
                  write-host "Mail has been sent to $owners"
                  $mailuri = "https://graph.microsoft.com/v1.0/users/" + "$mailsender" + "/sendMail"
