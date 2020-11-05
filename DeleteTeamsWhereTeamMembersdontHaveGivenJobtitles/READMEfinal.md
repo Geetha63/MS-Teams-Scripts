@@ -10,7 +10,7 @@ This is Graph API script, to excute the script user needs to create an Azure App
 
 [How to apply permissions](https://docs.microsoft.com/en-us/graph/notifications-integration-app-registration)
 
-# Requried Permissions
+### Requried Permissions
 
 Group.ReadWrite.All
  
@@ -18,16 +18,21 @@ Directory.AccessAsUser.All
 
 Mail.Send
 
+# Example
+
+mailsener AdeleV@contoso.com
+keepjobtitles Manager,Hr,Associate 
+script will delete HR Team if anyone of team member jobtitle does not match and script will send an email to HR team owner behalf of mailsender(AdeleV@contoso.com)
+
 # Parameters
 
  `mailsender`
-   
-    User Principal Name(for example: AdeleV@contoso.com) to send an email to Teams owner of deleted Teams 
+   User Principal Name(for example: AdeleV@contoso.com) to send an email to Teams owner of deleted Teams 
+   Type: string 
 
-  `KeepJobtitles`
-    
-    Designation of the employe(for example: Manager) 
-    Type: string 
+ `KeepJobtitles`
+   Designation of the employe(for example: Manager) 
+   Type: string 
       
 
 # Inputs
