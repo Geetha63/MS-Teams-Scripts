@@ -6,7 +6,7 @@ This script checks the each Team member job title, if at least one job title doe
 
 This is Graph API script, to excute the script user needs to create an Azure App and provide the necessary permisssons 
 
-[How to create Azure App] (https://docs.microsoft.com/en-us/graph/auth-register-app-v2)
+[How to create Azure App](https://docs.microsoft.com/en-us/graph/auth-register-app-v2)
 
 [How to apply permissions](https://docs.microsoft.com/en-us/graph/notifications-integration-app-registration)
 
@@ -22,12 +22,12 @@ Mail.Send
 
  `mailsender`
    
-   User Principal Name(for example: AdeleV@contoso.com) to send an email to Teams owner of deleted Teams 
+    User Principal Name(for example: AdeleV@contoso.com) to send an email to Teams owner of deleted Teams 
 
   `KeepJobtitles`
     
-   Designation of the employe(for example: Manager) 
-   Type: string 
+    Designation of the employe(for example: Manager) 
+    Type: string 
       
 
 # Inputs
