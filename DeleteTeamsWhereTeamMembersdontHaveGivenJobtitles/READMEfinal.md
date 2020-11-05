@@ -36,4 +36,4 @@ This script checks the each Team member job title, if at least one job title doe
         
  # Output
  
- Will receive pop up information of deleted teams,also it will send an email behalf of mail sender
+ Script will export the list of deleted Teams along with owners of the deleted Teams,also it will send an email to Teams owner behalf of mail sender
