@@ -37,4 +37,5 @@ This script checks the each Team member job title, if at least one job title doe
  # Output
  
  Script will export the output.csv file which contains list of deleted Teams along with owners,also it will send an email to Teams owner behalf of mail sender
+ 
  |DeletedTeam|TeamsOwner|
