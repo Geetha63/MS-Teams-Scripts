@@ -21,17 +21,23 @@ Mail.Send
 # Example
 
 mailsener AdeleV@contoso.com
+
 keepjobtitles Manager,Hr,Associate 
+
 script will delete HR Team if anyone of team member jobtitle does not match and script will send an email to HR team owner behalf of mailsender(AdeleV@contoso.com)
 
 # Parameters
 
  `mailsender`
+ 
    User Principal Name(for example: AdeleV@contoso.com) to send an email to Teams owner of deleted Teams 
+   
    Type: string 
 
  `KeepJobtitles`
-   Designation of the employe(for example: Manager) 
+ 
+   Designation of the employe(for example: Manager)
+   
    Type: string 
       
 
@@ -64,6 +70,7 @@ script will delete HR Team if anyone of team member jobtitle does not match and 
    Once you are login it will shows the below image for Grant permissions for the app to perform the operations
 
  ![GrantPermission](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/GrantPermissions.png)
+ 
  ![GrantPermission](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/GrantPermissions2.png)
  
  **Click Accept**
