@@ -2,7 +2,33 @@
 
 # Description
 
-This script checks the each Team member job title, if at least one job title does not match to given job titles , Script will delete those teams and sent an email to owners of the team.To excute download/copy and paste the script into powersell,fallow the procedure
+This script checks the each Team member job title, if at least one job title does not match to given job titles,Script will delete those teams.It will generate the ouput.csv file in current folder and sent an email to deleted team owners.
+
+This is Graph API script, to excute the script user needs to create an Azure App and provide the necessary permisssons 
+
+[How to create Azure App] (https://docs.microsoft.com/en-us/graph/auth-register-app-v2)
+
+[How to apply permissions](https://docs.microsoft.com/en-us/graph/notifications-integration-app-registration)
+
+# Requried Permissions
+
+Group.ReadWrite.All
+ 
+Directory.AccessAsUser.All
+
+Mail.Send
+
+# Parameters
+
+   `mailsender`
+   
+      User Principal Name(for example: AdeleV@contoso.com) to send an email to Teams owner of deleted Teams 
+
+  `KeepJobtitles`
+    
+    Designation of the employe(for example: Manager) 
+    Type: string 
+      
 
 # Inputs
 
