@@ -20,37 +20,33 @@ Mail.Send
 
 # Parameters
 
-   `mailsender`
+ `mailsender`
    
-      User Principal Name(for example: AdeleV@contoso.com) to send an email to Teams owner of deleted Teams 
+   User Principal Name(for example: AdeleV@contoso.com) to send an email to Teams owner of deleted Teams 
 
   `KeepJobtitles`
     
-    Designation of the employe(for example: Manager) 
-    Type: string 
+   Designation of the employe(for example: Manager) 
+   Type: string 
       
 
 # Inputs
-
-   $mailsender
    
-   $client_Id
+   client_Id
    
-   $Client_Secret
+   Client_Secret
    
-   $Tenantid
+   Tenantid
    
-   $KeepJobtitles
-
-   Username Ex: davidc@contoso.com
-        
-   Password
+   mailsender
+   
+   KeepJobtitles
         
  # Procedure to run the script
  
    To excute `DeleteTeamsWhereTeamMembersdontHaveGivenJobtitles` download/copy and paste the script into powersell
         
-   Provide the input parameters $mailsender,$client_Id,Client_Secret,$Tenantid,$KeepJobtitles and hit enter to proceed further on the script
+   Provide the input parameters mailsender,client_Id,Client_Secret,Tenantid,KeepJobtitles and hit enter to proceed further on the script
         
    Now script will redirect to web page for login
         
@@ -59,7 +55,16 @@ Mail.Send
    Provide admin credentials i.e user ID and password 
         
    Press enter to continue
-        
+   
+   Once you are login it will shows the below image for Grant permissions for the app to perform the operations
+
+ ![GrantPermission](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/GrantPermissions.png)
+ ![GrantPermission](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/GrantPermissions2.png)
+ 
+ **Click Accept**
+
+ If you have provided the correct credentials it will give success status `admin_consent = True`
+       
  # Output
  
  Script will export the output.csv file which contains list of deleted Teams along with owners,also it will send an email to Teams owner behalf of mail sender
