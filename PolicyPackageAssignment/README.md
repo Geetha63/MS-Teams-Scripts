@@ -1,50 +1,53 @@
-#### Description:
+# PolicyPackageAssignment
 
-This script will check the user license. After script execution Teacher license users will be assigned with “Education Teacher”.Student license users assigned with  “Education_SecondaryStudent” policy packages.
+# Description
 
-##### Prerequisites:
+This script will check the user license. After script execution teacher license users will be assigned with “Education Teacher”. Student license users will be assigned with  “Education_SecondaryStudent” policy packages
 
-1. As an Administrator, type PowerShell in the start menu. Right-click on Windows PowerShell, then select Run as Administrator. Click Yes at the UAC prompt.
+# Example
 
+If user assigned with faculty license script will assign Education_Teacher policy package to user 
 
-        Keep the Below details in info.json file
-                 "client_Id": "please paste App provider application id here" 
-                 "Client_Secret": "please paste App provided client secret here" 
-                 "Tenantid": "please provide requester tenant id here"
-                
+If user assigned with student license script will assign Education_SecondaryStudent policy package to user 
 
-**Note**: Client id and client secret will be same for every tenant. Only tenant id must be changed to requester tenant id
+# Parameters
 
-<<<<<<< HEAD
-To run the script please provide the global administrator credentials or Teams admin credentials to `connect-microsoftteams`
-=======
-Run the script 
+# Inputs
 
-Please provide the global administrator credentials or Teams admin credentials to coneect  to `connect-microsoftteams` 
->>>>>>> beb3250da352591d468513eacb3f121f52a39843
+Client_Id, Client_Secret, Tenantid
 
-It will open webpage for grant permissions.
+# Procedure to run the script
+ 
+   To excute `PolicyPackageAssignment` download/copy and paste the script into powersell
+        
+   Provide the input parameters client_Id, Client_Secret, Tenantid and hit enter to proceed further on the script
+   
+   Please provide the global administrator credentials or Teams administrator credentials to `Connect-microsoftteams`
+        
+   Now script will redirect to web page for login
+        
+   ![Signin](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/Siginin.png)
+        
+   Provide admin credentials i.e user ID and password 
+        
+   Press enter to continue
+   
+   Once you are login it will shows the below image for Grant permissions for the app to perform the operations
 
-Please login with your tenant _USER ID_ and _PASSWORD_.
+ ![GrantPermission](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/GrantPermissions.png)	
+ 
+ ![GrantPermission](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/GrantPermissions2.png)
+ 
+ **Click Accept**
 
-![Signin](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/Siginin.png)
+ If you have provided the correct credentials it will give success status `admin_consent = True`
+ 
+ Now press Y to proceed further in script
 
-Once you are login it will shows the below image for Grant permissions for the app to perform the operations
+# Sample Output:
 
-![GrantPermission](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/GrantPermissions.png)
-![GrantPermission](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/GrantPermissions2.png)
-
-**Click Accept**
-
-If you have provided the correct credentials it will give success status `admin_consent = True`
-
-![Admin Consent](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/AdminConsent.png)
-
-Now press Y to proceed further in script.
-
-Once the script executed , it generates the `license.csv` file contains no license users.
-
-Sample Output:
+ Once the script executed , it generates the `license.csv` file contains no license or diffrent license(other than Teams) users
 
 |UserName  | Userid  |
 |----------|---------|
+|David Chew|81701046-cb37-439b-90ce-2afd9630af7d|
