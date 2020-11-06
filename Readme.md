@@ -39,6 +39,7 @@ No  | Script Name    | Description         | Link to script   |
 |23|Teams User Activity|Use the Microsoft Teams activity reports to get insights into the Microsoft Teams user activity in your organization.Period specifies the length of time over which the report is aggregated|[Link](https://github.com/Geetha63/MS-Teams-Scripts/tree/master/TeamsUserActivity)
 |24|User As Teams Owner|Script will retrieves the teams details where user is owner for the team.|[Link](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/UserAsTeamsOwner)
 |25|User Policy Assignment|Script will work for assigning custom user policies for N no.of users.|[Link](https://github.com/Geetha63/MS-Teams-Scripts/tree/master/UserPolicyAssignment)
+|26|AddTeacherToDistribution list-Education domain|Script will serach and filter teachers in tenant using license parameter and adds to the All teachers distribution list|[Link](https://github.com/Geetha63/MS-Teams-Scripts/tree/master/AddTeacherToDistribution%20list-Education%20domain)
 
 
 
