@@ -4,17 +4,22 @@
 
 This script will change the Teams membership role based on the user license. After the script execution teacher license user will convert as Owner and student license users will converts as members
 
-Script will check users license in organization and do as fallows
+[How to create Azure App](https://docs.microsoft.com/en-us/graph/auth-register-app-v2)
+
+[How to apply permissions](https://docs.microsoft.com/en-us/graph/notifications-integration-app-registration)
 
 #### Requried Permissions
 
 # Example
 
-##### Case1: If user having faculty license and be part of ownerlist
+##### Case1: 
 
-##### output: This user having Faculty license and already owner of the team
+      If user having faculty license and be part of ownerlist
+
+      This user having Faculty license and already owner of the team
    
-##### Case2: If user having faculty license and not part of ownerlist
+##### Case2: 
+   If user having faculty license and not part of ownerlist
 
 Faculty Membership role has been changed to Owner fof the team
 
