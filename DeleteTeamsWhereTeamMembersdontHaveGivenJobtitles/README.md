@@ -76,9 +76,13 @@ script will delete HR Team if anyone of team member jobtitle does not match and 
  **Click Accept**
 
  If you have provided the correct credentials it will give success status `admin_consent = True`
+ 
+ Now press Y to proceed further in script
        
  # Output
  
  Script will export the output.csv file which contains list of deleted Teams along with owners,also it will send an email to Teams owner behalf of mail sender
  
  |DeletedTeam|TeamsOwner|
+ |HR|fannyd@contoso.com|
+ |Accounts|danas@contoso.com|
