@@ -1,12 +1,11 @@
-﻿#Keep tenant id, client id, client secret in info.json file run the script 
-#this script will take the input from current folder and create output in current folder  (keep the info.json file in same folder where you are running the script)
+﻿#this script will take the input from current folder and create output in current folder (input.csv should have Teamid, AllowToAddGuests) 
 #this script will change the Given Teams groups AllowToAddGuests value to False
 
-#creating token id
-$input = get-content info.json | ConvertFrom-Json
-$Client_Secret = $input.Client_Secret
-$client_Id = $input.client_Id
-$Tenantid = $input.Tenantid
+param(
+      [Parameter(Mandatory=$true)][System.String]$client_Id,
+      [Parameter(Mandatory=$true)][System.String]$Client_Secret,
+      [Parameter(Mandatory=$true)][System.String]$Tenantid
+     )
 
 
 #Grant Adminconsent 
@@ -39,9 +38,6 @@ if ($proceed -eq 'Y')
     $TeamsList = Import-Csv "input.csv"
     foreach($Teams in $TeamsList){
   
-                        #$Teams.Teamsid
-                        #$Teams.AllowToAddGuests
-
                         $uri = "https://graph.microsoft.com/v1.0/groups/" + $Teams.Teamsid
                         $details = Invoke-RestMethod -Headers $Header -Uri $uri -Method Get -ContentType 'application/json'
                         
