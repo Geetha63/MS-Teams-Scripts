@@ -1,12 +1,10 @@
 ﻿# This script copies user from the tenant and the applications installed for those users in Teams into csv file.
-# Keep tenant id in info.json file
 
-
-#creating token id
-$input = get-content info.json | ConvertFrom-Json
-$Client_Secret = $input.Client_Secret
-$client_Id = $input.client_Id
-$Tenantid = $input.Tenantid
+param(
+      [Parameter(Mandatory=$true)][System.String]$client_Id,
+      [Parameter(Mandatory=$true)][System.String]$Client_Secret,
+      [Parameter(Mandatory=$true)][System.String]$Tenantid
+     )
 
 #Grant Adminconsent 
 $Grant= 'https://login.microsoftonline.com/common/adminconsent?client_id='
@@ -57,9 +55,6 @@ if ($proceed -eq 'Y')
             $a = $values.teamsAppDefinition
             $Apps = $a | select displayName
             $InstalledApps = [string]::Join("; ",$Apps.displayName) 
-
-            $id
-            $InstalledApps
 
             $file = New-Object psobject
             $file | add-member -MemberType NoteProperty -Name id $id
