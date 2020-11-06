@@ -1,47 +1,59 @@
-#### Description:
+# GuestRestrictionForGivenTeams
 
-This script will restrict the guest users in Teams by applying restriction for O365 Group.Script will take the input from current folder and create output in current folder (keep the info.json file in same folder where you are running the script)
+# Description
 
-Powershell 3.0 or more should be available.
+This script will restrict the guest users in Teams by applying restriction to O365 Group. It will take the input from current folder and create the output in current folder 
 
-Right-click Windows PowerShell, then select Run as Administrator. Click Yes at the UAC prompt.
+Powershell 3.0 or more should be available
+
+[How to create Azure App](https://docs.microsoft.com/en-us/graph/auth-register-app-v2)
+
+[How to apply permissions](https://docs.microsoft.com/en-us/graph/notifications-integration-app-registration)
+
+#### Requried Permissions
+
+# Example
+
+# Parameters
+
+# Inputs
 
 Prepare input.csv file in below format and keep it in current location where script is running 
 
 ![Input](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/InkedGuestrestrictionForGivenTeams-Input_LI.jpg)
 
-    Keep the Below details in info.json file
-             "client_Id": "please paste App provider application id here" 
-             "Client_Secret": "please paste App provided client secret here" 
-             "Tenantid": "please provide requester tenant id here"
+# Procedure to run the script
 
+ To excute `GuestRestrictionForGivenTeams` download/copy and paste the script into powersell
+ 
+ Provide the input parameters client_Id,Client_Secret,Tenantid and hit enter to proceed further on the script
+ 
+ Now script will redirect to web page for login
+ 
+ ![Signin](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/Siginin.png)
+ 
+ Provide the admin credentials i.e user ID and password 
+        
+ Press enter to continue
+   
+ Once you are login it will shows the below image for Grant permissions for the app to perform the operations
 
-**Note**: Client id and client secret will be same for every tenant. Only tenant id must be changed to requester tenant id
+ ![GrantPermission](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/GrantPermissions.png)
+ 
+ ![GrantPermission](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/GrantPermissions2.png)
+ 
+ **Click Accept**
 
-Run the script it will open webpage for grant permissions.
+ If you have provided the correct credentials it will give success status `admin_consent = True`
 
-Please login with your tenant _USER ID_ and _PASSWORD_.
+ Now press Y to proceed further in script
 
-![Signin](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/Siginin.png)
+ Script will take the input from _input.csv_
 
-Once you are login it will shows the below image for Grant permissions for the app to perform the operations
+ Once the script is executed below output.csv file will generate.
 
-![GrantPermission](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/GrantPermissions.png)
-![GrantPermission](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/GrantPermissions2.png)
-
-**Click Accept**
-
-If you have provided the correct credentials it will give success status `admin_consent = True`
-
-![Admin Consent](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/AdminConsent.png)
-
-Now press Y to proceed further in script.
-
-Script will take the input from _input.csv_
-
-Once the script executed below output.csv file will generate.
-
-Sample Output:
+# Output
+    ##### Example
 
 |TeamsName	| AllowToAddGuests |
 |-----------|------------------|
