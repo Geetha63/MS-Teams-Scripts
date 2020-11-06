@@ -4,21 +4,18 @@
 param(
       [Parameter(Mandatory=$true)][System.String]$Groupname,
       [Parameter(Mandatory=$true)][System.String]$OwnerPrincipalName,
-      [Parameter(Mandatory=$true)][System.String]$AppName
+      [Parameter(Mandatory=$true)][System.String]$AppName,    
+      [Parameter(Mandatory=$true)][System.String]$client_Id,
+      [Parameter(Mandatory=$true)][System.String]$Client_Secret,
+      [Parameter(Mandatory=$true)][System.String]$Tenantid     
       )
      
-#creating token id
-$input = get-content info.json | ConvertFrom-Json
-$Client_Secret = $input.Client_Secret
-$client_Id = $input.client_Id
-$Tenantid = $input.Tenantid
-
 #Grant Adminconsent 
 $Grant= 'https://login.microsoftonline.com/common/adminconsent?client_id='
 $admin = '&state=12345&redirect_uri=https://localhost:1234'
 $Grantadmin = $Grant + $client_Id + $admin
 
-start $Grantadmin
+start-process $Grantadmin
 write-host "login with your tenant login detials to proceed further"
 
 $proceed = Read-host " Press Y to continue "
@@ -79,12 +76,12 @@ $teambody = '{
   }
 }'
     $teamuri = "https://graph.microsoft.com/v1.0/groups/" +$id+ "/team" 
-    $Team = Invoke-RestMethod -Headers $Header -Uri $getusers -Method put -ContentType 'application/json'
+    $Team = Invoke-RestMethod -Headers $Header -Uri $teamuri -body $teambody -Method put -ContentType 'application/json'
 
 #add app to team
 
 $getappuri = "https://graph.microsoft.com/v1.0/appCatalogs/teamsApps?filter=name%20eq%20'$AppName'"
-$getapp = Invoke-RestMethod -Headers $Header -Uri $ownerurl  -Method get -ContentType 'application/json'
+$getapp = Invoke-RestMethod -Headers $Header -Uri $getappuri  -Method get -ContentType 'application/json'
 $Appid = $getapp.id
 
 write-host "Adding App to Team"
@@ -92,6 +89,6 @@ $Appbody = '{
    "teamsApp@odata.bind":"https://graph.microsoft.com/v1.0/appCatalogs/teamsApps/'+$Appid+'"
 }'
     $AddAppsuri = "https://graph.microsoft.com/v1.0/teams/" +$id+ "/installedApps"
-    $Apps = Invoke-RestMethod -Headers $Header -Uri $AddAppsuri -body $Appbody -Method post -ContentType 'application/json'
-
+    Invoke-RestMethod -Headers $Header -Uri $AddAppsuri -body $Appbody -Method post -ContentType 'application/json'
+write-host "App has been added to team"
 }
