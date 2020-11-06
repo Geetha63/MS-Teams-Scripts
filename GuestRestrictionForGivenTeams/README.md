@@ -53,11 +53,11 @@ Prepare input.csv file in below format and keep it in current location where scr
  Once the script is executed below output.csv file will generate.
 
 # Output
-    ##### Example
+##### Example
 
-|TeamsName	| AllowToAddGuests |
+|TeamsName 	| AllowToAddGuests |
 |-----------|------------------|
 |HR	        | FALSE            |
-|IT Team	| FALSE            |
+|IT Team	   | FALSE            |
 |Admin      | FALSE            |
 |Accounts   | FALSE            |
