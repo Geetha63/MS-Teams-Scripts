@@ -1,8 +1,9 @@
-﻿#creating token id
-$input = get-content info.json | ConvertFrom-Json
-$Client_Secret = $input.Client_Secret
-$client_Id = $input.client_Id
-$Tenantid = $input.Tenantid
+﻿
+param(    
+      [Parameter(Mandatory=$true)][System.String]$client_Id,
+      [Parameter(Mandatory=$true)][System.String]$Client_Secret,
+      [Parameter(Mandatory=$true)][System.String]$Tenantid     
+      )
 
 #Grant Adminconsent 
 $Grant= 'https://login.microsoftonline.com/common/adminconsent?client_id='
@@ -12,7 +13,7 @@ $Grantadmin = $Grant + $client_Id + $admin
 Connect-MicrosoftTeams
 
 
-start $Grantadmin
+start-process $Grantadmin
 write-host "login with your tenant login detials to proceed further"
 
 $proceed = Read-host " Press Y to continue "
@@ -33,9 +34,7 @@ if ($proceed -eq 'Y')
         Authorization = "$($token.token_type) $($token.access_token)"
     }
 
-      
-       
-
+ 
     #Get Team details
          write-host "Getting Team details..."
          $getTeams = "https://graph.microsoft.com/beta/groups?filter=resourceProvisioningOptions/Any(x:x eq 'Team')" 
@@ -44,14 +43,12 @@ if ($proceed -eq 'Y')
          do 
         {
 
-      foreach($Team in $Teams.value.id){
-
-      #get All team members
-        #$Team = "61394a75-cc99-45f9-8cc9-6e22fc4aabdd"
-        $Tmembers ="https://graph.microsoft.com/v1.0/groups/" + $Team + "/members"
+      foreach($Team in $Teams.value.id)
+      {
+       $Tmembers ="https://graph.microsoft.com/v1.0/groups/" + $Team + "/members"
         $members = Invoke-RestMethod -Headers $Header -Uri $Tmembers -Method get 
 
-       #Geet all team Owners
+       #Get all team Owners
         $Teamowneruri ="https://graph.microsoft.com/v1.0/groups/" + $Team + "/owners"
         $ownerresult = Invoke-RestMethod -Headers $Header -Uri $Teamowneruri -Method get
         $owners = $ownerresult.value.id 
@@ -130,8 +127,3 @@ if ($proceed -eq 'Y')
 {
     write-host "You need to login admin consent in order to continue... " 
 }
-
-    
-    
-
-
