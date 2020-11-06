@@ -12,7 +12,7 @@ Scripts are written in Powershell , To use the Scripts
 
 ## Scripts list
 
-No  | Script Name    | Description         | Link to script   |                     
+No  | Script Name    | Description         | Script Link  |                     
 |---|----------------|---------------------|------------------|
 |  1|APP Installation|Script is to Adding TeamsApp to Teams or to the perticular user.| [Link](https://github.com/Geetha63/MS-Teams-Scripts/tree/master/App%20Installation) |
 |2| Call Quality Dashboard|Script will provide CQD data output using given input parameters.|[Link](https://github.com/Geetha63/MS-Teams-Scripts/tree/master/CQD)
@@ -41,7 +41,7 @@ No  | Script Name    | Description         | Link to script   |
 |25|User Policy Assignment|Script will work for assigning custom user policies for N no.of users.|[Link](https://github.com/Geetha63/MS-Teams-Scripts/tree/master/UserPolicyAssignment)
 |26|AddTeacherToDistribution list-Education domain|Script will serach and filter teachers in tenant using license parameter and adds to the All teachers distribution list|[Link](https://github.com/Geetha63/MS-Teams-Scripts/tree/master/AddTeacherToDistribution%20list-Education%20domain)
 |27|Address book policy-UpdateUserAttributes-EducationDomain|Script will check all groups of teachers,students and removes the part “students of” or “teachers of” and then it will update the user custom attribute with the school name,this way we can have both teachers,students of the same school can share the same attribute value|[Link](https://github.com/Geetha63/MS-Teams-Scripts/tree/master/Address%20book%20policy-UpdateUserAttributes-EducationDomain)
-|28|AssignPolicyToTeachers-EducationDomain|Script will search for All Teachers distribution list in tenant and assign policy types with policyName AllTeachers to All Teachers distribution lis[Link](https://github.com/Geetha63/MS-Teams-Scripts/tree/master/AssignPolicyToTeachers-EducationDomain)
+|28|AssignPolicyToTeachers-EducationDomain|Script will search for All Teachers distribution list in tenant and assign policy types with policyName AllTeachers to All Teachers distribution list|[Link](https://github.com/Geetha63/MS-Teams-Scripts/tree/master/AssignPolicyToTeachers-EducationDomain)
 |29|CreateAndAssignAddressBookPolicy-EducationDomain|Script will create and assign the address lists,address book policies to users based on the attribute|[Link](https://github.com/Geetha63/MS-Teams-Scripts/tree/master/CreateAndAssignAddressBookPolicy-EducationDomain)
 |30|ResetPolicies-Education domain|Script is to create below custom policies to set all access to teachers and restrict to students in an orgnization|[Link](https://github.com/Geetha63/MS-Teams-Scripts/tree/master/ResetPolicies-Education%20domain)
 |31|TeachersGroupUpdate-Education domain|Script will update the All teachers distribution list members,it checks the users who has teacher license are added to the All teachers distribution list are not, if any users are not added, script will add that particular users to DL|[Link](https://github.com/Geetha63/MS-Teams-Scripts/tree/master/TeachersGroupUpdate-Education%20domain)
