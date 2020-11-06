@@ -2,7 +2,7 @@
 
 # Description
 
-This script will change the Teams membership role based on the user license. After the script execution teacher license user will convert as Owner and student license users will converts as members, if user dont have Microsoft Teams license it will export the users list
+This script will change the Teams membership role based on the user license. After the script execution teacher license user will convert as Owner and student license users will converts as members, if users dont have Microsoft Teams license it will export the users list
 
 [How to create Azure App](https://docs.microsoft.com/en-us/graph/auth-register-app-v2)
 
@@ -18,19 +18,19 @@ This script will change the Teams membership role based on the user license. Aft
    
 ##### Case2: (If user having faculty license and not part of ownerlist)
 
-   Faculty Membership role has been changed to Owner of the team will populate on the screen
+   Faculty Membership role has been changed to Owner of the team message will populate on the screen
 
 ##### Case3:(If user having STUDENT license and not part of ownerlist)
 
-  This user having STUDENT license and already member of the team will populate on the screen
+  This user having STUDENT license and already member of the team message will populate on the screen
 
 ##### Case4:(If user having STUDENT license and part of ownerlist)
 
-  Student Membership role has been changed to member will populate on the screen
+  Student Membership role has been changed to member message will populate on the screen
 
 ##### Case5:(If user dont have license)
 
-  User have the different license and expots the user list will populate on the screen
+  User have the different license and expots the user list message will populate on the screen
 
 # Parameters
 
@@ -43,7 +43,9 @@ Client_Id,Client_Secret,Tenantid
    To excute `MembershipChangeTeacher-Owner,Student-Member` download/copy and paste the script into powersell
         
    Provide the input parameters Client_Id,Client_Secret,Tenantid and hit enter to proceed further on the script
-        
+    
+   Please provide the Teams admin credentials to connect to Microsoft Teams
+   
    Now script will redirect to web page for login
         
    ![Signin](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/Siginin.png)
@@ -65,6 +67,8 @@ Client_Id,Client_Secret,Tenantid
  Now press Y to proceed further in script
 
 # Output
+
+List of users who has no licnese, output.csv will be generated 
 
 ##### Example
 
