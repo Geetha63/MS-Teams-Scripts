@@ -4,6 +4,10 @@
 
 This script will check the user license. After script execution teacher license users will be assigned with “Education Teacher”. Student license users will be assigned with  “Education_SecondaryStudent” policy packages
 
+[How to create Azure App](https://docs.microsoft.com/en-us/graph/auth-register-app-v2)
+
+[How to apply permissions](https://docs.microsoft.com/en-us/graph/notifications-integration-app-registration)
+
 # Example
 
 If user assigned with faculty license script will assign Education_Teacher policy package to user 
@@ -44,7 +48,7 @@ Client_Id, Client_Secret, Tenantid
  
  Now press Y to proceed further in script
 
-# Sample Output:
+# Sample Output
 
  Once the script executed , it generates the `license.csv` file contains no license or diffrent license(other than Teams) users
 
