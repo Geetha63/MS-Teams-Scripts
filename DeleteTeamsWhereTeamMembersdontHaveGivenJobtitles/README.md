@@ -83,6 +83,10 @@ script will delete HR Team if anyone of team member jobtitle does not match and 
  
  Script will export the output.csv file which contains list of deleted Teams along with owners,also it will send an email to Teams owner behalf of mail sender
  
+ ##### Example
+ 
  |DeletedTeam|TeamsOwner|
+ 
  |HR|fannyd@contoso.com|
+ 
  |Accounts|danas@contoso.com|
