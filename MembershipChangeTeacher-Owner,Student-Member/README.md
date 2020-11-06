@@ -1,46 +1,71 @@
-#### Description:
+# MembershipChangeTeacher-Owner,Student-Member
 
-This script will change the Teams membership role based on the user license. After the script execution Teacher license user will convert as Owner and student license users will converts as members. 
+# Description
 
-##### Prerequisites:
+This script will change the Teams membership role based on the user license. After the script execution teacher license user will convert as Owner and student license users will converts as members
 
-1. As an Administrator, type PowerShell in the start menu. Right-click on Windows PowerShell, then select Run as Administrator. Click Yes at the UAC prompt.
+Script will check users license in organization and do as fallows
 
+#### Requried Permissions
 
-        Keep the Below details in info.json file
-                 "client_Id": "please paste App provider application id here" 
-                 "Client_Secret": "please paste App provided client secret here" 
-                 "Tenantid": "please provide requester tenant id here"
-                
+# Example
 
-**Note**: Client id and client secret will be same for every tenant. Only tenant id must be changed to requester tenant id
+##### Case1: If user having faculty license and be part of ownerlist
 
-Run the script 
+##### output: This user having Faculty license and already owner of the team
+   
+##### Case2: If user having faculty license and not part of ownerlist
 
-Please provide the global administrator credentials or Teams admin credentials to connect to `connect-microsoftteams` 
+Faculty Membership role has been changed to Owner fof the team
 
-It will open webpage for grant permissions.
+##### Case3:If user having STUDENT license and not part of ownerlist
 
-Please login with your tenant _USER ID_ and _PASSWORD_.
+This user having STUDENT license and already member of the team
 
-![Signin](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/Siginin.png)
+##### Case4:If user having STUDENT license and part of ownerlist
 
-Once you are login it will shows the below image for Grant permissions for the app to perform the operations
+Student Membership role has been changed to member
 
-![GrantPermission](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/GrantPermissions.png)
-![GrantPermission](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/GrantPermissions2.png)
+##### Case5: If user dont have license
 
-**Click Accept**
+User have the different license and expots the user list 
 
-If you have provided the correct credentials it will give success status `admin_consent = True`
+# Parameters
 
-![Admin Consent](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/AdminConsent.png)
+# Inputs
 
-Now press Y to proceed further in script.
+Client_Id,Client_Secret,Tenantid
 
-Once the script executed , it generates the `output.csv` file contains no license users.
+# Procedure to run the script
+ 
+   To excute `MembershipChangeTeacher-Owner,Student-Member` download/copy and paste the script into powersell
+        
+   Provide the input parameters Client_Id,Client_Secret,Tenantid and hit enter to proceed further on the script
+        
+   Now script will redirect to web page for login
+        
+   ![Signin](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/Siginin.png)
+        
+   Provide admin credentials i.e user ID and password 
+        
+   Press enter to continue
+   
+   Once you are login it will shows the below image for Grant permissions for the app to perform the operations
 
-Sample Output:
+ ![GrantPermission](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/GrantPermissions.png)
+ 
+ ![GrantPermission](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/GrantPermissions2.png)
+ 
+ **Click Accept**
+
+ If you have provided the correct credentials it will give success status `admin_consent = True`
+ 
+ Now press Y to proceed further in script
+
+# Output
+
+##### Example
 
 |UserName  | Userid  |
 |----------|---------|
+|David Chew|81701046-cb37-439b-90ce-2afd9630af7d|
