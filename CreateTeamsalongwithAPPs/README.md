@@ -50,6 +50,6 @@ Groupname, OwnerPrincipalName, AppName, client_Id, Client_Secret,Tenantid
  
 # Output
 
-Script will execute and Create the Teams using provided Group Name, OwnerPrincipalName and APPName
+Script will execute and create the Teams using provided Group Name, OwnerPrincipalName and APPName
 
 App has been added to team
