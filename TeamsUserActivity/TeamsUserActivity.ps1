@@ -1,26 +1,17 @@
 ﻿param(
+      [Parameter(Mandatory=$true)][System.String]$client_Id,
+      [Parameter(Mandatory=$true)][System.String]$Client_Secret,
+      [Parameter(Mandatory=$true)][System.String]$Tenantid, 
       [Parameter(Mandatory=$true)][System.String]$period
      )
-
-#creating token id
-$input = get-content info.json | ConvertFrom-Json
-$Client_Secret = $input.Client_Secret
-$client_Id = $input.client_Id
-$Tenantid = $input.Tenantid
-
- 
 
 #Grant Adminconsent 
 $Grant= 'https://login.microsoftonline.com/common/adminconsent?client_id='
 $admin = '&state=12345&redirect_uri=https://localhost:1234'
 $Grantadmin = $Grant + $client_Id + $admin
 
- 
-
-start $Grantadmin
+Start-Process $Grantadmin
 write-host "login with your tenant login detials to proceed further"
-
- 
 
 $proceed = Read-host " Press Y to continue "
 if ($proceed -eq 'Y')
@@ -32,13 +23,10 @@ if ($proceed -eq 'Y')
         Client_Secret = "$Client_Secret"
         Scope         = "https://graph.microsoft.com/.default"
     } 
-
- 
-
+     
     $loginurl = "https://login.microsoftonline.com/" + "$Tenantid" + "/oauth2/v2.0/token"
     $Token = Invoke-RestMethod -Uri "$loginurl" -Method POST -Body $ReqTokenBody -ContentType "application/x-www-form-urlencoded"
-
- 
+    
 
     $Header = @{
         Authorization = "$($token.token_type) $($token.access_token)"
@@ -96,7 +84,3 @@ if ($ProceedNext -eq "Y" )
     }
     while($true); 
     }
-      
-         
-       
-        
