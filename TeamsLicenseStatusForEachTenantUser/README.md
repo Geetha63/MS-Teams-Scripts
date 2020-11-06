@@ -1,48 +1,61 @@
-#### Description:
+# TeamsLicenseStatusForEachTenantUser
 
-This script will check each Tenant user license. It will also check MicrosotTeams subscription. If it is in disabled mode script will enable. If user don’t have any of teams license it will print the user name in output file.
+# Description
 
+This script will check each Tenant user license and MicrosotTeams subscription. If assigned license ia in disabled mode script will enable it. If user don’t have any of teams license it will print the user name in output file
 
-##### Prerequisites:
+[How to create Azure App](https://docs.microsoft.com/en-us/graph/auth-register-app-v2)
 
-1. As an Administrator, type PowerShell in the start menu. Right-click on Windows PowerShell, then select Run as Administrator. Click Yes at the UAC prompt.
+[How to apply permissions](https://docs.microsoft.com/en-us/graph/notifications-integration-app-registration)
 
+#### Requried Permissions
 
-        Keep the Below details in info.json file
-                 "client_Id": "please paste App provider application id here" 
-                 "Client_Secret": "please paste App provided client secret here" 
-                 "Tenantid": "please provide requester tenant id here"
-                
+# Example
 
-**Note**: Client id and client secret will be same for every tenant. Only tenant id must be changed to requester tenant id
+If user dont have Teams license it will export users list
 
-Run the script
+If user assigned with Teams license but it is in disable status - it will enable status
 
-It will execute `connect-msolservice` command. Provide admin credentials.
+# Parameters
 
+Client_Id, Client_Secret, Tenantid
 
-It will open webpage for grant permissions.
+# Inputs
 
-Please login with your tenant _USER ID_ and _PASSWORD_.
+# Procedure to run the script
+ 
+   To excute `TeamsLicenseStatusForEachTenantUser` download/copy and paste the script into powersell
+        
+   Provide the input parameters Client_Id, Client_Secret, Tenantid and hit enter to proceed further on the script
+   
+   Please provide active directory admin credentials to connect `connect-msolservice` 
+        
+   Now script will redirect to web page for login
+        
+   ![Signin](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/Siginin.png)
+        
+   Provide admin credentials i.e user ID and password 
+        
+   Press enter to continue
+   
+   Once you are login it will shows the below image for Grant permissions for the app to perform the operations
 
-![Signin](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/Siginin.png)
+  ![GrantPermission](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/GrantPermissions.png)	
+ 
+  ![GrantPermission](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/GrantPermissions2.png)
+ 
+ **Click Accept**
 
-Once you are login it will shows the below image for Grant permissions for the app to perform the operations
+ If you have provided the correct credentials it will give success status `admin_consent = True`
+ 
+ Now press Y to proceed further in script
 
-![GrantPermission](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/GrantPermissions.png)
-![GrantPermission](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/GrantPermissions2.png)
+# Output
 
-**Click Accept**
+ Once the script executed , it generates the `Nolicense.csv` file contains no license users
 
-If you have provided the correct credentials it will give success status `admin_consent = True`
-
-![Admin Consent](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/AdminConsent.png)
-
-Now press Y to proceed further in script.
-
-Once the script executed , it generates the `Nolicense.csv` file contains no license users.
-
-Sample Output:
+##### Example
 
 |UserName  | Userid  | Status |
 |----------|---------|--------|
+|David Chew|81701046-cb37-439b-90ce-2afd9630af7d|No|
