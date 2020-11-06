@@ -1,46 +1,54 @@
-#### Description:
+# TeamsLoginLogs
 
-Retrieve the MicrosoftTeams user log-ins for your tenant
+# Description
 
-1. As an Administrator, type PowerShell in the start menu. Right-click on Windows PowerShell, then select Run as Administrator. Click Yes at the UAC prompt.
+Retrieve the MicrosoftTeams user log-ins for your tenant, Script will check audit logs and export the file, contains teams login username along with device name
 
+[How to create Azure App](https://docs.microsoft.com/en-us/graph/auth-register-app-v2)
 
-        Keep the Below details in info.json file
-                 "client_Id": "please paste App provider application id here" 
-                 "Client_Secret": "please paste App provided client secret here" 
-                 "Tenantid": "please provide requester tenant id here"
-                
+[How to apply permissions](https://docs.microsoft.com/en-us/graph/notifications-integration-app-registration)
 
-**Note**: Client id and client secret will be same for every tenant. Only tenant id must be changed to requester tenant id
+#### Requried Permissions
 
-Run the script
+# Example
 
- It will open webpage for grant permissions
+# Parameters
 
- Please login with your tenant _USER ID_ and _PASSWORD_
+# Inputs
 
-![Signin](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/Siginin.png)
+Client_Id, Client_Secret, Tenantid
 
-Once you are login it will shows the below image for Grant permissions for the app to perform the operations
+ # Procedure to run the script
+ 
+   To excute `DeleteTeamsWhereTeamMembersdontHaveGivenJobtitles` download/copy and paste the script into powersell
+        
+   Provide the input parameters Client_Id, Client_Secret, Tenantid and hit enter to proceed further on the script
+        
+   Now script will redirect to web page for login
+        
+   ![Signin](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/Siginin.png)
+        
+   Provide admin credentials i.e user ID and password 
+        
+   Press enter to continue
+   
+   Once you are login it will shows the below image for Grant permissions for the app to perform the operations
 
-![GrantPermission](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/GrantPermissions.png)
-![GrantPermission](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/GrantPermissions2.png)
+ ![GrantPermission](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/GrantPermissions.png)	
+ 
+ ![GrantPermission](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/GrantPermissions2.png)
+ 
+ **Click Accept**
 
-**Click Accept**
+ If you have provided the correct credentials it will give success status `admin_consent = True`
+ 
+ Now press Y to proceed further in script
 
-If you have provided the correct credentials it will give success status `admin_consent = True`
+# Output
 
-![Admin Consent](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/AdminConsent.png)
-
-Now press Y to proceed further in script.
-
-Script will generate the _loginstatusoutput.csv_ output file
-
-Logininoutput:
-
+ Script will generate the _loginstatusoutput.csv_ output file
+ 
+ #### Example
+ 
  | UserUPN	| CreatedDateTime	| AppDisplayName	| IsInteractive |	DeviceDetail |
  |----------|-------------------|-------------------|---------------|----------------|
-
-
-
-
