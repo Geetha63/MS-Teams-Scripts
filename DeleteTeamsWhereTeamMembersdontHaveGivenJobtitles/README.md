@@ -86,7 +86,7 @@ script will delete HR Team if anyone of team member jobtitle does not match and 
  ##### Example
  
  |DeletedTeam|TeamsOwner|
- 
+ ------------------------
  |HR|fannyd@contoso.com|
  
  |Accounts|danas@contoso.com|
