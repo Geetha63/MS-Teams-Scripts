@@ -2,7 +2,7 @@
 
 # Description
 
-This script will change the Teams membership role based on the user license. After the script execution teacher license user will convert as Owner and student license users will converts as members
+This script will change the Teams membership role based on the user license. After the script execution teacher license user will convert as Owner and student license users will converts as members, if user dont have Microsoft Teams license it will export the users list
 
 [How to create Azure App](https://docs.microsoft.com/en-us/graph/auth-register-app-v2)
 
@@ -12,28 +12,25 @@ This script will change the Teams membership role based on the user license. Aft
 
 # Example
 
-##### Case1: 
+##### Case1:(If user having faculty license and be part of ownerlist)
 
-      If user having faculty license and be part of ownerlist
-
-      This user having Faculty license and already owner of the team
+   This user having Faculty license and already owner of the team message will populate on the screen
    
-##### Case2: 
-   If user having faculty license and not part of ownerlist
+##### Case2: (If user having faculty license and not part of ownerlist)
 
-Faculty Membership role has been changed to Owner fof the team
+   Faculty Membership role has been changed to Owner of the team will populate on the screen
 
-##### Case3:If user having STUDENT license and not part of ownerlist
+##### Case3:(If user having STUDENT license and not part of ownerlist)
 
-This user having STUDENT license and already member of the team
+  This user having STUDENT license and already member of the team will populate on the screen
 
-##### Case4:If user having STUDENT license and part of ownerlist
+##### Case4:(If user having STUDENT license and part of ownerlist)
 
-Student Membership role has been changed to member
+  Student Membership role has been changed to member will populate on the screen
 
-##### Case5: If user dont have license
+##### Case5:(If user dont have license)
 
-User have the different license and expots the user list 
+  User have the different license and expots the user list will populate on the screen
 
 # Parameters
 
