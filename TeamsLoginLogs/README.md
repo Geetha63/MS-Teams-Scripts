@@ -20,7 +20,7 @@ Client_Id, Client_Secret, Tenantid
 
  # Procedure to run the script
  
-   To excute `DeleteTeamsWhereTeamMembersdontHaveGivenJobtitles` download/copy and paste the script into powersell
+   To excute `TeamsLoginLogs` download/copy and paste the script into powersell
         
    Provide the input parameters Client_Id, Client_Secret, Tenantid and hit enter to proceed further on the script
         
