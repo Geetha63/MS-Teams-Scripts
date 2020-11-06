@@ -2,7 +2,7 @@
 
 # Description
 
-This script will restrict the guest users in Teams by applying restriction to O365 Group. It will take the input from current folder and create the output in current folder 
+This script will restrict the guest users in Teams by changing the O365 Group AllowToAddGuests parameter value to False. It takes the input from current folder and create the output in current folder 
 
 Powershell 3.0 or more should be available
 
