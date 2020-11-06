@@ -13,7 +13,7 @@ $Grant= 'https://login.microsoftonline.com/common/adminconsent?client_id='
 $admin = '&state=12345&redirect_uri=https://localhost:1234'
 $Grantadmin = $Grant + $client_Id + $admin
 
-start $Grantadmin
+Start-Process $Grantadmin
 write-host "login with your tenant login detials to proceed further"
 
 $proceed = Read-host " Press Y to continue "
