@@ -35,7 +35,7 @@ $CustomFilter += $F2
 
 if ($proceed -eq "2")
     {
-    $cqd_List = Import-Csv "D:\CQD\CQD_Input.csv"
+    $cqd_List = Import-Csv "CQD_Input.csv"
 
 
 Foreach ($cqd in $cqd_List)
