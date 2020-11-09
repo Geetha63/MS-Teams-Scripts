@@ -1,14 +1,14 @@
 # Canvas
 
-Index:
+# Index:
 
-System requirements:
+**System requirements:**
 
-Preparing the system:   
+**Preparing the system:**   
 
-Getting the Token ID:
+**Getting the Token ID:**
 
-Downloading Data from Canvas:
+**Downloading Data from Canvas:**
 
 Without sync.csv file
 
@@ -60,7 +60,7 @@ login into the Canvas website [uri](Ex:https://jlg.instructure.com)
 
 Go to Account-->settings-->Approved integrations-->New Access Token
 
-[](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CanvasApproved%20Integrations.png)
+![](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CanvasApproved%20Integrations.png)
 
 Downloading Data from Canvas:
 
@@ -83,14 +83,13 @@ Script will create sync.csv and ask you for the provide the details to move furt
 
 Script will ask user to “keep course id in sync.csv file and press Y to proceed”
 
-[](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CanvasContinue.png)
+![](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CanvasContinue.png)
 
-Once user press “Y” then enter. Remaining script will run and create the below files for given input sync.csv course ids
+Once user press “Y” then enter. Remaining script will run and create the below files for given input `sync.csv` course ids
 
 3)	What files will be created?
 
 School.csv
-
 
 Section.csv
 
@@ -156,59 +155,59 @@ Uploading files to School Data Sync (Manual process):
 
 •	Sync options: choose new users or Existing users
 
-[](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CanvasSyncOptions.png)
+![](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CanvasSyncOptions.png)
 
 •	Upload files: Select created 6 csv files (School.csv, Section.csv, Teacher.csv, Student.csv, StudentEnrollment.csv, TeacherRoster.csv)
 
-[](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/Canvasdatafile.png)
+![](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/Canvasdatafile.png)
 
 •	Select “Replace unsupported special characters” option 
 
-[](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CanvasReplaceUnsupported.png)
+![](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CanvasReplaceUnsupported.png)
 
 •	When should we stop syncing this profile?
 
 Select the date 
 
-[](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CanvasSelect%20the%20date.png)
+![](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CanvasSelect%20the%20date.png)
 
 •	Choose Teacher Options
 
-[](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CanvasChooseTeacher.png)
+![](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CanvasChooseTeacher.png)
 
 Select licenses for Teachers
 
-[](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CanvasChooseTeacherLicense.png)
+![](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CanvasChooseTeacherLicense.png)
 
 •	Choose Student Options
 
-[](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CanvasStudentption.png)
+![](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CanvasStudentption.png)
 
 Select licenses for Students
 
-[](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CanvasStudentLicense.png)
+![](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CanvasStudentLicense.png)
 
 •	Review all data and select Create profile
 
-[](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CanvasPleasewait.png)
+![](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CanvasPleasewait.png)
 
 •	Once Sync profile is submitted it will take some time to Create sync profile
 
-[](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CanvasSettingUp.png)
+![](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CanvasSettingUp.png)
 
 Once its created. It will show the status of sync
 
-[](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CanvasValidatingFiles.png)
+![](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CanvasValidatingFiles.png)
 
 It will create new Teams in Teams Console
 
-[](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CanvasNewdataabove.png)
+![](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CanvasNewdataabove.png)
 
-[](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CanvasNew.png)
+![](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CanvasNew.png)
 
 Once it's done. It will create O365 groups as shown in below same will reflect in Teams
 
-[](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CanvasNew2.png)
+![](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CanvasNew2.png)
 
 Canvas File Upload to SDS (Automation):
 
@@ -222,9 +221,9 @@ Navigate to current folder Run the script using run as admin rights
 
 ex: if I want to run the script in d:
 
-[](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CanvasTochangethepath.png)
+![](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CanvasTochangethepath.png)
 
-Script will run in current folder and create (conf. json) file and sastoken.cmd files.
+Script will run in current folder and create (conf. json) file and sastoken.cmd files
 
 Provide the username, password and syncprofileName for the first time running the script
 
