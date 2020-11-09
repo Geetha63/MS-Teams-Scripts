@@ -14,10 +14,10 @@ Scripts are written in Powershell , To use the Scripts
 
 No  | Script Name    | Description         | Script Link  |                     
 |---|----------------|---------------------|------------------|
-|  1|APP Installation|Script is to Adding TeamsApp to Teams or to the perticular user.| [Link](https://github.com/Geetha63/MS-Teams-Scripts/tree/master/App%20Installation) |
+|  1|APP Installation|Script is to Add TeamsApp to particular Team or all Teams in Tenant| [Link](https://github.com/Geetha63/MS-Teams-Scripts/tree/master/App%20Installation) |
 |2| Call Quality Dashboard Report|Script will provide total stream count including Audio,video,Appsharing for provided start time and end time, CQD Report of Given time|[Link](https://github.com/Geetha63/MS-Teams-Scripts/tree/master/CQDReport)
 |3|Canvas|Downloading the data from the canvas|[Link](https://github.com/Geetha63/MS-Teams-Scripts/tree/master/Canvas)
-|4|CreateMessaging Policy|Enable administrators to control user messaging policy,determines whether a user is allowed to exchange the messages or not.|[Link](https://github.com/Geetha63/MS-Teams-Scripts/tree/master/CreateMessaging%20Policy)
+|4|CreateMessaging Policy|Enable administrators to control user messaging policy,determines whether a user is allowed to exchange the messages or not|[Link](https://github.com/Geetha63/MS-Teams-Scripts/tree/master/CreateMessaging%20Policy)
 |5|Create a Teams along with App|Script to Creating a team with group and then adding app to that Team.|[Link](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/CreateTeamsalongwithAPPs)
 |6|Delete Teams Where Team Members dont Have Given Job titles|Script to check the each Team members job title, if at least one job title does not match to given job titles,will delete those teams and sent an email to owners of the team.|[Link](https://github.com/Geetha63/MS-Teams-Scripts/tree/master/DeleteTeamsWhereTeamMembersdontHaveGivenJobtitles)
 |7|Grant Messaging Policy|Script to granting messaging policy to user|[Link](https://github.com/Geetha63/MS-Teams-Scripts/tree/master/Grant%20Messaging%20Policy)
