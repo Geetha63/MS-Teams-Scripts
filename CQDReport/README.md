@@ -34,7 +34,7 @@ End Date : 1/11/2020
   
   Provide input 2 to get the CQD Report of Given time
   
-  Give the input file as shown below. Keep this file in current location(Input.csv). Script will collect the data from `input.csv` file and capture the data from call quality     dashboard
+  Give the input file as shown below. Keep this file in current location(CQD_Input.csv). Script will collect the data from `CQD_Input.csv` file and capture the data from call quality     dashboard
 
  |Dimensions  |	Measures| OutPutFilePath |	StartDate| EndDate | OutPutType	| MediaType	| IsServerPair |
  |------------|---------|----------------|-----------|---------|------------|-----------|--------------|
@@ -49,17 +49,19 @@ Powershell should be more than 3.0 version
 
 Run the script
 
-Once you run the script it will prompt for option 1 or 2\
+Once you run the script it will prompt for option 1 or 2
 
 If you have choosen the **option 1** please provide the parameters 
 
-Start Date – “Please Provide Start Date” \
-End Date – “Please Provide End date” \
-Press enter to continue \
+Start Date – “Please Provide Start Date” 
+
+End Date – “Please Provide End date” 
+
+Press enter to continue 
 
 Or if you have choosen the **option 2** please provide the `Input.csv` file 
 
-Now script open popup to connect the CQDDATA 
+Now script will popup for Teams Admin credentialsto to connect the CQDDATA tool
 
 ![Signin](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CQD-Signin.png)
 
