@@ -16,13 +16,19 @@ If user assigned with student license script will assign Education_SecondaryStud
 
 # Parameters
 
+`-isLicensed`
+
+Whether or not the user has any licenses assigned
+
+Type: SkuPartNumber
+
 # Inputs
 
 Client_Id, Client_Secret, Tenantid
 
 # Procedure to run the script
  
-   To excute `PolicyPackageAssignment` download/copy and paste the script into powersell
+   To excute `PolicyPackageAssignment` download/copy and paste the script into powershell
         
    Provide the input parameters client_Id, Client_Secret, Tenantid and hit enter to proceed further on the script
    
