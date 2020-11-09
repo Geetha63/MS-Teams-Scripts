@@ -2,11 +2,11 @@
 
 # Index
 
-**System requirements:**
+**System requirements**
 
-**Preparing the system:**   
+**Preparing the system**   
 
-**Getting the Token ID:**
+**Getting the Token ID**
 
 # Downloading Data from Canvas
 
