@@ -30,7 +30,7 @@ Click Yes at the UAC prompt.
 User: dmx1@example.com
 
 |Team Owner| Team Displayname|Teamid|
-|-----|----|
+|-----|----|---|
 |dmx1@example.com| HR| 208bfb7a-9d4c-xxxx-8677-18cc7fcxxxxx |
 |dmx1@example.com|Accounts|48ddcc0e-xxxx-4131-abf8-36axxxxx86ba|
 
