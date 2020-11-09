@@ -10,6 +10,12 @@ Retrieve the MicrosoftTeams user log-ins for your tenant, Script will check audi
 
 #### Requried Permissions
 
+ | Permission type	                   |  Permissions (from least to most privileged)|
+ |------------------------------------|---------------------------------------------|
+ | Delegated (work or school account)	| AuditLog.Read.All and Directory.Read.All    |
+ | Application	                       | AuditLog.Read.All and Directory.Read.All    |
+ 
+
 # Example
 
 # Parameters
@@ -20,7 +26,7 @@ Client_Id, Client_Secret, Tenantid
 
  # Procedure to run the script
  
-   To excute `TeamsLoginLogs` download/copy and paste the script into powersell
+   To excute `TeamsLoginLogs` download/copy and paste the script into powershell
         
    Provide the input parameters Client_Id, Client_Secret, Tenantid and hit enter to proceed further on the script
         
