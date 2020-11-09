@@ -1,6 +1,6 @@
 # Canvas
 
-# Index:
+# Index
 
 **System requirements:**
 
@@ -40,41 +40,43 @@ A suitable version of Windows PowerShell is available for these operating system
 
 * Windows Server 2008 R2 SP1
 
-Preparing the system:
+# Preparing the system
 
 Go to start button right click on the windows PowerShell Run as Administrator
 
 Check the ExecutionPolicy by running below command in console
 
-  Get-ExecutionPolicy 
+  	Get-ExecutionPolicy 
 
 Set the ExecutionPolicy to Unrestricted
+
 	Set-ExecutionPolicy -ExecutionPolicy Unrestricted 
 
-Getting the Token ID:
+# Getting the Token ID
 
-
-Generate the new access token using below process.
+Generate the new access token using below process
 
 login into the Canvas website [uri](Ex:https://jlg.instructure.com)
 
-Go to Account-->settings-->Approved integrations-->New Access Token
+Go to Account &rightarrow; settings &rightarrow; Approved integrations &rightarrow; New Access Token
 
 ![](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CanvasApproved%20Integrations.png)
 
-Downloading Data from Canvas:
+# Downloading Data from Canvas
 
-Without sync.csv file
+** Without sync.csv file **
 
-1)	How to run the script?
+1.How to run the script?
 
-i)	Run the script by double clicking “CanvasApiMainScript.ps1”
+* number
 
-ii)	Script will ask for Uri - Pass login canvas [Uri](Ex: https://jlg.instructure.com)
+ 1.Run the script by double clicking “CanvasApiMainScript.ps1”
 
-iii)	Script will ask fir Token ID - Provide created Token id (Ex:4626~OhR7Arue1IhsaJnplrLYYeqj********)
+ 2.Script will ask for Uri - Pass login canvas [Uri](Ex: https://jlg.instructure.com)
 
-2)	Where files will be created?
+ 3.Script will ask fir Token ID - Provide created Token id (Ex:4626~OhR7Arue1IhsaJnplrLYYeqj********)
+
+2. Where files will be created?
 
   	Files will be created in the same directory where the script file is located
     
