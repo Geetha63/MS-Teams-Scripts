@@ -1,4 +1,4 @@
-# APP Installation
+# Add App to Teams or Tenant
 
 # Description
 
