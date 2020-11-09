@@ -19,9 +19,9 @@ Retrieve the MicrosoftTeams user log-ins for your tenant, Script will check audi
 
 `-Auditlogs`
 
- records of system activities
+  Records of system activities
  
- Type: Logs
+  Type: Logs
 
 # Inputs
 
