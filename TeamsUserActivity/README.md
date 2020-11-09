@@ -25,6 +25,7 @@ Reference [Microsoft Teams user activity reports](https://docs.microsoft.com/en-
 For input 1
 
 |Report Refresh Date	|User Principal Name	|Last Activity Date	|Is Deleted|	Deleted Date	|Assigned Products	|Team Chat Message Count|	Private Chat Message Count	|Call Count	|Meeting Count|Has Other Action	|Report Period|
+|---|---|---|---|---|---|---|---|---|---|---|---|
 |25-02-2020|IrvinS@M365x726831.OnMicrosoft.com		|FALSE		|ENTERPRISE MOBILITY + SECURITY E5+OFFICE 365 E5	|0	|0|	0	|0|	No	|30|
 
 # Parameters
