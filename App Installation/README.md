@@ -23,15 +23,15 @@
 Team identifier in Microsoft Teams.
 
 Type:	String
-|---|
+***
 Aliases:	GroupId
-|---|
+***
 Position:	Named
-|---|
+***
 Default value:	None
-|---|
+***
 Accept pipeline input:	True
-|---|
+***
 Accept wildcard characters:	False
 
 `-AppId`
@@ -39,13 +39,13 @@ Accept wildcard characters:	False
 Teams App identifier in Microsoft Teams
 
 Type:	String
-|---|
+***
 Position:	Named
-|---|
+***
 Default value:	None
-|---|
+***
 Accept pipeline input:	True
-|---|
+***
 Accept wildcard characters:	False
 
 `-TenantId`
@@ -53,13 +53,13 @@ Accept wildcard characters:	False
 Specifies the unique ID of the tenant on which to perform the operation. The default value is the tenant of the current user. This parameter applies only to partner users.
 
 Type:	Guid
-|---|
+***
 Position:	Named
-|---|
+***
 Default value:	None
-|---|
+***
 Accept pipeline input:	True
-|---|
+***
 Accept wildcard characters:	False
   
  # Inputs
