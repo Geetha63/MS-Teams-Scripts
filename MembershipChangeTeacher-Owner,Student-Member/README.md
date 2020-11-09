@@ -10,6 +10,12 @@ This script will change the Teams membership role based on the user license. Aft
 
 #### Requried Permissions
 
+|Permission type	|Permissions (from least to most privileged)|
+|---|----|
+|Delegated (work or school account)	|Team.ReadBasic.All, TeamSettings.Read.All, TeamSettings.ReadWrite.All, Group.Read.All, Group.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All, User.Read, User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All, Directory.AccessAsUser.All|
+|Delegated (personal Microsoft account)	|Not supported|
+|Application	|TeamSettings.Read.Group*, TeamSettings.ReadWrite.Group*, Team.ReadBasic.All, TeamSettings.Read.All, TeamSettings.ReadWrite.All, Group.Read.All, Group.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All, User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All|
+
 # Example
 
 ##### Case1:(If user having faculty license and be part of ownerlist)
@@ -34,13 +40,19 @@ This script will change the Teams membership role based on the user license. Aft
 
 # Parameters
 
+`-isLicensed`
+
+ Whether or not the user has any licenses assigned
+ 
+ Type: SkuPartNumber
+ 
 # Inputs
 
 Client_Id,Client_Secret,Tenantid
 
 # Procedure to run the script
  
-   To excute `MembershipChangeTeacher-Owner,Student-Member` download/copy and paste the script into powersell
+   To excute `MembershipChangeTeacher-Owner,Student-Member` download/copy and paste the script into powershell
         
    Provide the input parameters Client_Id,Client_Secret,Tenantid and hit enter to proceed further on the script
     
