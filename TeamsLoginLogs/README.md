@@ -8,7 +8,7 @@ Retrieve the MicrosoftTeams user log-ins for your tenant, Script will check audi
 
 [How to apply permissions](https://docs.microsoft.com/en-us/graph/notifications-integration-app-registration)
 
-#### Requried Permissions
+#### Required Permissions
 
  | Permission type	                   |  Permissions (from least to most privileged)|
  |------------------------------------|---------------------------------------------|
