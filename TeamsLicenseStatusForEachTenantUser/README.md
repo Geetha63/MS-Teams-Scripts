@@ -8,7 +8,13 @@ This script will check each Tenant user license and MicrosotTeams subscription. 
 
 [How to apply permissions](https://docs.microsoft.com/en-us/graph/notifications-integration-app-registration)
 
-#### Requried Permissions
+#### Required Permissions
+
+|Permission type	|Permissions (from least to most privileged)|
+|---|----|
+|Delegated (work or school account)	|User.Read, User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All, Directory.AccessAsUser.All|
+|Delegated (personal Microsoft account)	|User.Read|
+|Application	|User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All|
 
 # Example
 
@@ -18,13 +24,19 @@ If user assigned with Teams license but it is in disable status - it will enable
 
 # Parameters
 
-Client_Id, Client_Secret, Tenantid
+`-isLicensed`
+
+Whether or not the user has any licenses assigned
+
+Type: SkuPartNumber
 
 # Inputs
 
+Client_Id, Client_Secret, Tenantid
+
 # Procedure to run the script
  
-   To excute `TeamsLicenseStatusForEachTenantUser` download/copy and paste the script into powersell
+   To excute `TeamsLicenseStatusForEachTenantUser` download/copy and paste the script into powershell
         
    Provide the input parameters Client_Id, Client_Secret, Tenantid and hit enter to proceed further on the script
    
