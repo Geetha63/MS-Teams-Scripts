@@ -6,7 +6,7 @@ param(
       [Parameter(Mandatory=$true)][System.String]$Client_Secret
       )
       
-     
+Connect-MicrosoftTeams
 
 #Grant Adminconsent 
 $Grant= 'https://login.microsoftonline.com/common/adminconsent?client_id='
