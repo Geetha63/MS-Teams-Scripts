@@ -12,11 +12,11 @@ Powershell should be more than 3.0 version
 
 ![Example](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CQD-Example.png)
 
-##### Example 2 for CQD Report of Given time
+##### Example 2 for CQD Report of Given time (DD-MM-YYYY(Ex:31-03-2020)
 
-Start Date: 1/10/2020
+Start Date: 1-10-2020
 
-End Date : 1/11/2020
+End Date: 1-11-2020
 
  # Parameters
  
