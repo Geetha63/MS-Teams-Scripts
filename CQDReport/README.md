@@ -61,7 +61,7 @@ Press enter to continue
 
 Or if you have choosen the **option 2** please provide the `Input.csv` file 
 
-Now script will popup for Teams Admin credentialsto to connect the CQDDATA tool
+Now script will popup for Teams Admin credentials to connect the CQD tool
 
 ![Signin](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CQD-Signin.png)
 
@@ -78,7 +78,7 @@ Script will execute and creates `cqdoutput.csv` file
 
 For option 2
 
-##### Example outpot
+##### Example output
 
 ![Output](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CQD-output.png)
 
