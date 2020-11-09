@@ -2,7 +2,7 @@
 
 # Description
 
-   This script retrieve the list of apps installed for Users in the tenant
+   This script retrieve the list of apps installed for users in the tenant
    
    [How to create Azure App](https://docs.microsoft.com/en-us/graph/auth-register-app-v2)
 
@@ -10,7 +10,11 @@
    
 ##### Requried Permissions
 
-# Example
+|Permission type	|Permissions (from least to most privileged)|
+|-------|----|
+|Delegated (work or school account)	|TeamsAppInstallation.ReadWriteForTeam, Group.ReadWrite.All, Directory.ReadWrite.All|
+|Delegated (personal Microsoft account)	|Not supported|
+|Application	|TeamsAppInstallation.ReadWriteForTeam.All, Group.ReadWrite.All, Directory.ReadWrite.All|
 
 # Parameters
 
@@ -34,7 +38,7 @@ client_Id, Client_Secret, Tenantid
 
 # Procedure to run the script
 
-To excute `InstalledAPPs` download/copy and paste the script into powersell
+To excute `InstalledAPPs` download/copy and paste the script into powershell
 
 Provide the input parameters client_Id, Client_Secret, Tenantid and hit enter to proceed further on the script
 
