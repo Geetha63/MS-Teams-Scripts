@@ -1,6 +1,8 @@
 # User As Teams Owner
-# Description:
- Script will provide the teams details where user as owner of a team in your organization
+
+# Description
+
+ Script will provide the Teams details where user as owner of a team in your organization
  
 # Prerequisite 
 
@@ -14,7 +16,7 @@ Click Yes at the UAC prompt.
 2. Type the following within PowerShell and then press enter.\
     **`Install-Module MicrosoftTeams`**
   
-3. Type Y at the prompt.Press Enter.
+3. Type Y at the prompt.Press Enter
 
 4. If you are prompted for an untrusted repository,then type A (Yes to All) and press Enter.The module will now install. 
 
@@ -24,16 +26,34 @@ Click Yes at the UAC prompt.
    - Exports details to a output.csv file.
 
 # Example 
- ```bash
- Get-TeamUser -GroupId 5e4aac3a-2547-4645-bb56-dafdb8733ccd -Role Owner | Where-Object {$_.User -match 'John megh'}
- ```
+
+User: dmx1@example.com
+
+|Team Owner| Team Displayname|Teamid|
+|-----|----|
+|dmx1@example.com| HR| 208bfb7a-9d4c-xxxx-8677-18cc7fcxxxxx |
+|dmx1@example.com|Accounts|48ddcc0e-xxxx-4131-abf8-36axxxxx86ba|
 
 # Parameters
- User : the user whom you want to get the data.\
- example:- User:'John megh'
+
+`-UserPrincipalName`
+
+Speicifies the user ID of the user to retrieve.
+
+Type:	String
+***
+Position:	Named
+***
+Default value:	None
+***
+Accept pipeline input:	True
+***
+Accept wildcard characters:	False
+ 
 # Input 
-User :'John megh'
+
+UserPrincipalName
+
 # Output
  Script will export details of user as owner of microsoft Teams in your tenant with following details to a output.csv file.\
 |Team Owner| Team Displayname|Teamid|
-
