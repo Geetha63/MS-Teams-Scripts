@@ -1,6 +1,6 @@
 # CreateTeamsalongwithAPPs
 
-# Description:
+# Description
 
 Create MicrosoftTeams along with APP for your tenant
 
@@ -8,7 +8,7 @@ Create MicrosoftTeams along with APP for your tenant
 
 [How to apply permissions](https://docs.microsoft.com/en-us/graph/notifications-integration-app-registration)
                 
-#### Requried Permissions
+#### Required Permissions
 
 | Permission type | Permissions (from least to most privileged)|
 |-----------------|--------------------------------------------|
