@@ -101,7 +101,7 @@ Once user press “Y” then enter. Remaining script will run and create the bel
 
 	TeacherRoster.csv
 
-**With sync.csv file
+**With sync.csv file**
 
 1. How to run the script?
 
@@ -135,7 +135,7 @@ Script will create below files taking the input from sync.csv
 
 # Canvas Files Upload to SDS:
 
-**Canvas_FileUpload (Manual Script):
+**Canvas_FileUpload (Manual Script):**
 
 Uploading files to School Data Sync (Manual process):
 
