@@ -64,17 +64,15 @@ Go to Account &rightarrow; settings &rightarrow; Approved integrations &rightarr
 
 # Downloading Data from Canvas
 
-** Without sync.csv file **
+**Without sync.csv file**
 
-1.How to run the script?
+1. How to run the script?
 
-* number
+  1.Run the script by double clicking “CanvasApiMainScript.ps1”
 
- 1.Run the script by double clicking “CanvasApiMainScript.ps1”
+  2.Script will ask for Uri - Pass login canvas [Uri](Ex: https://jlg.instructure.com)
 
- 2.Script will ask for Uri - Pass login canvas [Uri](Ex: https://jlg.instructure.com)
-
- 3.Script will ask fir Token ID - Provide created Token id (Ex:4626~OhR7Arue1IhsaJnplrLYYeqj********)
+  3.Script will ask fir Token ID - Provide created Token id (Ex:4626~OhR7Arue1IhsaJnplrLYYeqj********)
 
 2. Where files will be created?
 
