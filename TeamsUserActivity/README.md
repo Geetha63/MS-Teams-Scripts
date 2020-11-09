@@ -14,9 +14,19 @@ Reference [Microsoft Teams user activity reports](https://docs.microsoft.com/en-
 
 #### Requried Permissions
 
+Reports.Read.All
+
 # Example
 
+
+
 # Parameters
+
+`-Days`
+
+Total number of dyas 
+
+Type:String
 
 # Inputs 
 
@@ -27,7 +37,6 @@ Client_Id, Client_Secret, Tenantid, Period
 2-GetTeamsUserActivityCounts
 
 3-GetTeamsUserActivityUserCounts
-
 
  # Procedure to run the script
  
