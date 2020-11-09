@@ -12,13 +12,20 @@ Reference [Microsoft Teams user activity reports](https://docs.microsoft.com/en-
 
 [How to apply permissions](https://docs.microsoft.com/en-us/graph/notifications-integration-app-registration)
 
-#### Requried Permissions
+#### Required Permissions
 
-Reports.Read.All
+|Permission type	|Permissions (from least to most privileged)|
+|----|---|
+|Delegated (work or school account)	|Reports.Read.All|
+|Delegated (personal Microsoft account)	|Not supported|
+|Application	|Reports.Read.All|
 
 # Example
 
+For input 1
 
+|Report Refresh Date	|User Principal Name	|Last Activity Date	|Is Deleted|	Deleted Date	|Assigned Products	|Team Chat Message Count|	Private Chat Message Count	|Call Count	|Meeting Count|Has Other Action	|Report Period|
+|25-02-2020|IrvinS@M365x726831.OnMicrosoft.com		|FALSE		|ENTERPRISE MOBILITY + SECURITY E5+OFFICE 365 E5	|0	|0|	0	|0|	No	|30|
 
 # Parameters
 
@@ -40,7 +47,7 @@ Client_Id, Client_Secret, Tenantid, Period
 
  # Procedure to run the script
  
-   To excute `TeamsUserActivity` download/copy and paste the script into powersell
+   To excute `TeamsUserActivity` download/copy and paste the script into powershell
         
    Provide the input parameters Client_Id, Client_Secret, Tenantid, Period and hit enter to proceed further on the script
         
