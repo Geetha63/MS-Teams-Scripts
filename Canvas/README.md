@@ -105,11 +105,11 @@ Once user press “Y” then enter. Remaining script will run and create the bel
 
 1. How to run the script?
 
-* Run the script by double clicking `CanvasApiMainScript.ps1`
+ * Run the script by double clicking `CanvasApiMainScript.ps1`
 
-* Script will ask for Uri - Pass login [canvas Uri](https://jlg.instructure.com)
+ * Script will ask for Uri - Pass login [canvas Uri](https://jlg.instructure.com)
 
-* Script will ask fir Token ID - Provide created Token id (Ex:4626~OhR7Arue1IhsaJnplrLYYeqj********)
+ * Script will ask fir Token ID - Provide created Token id (Ex:4626~OhR7Arue1IhsaJnplrLYYeqj********)
 
 2. Where files will be created?
 
