@@ -66,7 +66,7 @@ Go to Account &rightarrow; settings &rightarrow; Approved integrations &rightarr
 
 **Without sync.csv file**
 
- 1. How to run the script?
+1. How to run the script?
 
   	1. Run the script by double clicking “CanvasApiMainScript.ps1”
 
@@ -87,91 +87,91 @@ Script will ask user to “keep course id in sync.csv file and press Y to procee
 
 Once user press “Y” then enter. Remaining script will run and create the below files for given input `sync.csv` course ids
 
-3)	What files will be created?
+3. What files will be created?
 
-School.csv
+	School.csv
 
-Section.csv
+	Section.csv
 
-Teacher.csv
+	Teacher.csv
 
-Student.csv
+	Student.csv
 
-StudentEnrollment.csv
+	StudentEnrollment.csv
 
-TeacherRoster.csv
+	TeacherRoster.csv
 
-With **sync.csv** file
+**With sync.csv file
 
-1)	How to run the script?
+1. How to run the script?
 
-•	Run the script by double clicking `CanvasApiMainScript.ps1`
+* Run the script by double clicking `CanvasApiMainScript.ps1`
 
-•	Script will ask for Uri - Pass login [canvas Uri](https://jlg.instructure.com)
+* Script will ask for Uri - Pass login [canvas Uri](https://jlg.instructure.com)
 
-•	Script will ask fir Token ID - Provide created Token id (Ex:4626~OhR7Arue1IhsaJnplrLYYeqj********)
+* Script will ask fir Token ID - Provide created Token id (Ex:4626~OhR7Arue1IhsaJnplrLYYeqj********)
 
-2)	Where files will be created?
+2. Where files will be created?
 
-Files will be created in the same directory where the script file is located
+	Files will be created in the same directory where the script file is located
 
 Once you run the script, it downloads the all available courses data from canvas and creates courses.csv
 
 Script will check sync.csv file. If file is available runs the remaining script. If file is not available script asks you to re-run the script by keeping the sync.csv file in current location
 
-Script will creates below files taking the input from sync.csv
+Script will create below files taking the input from sync.csv
 
-School.csv
+	School.csv
 
-Section.csv
+	Section.csv
 
-Teacher.csv
+	Teacher.csv
 
-Student.csv
+	Student.csv
 
-StudentEnrollment.csv
+	StudentEnrollment.csv
 
-TeacherRoster.csv
+	TeacherRoster.csv
 
-Canvas Files Upload to SDS:
+# Canvas Files Upload to SDS:
 
-Canvas_FileUpload (Manual Script):
+**Canvas_FileUpload (Manual Script):
 
 Uploading files to School Data Sync (Manual process):
 
-•	[Link](https://sds.microsoft.com) 
+* [Link](https://sds.microsoft.com) 
 
-•	Login using your Global Admin account
+* Login using your Global Admin account
 
-•	Click on Add Profile
+* Click on Add Profile
 
-•	Enter sync profile Name
+* Enter sync profile Name
 
-•	Choose Sync method &rightarrow; Upload CSV files
+* Choose Sync method &rightarrow; Upload CSV files
 
-•	Choose Type for Csv files you are using &rightarrow; CSV files: SDS Format
+* Choose Type for Csv files you are using &rightarrow; CSV files: SDS Format
 
-•	Click start
+* Click start
 
-•	Sync options: choose new users or Existing users
+* Sync options: choose new users or Existing users
 
 ![](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CanvasSyncOptions.png)
 
-•	Upload files: Select created 6 csv files (School.csv, Section.csv, Teacher.csv, Student.csv, StudentEnrollment.csv, TeacherRoster.csv)
+* Upload files: Select created 6 csv files (School.csv, Section.csv, Teacher.csv, Student.csv, StudentEnrollment.csv, TeacherRoster.csv)
 
 ![](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/Canvasdatafile.png)
 
-•	Select “Replace unsupported special characters” option 
+* Select “Replace unsupported special characters” option 
 
 ![](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CanvasReplaceUnsupported.png)
 
-•	When should we stop syncing this profile?
+* When should we stop syncing this profile?
 
 Select the date 
 
 ![](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CanvasSelect%20the%20date.png)
 
-•	Choose Teacher Options
+* Choose Teacher Options
 
 ![](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CanvasChooseTeacher.png)
 
@@ -179,7 +179,7 @@ Select licenses for Teachers
 
 ![](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CanvasChooseTeacherLicense.png)
 
-•	Choose Student Options
+* Choose Student Options
 
 ![](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CanvasStudentption.png)
 
@@ -187,11 +187,11 @@ Select licenses for Students
 
 ![](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CanvasStudentLicense.png)
 
-•	Review all data and select Create profile
+* Review all data and select Create profile
 
 ![](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CanvasPleasewait.png)
 
-•	Once Sync profile is submitted it will take some time to Create sync profile
+* Once Sync profile is submitted it will take some time to Create sync profile
 
 ![](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CanvasSettingUp.png)
 
@@ -209,7 +209,7 @@ Once it's done. It will create O365 groups as shown in below same will reflect i
 
 ![](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CanvasNew2.png)
 
-Canvas File Upload to SDS (Automation):
+# Canvas File Upload to SDS (Automation):
 
 Keep the below files in current folder where you are running the script
 
@@ -229,11 +229,11 @@ Provide the username, password and syncprofileName for the first time running th
 
 Second time onwards script will provide sync status
 
-FAQs/Common Problems:
+# FAQs/Common Problems:
 
 Active directory sync error
 
-If teachers or students are invited but they don’t enrol as teacher or student. They will not be available as teacher or student in the created team.
+If teachers or students are invited but they don’t enrol as teacher or student. They will not be available as teacher or student in the created team
 
 If No Teachers – SDS won’t create teams for that section (if it has the students also)
 
