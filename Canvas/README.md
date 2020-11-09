@@ -1,5 +1,9 @@
 # Canvas
 
+# Description
+
+Downloading the synchronization files from data source Canvas and uploading the data to school data synchronization tool
+
 # Index
 
 **System requirements**

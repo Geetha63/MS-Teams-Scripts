@@ -12,11 +12,10 @@ This is Graph API script, to excute the script user needs to create an Azure App
 
 ### Requried Permissions
 
-Group.ReadWrite.All
- 
-Directory.AccessAsUser.All
-
-Mail.Send
+|Permission type	          |  Permissions (from least to most privileged)|
+|----------|-------------------|
+|Delegated (work or school account)|Group.ReadWrite.All, Mail.Send| 
+|Application|Directory.AccessAsUser.All, Mail.Send|
 
 # Example
 

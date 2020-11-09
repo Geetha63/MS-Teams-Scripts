@@ -10,12 +10,31 @@ Powershell 3.0 or more should be available
 
 [How to apply permissions](https://docs.microsoft.com/en-us/graph/notifications-integration-app-registration)
 
-#### Requried Permissions
+#### Required Permissions
+
+| Permission type | Permissions (from least to most privileged)|
+|-----------------|--------------------------------------------|
+|Delegated (work or school account)|Group.ReadWrite.All, Directory.ReadWrite.All, Directory.AccessAsUser.All|
+|Application|Group.Create, Group.ReadWrite.All, Directory.ReadWrite.All|
 
 # Example
 
+|TeamsName 	| AllowToAddGuests |
+|-----------|------------------|
+|HR	        | FALSE            |
+
 # Parameters
 
+`-Group.Unified.Guest`
+
+Boolean indicating whether or not a guest user can have access to Microsoft 365 groups content. This setting does not require an Azure Active Directory Premium P1 license.
+
+AllowGuestsToAccessGroups
+***
+Type: Boolean
+***
+Default: True
+ 
 # Inputs
 
 Prepare input.csv file in below format and keep it in current location where script is running 
@@ -24,7 +43,7 @@ Prepare input.csv file in below format and keep it in current location where scr
 
 # Procedure to run the script
 
- To excute `GuestRestrictionForGivenTeams` download/copy and paste the script into powersell
+ To excute `GuestRestrictionForGivenTeams` download/copy and paste the script into powershell
  
  Provide the input parameters client_Id,Client_Secret,Tenantid and hit enter to proceed further on the script
  
