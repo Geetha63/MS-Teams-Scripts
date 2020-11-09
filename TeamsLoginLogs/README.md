@@ -15,10 +15,13 @@ Retrieve the MicrosoftTeams user log-ins for your tenant, Script will check audi
  | Delegated (work or school account)	| AuditLog.Read.All and Directory.Read.All    |
  | Application	                       | AuditLog.Read.All and Directory.Read.All    |
  
-
-# Example
-
 # Parameters
+
+`-Auditlogs`
+
+ records of system activities
+ 
+ Type: Logs
 
 # Inputs
 
@@ -58,3 +61,4 @@ Client_Id, Client_Secret, Tenantid
  
  | UserUPN	| CreatedDateTime	| AppDisplayName	| IsInteractive |	DeviceDetail |
  |----------|-------------------|-------------------|---------------|----------------|
+ |davidchew@contoso.com|2020-03-23T15:10:59.2906713Z	|Microsoft Teams Web Client|	FALSE|	@{deviceId=; displayName=; operatingSystem=Windows 10; browser=Chrome 80.0.3987; isCompliant=; isManaged=; trustType=}|
