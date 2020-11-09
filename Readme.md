@@ -14,7 +14,7 @@ Scripts are written in Powershell , To use the Scripts
 
 No  | Script Name    | Description         | Script Link  |                     
 |---|----------------|---------------------|------------------|
-|  1|APP Installation|Script is to Add TeamsApp to particular Team or all Teams in Tenant| [Link](https://github.com/Geetha63/MS-Teams-Scripts/tree/master/App%20Installation) |
+|  1|Add App to Teams and Tenant|Script is to Add TeamsApp to particular Team or all Teams in Tenant| [Link](https://github.com/Geetha63/MS-Teams-Scripts/tree/master/App%20Installation) |
 |2| Call Quality Dashboard Report|Script will provide total stream count including Audio,video,Appsharing for provided start time and end time, CQD Report of Given time|[Link](https://github.com/Geetha63/MS-Teams-Scripts/tree/master/CQDReport)
 |3|Canvas|Downloading the data from the canvas|[Link](https://github.com/Geetha63/MS-Teams-Scripts/tree/master/Canvas)
 |4|CreateMessaging Policy|Enable administrators to control user messaging policy,determines whether a user is allowed to exchange the messages or not|[Link](https://github.com/Geetha63/MS-Teams-Scripts/tree/master/CreateMessaging%20Policy)
