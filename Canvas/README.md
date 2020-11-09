@@ -8,37 +8,37 @@
 
 **Getting the Token ID:**
 
-**Downloading Data from Canvas:**
+# Downloading Data from Canvas
 
-Without sync.csv file
+	Without sync.csv file
 
-With sync.csv file
+	With sync.csv file
 
-File Upload:
+# File Upload
 
-Canvas_FileUpload (Manual Script):
+Canvas_FileUpload (Manual Script)
 
-Canvas_FileUpload (Automate):
+Canvas_FileUpload (Automate)
 
-System requirements:
+# System requirements
 
 A suitable version of Windows PowerShell is available for these operating systems:
 
-•	Windows 10
+* Windows 10
 
-•	Windows 8.1 Pro
+* Windows 8.1 Pro
 
-•	Windows 8.1 Enterprise
+* Windows 8.1 Enterprise
 
-•	Windows 7 SP1
+* Windows 7 SP1
 
-•	Windows Server 2019
+* Windows Server 2019
 
-•	Windows Server 2016
+* Windows Server 2016
 
-•	Windows Server 2012 R2
+* Windows Server 2012 R2
 
-•	Windows Server 2008 R2 SP1
+* Windows Server 2008 R2 SP1
 
 Preparing the system:
 
