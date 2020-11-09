@@ -11,7 +11,7 @@ Create MicrosoftTeams along with APP for your tenant
 #### Requried Permissions
 
 | Permission type | Permissions (from least to most privileged)|
-|--------------------------------------------------------------|
+|-----------------|--------------------------------------------|
 |Delegated (work or school account)|Group.ReadWrite.All, Directory.ReadWrite.All, Directory.AccessAsUser.All|
 |Application|Group.Create, Group.ReadWrite.All, Directory.ReadWrite.All|
 
