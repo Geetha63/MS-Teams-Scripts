@@ -8,6 +8,14 @@ This script will check the user license. After script execution teacher license 
 
 [How to apply permissions](https://docs.microsoft.com/en-us/graph/notifications-integration-app-registration)
 
+##### Requried Permissions
+
+|Permission type	|Permissions (from least to most privileged)|
+|----|----|
+|Delegated (work or school account)	|User.Read, User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All, Directory.AccessAsUser.All|
+|Delegated (personal Microsoft account)	|User.Read|
+|Application	|User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All|
+
 # Example
 
 If user assigned with faculty license script will assign Education_Teacher policy package to user 
