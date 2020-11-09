@@ -8,7 +8,7 @@ This script will check the user license. After script execution teacher license 
 
 [How to apply permissions](https://docs.microsoft.com/en-us/graph/notifications-integration-app-registration)
 
-##### Requried Permissions
+##### Required Permissions
 
 |Permission type	|Permissions (from least to most privileged)|
 |----|----|
