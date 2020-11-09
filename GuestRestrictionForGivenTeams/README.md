@@ -10,7 +10,7 @@ Powershell 3.0 or more should be available
 
 [How to apply permissions](https://docs.microsoft.com/en-us/graph/notifications-integration-app-registration)
 
-#### Requried Permissions
+#### Required Permissions
 
 # Example
 
@@ -24,7 +24,7 @@ Prepare input.csv file in below format and keep it in current location where scr
 
 # Procedure to run the script
 
- To excute `GuestRestrictionForGivenTeams` download/copy and paste the script into powersell
+ To excute `GuestRestrictionForGivenTeams` download/copy and paste the script into powershell
  
  Provide the input parameters client_Id,Client_Secret,Tenantid and hit enter to proceed further on the script
  
