@@ -9,6 +9,12 @@
  [How to apply permissions](https://docs.microsoft.com/en-us/graph/notifications-integration-app-registration)
   
  ##### Required Permissions
+ 
+|Permission type	|Permissions (from least to most privileged)|
+|----|----|
+|Delegated (work or school account)	|TeamsAppInstallation.ReadWriteForTeam, Group.ReadWrite.All, Directory.ReadWrite.All|
+|Delegated (personal Microsoft account)	|Not supported|
+|Application	|TeamsAppInstallation.ReadWriteForTeam.All, Group.ReadWrite.All, Directory.ReadWrite.All|
   
  # Example
   
