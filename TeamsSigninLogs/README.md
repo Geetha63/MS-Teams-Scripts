@@ -8,16 +8,20 @@ Retrieve the MicrosoftTeams user sign-ins for your tenant, Script will check aud
 
 [How to apply permissions](https://docs.microsoft.com/en-us/graph/notifications-integration-app-registration)
 
-#### Requried Permissions
+#### Required Permissions
 
   | Permission type	                   |  Permissions (from least to most privileged)|
   |------------------------------------|---------------------------------------------|
   | Delegated (work or school account)	| AuditLog.Read.All and Directory.Read.All    |
   | Application	                       | AuditLog.Read.All and Directory.Read.All    |
  
-# Example
+# Parameters
 
+`-Auditlogs`
 
+ records of system activities
+ 
+ Type: Logs
 
 # Inputs
 
@@ -55,3 +59,4 @@ _Signinoutput.csv_ is the final output file having signin details
 
  | UserUPN	| CreatedDateTime	| resourceDisplayName | AppDisplayName	| IsInteractive |	DeviceDetail |
  |----------|-------------------|---------------------|------------------|--------------|----------------|
+ |davidchew@contoso.com|2020-03-23T15:10:59.2906713Z|Microsoft Teams Web Client	|FALSE	|@{deviceId=; displayName=; operatingSystem=Windows 10; browser=Chrome 80.0.3987; isCompliant=; isManaged=; trustType=}|
