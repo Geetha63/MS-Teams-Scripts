@@ -28,13 +28,27 @@ OneNote has been added to HR
 Specify a GroupId to convert to a Team. If specified, you cannot provide the other values that are already specified by the existing group, namely: Visibility, Alias, Description, or DisplayName. If, for example, you need to create a Team from an existing Microsoft 365 Group, use the ExternalDirectoryObjectId property value returned by [Get-UnifiedGroup](https://docs.microsoft.com/en-us/powershell/module/exchange/get-unifiedgroup?view=exchange-ps)
 
 Type:	String
-|---
+***
 Position:	Named
-|---
+***
 Default value:	None
-|---
+***
 Accept pipeline input:	True
-|---
+***
+Accept wildcard characters:	False
+
+`-AppId`
+
+Teams App identifier in Microsoft Teams
+
+Type:	String
+***
+Position:	Named
+***
+Default value:	None
+***
+Accept pipeline input:	True
+***
 Accept wildcard characters:	False
 
 # Inputs
