@@ -1,6 +1,6 @@
 # Teams Owner Members details
 
-# Description:
+# Description
 Script will fetch the Teams owner and members details
 
 # Prerequisite
