@@ -14,13 +14,13 @@ Scripts are written in Powershell , To use the Scripts
 
 No  | Script Name    | Description         | Script Link  |                     
 |---|----------------|---------------------|------------------|
-|  1|Add App to Teams and Tenant|Script is to Add TeamsApp to particular Team or all Teams in Tenant| [Link](https://github.com/Geetha63/MS-Teams-Scripts/tree/master/App%20Installation) |
-|2| Call Quality Dashboard Report|Script will provide total stream count including Audio,video,Appsharing for provided start time and end time, CQD Report of Given time|[Link](https://github.com/Geetha63/MS-Teams-Scripts/tree/master/CQDReport)
+|  1|Add App to Teams and Tenant|Script is to Add TeamsApp to particular Team or all Teams in Tenant| [Link](https://github.com/Geetha63/MS-Teams-Scripts/tree/master/Add%20App%20to%20Teams%20and%20Tenant)|
+|2| Call Quality Dashboard Report|Script will provide total stream count including Audio,video,Appsharing for provided start time and end time, CQD Report of Given time|[Link](https://github.com/Geetha63/MS-Teams-Scripts/tree/master/Call%20Quality%20Dashboard%20Report)
 |3|Canvas|Downloading the data from the canvas|[Link](https://github.com/Geetha63/MS-Teams-Scripts/tree/master/Canvas)
-|4|CreateMessaging Policy|Enable administrators to control user messaging policy,determines whether a user is allowed to exchange the messages or not|[Link](https://github.com/Geetha63/MS-Teams-Scripts/tree/master/CreateMessaging%20Policy)
+|4|Create New-CsTeamsMessagingPolicy|Enable administrators to control user messaging policy,determines whether a user is allowed to exchange the messages or not|[Link](https://github.com/Geetha63/MS-Teams-Scripts/tree/master/Create%20New-CsTeamsMessagingPolicy)
 |5|Create a Teams along with App|Script to Creating a team with group and then adding app to that Team.|[Link](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/CreateTeamsalongwithAPPs)
 |6|Delete Teams Where Team Members dont Have Given Job titles|Script to check the each Team members job title, if at least one job title does not match to given job titles,will delete those teams and sent an email to owners of the team.|[Link](https://github.com/Geetha63/MS-Teams-Scripts/tree/master/DeleteTeamsWhereTeamMembersdontHaveGivenJobtitles)
-|7|Grant Messaging Policy|Script to granting messaging policy to user|[Link](https://github.com/Geetha63/MS-Teams-Scripts/tree/master/Grant%20Messaging%20Policy)
+|7|Grant Messaging Policy|Script to granting messaging policy to user|[Link](https://github.com/Geetha63/MS-Teams-Scripts/tree/master/Grant-CsTeamsMessagingPolicy)
 |8|Group or TeamsCreationRestrictionPolicy-Bulk|Script to restrict Office 365 group creation to the members of a particular security group.|[Link](https://github.com/Geetha63/MS-Teams-Scripts/tree/master/Group%20or%20TeamsCreationRestrictionPolicy-Bulk)
 |9|Group or TeamsCreationRestrictionPolicy|Script to restrict Office 365 Group creation to the member of a particular security group.|[Link](https://github.com/Geetha63/MS-Teams-Scripts/tree/master/Group%20or%20TeamsCreationRestrictionPolicy)
 |10|GuestRestrictionForGivenTeams|Script will restrict the adding guest users in Teams.|[Link](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/GuestRestrictionForGivenTeams)
