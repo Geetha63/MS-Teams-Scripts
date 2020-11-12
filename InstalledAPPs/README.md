@@ -34,7 +34,7 @@
 
 # Inputs
 
-client_Id, Client_Secret, Tenantid 
+Client_Id, Client_Secret, Tenantid 
 
 # Procedure to run the script
 
