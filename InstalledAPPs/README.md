@@ -73,4 +73,4 @@ Script will create 3 files i.e file.csv, file1.csv, Apps.csv. file.csv and file1
 
 | ID | Displayname |UserPrincipalName | InstalledApps |
 |----|-------------|------------------|---------------|
-|81701046-cb37-439b-90ce-2afd9630af7d|David Chew|davidchew@contoso.com|Notepad,OneNote|
+|81701046-cb37-439b-90ce-2afd9630af7d|David Chew|davidchew@contoso.com|Activity; Calling; Teams; Saved; Files|
