@@ -4,11 +4,11 @@
 
    Script retrieves the list of apps installed in the personal scope of the specified user
    
-   [How to create Azure App](https://docs.microsoft.com/en-us/graph/auth-register-app-v2)
-
-   [How to apply permissions](https://docs.microsoft.com/en-us/graph/notifications-integration-app-registration)
+ # Prerequisites  
    
-##### Requried Permissions
+   [Create new Azure App.](https://docs.microsoft.com/en-us/graph/auth-register-app-v2)
+
+   [Add following permissions](https://docs.microsoft.com/en-us/graph/notifications-integration-app-registration) to your newly created App.
 
 |Permission type	|Permissions (from least to most privileged)|
 |-------|----|
