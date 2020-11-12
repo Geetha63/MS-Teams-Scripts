@@ -5,17 +5,17 @@ Script is to create below custom policies to set all access to teachers and rest
 
   Teams policies
 
-  Meetings Policies
+  Meetings policies
 
-  meeting Settings
+  Meeting settings
 
-  messaging policies
+  Messaging policies
 
   Assignment policy
 
-  OrgWide settings
+  Org-Wide settings
 
-  apps
+  Apps
 
 # Prerequisite
 1)	Install [SFB online connector](https://www.microsoft.com/en-us/download/details.aspx?id=39366)
