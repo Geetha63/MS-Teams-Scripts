@@ -8,7 +8,7 @@
    
    [Create new Azure App.](https://docs.microsoft.com/en-us/graph/auth-register-app-v2)
 
-   [How to apply permissions to your APP.](https://docs.microsoft.com/en-us/graph/notifications-integration-app-registration) to your newly created App.
+   [How to apply permissions](https://docs.microsoft.com/en-us/graph/notifications-integration-app-registration) to your newly created App.
    
    ##### Required Permissions
 
