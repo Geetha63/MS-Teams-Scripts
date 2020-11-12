@@ -2,7 +2,7 @@
 
 # Description
 
-   This script retrieve the list of apps installed for users in the tenant
+   Script retrieves the list of apps installed in the personal scope of the specified user
    
    [How to create Azure App](https://docs.microsoft.com/en-us/graph/auth-register-app-v2)
 
