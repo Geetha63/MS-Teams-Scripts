@@ -12,8 +12,6 @@
 
 |Permission type	|Permissions (from least to most privileged)|
 |-------|----|
-|Delegated (work or school account)	|TeamsAppInstallation.ReadForUser, TeamsAppInstallation.ReadWriteForUser|
-|Delegated (personal Microsoft account)	|Not supported|
 |Application	|TeamsAppInstallation.ReadForUser.All, TeamsAppInstallation.ReadWriteForUser.All|
 
 # Parameters
