@@ -40,7 +40,6 @@ script will delete HR Team if anyone of team member jobtitle does not match and 
    
    Type: string 
       
-
 # Inputs
    
    client_Id
