@@ -4,9 +4,11 @@
 
 This script will check the user license. After script execution teacher license users will be assigned with “Education Teacher”. Student license users will be assigned with  “Education_SecondaryStudent” policy packages
 
-[How to create Azure App](https://docs.microsoft.com/en-us/graph/auth-register-app-v2)
+# Prerequisites
 
-[How to apply permissions](https://docs.microsoft.com/en-us/graph/notifications-integration-app-registration)
+[Create Azure App](https://docs.microsoft.com/en-us/graph/auth-register-app-v2)
+
+[How to apply permissions](https://docs.microsoft.com/en-us/graph/notifications-integration-app-registration) to your newly created App 
 
 ##### Required Permissions
 
