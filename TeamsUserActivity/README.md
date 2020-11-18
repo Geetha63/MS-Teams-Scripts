@@ -8,16 +8,16 @@ Provide the number(1,2,3) to get the Microsoft Teams user activity reports
 
 Reference [Microsoft Teams user activity reports](https://docs.microsoft.com/en-us/graph/api/resources/microsoft-teams-user-activity-reports?view=graph-rest-1.0)
 
-[How to create Azure App](https://docs.microsoft.com/en-us/graph/auth-register-app-v2)
+# Prerequisites
 
-[How to apply permissions](https://docs.microsoft.com/en-us/graph/notifications-integration-app-registration)
+[Create new Azure App](https://docs.microsoft.com/en-us/graph/auth-register-app-v2)
+
+[How to apply permissions](https://docs.microsoft.com/en-us/graph/notifications-integration-app-registration) to your newly created App
 
 #### Required Permissions
 
 |Permission type	|Permissions (from least to most privileged)|
 |----|---|
-|Delegated (work or school account)	|Reports.Read.All|
-|Delegated (personal Microsoft account)	|Not supported|
 |Application	|Reports.Read.All|
 
 # Example
