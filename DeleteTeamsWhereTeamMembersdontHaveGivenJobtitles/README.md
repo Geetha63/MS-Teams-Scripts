@@ -6,15 +6,16 @@ This script checks the each Team member job title, if at least one job title doe
 
 This is Graph API script, to excute the script user needs to create an Azure App and provide the necessary permisssons 
 
-[How to create Azure App](https://docs.microsoft.com/en-us/graph/auth-register-app-v2)
+# Prerequisites
 
-[How to apply permissions](https://docs.microsoft.com/en-us/graph/notifications-integration-app-registration)
+[Create new Azure App](https://docs.microsoft.com/en-us/graph/auth-register-app-v2)
+
+[How to apply permissions](https://docs.microsoft.com/en-us/graph/notifications-integration-app-registration) to your newly created App
 
 ### Requried Permissions
 
 |Permission type	          |  Permissions (from least to most privileged)|
 |----------|-------------------|
-|Delegated (work or school account)|Group.ReadWrite.All, Mail.Send| 
 |Application|Directory.AccessAsUser.All, Mail.Send|
 
 # Example
