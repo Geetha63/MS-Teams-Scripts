@@ -39,4 +39,6 @@ For each Team it will fetch the Teamid,TeamDisplayname and ChannelName of the te
 
 Script will export the **Channeloutput.csv** in the current folder
 
-Output contain | _Teamid_ | _TeamDisplayname_ | _ChannelName_ |
+Output contain 
+
+| _Teamid_ | _TeamDisplayname_ | _ChannelName_ |
