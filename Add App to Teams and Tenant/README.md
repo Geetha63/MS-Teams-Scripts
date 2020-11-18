@@ -4,16 +4,16 @@
 
   Script is to Add TeamsApp to Teams or Tenant by providing the parameters $OwnerPrincipalName,$AppName and selecting the input 
   
- [How to create Azure App](https://docs.microsoft.com/en-us/graph/auth-register-app-v2)
+# Prerequisites
+  
+ [Create new Azure App](https://docs.microsoft.com/en-us/graph/auth-register-app-v2)
 
- [How to apply permissions](https://docs.microsoft.com/en-us/graph/notifications-integration-app-registration)
+ [How to apply permissions](https://docs.microsoft.com/en-us/graph/notifications-integration-app-registration) to your newly created App.
   
  ##### Required Permissions
  
 |Permission type	|Permissions (from least to most privileged)|
 |----|----|
-|Delegated (work or school account)	|TeamsAppInstallation.ReadWriteForTeam, Group.ReadWrite.All, Directory.ReadWrite.All|
-|Delegated (personal Microsoft account)	|Not supported|
 |Application	|TeamsAppInstallation.ReadWriteForTeam.All, Group.ReadWrite.All, Directory.ReadWrite.All|
   
  # Example
