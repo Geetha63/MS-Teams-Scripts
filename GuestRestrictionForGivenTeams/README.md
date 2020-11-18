@@ -6,15 +6,16 @@ This script will restrict the guest users in Teams by changing the O365 Group Al
 
 Powershell 3.0 or more should be available
 
-[How to create Azure App](https://docs.microsoft.com/en-us/graph/auth-register-app-v2)
+# Prerequisites
 
-[How to apply permissions](https://docs.microsoft.com/en-us/graph/notifications-integration-app-registration)
+[Create new Azure App](https://docs.microsoft.com/en-us/graph/auth-register-app-v2)
+
+[How to apply permissions](https://docs.microsoft.com/en-us/graph/notifications-integration-app-registration) to your newly created App
 
 #### Required Permissions
 
 | Permission type | Permissions (from least to most privileged)|
 |-----------------|--------------------------------------------|
-|Delegated (work or school account)|Group.ReadWrite.All, Directory.ReadWrite.All, Directory.AccessAsUser.All|
 |Application|Group.Create, Group.ReadWrite.All, Directory.ReadWrite.All|
 
 # Example
