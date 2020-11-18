@@ -4,16 +4,16 @@
 
 This script will check each Tenant user license and MicrosotTeams subscription. If assigned license ia in disabled mode script will enable it. If user don’t have any of teams license it will print the user name in output file
 
-[How to create Azure App](https://docs.microsoft.com/en-us/graph/auth-register-app-v2)
+# Prerequisites
 
-[How to apply permissions](https://docs.microsoft.com/en-us/graph/notifications-integration-app-registration)
+[Create new Azure App](https://docs.microsoft.com/en-us/graph/auth-register-app-v2)
+
+[How to apply permissions](https://docs.microsoft.com/en-us/graph/notifications-integration-app-registration) to your newly created App
 
 #### Required Permissions
 
 |Permission type	|Permissions (from least to most privileged)|
 |---|----|
-|Delegated (work or school account)	|User.Read, User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All, Directory.AccessAsUser.All|
-|Delegated (personal Microsoft account)	|User.Read|
 |Application	|User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All|
 
 # Example
