@@ -28,13 +28,13 @@ End Date: 1-11-2020
  
   Provide input 1 to get total steram count including audio, video, appsharing
   
-   Start Date – “please provide start date
+   Start Date – “Please provide start date
    
-   End Date – “please provide end date
+   End Date – “Please provide end date
   
   Provide input 2 to get the CQD report of given time
   
-  Give the input file as shown below. Keep this file in current location(CQD_Input.csv). Script will collect the data from `CQD_Input.csv` file and capture the data from call quality dashboard
+  Give the input file as shown below. Keep this file in current location(CQD_Input.csv). Script will collect the data from `CQD_Input.csv` file and capture the data from call     quality dashboard
 
  |Dimensions  |	Measures| OutPutFilePath |	StartDate| EndDate | OutPutType	| MediaType	| IsServerPair |
  |------------|---------|----------------|-----------|---------|------------|-----------|--------------|
@@ -53,9 +53,9 @@ Once you run the script it will prompt for option 1 or 2
 
 If you have choosen the **option 1** please provide the parameters 
 
-Start Date – “please provide start date” 
+Start Date – “Please provide start date” 
 
-End Date – “please provide end date” 
+End Date – “Please provide end date” 
 
 Press enter to continue 
 
