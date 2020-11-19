@@ -12,6 +12,8 @@ PowerShell 3.0 or more should be available
 
 [How to apply permissions](https://docs.microsoft.com/en-us/graph/notifications-integration-app-registration) to your newly created App
 
+Please collect client id, client secret from created Azure app and tenant id from Azure portal
+
 #### Required Permissions
 
 | Permission type | Permissions (from least to most privileged)|
