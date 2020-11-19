@@ -12,6 +12,8 @@ This is a Graph API script, to excute the script user needs to create an Azure A
 
 [How to apply permissions](https://docs.microsoft.com/en-us/graph/notifications-integration-app-registration) to your newly created App
 
+Please collect client id, client secret from created Azure app and tenant id from Azure portal
+
 ### Requried Permissions
 
 |Permission type	          |  Permissions (from least to most privileged)|
