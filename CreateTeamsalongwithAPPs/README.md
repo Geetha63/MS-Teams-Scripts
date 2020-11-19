@@ -4,6 +4,8 @@
 
 Create MicrosoftTeams along with APP for your tenant
 
+# Prerequisites
+
 [Create new Azure App](https://docs.microsoft.com/en-us/graph/auth-register-app-v2)
 
 [How to apply permissions](https://docs.microsoft.com/en-us/graph/notifications-integration-app-registration) to your newly created App
@@ -52,19 +54,19 @@ Accept wildcard characters:	False
 
 # Inputs
 
-Groupname, OwnerPrincipalName, AppName, client_Id, Client_Secret,Tenantid
+Groupname, OwnerPrincipalName, AppName, Client_Id, Client_Secret,Tenantid
 
 # Procedure to run the script
 
-   To excute `CreateTeamsalongwithAPPs` download/copy and paste the script into powershell
+   To excute `CreateTeamsalongwithAPPs` download/copy and paste the script into PowerShell
         
-   Provide the input parameters Groupname, OwnerPrincipalName, AppName, client_Id,Client_Secret,Tenantid and hit enter to proceed further on the script
+   Provide the input parameters Groupname, OwnerPrincipalName, AppName, Client_Id, Client_Secret, Tenantid and hit enter to proceed further on the script
         
    Now script will redirect to web page for login
         
    ![Signin](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/Siginin.png)
         
-   Provide admin credentials i.e user ID and password 
+   Provide Administrator credentials i.e user ID and password 
         
    Press enter to continue
    
@@ -82,6 +84,6 @@ Groupname, OwnerPrincipalName, AppName, client_Id, Client_Secret,Tenantid
  
 # Output
 
-Script will execute and create the Teams using provided Group Name, OwnerPrincipalName and APPName
+Script will execute and create the Team using provided Group Name, OwnerPrincipalName and APPName
 
 App has been added to team
