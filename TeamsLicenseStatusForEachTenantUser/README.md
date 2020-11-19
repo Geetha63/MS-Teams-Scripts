@@ -2,13 +2,15 @@
 
 # Description
 
-This script will check each Tenant user license and MicrosotTeams subscription. If assigned license ia in disabled mode script will enable it. If user don’t have any of teams license it will print the user name in output file
+This script will check each tenant user license and MicrosotTeams subscription. If assigned license is in disabled mode, script will enable it. If user don’t have any of Teams license it will print the user name in output file
 
 # Prerequisites
 
 [Create new Azure App](https://docs.microsoft.com/en-us/graph/auth-register-app-v2)
 
 [How to apply permissions](https://docs.microsoft.com/en-us/graph/notifications-integration-app-registration) to your newly created App
+
+Please collect client id, client secret from created Azure App and tenant id from Azure portal
 
 #### Required Permissions
 
@@ -20,7 +22,7 @@ This script will check each Tenant user license and MicrosotTeams subscription. 
 
 If user dont have Teams license it will export users list
 
-If user assigned with Teams license but it is in disable status - it will enable status
+If user assigned with Teams license but it is in disable status - script will enable the status
 
 # Parameters
 
@@ -36,7 +38,7 @@ Client_Id, Client_Secret, Tenantid
 
 # Procedure to run the script
  
-   To excute `TeamsLicenseStatusForEachTenantUser` download/copy and paste the script into powershell
+   To excute `TeamsLicenseStatusForEachTenantUser` download/copy and paste the script into PowerShell
         
    Provide the input parameters Client_Id, Client_Secret, Tenantid and hit enter to proceed further on the script
    
@@ -46,11 +48,11 @@ Client_Id, Client_Secret, Tenantid
         
    ![Signin](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/Siginin.png)
         
-   Provide admin credentials i.e user ID and password 
+   Provide Administrator credentials i.e user ID and password 
         
    Press enter to continue
    
-   Once you are login it will shows the below image for Grant permissions for the app to perform the operations
+   Once you are login it will shows the below image for grant permissions for app to perform the operations
 
   ![GrantPermission](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/GrantPermissions.png)	
  
