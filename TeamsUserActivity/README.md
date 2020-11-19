@@ -2,9 +2,9 @@
 
 # Description
 
-Use the Microsoft Teams activity reports to get insights into the Microsoft Teams user activity in your organization.Period specifies the length of time over which the report is aggregated. The supported values for {period_value} are: D7, D30, D90, and D180. 
+Use the MicrosoftTeams activity reports to get insights into the Microsoft Teams user activity in your organization. Period specifies the length of time over which the report is aggregated. The supported values for {period_value} are: D7, D30, D90, and D180
 
-Provide the number(1,2,3) to get the Microsoft Teams user activity reports
+Provide the number(1,2,3) to get the MicrosoftTeams user activity reports
 
 Reference [Microsoft Teams user activity reports](https://docs.microsoft.com/en-us/graph/api/resources/microsoft-teams-user-activity-reports?view=graph-rest-1.0)
 
@@ -13,6 +13,8 @@ Reference [Microsoft Teams user activity reports](https://docs.microsoft.com/en-
 [Create new Azure App](https://docs.microsoft.com/en-us/graph/auth-register-app-v2)
 
 [How to apply permissions](https://docs.microsoft.com/en-us/graph/notifications-integration-app-registration) to your newly created App
+
+Please collect client id, client secret from created Azure App and tenant id from Azure portal
 
 #### Required Permissions
 
@@ -48,7 +50,7 @@ Client_Id, Client_Secret, Tenantid, Period
 
  # Procedure to run the script
  
-   To excute `TeamsUserActivity` download/copy and paste the script into powershell
+   To excute `TeamsUserActivity` download/copy and paste the script into PowerShell
         
    Provide the input parameters Client_Id, Client_Secret, Tenantid, Period and hit enter to proceed further on the script
         
@@ -56,11 +58,11 @@ Client_Id, Client_Secret, Tenantid, Period
         
    ![Signin](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/Siginin.png)
         
-   Provide admin credentials i.e user ID and password 
+   Provide Administrator credentials i.e user ID and password 
         
    Press enter to continue
    
-   Once you are login it will shows the below image for Grant permissions for the app to perform the operations
+   Once you are login it will shows the below image for grant permissions for the app to perform operations
 
  ![GrantPermission](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/GrantPermissions.png)	
  
