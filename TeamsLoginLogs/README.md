@@ -2,13 +2,15 @@
 
 # Description
 
-Retrieve the MicrosoftTeams user log-ins for your tenant, Script will check audit logs and export the file, contains teams login username along with device name
+Retrieve the MicrosoftTeams user log-ins for your tenant, script will check audit logs and export the file, contains Teams login username along with device name
 
 # Prerequisites
 
 [Create new Azure App](https://docs.microsoft.com/en-us/graph/auth-register-app-v2)
 
 [How to apply permissions](https://docs.microsoft.com/en-us/graph/notifications-integration-app-registration) to your newly created App
+
+Please collect client id, client secret from created Azure app and tenant id from Azure portal
 
 #### Required Permissions
 
@@ -30,7 +32,7 @@ Client_Id, Client_Secret, Tenantid
 
  # Procedure to run the script
  
-   To excute `TeamsLoginLogs` download/copy and paste the script into powershell
+   To excute `TeamsLoginLogs` download/copy and paste the script into PowerShell
         
    Provide the input parameters Client_Id, Client_Secret, Tenantid and hit enter to proceed further on the script
         
@@ -38,11 +40,11 @@ Client_Id, Client_Secret, Tenantid
         
    ![Signin](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/Siginin.png)
         
-   Provide admin credentials i.e user ID and password 
+   Provide Administrator credentials i.e user ID and password 
         
    Press enter to continue
    
-   Once you are login it will shows the below image for Grant permissions for the app to perform the operations
+   Once you are login it will shows the below image for grant permissions for the app to perform operations
 
  ![GrantPermission](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/GrantPermissions.png)	
  
