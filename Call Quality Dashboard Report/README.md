@@ -28,9 +28,9 @@ End Date: 1-11-2020
  
   Provide input 1 to get total steram count including audio, video, appsharing
   
-   Start Date – “Please provide start date
+   Start Date – “Please provide start date"
    
-   End Date – “Please provide end date
+   End Date – “Please provide end date"
   
   Provide input 2 to get the CQD report of given time
   
