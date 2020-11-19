@@ -2,7 +2,7 @@
 
 # Description
 
-This script checks the each Team member job title, if at least one job title does not match to given job titles, script will delete those teams. It will generate the ouput.csv file in current folder and sent an email to deleted Team owners
+This script checks the each Team member job title, if at least one job title does not match to given job titles, script will delete those Teams. It will generate the ouput.csv file in current folder and sent an email to deleted Team owners
 
 This is a Graph API script, to excute the script user needs to create an Azure App and provide the necessary permisssons 
 
