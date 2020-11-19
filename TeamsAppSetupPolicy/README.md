@@ -46,7 +46,7 @@ Right-click on Windows PowerShell, then select Run as Administrator. Click Yes a
 
 3.	If you are prompted for an untrusted repository, then type A (Yes to All) and press Enter. The module will now install
 
-Run the script, provide the Global Administrator credentials or Teams Administrator credentials                   
+Run the script, provide the Global Administrator credentials or Teams Administrator credentials
       .......................
 
 For single user use `TeamsAppsetuppolicy-SingleUser`
@@ -71,8 +71,8 @@ Supply credentials
 
 ![Credentials](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/TeamsAppSetupPolicy-Credentialspage.png)
 
-It will assign the policy to user \n
-      ...................
+It will assign the policy to user
+     ...................
                           
 For Bulk users use `TeamsAppsetuppolicy - Bulk users`, 
 Provide the input in `Input.csv file`
