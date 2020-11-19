@@ -2,13 +2,15 @@
 
 # Description
 
-This script will change the Teams membership role based on the user license. After the script execution teacher license user will convert as Owner and student license users will converts as members, if users dont have Microsoft Teams license it will export the users list
+This script will change the Teams membership role based on the user license. After the script execution teacher license user will convert as owner and student license users will convert as members, if users dont have MicrosoftTeams license it will export the users list
 
 # Prerequisites
 
 [Create new Azure App](https://docs.microsoft.com/en-us/graph/auth-register-app-v2)
 
 [How to apply permissions](https://docs.microsoft.com/en-us/graph/notifications-integration-app-registration) to your newly created App
+
+Please collect client id, client secret from created Azure App and tenant id from Azure portal
 
 #### Requried Permissions
 
@@ -36,7 +38,7 @@ This script will change the Teams membership role based on the user license. Aft
 
 ##### Case5:(If user dont have license)
 
-  User have the different license and expots the user list message will populate on the screen
+  User have the different license and export the user list message will populate on the screen
 
 # Parameters
 
@@ -48,13 +50,13 @@ This script will change the Teams membership role based on the user license. Aft
  
 # Inputs
 
-Client_Id,Client_Secret,Tenantid
+Client_Id, Client_Secret, Tenantid
 
 # Procedure to run the script
  
-   To excute `MembershipChangeTeacher-Owner,Student-Member` download/copy and paste the script into powershell
+   To excute `MembershipChangeTeacher-Owner,Student-Member` download/copy and paste the script into PowerShell
         
-   Provide the input parameters Client_Id,Client_Secret,Tenantid and hit enter to proceed further on the script
+   Provide the input parameters Client_Id, Client_Secret, Tenantid and hit enter to proceed further on the script
     
    Please provide the Teams admin credentials to connect to Microsoft Teams
    
@@ -66,7 +68,7 @@ Client_Id,Client_Secret,Tenantid
         
    Press enter to continue
    
-   Once you are login it will shows the below image for Grant permissions for the app to perform the operations
+   Once you are login it will shows the below image for grant permissions for the app to perform the operations
 
  ![GrantPermission](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/GrantPermissions.png)
  
