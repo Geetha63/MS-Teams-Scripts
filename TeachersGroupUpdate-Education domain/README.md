@@ -6,10 +6,10 @@ Script will update the **All teachers** distribution list members, it checks the
 System should have the AzureADPreview module [`Install-Module azureadpreview`](https://docs.microsoft.com/en-us/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview#installing-the-azure-ad-module) to exceute the script
 
 # Inputs
-Global admin or Azure AD admin credentails 
+Global Administrator or Azure AD Administrator credentials 
 
 # Prerequisites
-As an Administrator, type PowerShell in the start menu. 
+As an Administrator, type PowerShell in the start menu
 
 Right-click on Windows PowerShell, then select Run as Administrator. Click Yes at the UAC prompt.
 1.	Type the following within PowerShell and then press Enter:
