@@ -1,10 +1,10 @@
 # User Policy Assignment
 # Description:
-UserPolicyAssignment script will work for assigning custom user policies for N no.of users.\
+UserPolicyAssignment script will work for assigning custom user policies for N no.of users\
 To run the script please install the [SFB online connector](https://www.microsoft.com/en-us/download/details.aspx?id=39366)
-- Import the Module into windows powershell 
-- Get the script from the 'UserPolicyAssignment.ps1' file and paste it into windows powershell, then run the script.
-- Script has all the avaialble policies to user listed below, please provide the requried input from 1 to 12 to apply the policy. 
+- Import the Module into windows PowerShell 
+- Get the script from the 'UserPolicyAssignment.ps1' file and paste it into windows powershell, then run the script
+- Script has all the avaialble policies to user listed below, please provide the requried input from 1 to 12 to apply the policy
 
                       1- TeamsAppSetupPolicy 
                       2- TeamsMeetingPolicy 
@@ -21,7 +21,7 @@ To run the script please install the [SFB online connector](https://www.microsof
 
 # Example
 ![User Policy](https://github.com/SwathiGugulot/Sample/blob/master/userpolisyAssignimage.PNG) \
-In the list of policies ,Provided Input number 2 to apply TeamsMeetingPolicy to user/users
+In the list of policies, provided input number 2 to apply TeamsMeetingPolicy to user/users
 # Input 
  Keep the UserPricipleName in Input.Csv file
  
@@ -29,11 +29,3 @@ In the list of policies ,Provided Input number 2 to apply TeamsMeetingPolicy to 
  
 # Output
 Custom policy assigned to user
-
-
-
-
-
-
-
-
