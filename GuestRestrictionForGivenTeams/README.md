@@ -52,7 +52,7 @@ Prepare `input.csv` file in below format and keep it in current location where s
  
  ![Signin](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/Siginin.png)
  
- Provide the Global Administrator i.e user ID and password 
+ Provide the Global Administrator credentials i.e user ID and password 
         
  Press enter to continue
    
