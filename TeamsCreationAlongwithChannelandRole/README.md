@@ -10,8 +10,7 @@ Script will generate the `output.csv` file which holds the details of created Te
 
 # Prerequisites
 
-1. As an Administrator, type PowerShell in the start menu. Right-click on Windows PowerShell, then select Run as Administrator
-Click Yes at the UAC prompt
+1. As an Administrator, type PowerShell in the start menu. Right-click on Windows PowerShell, then select Run as Administrator. Click Yes at the UAC prompt
 
 2. Type the following within PowerShell and then press Enter:\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**`Install-Module MicrosoftTeams`**
