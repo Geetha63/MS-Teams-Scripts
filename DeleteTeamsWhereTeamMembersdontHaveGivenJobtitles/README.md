@@ -2,9 +2,9 @@
 
 # Description
 
-This script checks the each Team member job title, if at least one job title does not match to given job titles,Script will delete those teams.It will generate the ouput.csv file in current folder and sent an email to deleted team owners.
+This script checks the each Team member job title, if at least one job title does not match to given job titles, script will delete those teams. It will generate the ouput.csv file in current folder and sent an email to deleted Team owners
 
-This is Graph API script, to excute the script user needs to create an Azure App and provide the necessary permisssons 
+This is a Graph API script, to excute the script user needs to create an Azure App and provide the necessary permisssons 
 
 # Prerequisites
 
@@ -24,7 +24,7 @@ mailsener AdeleV@contoso.com
 
 keepjobtitles Manager,Hr,Associate 
 
-script will delete HR Team if anyone of team member jobtitle does not match and script will send an email to HR team owner behalf of mailsender(AdeleV@contoso.com)
+script will delete HR Team if anyone of Team member jobtitle does not match and script will send an email to HR Team owner behalf of mailsender(AdeleV@contoso.com)
 
 # Parameters
 
@@ -42,21 +42,21 @@ script will delete HR Team if anyone of team member jobtitle does not match and 
       
 # Inputs
    
-   client_Id
+   Client_Id
    
    Client_Secret
    
    Tenantid
    
-   mailsender
+   Mailsender
    
    KeepJobtitles
         
  # Procedure to run the script
  
-   To excute `DeleteTeamsWhereTeamMembersdontHaveGivenJobtitles` download/copy and paste the script into powersell
+   To excute `DeleteTeamsWhereTeamMembersdontHaveGivenJobtitles` download/copy and paste the script into PowerShell
         
-   Provide the input parameters mailsender,client_Id,Client_Secret,Tenantid,KeepJobtitles and hit enter to proceed further on the script
+   Provide the input parameters Mailsender, Client_Id, Client_Secret, Tenantid, KeepJobtitles and hit enter to proceed further on the script
         
    Now script will redirect to web page for login
         
@@ -66,7 +66,7 @@ script will delete HR Team if anyone of team member jobtitle does not match and 
         
    Press enter to continue
    
-   Once you are login it will shows the below image for Grant permissions for the app to perform the operations
+   Once you are login it will shows the below image for grant permissions for the app to perform the operations
 
  ![GrantPermission](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/GrantPermissions.png)
  
@@ -80,7 +80,7 @@ script will delete HR Team if anyone of team member jobtitle does not match and 
        
  # Output
  
- Script will export the output.csv file which contains list of deleted Teams along with owners,also it will send an email to Teams owner behalf of mail sender
+ Script will export the output.csv file which contains list of deleted Teams along with owners, also it will send an email to Teams owner behalf of mail sender
  
  ##### Example
  
