@@ -21,7 +21,7 @@ Script is to create below custom policies to set all access to teachers and rest
 1)	Install [SFB online connector](https://www.microsoft.com/en-us/download/details.aspx?id=39366)
 
 # Inputs
-Global admin or Skype for Business Online administrator account name and password, and then select OK.
+Global Administrator or Skype for Business Online administrator account name and password, and then select OK
 
 # How to run the script
 
