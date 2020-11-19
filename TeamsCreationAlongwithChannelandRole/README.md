@@ -15,9 +15,9 @@ Script will generate the `output.csv` file which holds the details of created Te
 2. Type the following within PowerShell and then press Enter:\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**`Install-Module MicrosoftTeams`**
   
-3. Type Y at the prompt.Click Enter
+3. Type Y at the prompt. Click enter
 
-4. If you are prompted for an untrusted repository,then type A (Yes to All) and press Enter.The module will now install
+4. If you are prompted for an untrusted repository, then type A (Yes to All) and press Enter. The module will now install
 
 # Inputs
 
