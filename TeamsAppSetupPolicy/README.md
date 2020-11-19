@@ -74,7 +74,7 @@ Supply credentials
 It will assign the policy to user      
      ...................
                           
-For Bulk users use `TeamsAppsetuppolicy - Bulk users`, 
+For bulk users use `TeamsAppsetuppolicy - Bulk users`, 
 Provide the input in `Input.csv file`
 
 # Input
