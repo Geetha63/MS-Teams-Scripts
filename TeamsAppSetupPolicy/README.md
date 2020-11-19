@@ -47,9 +47,8 @@ Right-click on Windows PowerShell, then select Run as Administrator. Click Yes a
 
 3.	If you are prompted for an untrusted repository, then type A (Yes to All) and press Enter. The module will now install
 
-To run the script please provide the Global Administrator credentials or Teams Administrator credentials
-
-                .......................
+Run the script, provide the Global Administrator credentials or Teams Administrator credentials
+               .......................
 
 For single user use `TeamsAppsetuppolicy-SingleUser`
 
