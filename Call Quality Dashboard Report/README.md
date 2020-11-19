@@ -2,17 +2,17 @@
 
 # Description
 
-Script will provide total stream count including Audio,video,Appsharing for provided start time and end time, CQD Report of Given time
+Script will provide total stream count including audio, video, appsharing for provided start time and end time, CQD report of given time
 
-Powershell should be more than 3.0 version
+PowerShell should be more than 3.0 version
 
 # Example
 
-##### Example 1 for Total Steram count including Audio,video,Appsharing
+##### Example 1 for total steram count including audio, video, appsharing
 
 ![Example](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CQD-Example.png)
 
-##### Example 2 for CQD Report of Given time (DD-MM-YYYY(Ex:31-03-2020)
+##### Example 2 for CQD report of given time (DD-MM-YYYY(Ex:31-03-2020)
 
 Start Date: 1-10-2020
 
@@ -26,15 +26,15 @@ End Date: 1-11-2020
  
  # Inputs
  
-  Provide input 1 to get Total Steram count including Audio,video,Appsharing
+  Provide input 1 to get total steram count including audio, video, appsharing
   
-   Start Date – “Please Provide Start Date
+   Start Date – “please provide start date
    
-   End Date – “Please Provide End date
+   End Date – “please provide end date
   
-  Provide input 2 to get the CQD Report of Given time
+  Provide input 2 to get the CQD report of given time
   
-  Give the input file as shown below. Keep this file in current location(CQD_Input.csv). Script will collect the data from `CQD_Input.csv` file and capture the data from call quality     dashboard
+  Give the input file as shown below. Keep this file in current location(CQD_Input.csv). Script will collect the data from `CQD_Input.csv` file and capture the data from call quality dashboard
 
  |Dimensions  |	Measures| OutPutFilePath |	StartDate| EndDate | OutPutType	| MediaType	| IsServerPair |
  |------------|---------|----------------|-----------|---------|------------|-----------|--------------|
@@ -45,7 +45,7 @@ End Date: 1-11-2020
  
  # Procedure
  
-Powershell should be more than 3.0 version
+PowerShell should be more than 3.0 version
 
 Run the script
 
@@ -53,19 +53,19 @@ Once you run the script it will prompt for option 1 or 2
 
 If you have choosen the **option 1** please provide the parameters 
 
-Start Date – “Please Provide Start Date” 
+Start Date – “please provide start date” 
 
-End Date – “Please Provide End date” 
+End Date – “please provide end date” 
 
 Press enter to continue 
 
 Or if you have choosen the **option 2** please provide the `Input.csv` file 
 
-Now script will popup for Teams Admin credentials to connect the CQD tool
+Now script will pop-up for Teams Administrator credentials to connect the CQD tool
 
 ![Signin](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CQD-Signin.png)
 
-Provide the Teams Admin credentials
+Provide the Teams Administrator credentials
 
 # Output
 
@@ -81,5 +81,3 @@ For option 2
 ##### Example output
 
 ![Output](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CQD-output.png)
-
-
