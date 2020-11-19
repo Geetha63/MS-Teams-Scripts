@@ -11,7 +11,7 @@ Script will fetch the Teams owner and members details
 1. As an Administrator, type PowerShell in the start menu. Right-click Windows PowerShell, then select Run as Administrator.
 Click Yes at the UAC prompt
 
-2. Type the following within PowerShell command prompt and then press enter\
+2. Type the following within PowerShell command prompt and then press enter
 
     **`Install-Module MicrosoftTeams`** 
     
