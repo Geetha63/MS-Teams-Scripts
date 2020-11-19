@@ -1,9 +1,9 @@
 # TeamsAppSetupPolicy
 
 
-# Description:
+# Description
 
-Creating a New Teams App Setup Policy and Assigning a Teams App Setup Policy to Users
+Creating a new Teams app setup policy and assigning a Teams app setup policy to users
 
 # Prerequisites:
 
@@ -31,20 +31,20 @@ Choose Pinned apps by clicking Add apps
 
  ![AddPinnedApps](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/TeamsAppSetupPolicy-AddPinnedApps.png)
 
- Click save.
+ Click save
 
 Now we can apply Teams app setup policy using script
-As an Administrator, type PowerShell in the start menu. 
+As an Administrator, type PowerShell in the start menu
 
-Right-click Windows PowerShell, then select Run as Administrator. Click Yes at the UAC prompt.
+Right-click on Windows PowerShell, then select Run as Administrator. Click Yes at the UAC prompt
 1.	Type the following within PowerShell and then press Enter:
 
      [`Install-Module MicrosoftTeams`](https://docs.microsoft.com/en-us/microsoftteams/teams-powershell-install)
-2.	Type Y at the prompt.Press Enter
+2.	Type Y at the prompt. Press Enter
 
-3.	If you are prompted for an untrusted repository,then type A (Yes to All) and press Enter.The module will now install.
+3.	If you are prompted for an untrusted repository, then type A (Yes to All) and press Enter. The module will now install
 
-To run the script please provide the global administrator credentials or Teams admin credentials.\
+To run the script please provide the Global Administrator credentials or Teams Administrator credentials.\
                 .......................
 
 For single user use `TeamsAppsetuppolicy-SingleUser`
@@ -83,10 +83,10 @@ Provide the input in `Input.csv file`
 
 Run the `TeamsAppsetuppolicy - Bulk users` script
 
-Provide the administrator credentials
+Provide the Administrator credentials
 
 ![Credentials](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/TeamsAppSetupPolicy-Credentialspage.png)
 
 # Output
 
-Policy will assign to respective users.
+Policy will assign to respective users
