@@ -1,6 +1,5 @@
 # TeamsAppSetupPolicy
 
-
 # Description
 
 Creating a new Teams app setup policy and assigning a Teams app setup policy to users
@@ -73,8 +72,7 @@ Supply credentials
 ![Credentials](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/TeamsAppSetupPolicy-Credentialspage.png)
 
 It will assign the policy to user
-
-    ........................................
+       ...................
                           
 For Bulk users use `TeamsAppsetuppolicy - Bulk users`, 
 Provide the input in `Input.csv file`
