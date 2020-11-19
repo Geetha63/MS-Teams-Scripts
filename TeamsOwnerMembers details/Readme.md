@@ -4,7 +4,7 @@
 Script will fetch the Teams owner and members details
 
 # Prerequisite
-   **`Install-Module MicrosoftTeams`** [link](https://www.powershellgallery.com/packages/MicrosoftTeams/1.0.6)
+   [Install-Module MicrosoftTeams](https://www.powershellgallery.com/packages/MicrosoftTeams/1.0.6)
 
 # Procedure
 
@@ -20,7 +20,7 @@ Click Yes at the UAC prompt
 4. If you are prompted for an untrusted repository, then type A (Yes to All) and press Enter. The module will now install
 
 - Get the script from 'Teams_Owner and Members details.ps1' and paste it in windows powershell command prompt
-- Run the script ,script will process the below steps
+- Run the script, script will process the below steps
 
   1. Provide the Teams Administrator credentials to connect to MicrosoftTeams
   2. It will get the available Teams in the tenant
