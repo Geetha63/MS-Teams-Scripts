@@ -33,7 +33,7 @@ Right-click Windows PowerShell, then select Run as Administrator. Click Yes at t
 3.	If you are prompted for an untrusted repository, then type A (Yes to All) and press Enter. The module will now install
 
 # How to run the script
-To run the script you will need to either download it or copy and paste the script into Powershell
+To run the script you will need to either download it or copy and paste the script into PowerShell
 
 Provide the Global Administrator credentials or AzureAD Administrator credentials when it prompts
 
