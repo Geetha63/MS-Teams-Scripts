@@ -2,7 +2,7 @@
 
 # Description
 
-This script will check the user license. After script execution teacher license users will be assigned with “Education Teacher”. Student license users will be assigned with  “Education_SecondaryStudent” policy packages
+This script will check the user license. After the script execution teacher license users will be assigned with “Education Teacher”. Student license users will be assigned with  “Education_SecondaryStudent” policy packages
 
 # Prerequisites
 
@@ -10,19 +10,19 @@ This script will check the user license. After script execution teacher license 
 
 [How to apply permissions](https://docs.microsoft.com/en-us/graph/notifications-integration-app-registration) to your newly created App 
 
+Please collect client id, client secret from created Azure App and tenant id from Azure portal
+
 ##### Required Permissions
 
 |Permission type	|Permissions (from least to most privileged)|
 |----|----|
-|Delegated (work or school account)	|User.Read, User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All, Directory.AccessAsUser.All|
-|Delegated (personal Microsoft account)	|User.Read|
 |Application	|User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All|
 
 # Example
 
-If user assigned with faculty license script will assign Education_Teacher policy package to user 
+If user assigned with faculty license, script will assign Education_Teacher policy package to user 
 
-If user assigned with student license script will assign Education_SecondaryStudent policy package to user 
+If user assigned with student license, script will assign Education_SecondaryStudent policy package to user 
 
 # Parameters
 
@@ -38,9 +38,9 @@ Client_Id, Client_Secret, Tenantid
 
 # Procedure to run the script
  
-   To excute `PolicyPackageAssignment` download/copy and paste the script into powershell
+   To excute `PolicyPackageAssignment` download/copy and paste the script into PowerShell
         
-   Provide the input parameters client_Id, Client_Secret, Tenantid and hit enter to proceed further on the script
+   Provide the input parameters Client_Id, Client_Secret, Tenantid and hit enter to proceed further on the script
    
    Please provide the global administrator credentials or Teams administrator credentials to `Connect-microsoftteams`
         
@@ -52,7 +52,7 @@ Client_Id, Client_Secret, Tenantid
         
    Press enter to continue
    
-   Once you are login it will shows the below image for Grant permissions for the app to perform the operations
+   Once you are login it will shows the below image for grant permissions for the app to perform the operations
 
  ![GrantPermission](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/GrantPermissions.png)	
  
