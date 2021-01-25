@@ -77,16 +77,6 @@ Default value:	None
 Accept pipeline input:	True
 ***
 Accept wildcard characters:	False
-
-`-Chatid`
-
-`-Userid`
-
-`-Distribution list id`
-
-`-csv file full location(ex:d:\example.csv)`
-
-`-Tab id`
   
 # Inputs
   
@@ -94,19 +84,7 @@ Accept wildcard characters:	False
   
   [Find your tenant ID](https://docs.microsoft.com/en-us/onedrive/find-your-office-365-tenant-id#:~:text=In%20this%20article,your%20organization%20name%20or%20domain.)
   
- `-Chatid`
-
-`-Userid`
-
-`-Distribution list id`
-
-`-csv file full location(ex:d:\example.csv)`
-
-`-Tab id`
-
-`-Team id`
- 
- `-App id`
+ Chatid, Userid, Distribution list id, Tab id, Team id, App id, csv file full location(ex:d:\example.csv)
  
 # Procedure to run the script
  
