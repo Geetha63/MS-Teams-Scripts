@@ -5,6 +5,8 @@
 Script will accept target audience from user(CSV/Team Members/SG/DL), destination we need to point the users(App / Deep Link) to a specific entity and 
 send notification
 
+APIs used in script are under the /`beta` version in Microsoft Graph ,script will not supported in production environment 
+
 # Prerequisites
   
  [Create new Azure App.](https://docs.microsoft.com/en-us/graph/auth-register-app-v2)
@@ -17,7 +19,7 @@ send notification
  
 |Permission type	|Permissions (from least to most privileged)|
 |----|----|
-|Application	|TeamsAppInstallation.ReadWriteForTeam.All, Group.ReadWrite.All, Directory.ReadWrite.All|
+|Application	|Not supported|
 
  # Example
   Input 1 to send notification to user chat
