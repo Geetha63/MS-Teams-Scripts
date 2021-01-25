@@ -2,7 +2,7 @@
 
 # Description:
 
-Script will accept target audience from user(CSV/Team Members/SG/DL), destination we need to point the users to App / Deep Link to a specific entity and 
+Script will accept target audience from user(CSV/Team Members/SG/DL), destination we need to point the users(App / Deep Link) to a specific entity and 
 send notification
 
 # Prerequisites
@@ -22,17 +22,16 @@ send notification
  # Example
   Input 1 to send notification to user chat
   
-  Input 2 send notification to specific Team
+  Input 2 to send notification to specific Team
   
-  Input 3 send notification to user installed app
+  Input 3 to send notification to user installed app
   
-  Input 4 send notification to Distribution list
+  Input 4 to send notification to Distribution list
   
-  Input 5 send notification to Bulk users for installed app(csv)
+  Input 5 to send notification to Bulk users for installed app(csv)
   
-  Input 6 send notification to specific tab in application"
+  Input 6 to send notification to specific tab in application
    
-
   # Parameters
  
 `-TeamId`
@@ -78,6 +77,16 @@ Default value:	None
 Accept pipeline input:	True
 ***
 Accept wildcard characters:	False
+
+`-Chatid`
+
+`-Userid`
+
+`-Distribution list id`
+
+`-csv file full location(ex:d:\example.csv)`
+
+`-Tab id`
   
 # Inputs
   
@@ -93,11 +102,9 @@ Accept wildcard characters:	False
     
 # Procedure to run the script
  
-   To excute `Add App to Teams and Tenant` download/copy and paste the script into powershell
+   To excute `Send Notification to Selected Audience and Direct them to a Deep Link App` download/copy and paste the script into powershell
         
-   Provide the input parameters OwnerPrincipalName, AppName, Client_Id, Client_Secret, Tenantid and hit enter to proceed further on the script
-   
-   Please provide the global administrator credentials or Teams administrator credentials to `Connect-microsoftteams`
+   Provide the input parameters Client_Id, Client_Secret, Tenantid and hit enter to proceed further on the script
         
    Now script will redirect to web page for login
         
@@ -117,11 +124,6 @@ Accept wildcard characters:	False
 
  If you have provided the correct credentials it will give success status `admin_consent = True`
  
- Please choose the option 1 for add app to Team and enter the Team name 
+ Now press Y to proceed further in script
  
- 2 for add app to Tenant
-
- ### Example 
- 
-    To install Notepad, please provide app displayname: Notepad for parameter $AppName, Notepad will be installed after successful running of the script 
-    
+ Please choose the option 1 to 6 to send noticatification to targeted user 
