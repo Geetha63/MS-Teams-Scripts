@@ -94,12 +94,20 @@ Accept wildcard characters:	False
   
   [Find your tenant ID](https://docs.microsoft.com/en-us/onedrive/find-your-office-365-tenant-id#:~:text=In%20this%20article,your%20organization%20name%20or%20domain.)
   
-  OwnerPrincipalName
-  
-  AppName
-  
-  TeamName
-    
+ `-Chatid`
+
+`-Userid`
+
+`-Distribution list id`
+
+`-csv file full location(ex:d:\example.csv)`
+
+`-Tab id`
+
+`-Team id`
+ 
+ `-App id`
+ 
 # Procedure to run the script
  
    To excute `Send Notification to Selected Audience and Direct them to a Deep Link App` download/copy and paste the script into powershell
