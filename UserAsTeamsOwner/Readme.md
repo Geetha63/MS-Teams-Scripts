@@ -2,7 +2,7 @@
 
 # Description
 
- Script will provide the Teams details where user as owner of a Team in your organization
+ Script will provide the Teams details where user as the owner of a Team in your organization
  
 # Prerequisite 
 
@@ -18,12 +18,12 @@ Click Yes at the UAC prompt
   
 3. Type Y at the prompt. Press enter
 
-4. If you are prompted for an untrusted repository,then type A (Yes to All) and press Enter. The module will now install
+4. If you are prompted for an untrusted repository, then type A (Yes to All) and press Enter. The module will now install
 
    - Script will prompt you for input user, provide the input to proceed
    - To connect to MicrosoftTeams provide the Global Administrator credentials or Teams Administrator credentials
-   - Script will get the Teams details where user as owner for the Team in your organization
-   - Exports details to a output.csv file
+   - Script will get the Teams details where user as the owner for the Team in your organization
+   - Exports details to an output.csv file
 
 # Example 
 
@@ -38,7 +38,7 @@ User: dmx1@example.com
 
 `-UserPrincipalName`
 
-Speicifies the user ID of the user to retrieve.
+Specifies the user ID of the user to retrieve.
 
 Type:	String
 ***
@@ -55,5 +55,5 @@ Accept wildcard characters:	False
 UserPrincipalName
 
 # Output
- Script will export details of user as owner of MicrosoftTeams in your tenant with following details to a output.csv file.\
+ The script will export details of user as the owner of MicrosoftTeams in your tenant with following details to an output.csv file.\
 |Team Owner| Team Displayname|Teamid|
