@@ -1,10 +1,10 @@
 # TeamOwnerMemberandChannel details
 
 # Description:
-Script returns owners, members of a Team and channels of a Team by providing the required input 1 or 2
+The script returns owners, members of a Team and channels of a Team by providing the required input 1 or 2
 
 	1- To get the TeamsOwnerandMember details of a team in tenant
-	2- To get the availale channels in each Team
+	2- To get the available channels in each Team
 
 # Prerequisites:
 
@@ -22,24 +22,24 @@ Click Yes at the UAC prompt
 
 # If Input=1
 
-First it will get the available Teams in the tenat\
-For each Team it will fetch the owners and members of the team
+First, it will get the available Teams in the tenat\
+For each Team, it will fetch the owners and members of the team
 
 # Output
 
-Script will export **Teamoutput.csv** in the current folder contains feilds
+Script will export **Teamoutput.csv** in the current folder contains fields
 
 | _Team Name_ | _Team id_ | _Team Owner_ | _Team member_ |
 
 # If input=2
 
-First it will get the available Teams in the tenat\
-For each Team it will fetch the Teamid, TeamDisplayname and ChannelName of the team
+First, it will get the available Teams in the tenat\
+For each Team, it will fetch the TeamId, TeamDisplayname and ChannelName of the team
 
 # Output
 
 Script will export the **Channeloutput.csv** in the current folder
 
-Output contain 
+Output contains 
 
 | _Teamid_ | _TeamDisplayname_ | _ChannelName_ |
