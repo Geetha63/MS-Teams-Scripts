@@ -19,7 +19,7 @@ Click Yes at the UAC prompt
 
 4. If you are prompted for an untrusted repository, then type A (Yes to All) and press Enter. The module will now install
 
-- Get the script from 'Teams_Owner and Members details.ps1' and paste it in Windows PowerShell command prompt
+- Get the script from ' Teams_Owner and Members details.ps1' and paste it in Windows PowerShell command prompt
 - Run the script, it will process the below steps
 
   1. Provide the Teams Administrator credentials to connect to MicrosoftTeams
