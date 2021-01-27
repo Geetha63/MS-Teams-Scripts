@@ -4,7 +4,7 @@ Script fetches the SIP enabled domains from Tenant, skips the DNS query for the 
 
 If all the domains are pointing to Webdir.online.lync.com script displays the **Overall status is Ok**, even if one of the domain is pointing to outside webdir.online.lync.com then script displays the **Overall status is not Ok** message
 
-#### Prerequisite
+# Prerequisite
 [SFB online connector](https://www.microsoft.com/en-us/download/details.aspx?id=39366)
 
 ##### Example 1
@@ -55,4 +55,5 @@ Overall Tenant status - Ok/Not Ok
 
 |Domain Name |Status |ErrorMessage|
 
+#### Example
 ![Sample Output](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/DomsinValidation.PNG)
