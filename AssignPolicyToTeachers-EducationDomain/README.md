@@ -5,7 +5,7 @@ Script will search for **All Teachers** distribution list in tenant and assign p
 
 GroupPolicyAssignment is used to assign a policy to a security group or distribution list. The policy assignment will then be propagated to the members of the group (even if members are added to the group later) in accordance with the rules for group policy inheritance
 
-System should have the AzureADPreview module [`Install-Module azure preview`](https://docs.microsoft.com/en-us/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview#installing-the-azure-ad-module) and [`Install-Module MicrosoftTeams`](https://www.powershellgallery.com/packages/MicrosoftTeams/1.0.6)
+System should have the AzureADPreview module [`Install-Module AzureADPreview`](https://docs.microsoft.com/en-us/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview#installing-the-azure-ad-module) and [`Install-Module MicrosoftTeams`](https://www.powershellgallery.com/packages/MicrosoftTeams/1.0.6)
 
 # Inputs
 Global Administrator or AzureAD and MicrosoftTeams Administrator credentials 
