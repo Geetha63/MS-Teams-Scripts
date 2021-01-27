@@ -86,7 +86,7 @@ Accept wildcard characters:	False
   
   [Find your tenant ID](https://docs.microsoft.com/en-us/onedrive/find-your-office-365-tenant-id#:~:text=In%20this%20article,your%20organization%20name%20or%20domain.)
   
- Chatid, Userid, Distribution list id, Tab id, Team id, App id, csv file full location(ex:d:\example.csv)
+ ChatId, UserId, Distribution list Id, TabId, TeamId, AppId, csv file full location(ex:d:\example.csv)
  
 # Procedure to run the script
  
