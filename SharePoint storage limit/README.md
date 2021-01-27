@@ -2,7 +2,7 @@
 
 # Description
 
-Script is to modify the SharePoint storage limit and also to set the StorageQuotaWarningLevel, please provide the storageQuota and storageQuotaWarningLevel inputs in MB
+The script is to modify the SharePoint storage limit and also to set the StorageQuotaWarningLevel, please provide the storage quota and StorageQuotaWarningLevel inputs in MB
 
 You must be a SharePoint Online Administrator or Global Administrator and be a site collection administrator to run the script
 
@@ -65,7 +65,7 @@ Applies to:	SharePoint Online
 
 # How to run the script
 
-1. To run the script you will need to either download it or copy and paste the **`SharePoint storage limit.ps1`** into PowerShell
+1. To run the script you will need to either download it or copy and paste the **` SharePoint storage limit.ps1`** into PowerShell
 2. Provide the SharePoint Online Administrator or Global Administrator or site collection administrator credentials when it prompts
 3. Provide the parameters `$SiteName`,`$StorageQuota` and `$StorageQuotaWarningLevel`
 
