@@ -42,4 +42,4 @@ Script will export the **Channeloutput.csv** in the current folder
 
 Output contains 
 
-| _Teamid_ | _TeamDisplayname_ | _ChannelName_ |
+| TeamId | TeamDisplayname | ChannelName |
