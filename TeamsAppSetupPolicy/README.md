@@ -32,7 +32,7 @@ Choose Pinned apps by clicking Add apps
 
  Click save
 
-Now we can apply Teams app setup policy using script
+Now we can apply Teams app setup policy using the script
 
 As an Administrator, type PowerShell in the start menu
 
@@ -71,7 +71,7 @@ Supply credentials
 
 ![Credentials](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/TeamsAppSetupPolicy-Credentialspage.png)
 
-It will assign the policy to user      
+It will assign the policy to the user      
      ...................
                           
 For bulk users use `TeamsAppsetuppolicy - Bulk users`, 
@@ -93,4 +93,4 @@ Provide the Administrator credentials
 
 # Output
 
-Policy will assign to respective users
+The policy will assign to respective users
