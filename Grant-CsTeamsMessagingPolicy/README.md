@@ -1,9 +1,9 @@
 # Grant New-CsTeamsMessagingPolicy
 
 # Description
-Script will assign a Teams Messaging Policy at the per-user scope, to run the script please install the [SFB online connector](https://www.microsoft.com/en-us/download/details.aspx?id=39366)
-- Import the module into windows PowerShell 
-- Get the script from the 'Grant New-CsTeamsMessagingPolicy.ps1' file and paste it into windows powershell, then run the script
+The script will assign a Teams Messaging Policy at the per-user scope, to run the script please install the [SFB online connector](https://www.microsoft.com/en-us/download/details.aspx?id=39366)
+- Import the module into Windows PowerShell 
+- Get the script from the 'Grant New-CsTeamsMessagingPolicy.ps1' file and paste it into windows PowerShell, then run the script
 
 # Example
   Grant-CsTeamsMessagingPolicy -identity "Ken Myer" -PolicyName StudentMessagingPolicy
@@ -11,7 +11,7 @@ Script will assign a Teams Messaging Policy at the per-user scope, to run the sc
 # Parameters
 **`-Identity`**
 
-Indicates the Identity of the user account the policy should be assigned to. User Identities can be specified using one of four formats: 1) the user's SIP address; 2) the user principal name (UPN); 3) the user's domain name and logon name, in the form domain\logon (for example, litwareinc\kenmyer); and, 4) the user's Active Directory display name (for example, Ken Myer). User Identities can also be referenced by using the user's Active Directory distinguished name.
+Indicates the Identity of the user account the policy should be assigned to. User Identities can be specified using one of four formats: 1) the user's SIP address; 2) the user principal name (UPN); 3) the user's domain name and login name, in the form domain\logon (for example, litwareinc\kenmyer); and, 4) the user's Active Directory display name (for example, Ken Myer). User Identities can also be referenced by using the user's Active Directory distinguished name.
 
 Type:	UserIdParameter
 * * *
