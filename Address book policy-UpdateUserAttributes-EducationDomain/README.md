@@ -3,7 +3,7 @@
 # Description
 Script will check all groups of teachers, students and removes the part “students of” or “teachers of” and then it will update the user custom attribute with the school name, this way we can have both teachers, students of the same school can share the same attribute value
 
-System should have the AzureADPreview module [`Install-Module azureadpreview`](https://docs.microsoft.com/en-us/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview#installing-the-azure-ad-module) and [`Exchange Online`](https://docs.microsoft.com/en-us/powershell/module/exchange/connect-exchangeonline?view=exchange-ps) to exceute the script
+System should have the AzureADPreview module [`Install-Module azure preview`](https://docs.microsoft.com/en-us/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview#installing-the-azure-ad-module) and [`Exchange Online`](https://docs.microsoft.com/en-us/powershell/module/exchange/connect-exchangeonline?view=exchange-ps) to exceute the script
 
 # Inputs
 Global Administrator or Azure AD Administrator and ExchangeOnline Administrator credentials
@@ -21,4 +21,4 @@ Provide the Global Administrator credentials or AzureAD and ExchangeOnline Admin
 Hit enter to continue
 
 # Expected output
-User custom attributes are updated 
+User custom attributes are updated
