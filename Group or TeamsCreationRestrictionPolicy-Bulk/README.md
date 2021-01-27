@@ -4,7 +4,7 @@
 
 You can restrict Office 365 group creation to the members of a particular security group
 
-Office 365 global admins can create groups via any means, such as the Microsoft 365 admin centre, Planner, Teams, Exchange, and SharePoint Online
+Office 365 global admins can create groups via any means, such as the Microsoft 365 admin center, Planner, Teams, Exchange, and SharePoint Online
 
 The system should have the AzureADPreview module [`Install-Module azure preview`](https://docs.microsoft.com/en-us/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview#installing-the-azure-ad-module)
 
