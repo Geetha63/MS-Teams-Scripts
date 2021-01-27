@@ -1,12 +1,12 @@
 # TeamOwnerMemberandChannel details
 
-# Description:
+# Description
 The script returns owners, members of a Team and channels of a Team by providing the required input 1 or 2
 
 	1- To get the TeamsOwnerandMember details of a team in tenant
 	2- To get the available channels in each Team
 
-# Prerequisites:
+# Prerequisites
 
 1. As an Administrator, type PowerShell in the start menu. Right-click Windows PowerShell, then select Run as Administrator
 Click Yes at the UAC prompt
