@@ -4,15 +4,15 @@
 
 You can restrict Office 365 group creation to the members of a particular security group
 
-Office 365 global admins can create groups via any means, such as the Microsoft 365 admin center, Planner, Teams, Exchange, and SharePoint Online
+Office 365 global admins can create groups via any means, such as the Microsoft 365 admin centre, Planner, Teams, Exchange, and SharePoint Online
 
-System should have the AzureADPreview module [`Install-Module azureadpreview`](https://docs.microsoft.com/en-us/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview#installing-the-azure-ad-module)
+The system should have the AzureADPreview module [`Install-Module azure preview`](https://docs.microsoft.com/en-us/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview#installing-the-azure-ad-module)
 
 # Example
 Restricting HR group members from creating Teams or groups
 
 # Inputs
-Import _Input.xlsx_ file as an input which contains Groupname and AllowGroupCreation, Please refer example table
+Import _Input. xlsx_ file as an input which contains Groupname and AllowGroupCreation, Please refer example table
 
  | Groupname    | AllowGroupCreation    |
  |--------------|--------------------   |
@@ -20,7 +20,7 @@ Import _Input.xlsx_ file as an input which contains Groupname and AllowGroupCrea
  | Group2       | False                 |
 
 # Parameters
-Groupname: The name of created O365 security group
+Groupname: The name of the created O365 security group
 
 AllowGroupCreation: Do You want to allow this group to create Teams True/False
 
@@ -40,7 +40,7 @@ To run the script you will need to either download it or copy and paste the scri
 
 Provide the Global Administrator credentials or AzureAD Administrator credentials when it prompts
 
-Script will restrict or allow the group users based on AllowGroupCreation input
+The script will restrict or allow the group users based on AllowGroupCreation input
 
 # Output
 The last line of the script will display the updated settings:
