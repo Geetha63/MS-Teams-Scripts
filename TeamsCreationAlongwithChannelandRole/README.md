@@ -2,11 +2,11 @@
 
 # Description
 
-Script is to create Teams along with channel and role
+The script is to create Teams along with channel and role
 
 Provide the input data `TeamName` `ChannelName` `Owner` `Member` and `Visibility` in .csv format and provide the path location in script
 
-Script will generate the `output.csv` file which holds the details of created TeamName, TeamOwner, Member, ChannelName, Channelid
+The script will generate the `output.csv` file which holds the details of created TeamName, TeamOwner, Member, ChannelName, ChannelId
 
 # Prerequisites
 
@@ -86,11 +86,11 @@ Accept wildcard characters:	False
 
 To run the script you will need to either download it or copy and paste the script into PowerShell
 
-Provide the Global Administrator credentials or Teams Administrator credentials when it prommpts
+Provide the Global Administrator credentials or Teams Administrator credentials when it prompts
 
-After execution script will export the created Teams details of MicrosoftTeams in your tenant with following details to a `output.csv` file
+After execution script will export the created Teams details of MicrosoftTeams in your tenant with following details to an `output.csv` file
 
 # Output
 
-| TeamName |TeamId | channelName |channelId |TeamOwner | Team Member |
+| TeamName |TeamId | ChannelName |ChannelId |TeamOwner | Team Member |
 |----------|-------|-------------|----------|----------|-------------|
