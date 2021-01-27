@@ -7,7 +7,7 @@ If all the domains are pointing to Webdir.online.lync.com script displays the **
 # Prerequisite
 [SFB online connector](https://www.microsoft.com/en-us/download/details.aspx?id=39366)
 # Input
-Global Administrator or Skype for Business Online administrator account name and password, and then select OK
+Global Administrator or Skype for Business Online administrator account user principal name and password, and then select OK
 
 ##### Example 1
 If domain resloving to webdir.online.lync.com 
