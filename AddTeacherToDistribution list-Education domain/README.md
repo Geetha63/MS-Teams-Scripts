@@ -2,9 +2,9 @@
 
 # Description
 
-Script will serach and filter teachers in tenant using license parameter and adds to the *All teachers* distribution list
+Script will search and filter teachers in a tenant using license parameter and adds to the *All teachers* distribution list
 
-System should have the Azureadpreview module [`Install-Module azureadpreview`](https://docs.microsoft.com/en-us/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview#installing-the-azure-ad-module) to exceute the script
+System should have the Azureadpreview module [`Install-Module azure preview`](https://docs.microsoft.com/en-us/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview#installing-the-azure-ad-module) to execute the script
 
 # Inputs
 Global Administrator or Azure AD Administrator credentials 
