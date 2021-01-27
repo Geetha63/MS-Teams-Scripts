@@ -13,18 +13,23 @@ After DNS query If any of the the domain is not pointing to webdir.online.lync.c
 If domain resloving to webdir.online.lync.com 
 # Output
 |Name  |   Status|  ErrorMessage |
----
+|---|----|-----|
 |xyz      |  OK    | Resolving to webdir.online.lync.com |
+
 # Example 2
 If domain resloving to other than webdir.online.lync.com 
 # Output
-Name      Status  ErrorMessage 
-xyz       NOT_OK  Resolving to 52.xxx.12.xx4(IP Address)
+|Name      |Status  |ErrorMessage |
+|----|---|---|
+|xyz       |NOT_OK  |Resolving to 52.xxx.12.xx4(IP Address)|
+
 # Example 3
 If domain is not resolving 
+
 # Output
-Name      Status  ErrorMessage 
-dinair.msftonlinerepro.com   NOT_OK lyncdiscover.xyz.com : DNS name does not exist
+|Name     | Status  |ErrorMessage |
+|---|---|---|
+|dinair.msftonlinerepro.com   |NOT_OK |lyncdiscover.xyz.com : DNS name does not exist|
 #### Parameters
 
 `-Type`
