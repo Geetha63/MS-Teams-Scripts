@@ -1,11 +1,11 @@
 # AssignPolicyToTeachers-Education domain
 
 # Description
-Script will search for **All Teachers** distribution list in tenant and assign policy types TeamsChannelsPolicy, TeamsMeetingPolicy, TeamsMessagingPolicy with policyname AllTeachers to **All Teachers** distribution list
+Script will search for **All Teachers** distribution list in tenant and assign policy types TeamsChannelsPolicy, TeamsMeetingPolicy, TeamsMessagingPolicy with policy name AllTeachers to **All Teachers** distribution list
 
 GroupPolicyAssignment is used to assign a policy to a security group or distribution list. The policy assignment will then be propagated to the members of the group (even if members are added to the group later) in accordance with the rules for group policy inheritance
 
-System should have the AzureADPreview module [`Install-Module azureadpreview`](https://docs.microsoft.com/en-us/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview#installing-the-azure-ad-module) and [`Install-Module MicrosoftTeams`](https://www.powershellgallery.com/packages/MicrosoftTeams/1.0.6)
+System should have the AzureADPreview module [`Install-Module azure preview`](https://docs.microsoft.com/en-us/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview#installing-the-azure-ad-module) and [`Install-Module MicrosoftTeams`](https://www.powershellgallery.com/packages/MicrosoftTeams/1.0.6)
 
 # Inputs
 Global Administrator or AzureAD and MicrosoftTeams Administrator credentials 
@@ -91,4 +91,4 @@ Provide the Global Administrator credentials or credentials which has both Azure
 Hit enter to continue
 
 # Expected Output
-Policie types TeamsChannelsPolicy, TeamsMeetingPolicy, TeamsMessagingPolicy with policyname `All teachers` are assigned to **All Teachers** distribution list with rank 1
+Policy types TeamsChannelsPolicy, TeamsMeetingPolicy, TeamsMessagingPolicy with policy name `All teachers` are assigned to **All Teachers** distribution list with rank 1
