@@ -1,7 +1,7 @@
 # ResetPolicies-Education domain
 
 # Description
-Script is to create below custom policies to set all access to teachers and restrict to students in an orgnization
+Script is to create below custom policies to set all access to teachers and restrict to students in an organization
 
   Teams policies
 
