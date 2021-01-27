@@ -5,7 +5,7 @@
 Script will accept the target audience from the user(CSV/Team Members/SG/DL), destination we need to point the users(App / Deep Link) to a specific entity and 
 send notification
 
-API's used in the script are under the /`beta` version in Microsoft Graph, the script will not support in the production environment 
+API's used in the script are under the `/beta` version in Microsoft Graph, the script will not support in the production environment 
 
 # Prerequisites
   
