@@ -29,7 +29,7 @@ For each Team, it will fetch the owners and members of the team
 
 Script will export **Teamoutput.csv** in the current folder contains fields
 
-| _Team Name_ | _Team id_ | _Team Owner_ | _Team member_ |
+| Team Name | Team Id | Team Owner | Team member |
 
 # If input=2
 
