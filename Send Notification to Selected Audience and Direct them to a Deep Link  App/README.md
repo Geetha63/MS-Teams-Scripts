@@ -1,6 +1,6 @@
 # Send Notification to Selected Audience and Direct them to a Deep Link App
 
-# Description:
+# Description
 
 Script will accept the target audience from the user(CSV/Team Members/SG/DL), destination we need to point the users(App / Deep Link) to a specific entity and 
 send notification
