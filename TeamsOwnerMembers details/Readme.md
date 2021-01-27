@@ -1,7 +1,7 @@
 # Teams Owner Members details
 
 # Description
-Script will fetch the Teams owner and members details
+The script will fetch the Teams owner and members details
 
 # Prerequisite
    [Install-Module MicrosoftTeams](https://www.powershellgallery.com/packages/MicrosoftTeams/1.0.6)
@@ -19,12 +19,12 @@ Click Yes at the UAC prompt
 
 4. If you are prompted for an untrusted repository, then type A (Yes to All) and press Enter. The module will now install
 
-- Get the script from 'Teams_Owner and Members details.ps1' and paste it in windows powershell command prompt
-- Run the script, script will process the below steps
+- Get the script from 'Teams_Owner and Members details.ps1' and paste it in Windows PowerShell command prompt
+- Run the script, it will process the below steps
 
   1. Provide the Teams Administrator credentials to connect to MicrosoftTeams
   2. It will get the available Teams in the tenant
-  3. After getting the available teams in tanant, script will fetch the owner and members of each team\
+  3. After getting the available Teams in tenant, script will fetch the owner and members of each Team\
  Then exports the details of Teams in your tenant to a .csv file,**Output.csv** will store in the current folder
 # Example 
  ```bash
@@ -37,4 +37,3 @@ Click Yes at the UAC prompt
  The details of each Team will stores in a .csv file with below details 
  
  |Team Name| Team id|Team Owner|Team member|
-
