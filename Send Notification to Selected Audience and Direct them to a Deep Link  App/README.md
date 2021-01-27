@@ -2,10 +2,10 @@
 
 # Description:
 
-Script will accept target audience from user(CSV/Team Members/SG/DL), destination we need to point the users(App / Deep Link) to a specific entity and 
+Script will accept the target audience from the user(CSV/Team Members/SG/DL), destination we need to point the users(App / Deep Link) to a specific entity and 
 send notification
 
-APIs used in script are under the /`beta` version in Microsoft Graph ,script will not supported in production environment 
+API's used in the script are under the /`beta` version in Microsoft Graph, the script will not support in the production environment 
 
 # Prerequisites
   
@@ -22,17 +22,17 @@ APIs used in script are under the /`beta` version in Microsoft Graph ,script wil
 |Application	|Not supported|
 
  # Example
-  Input 1 to send notification to user chat
+  Input 1 to send a notification to user chat
   
-  Input 2 to send notification to specific Team
+  Input 2 to send a notification to a specific Team
   
-  Input 3 to send notification to user installed app
+  Input 3 to send a notification to user-installed app
   
-  Input 4 to send notification to Distribution list
+  Input 4 to send a notification to the Distribution list
   
-  Input 5 to send notification to Bulk users for installed app(csv)
+  Input 5 to send a notification to Bulk users for the installed app(CSV)
   
-  Input 6 to send notification to specific tab in application
+  Input 6 to send a notification to a specific tab in the application
    
   # Parameters
  
@@ -90,11 +90,11 @@ Accept wildcard characters:	False
  
 # Procedure to run the script
  
-   To excute `Send Notification to Selected Audience and Direct them to a Deep Link App` download/copy and paste the script into powershell
+   To execute `Send Notification to Selected Audience and Direct them to a Deep Link App` download/copy and paste the script into PowerShell
         
-   Provide the input parameters Client_Id, Client_Secret, Tenantid and hit enter to proceed further on the script
+   Provide the input parameters Client_Id, Client_Secret, TenantId and hit enter to proceed further on the script
         
-   Now script will redirect to web page for login
+   Now the script will redirect to the web page for login
         
    ![Signin](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/Siginin.png)
         
@@ -102,7 +102,7 @@ Accept wildcard characters:	False
         
    Press enter to continue
    
-   Once you are login it will shows the below image for grant permissions for the app to perform the operations
+   Once you are login it will show the below image for grant permissions for the app to perform the operations
 
  ![GrantPermission](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/GrantPermissions.png)	
  
@@ -112,6 +112,6 @@ Accept wildcard characters:	False
 
  If you have provided the correct credentials it will give success status `admin_consent = True`
  
- Now press Y to proceed further in script
+ Now press Y to proceed further in the script
  
- Please choose the option 1 to 6 to send noticatification to targeted user 
+ Please choose the option 1 to 6 to send a notification to the targeted user
