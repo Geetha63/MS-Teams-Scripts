@@ -1,4 +1,4 @@
-# DomainValidationScript
+# DomainValidation
 # Description
 Script fetches the SIP enabled domains from Tenant, skips the DNS query for the domains contain .onmicrosoft.com, for domains which do not contain .onmicrosoft.com do a DNS name query resolution for lyncdiscover records and validate if they are pointing to webdir.online.lync.com 
 
@@ -31,6 +31,7 @@ If the domain is not resolving
 #### Parameters
 
 `-Type`
+
 Specifies the DNS query type that is to be issued. By default the type is A_AAAA, the A and AAAA types will both be queried.
 
 Type:	RecordType
@@ -47,8 +48,11 @@ Accept wildcard characters:	False
 
 # Output
 Output contains
+
 Skip domains list 
+
 Overall Tenant status - Ok/Not Ok
+
 |Domain Name |Status |ErrorMessage|
 
 ![Sample Output](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/DomsinValidation.PNG)
