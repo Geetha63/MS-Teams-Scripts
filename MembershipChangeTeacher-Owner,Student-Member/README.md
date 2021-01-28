@@ -1,12 +1,12 @@
-# MembershipChangeTeacher-Owner,Student-Member
+# MembershipChangeTeacher-Owner, Student-Member
 
 # Description
 
-This script will change the Teams membership role based on the user license. After the script execution teacher license user will convert as owner and student license users will convert as members, if users dont have MicrosoftTeams license it will export the users list
+This script will change the Teams membership role based on the user license. After the script execution, teacher license user will convert as owner and student license users will convert as members, if users don't have MicrosoftTeams license it will export the user's list
 
 # Prerequisites
 
-[Create new Azure App](https://docs.microsoft.com/en-us/graph/auth-register-app-v2)
+[Create a new Azure App](https://docs.microsoft.com/en-us/graph/auth-register-app-v2)
 
 [How to apply permissions](https://docs.microsoft.com/en-us/graph/notifications-integration-app-registration) to your newly created App
 
@@ -20,29 +20,29 @@ Please collect client id, client secret from created Azure App and tenant id fro
 
 # Example
 
-##### Case1:(If user having faculty license and be part of ownerlist)
+##### Case1:(If a user having faculty license and be part of owner list)
 
-   This user having Faculty license and already owner of the team message will populate on the screen
+   This user having Faculty license and already the owner of the team message will populate on the screen
    
-##### Case2: (If user having faculty license and not part of ownerlist)
+##### Case2: (If a user having faculty license and not part of owner list)
 
    Faculty Membership role has been changed to Owner of the team message will populate on the screen
 
-##### Case3:(If user having STUDENT license and not part of ownerlist)
+##### Case3:(If a user having STUDENT license and not part of owner list)
 
-  This user having STUDENT license and already member of the team message will populate on the screen
+  This user having STUDENT license and already a member of the team message will populate on the screen
 
-##### Case4:(If user having STUDENT license and part of ownerlist)
+##### Case4:(If a user having STUDENT license and part of owner list)
 
   Student Membership role has been changed to member message will populate on the screen
 
 ##### Case5:(If user dont have license)
 
-  User have the different license and export the user list message will populate on the screen
+  User has the different license and exports the user list message will populate on the screen
 
 # Parameters
 
-`-isLicensed`
+`-IsLicensed`
 
  Whether or not the user has any licenses assigned
  
@@ -54,13 +54,13 @@ Client_Id, Client_Secret, Tenantid
 
 # Procedure to run the script
  
-   To excute `MembershipChangeTeacher-Owner,Student-Member` download/copy and paste the script into PowerShell
+   To execute `MembershipChangeTeacher-Owner, Student-Member` download/copy and paste the script into PowerShell
         
-   Provide the input parameters Client_Id, Client_Secret, Tenantid and hit enter to proceed further on the script
+   Provide the input parameters Client_Id, Client_Secret, TenantId and hit enter to proceed further on the script
     
    Please provide the Teams admin credentials to connect to Microsoft Teams
    
-   Now script will redirect to web page for login
+   Now the script will redirect to the web page for login
         
    ![Signin](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/Siginin.png)
         
@@ -68,7 +68,7 @@ Client_Id, Client_Secret, Tenantid
         
    Press enter to continue
    
-   Once you are login it will shows the below image for grant permissions for the app to perform the operations
+   Once you are login it will show the below image for grant permissions for the app to perform the operations
 
  ![GrantPermission](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/GrantPermissions.png)
  
@@ -78,11 +78,11 @@ Client_Id, Client_Secret, Tenantid
 
  If you have provided the correct credentials it will give success status `admin_consent = True`
  
- Now press Y to proceed further in script
+ Now press Y to proceed further in the script
 
 # Output
 
-List of users who has no licnese, output.csv will be generated 
+List of users who has no license, output.csv will be generated 
 
 ##### Example
 
