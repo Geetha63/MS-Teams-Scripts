@@ -2,11 +2,11 @@
 
 # Description
 
-Retrieve the MicrosoftTeams user sign-ins for your tenant, script will check audit logs and export the file, it contains the Teams signin username along with device name
+Retrieve the MicrosoftTeams user sign-ins for your tenant, script will check audit logs and export the file, it contains the Teams sign-in username along with device name
 
 # Prerequisites
 
-[Create new Azure App](https://docs.microsoft.com/en-us/graph/auth-register-app-v2)
+[Create a new Azure App](https://docs.microsoft.com/en-us/graph/auth-register-app-v2)
 
 [How to apply permissions](https://docs.microsoft.com/en-us/graph/notifications-integration-app-registration) to your newly created App
 
@@ -32,11 +32,11 @@ Client_Id, Client_Secret, Tenantid
 
  # Procedure to run the script
  
-   To excute `TeamsSigninLogs` download/copy and paste the script into PowerShell
+   To execute `TeamsSigninLogs` download/copy and paste the script into PowerShell
         
-   Provide the input parameters Client_Id, Client_Secret, Tenantid and hit enter to proceed further on the script
+   Provide the input parameters Client_Id, Client_Secret, TenantId and hit enter to proceed further on the script
         
-   Now script will redirect to web page for login
+   Now the script will redirect to the web page for login
         
    ![Signin](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/Siginin.png)
         
@@ -44,7 +44,7 @@ Client_Id, Client_Secret, Tenantid
         
    Press enter to continue
    
-   Once you are login it will shows the below image for grant permissions for the app to perform operations
+   Once you are login it will show the below image for grant permissions for the app to perform operations
 
  ![GrantPermission](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/GrantPermissions.png)	
  
@@ -58,7 +58,7 @@ Client_Id, Client_Secret, Tenantid
 
 # Output:
 
-_Signinoutput.csv_ is the final output file having signin details 
+_Signinoutput. csv_ is the final output file having sign-in details 
 
  | UserUPN	| CreatedDateTime	| resourceDisplayName | AppDisplayName	| IsInteractive |	DeviceDetail |
  |----------|-------------------|---------------------|------------------|--------------|----------------|
