@@ -19,8 +19,8 @@ API's used in the script are under the `/beta` version in Microsoft Graph, the s
  
 |Permission type	|Permissions (from least to most privileged)|
 |----|----|
-|Delegated (work or school account)	|TeamsActivity.Send,Team.ReadBasic.All, TeamSettings.Read.All, TeamSettings.ReadWrite.All, Group.Read.All, Group.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All,GroupMember.Read.All, Group.Read.All, Directory.Read.All|
-|Application	|TeamsActivity.Send,TeamSettings.Read.Group*, TeamSettings.ReadWrite.Group*, Team.ReadBasic.All, TeamSettings.Read.All, TeamSettings.ReadWrite.All, Group.Read.All, Group.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All,GroupMember.Read.All, Group.Read.All, Directory.Read.All|
+|Delegated (work or school account)	|TeamsActivity.Send,Team.ReadBasic.All, TeamSettings.Read.All, TeamSettings.ReadWrite.All, Group.Read.All, Group.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All,GroupMember.Read.All, Group.Read.All|
+|Application	|TeamsActivity.Send,TeamSettings.Read.Group*, TeamSettings.ReadWrite.Group*, Team.ReadBasic.All, TeamSettings.Read.All, TeamSettings.ReadWrite.All, Group.Read.All, Group.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All,GroupMember.Read.All, Group.Read.All|
 
  # Example
   Input 1 to send a notification to user chat
