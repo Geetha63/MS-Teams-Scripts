@@ -6,7 +6,7 @@ Create MicrosoftTeams along with APP for your tenant
 
 # Prerequisites
 
-[Create new Azure App](https://docs.microsoft.com/en-us/graph/auth-register-app-v2)
+[Create a new Azure App](https://docs.microsoft.com/en-us/graph/auth-register-app-v2)
 
 [How to apply permissions](https://docs.microsoft.com/en-us/graph/notifications-integration-app-registration) to your newly created App
 
@@ -60,11 +60,11 @@ Groupname, OwnerPrincipalName, AppName, Client_Id, Client_Secret,Tenantid
 
 # Procedure to run the script
 
-   To excute `CreateTeamsalongwithAPPs` download/copy and paste the script into PowerShell
+   To execute `CreateTeamsalongwithAPPs` download/copy and paste the script into PowerShell
         
-   Provide the input parameters Groupname, OwnerPrincipalName, AppName, Client_Id, Client_Secret, Tenantid and hit enter to proceed further on the script
+   Provide the input parameters Groupname, OwnerPrincipalName, AppName, Client_Id, Client_Secret, TenantId and hit enter to proceed further on the script
         
-   Now script will redirect to web page for login
+   Now the script will redirect to the web page for login
         
    ![Signin](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/Siginin.png)
         
@@ -72,7 +72,7 @@ Groupname, OwnerPrincipalName, AppName, Client_Id, Client_Secret,Tenantid
         
    Press enter to continue
    
-   Once you are login it will shows the below image for Grant permissions for the app to perform the operations
+   Once you are login it will show the below image for Grant permissions for the app to perform the operations
 
  ![GrantPermission](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/GrantPermissions.png)
  
@@ -82,10 +82,10 @@ Groupname, OwnerPrincipalName, AppName, Client_Id, Client_Secret,Tenantid
 
  If you have provided the correct credentials it will give success status `admin_consent = True`
  
- Now press Y to proceed further in script
+ Now press Y to proceed further in the script
  
 # Output
 
 Script will execute and create the Team using provided Group Name, OwnerPrincipalName and APPName
 
-App has been added to team
+App has been added to the team
