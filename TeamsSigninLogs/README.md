@@ -56,7 +56,7 @@ Client_Id, Client_Secret, Tenantid
  
  Now press Y to proceed further in script
 
-# Output:
+# Output
 
 _Signinoutput. csv_ is the final output file having sign-in details 
 
