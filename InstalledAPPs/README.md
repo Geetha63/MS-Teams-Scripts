@@ -40,11 +40,11 @@ Client_Id, Client_Secret, Tenantid
 
 # Procedure to run the script
 
-To excute `InstalledAPPs` download/copy and paste the script into PowerShell
+To execute `InstalledAPPs` download/copy and paste the script into PowerShell
 
-Provide the input parameters Client_Id, Client_Secret, Tenantid and hit enter to proceed further on the script
+Provide the input parameters Client_Id, Client_Secret, TenantId and hit enter to proceed further on the script
 
-Now script will redirect to web page for login
+Now the script will redirect to the web page for login
 
 ![Signin](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/Siginin.png)
 
@@ -52,7 +52,7 @@ Provide the MicrosoftTeams Administrator credentials i.e user ID and password
 
 Press enter to continue
 
-Once you are login it will shows the below image for grant permissions for the app to perform the operations
+Once you are login it will show the below image for grant permissions for the app to perform the operations
 
 ![GrantPermission](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/GrantPermissions.png)
 
@@ -64,7 +64,7 @@ If you have provided the correct credentials it will give the success status `ad
 
 ![Admin Consent](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/AdminConsent.png)
 
-Now press Y to proceed further in script
+Now press Y to proceed further in the script
 
 Script will create 3 files i.e file.csv, file1.csv, Apps.csv. file.csv and file1.csv will be used as input files to get the final output Apps.csv
 `Apps.csv` is the final output file having installed Teams applications for each user
