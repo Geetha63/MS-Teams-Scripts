@@ -2,7 +2,7 @@
 
 # Description
 
-Downloading the synchronization files from data source Canvas and uploading the data to school data synchronization tool
+Downloading the synchronization files from data source Canvas and uploading the data to the school data synchronization tool
 
 # Index
 
@@ -48,7 +48,7 @@ A suitable version of Windows PowerShell is available for these operating system
 
 Go to start button right click on the windows PowerShell Run as Administrator
 
-Check the ExecutionPolicy by running below command in console
+Check the ExecutionPolicy by running below command in the console
 
   	Get-ExecutionPolicy 
 
@@ -58,7 +58,7 @@ Set the ExecutionPolicy to Unrestricted
 
 # Getting the Token ID
 
-Generate the new access token using below process
+Generate the new access token using the below process
 
 login into the Canvas website [uri](Ex:https://jlg.instructure.com)
 
@@ -72,7 +72,7 @@ Go to Account &rightarrow; settings &rightarrow; Approved integrations &rightarr
 
 1. How to run the script?
 
-  	1. Run the script by double clicking “CanvasApiMainScript.ps1”
+  	1. Run the script by double-clicking “CanvasApiMainScript.ps1”
 
   	2. Script will ask for Uri - Pass login canvas [Uri](Ex: https://jlg.instructure.com)
 
@@ -85,11 +85,11 @@ Go to Account &rightarrow; settings &rightarrow; Approved integrations &rightarr
 Once you run the script, it downloads the all available courses data from canvas and creates courses.csv and looks for sync.csv file ( If location not having sync.csv file 
 Script will create sync.csv and ask you for the provide the details to move further)
 
-Script will ask user to “keep course id in sync.csv file and press Y to proceed”
+Script will ask the user to “keep course id in sync.csv file and press Y to proceed”
 
 ![](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CanvasContinue.png)
 
-Once user press “Y” then enter. Remaining script will run and create the below files for given input `sync.csv` course ids
+Hit “Y” and enter. The remaining script will run and create the below files for given input `sync.csv` course ids
 
 3. What files will be created?
 
@@ -109,7 +109,7 @@ Once user press “Y” then enter. Remaining script will run and create the bel
 
 1. How to run the script?
 
- * Run the script by double clicking `CanvasApiMainScript.ps1`
+ * Run the script by double-clicking `CanvasApiMainScript.ps1`
 
  * Script will ask for Uri - Pass login [canvas Uri](https://jlg.instructure.com)
 
@@ -121,7 +121,7 @@ Once user press “Y” then enter. Remaining script will run and create the bel
 
 Once you run the script, it downloads the all available courses data from canvas and creates courses.csv
 
-Script will check sync.csv file. If file is available runs the remaining script. If file is not available script asks you to re-run the script by keeping the sync.csv file in current location
+Script will check sync.csv file. If the file is available runs the remaining script. If the file is not available script asks you to re-run the script by keeping the sync.csv file in the current location
 
 Script will create below files taking the input from sync.csv
 
@@ -191,7 +191,7 @@ Select licenses for Students
 
 ![](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CanvasStudentLicense.png)
 
-* Review all data and select Create profile
+* Review all data and select Create a profile
 
 ![](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CanvasPleasewait.png)
 
@@ -199,7 +199,7 @@ Select licenses for Students
 
 ![](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CanvasSettingUp.png)
 
-Once its created. It will show the status of sync
+Once it is created. It will show the status of sync
 
 ![](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CanvasValidatingFiles.png)
 
@@ -215,7 +215,7 @@ Once it's done. It will create O365 groups as shown in below same will reflect i
 
 # Canvas File Upload to SDS (Automation):
 
-Keep the below files in current folder where you are running the script
+Keep the below files in the current folder where you are running the script
 
 azcopy.exe
 
@@ -227,7 +227,7 @@ ex: if I want to run the script in d:
 
 ![](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CanvasTochangethepath.png)
 
-Script will run in current folder and create (conf. json) file and sastoken.cmd files
+Script will run in the current folder and create (conf. JSON) file and sastoken.cmd files
 
 Provide the username, password and syncprofileName for the first time running the script
 
@@ -235,10 +235,10 @@ Second time onwards script will provide sync status
 
 # FAQs/Common Problems:
 
-Active directory sync error
+Active Directory sync error
 
-If teachers or students are invited but they don’t enrol as teacher or student. They will not be available as teacher or student in the created team
+If teachers or students are invited but they don’t enrol as teacher or student. They will not be available as a teacher or student in the created team
 
 If No Teachers – SDS won’t create teams for that section (if it has the students also)
 
-In tenant Teacher will be assigned teacher license and student will be student license
+In tenant, Teacher will be assigned teacher license and the student will be student license
