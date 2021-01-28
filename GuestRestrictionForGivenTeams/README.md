@@ -2,13 +2,13 @@
 
 # Description
 
-This script will restrict the guest users in Teams by changing the O365 group AllowToAddGuests parameter value to false. It takes the input from current folder and create the output in current folder 
+This script will restrict the guest users in Teams by changing the O365 group AllowToAddGuests parameter value to false. It takes the input from the current folder and creates the output in the current folder 
 
 PowerShell 3.0 or more should be available
 
 # Prerequisites
 
-[Create new Azure App](https://docs.microsoft.com/en-us/graph/auth-register-app-v2)
+[Create a new Azure App](https://docs.microsoft.com/en-us/graph/auth-register-app-v2)
 
 [How to apply permissions](https://docs.microsoft.com/en-us/graph/notifications-integration-app-registration) to your newly created App
 
@@ -40,17 +40,17 @@ Default: True
  
 # Inputs
 
-Prepare `input.csv` file in below format and keep it in current location where script is running 
+Prepare `input.csv` file in below format and keep it in a current location where the script is running 
 
 ![Input](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/InkedGuestrestrictionForGivenTeams-Input_LI.jpg)
 
 # Procedure to run the script
 
- To excute `GuestRestrictionForGivenTeams` download/copy and paste the script into PowerShell
+ To execute `GuestRestrictionForGivenTeams` download/copy and paste the script into PowerShell
  
- Provide the input parameters Client_Id, Client_Secret, Tenantid and hit enter to proceed further on the script
+ Provide the input parameters Client_Id, Client_Secret, TenantId and hit enter to proceed further in the script
  
- Now script will redirect to web page for login
+ Now the script will redirect to the web page for login
  
  ![Signin](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/Siginin.png)
  
@@ -58,7 +58,7 @@ Prepare `input.csv` file in below format and keep it in current location where s
         
  Press enter to continue
    
- Once you are login it will shows the below image for grant permissions for the app to perform the operations
+ Once you are login it will show the below image for grant permissions for the app to perform the operations
 
  ![GrantPermission](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/GrantPermissions.png)
  
@@ -68,7 +68,7 @@ Prepare `input.csv` file in below format and keep it in current location where s
 
  If you have provided the correct credentials it will give success status `admin_consent = True`
 
- Now press Y to proceed further in script
+ Now press Y to proceed further in the script
 
  Script will take the input from _input.csv_
 
