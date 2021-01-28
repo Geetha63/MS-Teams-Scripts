@@ -2,13 +2,13 @@
 
 # Description
 
-This script checks the each Team member job title, if at least one job title does not match to given job titles, script will delete those Teams. It will generate the ouput.csv file in current folder and sent an email to deleted Team owners
+This script checks each Team member job title, if at least one job title does not match to given job titles, the script will delete those Teams. It will generate the ouput.csv file in the current folder and sent an email to deleted Team owners
 
-This is a Graph API script, to excute the script user needs to create an Azure App and provide the necessary permisssons 
+This is a Graph API script, to execute the script user needs to create an Azure App and provide the necessary permissions 
 
 # Prerequisites
 
-[Create new Azure App](https://docs.microsoft.com/en-us/graph/auth-register-app-v2)
+[Create a new Azure App](https://docs.microsoft.com/en-us/graph/auth-register-app-v2)
 
 [How to apply permissions](https://docs.microsoft.com/en-us/graph/notifications-integration-app-registration) to your newly created App
 
@@ -22,23 +22,23 @@ Please collect client id, client secret from created Azure app and tenant id fro
 
 # Example
 
-mailsener AdeleV@contoso.com
+Mailsender AdeleV@contoso.com
 
-keepjobtitles Manager,Hr,Associate 
+Keepjobtitles Manager, Hr, Associate 
 
-script will delete HR Team if anyone of Team member jobtitle does not match and script will send an email to HR Team owner behalf of mailsender(AdeleV@contoso.com)
+Script will delete HR Team if anyone of Team member job title does not match and the script will send an email to HR Team owner behalf of mailsender(AdeleV@contoso.com)
 
 # Parameters
 
  `mailsender`
  
-   User Principal Name(for example: AdeleV@contoso.com) to send an email to Teams owner of deleted Teams 
+   User Principal Name(for example AdeleV@contoso.com) to send an email to Teams owner of deleted Teams 
    
    Type: string 
 
  `KeepJobtitles`
  
-   Designation of the employe(for example: Manager)
+   Designation of the employe(for example Manager)
    
    Type: string 
       
@@ -48,9 +48,9 @@ script will delete HR Team if anyone of Team member jobtitle does not match and 
    
    Client_Secret
    
-   Tenantid
+   TenantId
    
-   Mailsender
+   Mail sender
    
    KeepJobtitles
         
@@ -58,9 +58,9 @@ script will delete HR Team if anyone of Team member jobtitle does not match and 
  
    To excute `DeleteTeamsWhereTeamMembersdontHaveGivenJobtitles` download/copy and paste the script into PowerShell
         
-   Provide the input parameters Mailsender, Client_Id, Client_Secret, Tenantid, KeepJobtitles and hit enter to proceed further on the script
+   Provide the input parameters Mailsender, Client_Id, Client_Secret, TenantId, KeepJobtitles and hit enter to proceed further on the script
         
-   Now script will redirect to web page for login
+   Now the script will redirect to the web page for login
         
    ![Signin](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/Siginin.png)
         
@@ -68,7 +68,7 @@ script will delete HR Team if anyone of Team member jobtitle does not match and 
         
    Press enter to continue
    
-   Once you are login it will shows the below image for grant permissions for the app to perform the operations
+   Once you are login it will show the below image for grant permissions for the app to perform the operations
 
  ![GrantPermission](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/GrantPermissions.png)
  
@@ -78,11 +78,11 @@ script will delete HR Team if anyone of Team member jobtitle does not match and 
 
  If you have provided the correct credentials it will give success status `admin_consent = True`
  
- Now press Y to proceed further in script
+ Now press Y to proceed further in the script
        
  # Output
  
- Script will export the output.csv file which contains list of deleted Teams along with owners, also it will send an email to Teams owner behalf of mail sender
+ Script will export the output.csv file which contains a list of deleted Teams along with owners, also it will send an email to Teams owner behalf of mail sender
  
  ##### Example
  
