@@ -2,11 +2,11 @@
 
 # Description
 
-This script will check each tenant user license and MicrosotTeams subscription. If assigned license is in disabled mode, script will enable it. If user don’t have any of Teams license it will print the user name in output file
+This script will check each tenant user license and MicrosotTeams subscription. If the assigned license is in disabled mode, script will enable it. If the user doesn’t have any of Teams license it will print the user name in the output file
 
 # Prerequisites
 
-[Create new Azure App](https://docs.microsoft.com/en-us/graph/auth-register-app-v2)
+[Create a new Azure App](https://docs.microsoft.com/en-us/graph/auth-register-app-v2)
 
 [How to apply permissions](https://docs.microsoft.com/en-us/graph/notifications-integration-app-registration) to your newly created App
 
@@ -20,7 +20,7 @@ Please collect client id, client secret from created Azure App and tenant id fro
 
 # Example
 
-If user dont have Teams license it will export users list
+If user don't have Teams license it will export users list
 
 If user assigned with Teams license but it is in disable status - script will enable the status
 
@@ -40,11 +40,11 @@ Client_Id, Client_Secret, Tenantid
  
    To excute `TeamsLicenseStatusForEachTenantUser` download/copy and paste the script into PowerShell
         
-   Provide the input parameters Client_Id, Client_Secret, Tenantid and hit enter to proceed further on the script
+   Provide the input parameters Client_Id, Client_Secret, TenantId and hit enter to proceed further on the script
    
    Please provide active directory admin credentials to connect `connect-msolservice` 
         
-   Now script will redirect to web page for login
+   Now the script will redirect to the web page for login
         
    ![Signin](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/Siginin.png)
         
@@ -52,7 +52,7 @@ Client_Id, Client_Secret, Tenantid
         
    Press enter to continue
    
-   Once you are login it will shows the below image for grant permissions for app to perform the operations
+   Once you are login it will show the below image for grant permissions for the app to perform operations
 
   ![GrantPermission](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/GrantPermissions.png)	
  
@@ -62,11 +62,11 @@ Client_Id, Client_Secret, Tenantid
 
  If you have provided the correct credentials it will give success status `admin_consent = True`
  
- Now press Y to proceed further in script
+ Now press Y to proceed further in the script
 
 # Output
 
- Once the script executed , it generates the `Nolicense.csv` file contains no license users
+ Once the script executed, it generates the `Nolicense.csv` file contains no license users
 
 ##### Example
 
