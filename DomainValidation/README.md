@@ -1,6 +1,6 @@
 # DomainValidation
 # Description
-Script fetches the SIP enabled domains from Tenant, skips the DNS query for the domains contain .onmicrosoft.com, for domains which do not contain .onmicrosoft.com do a DNS name query resolution for lyncdiscover records and validate if they are pointing to webdir.online.lync.com 
+Script fetches the SIP enabled domains from Tenant, skips the DNS query for the domains contain .onmicrosoft.com, for domains which do not contain .onmicrosoft.com does a DNS name query resolution for **Lync discover** records and validate if they are pointing to webdir.online.lync.com 
 
 If all the domains are pointing to Webdir.online.lync.com script displays the **Overall status is Ok**, even if one of the domain is pointing to outside webdir.online.lync.com then script displays the **Overall status is not Ok** message
 
@@ -10,7 +10,7 @@ If all the domains are pointing to Webdir.online.lync.com script displays the **
 Global Administrator or Skype for Business Online administrator account user principal name and password, and then select OK
 # Examples
 ##### Example 1
-If domain resloving to webdir.online.lync.com 
+If domain resolving to webdir.online.lync.com 
 ###### Output
 |Name  |   Status|  ErrorMessage |
 |---|----|-----|
