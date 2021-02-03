@@ -1,23 +1,19 @@
-﻿# This script will provide the Teams Member,Owner and channel details 
-
-
+#Script will provide the Teams Member,Owner and channel details
+$logfile = "C:\TeamOwnerMemberandChanneldetailslog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
+$start = [system.datetime]::Now 
 connect-microsoftteams
-
-    
     function Get-Result(){
     Write-Host "1-To get the Team Owner and Member details
                 2-To get the Channel details"
-
+                
     $proceed = Read-host "Please provide input number 1 or 2" 
-
-
-  
 
  if ($proceed -eq '1')
  {
+ try{
  $Teams = get-team 
  foreach ($team in $Teams)
- {
+       {
         $groupid = $team.Groupid
         $displayname = $team.DisplayName
         $Teammember = get-teamuser -GroupId "$groupid" -Role Member
@@ -28,23 +24,23 @@ connect-microsoftteams
         #$groupid
         #$Memebrs
         #Owner
- 
 
-       
             $file = New-Object psobject
             $file | add-member -MemberType NoteProperty -Name Teamid $groupid
             $file | add-member -MemberType NoteProperty -Name TeamDisplayname $displayname
             $file | add-member -MemberType NoteProperty -Name Owner  $Owner
             $file | add-member -MemberType NoteProperty -Name Member $Members
-        
-         
             $file | export-csv Teamoutput.csv -NoTypeInformation -Append
-            
+       }     
     
+    }
+    catch{
+    $_.Exception.Message | out-file -Filepath $logfile -append
     }
     }
     elseif($proceed -eq '2')
     {
+    try{
     $Teams = get-team 
     foreach ($team in $Teams)
     {
@@ -57,13 +53,16 @@ connect-microsoftteams
        $file | add-member -MemberType NoteProperty -Name ChaneelName  $channels
        $file | export-csv channeloutput.csv -NoTypeInformation -Append
     }
+      }
+    catch{
+       $_.Exception.Message | out-file -Filepath $logfile -append
+         }
+    }
    }
-   }
-    do
-{
-
-$ProceedNext = Read-host "To proceed enter Y to continue"
-if ($ProceedNext -eq "Y" ) 
+ do
+ {
+    $ProceedNext = Read-host "To proceed enter Y to continue"
+    if ($ProceedNext -eq "Y" ) 
         { 
         Get-Result 
         } 
@@ -73,5 +72,8 @@ if ($ProceedNext -eq "Y" )
         } 
     }
     while($true); 
-    
-    
+
+$end = [system.datetime]::Now
+$resultTime = $end - $start
+Write-Host "Execution took : $($resultTime.TotalSeconds) seconds." -ForegroundColor Cyan   
+$resultTime.TotalSeconds 
