@@ -1,14 +1,16 @@
-﻿$proceed = Read-host " 
+﻿$start = [system.datetime]::Now
+$logfile = "C:\CQDLog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
+ 
+$proceed = Read-host " 
 Provide 1 For Total Steram count including Audio,video,Appsharing
 Provide 2 for CQD Report of Given time"
 if ($proceed -eq "1")
-{
-#write-host "Provide startDate and Enddate in DD-MM-YYYY(Ex:31-03-2020)"
+{try{
+write-host "Provide startDate and Enddate in MM/dd/yyyy H:mm(Ex:31-03-2020 4:34)"
 
-param(
-      [Parameter(Mandatory=$true)][System.DateTime]$StartDate,
-      [Parameter(Mandatory=$true)][System.DateTime]$EndDate
-      )
+$StartDate = read-host "Please provide start date"
+$EndDate = read-host "please provide end date"
+
 
 $dimensions = "AllStreams.Date","AllStreams.Media Type","AllStreams.Second UPN" 
  
@@ -30,11 +32,16 @@ $CustomFilter += $F2
 
   $CQDTableTemp= Get-CQDData -OutPutType CSV -OutPutFilePath cqdoutput.csv  -CQDVer V3 -LargeQuery -StartDate $StartDate -EndDate $EndDate -IsServerPair 'Client : Server','Client : Client'  `
     -Dimensions $dimensions -Measures $measures -customfilter $CustomFilter  -ShowQuery $true 
-
+}
+catch
+{
+$_.Exception.Message | out-file -Filepath $logfile -append
+}
     }
 
 if ($proceed -eq "2")
     {
+    try{
     $cqd_List = Import-Csv "CQD_Input.csv"
 
 
@@ -43,7 +50,11 @@ Foreach ($cqd in $cqd_List)
 
 Get-CQDData -Dimensions $cqd.Dimensions -Measures $cqd.Measures -OutPutFilePath $cqd.OutPutFilePath -StartDate $cqd.StartDate -EndDate $cqd.EndDate -OutPutType $cqd.OutPutType -MediaType $cqd.MediaType -IsServerPair $cqd.IsServerPair -OverWriteOutput
 }
-    
+   }
+   catch
+{
+$_.Exception.Message | out-file -Filepath $logfile -append
+}
     }
 
     Else   {
