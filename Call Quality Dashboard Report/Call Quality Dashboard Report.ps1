@@ -60,3 +60,8 @@ $_.Exception.Message | out-file -Filepath $logfile -append
     Else   {
     write-host "Please run the script again choose option 1 or 2"
     }
+    $end = [system.datetime]::Now
+$resultTime = $end - $start
+Write-Host "Execution took : $($resultTime.TotalSeconds) seconds."
+
+
