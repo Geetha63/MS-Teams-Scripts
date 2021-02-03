@@ -1,8 +1,11 @@
 
-Import-Module SkypeOnlineConnector
-$userCredential = Get-Credential
-$sfbSession = New-CsOnlineSession -Credential $userCredential
+$logfile = "C:\UserPolicyAssignmentlog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
+$start = [system.datetime]::Now
+
 Import-PSSession $sfbSession
+Import-Module SkypeOnlineConnector
+$sfbSession = New-CsOnlineSession 
+Import-PSSession $sfbSession -AllowClobber
 
 $Input = import-csv "Input.csv"
 $UserPricipleNames = $Input.UserPricipleName
@@ -11,8 +14,6 @@ write-host "Running the script for users:" $count
 
 foreach($UserPricipleName in $UserPricipleNames)
 {
- 
-
 Write-Host "To change the Applied Policy to user" $UserPricipleName
 
 
@@ -34,110 +35,156 @@ $proceed = Read-host "Please provide number which policy you want to proceed fur
 
 if ($proceed -eq '1')
 {
+    try{
     Get-CsOnlineUser -Identity "$UserPricipleName" | fl TeamsAppSetupPolicy 
     Get-CSTeamsAppsetuppolicy |fl Identity
     $PolicyName=Read-Host "Please provide the Policy Name"
-
     Grant-CsTeamsAppSetupPolicy -identity "$UserPricipleName" -PolicyName  "$PolicyName"
-
-
+    }
+    catch{
+   $_.Exception.Message | out-file -Filepath $logfile -append
+    }
 }
 
 
 elseif ($proceed -eq '2')
 {
+    try{
     Get-CsOnlineUser -Identity "$UserPricipleName" | fl TeamsMeetingPolicy 
     Get-CsTeamsMeetingPolicy  |fl Identity  
     Grant-CsTeamsMeetingPolicy -identity "$UserPricipleName" -PolicyName "$PolicyName"
+    }
+    catch{
+   $_.Exception.Message | out-file -Filepath $logfile -append
+    }
 }
 
 elseif ($proceed -eq '3')
 {
+try{
     Get-CsOnlineUser -Identity "$UserPricipleName" | fl TeamsCallingPolicy
     Get-CsTeamsCallingPolicy  |fl Identity
     $PolicyName= Read-Host "Please provide the Policy Name"
     Grant-CsTeamsCallingPolicy  -identity "$UserPricipleName" -PolicyName  "$PolicyName"
+    }
+    catch{
+   $_.Exception.Message | out-file -Filepath $logfile -append
+    }
 }
 
 elseif ($proceed -eq '4')
 {
+    try{
     Get-CsOnlineUser -Identity "$UserPricipleName" | fl TeamsMessagingPolicy 
     Get-CsTeamsMessagingPolicy |fl Identity
     $PolicyName = Read-Host "Please provide the Policy Name"
-
     Grant-CsTeamsMessagingPolicy -identity "$UserPricipleName" -PolicyName  "$PolicyName"
+    }
+    catch{
+   $_.Exception.Message | out-file -Filepath $logfile -append
+    }
 }
 
 
 elseif ($proceed -eq '5')
 {
+    try{
     Get-CsOnlineUser -Identity "$UserPricipleName" | fl BroadcastMeetingPolicy  
     Get-CsBroadcastMeetingPolicy   |fl Identity
     $PolicyName=Read-Host "Please provide the Policy Name"
-
     Grant-CsBroadcastMeetingPolicy  -identity "$UserPricipleName" -PolicyName  "$PolicyName"
+}
+catch{
+   $_.Exception.Message | out-file -Filepath $logfile -append
+    }
 }
 
 elseif ($proceed -eq '6')
 {
+    try{
     Get-CsOnlineUser -Identity "$UserPricipleName" | fl TeamsCallParkPolicy
- 
     Get-CsTeamsCallParkPolicy|fl Identity
     $PolicyName=Read-Host "Please provide the Policy Name"
-
     Grant-CsTeamsCallParkPolicy   -identity "$UserPricipleName" -PolicyName  "$PolicyName"
+    }
+    catch{
+   $_.Exception.Message | out-file -Filepath $logfile -append
+    }
 }
 
 elseif ($proceed -eq '7')
 {
+try{
     Get-CsOnlineUser -Identity "$UserPricipleName" | fl CallerIdPolicy 
     Get-CsTeamsCallerIdPolicy|fl Identity
     $PolicyName=Read-Host "Please provide the Policy Name"
-
     Grant-CsTeamsCallerIdPolicy  -identity "$UserPricipleName" -PolicyName  "$PolicyName"
+    }
+    catch{
+   $_.Exception.Message | out-file -Filepath $logfile -append
+    }
 }
 elseif ($proceed -eq '8')
 {
+    try{
     Get-CsOnlineUser -Identity "$UserPricipleName" | fl TeamsEmergencyCallingPolicy 
     Get-CsTeamsEmergencyCallingPolicy    |fl Identity
     $PolicyName=Read-Host "Please provide the Policy Name"
-
     Grant-CsTeamsEmergencyCallingPolicy   -identity "$UserPricipleName" -PolicyName  "$PolicyName"
+    }
+    catch{
+   $_.Exception.Message | out-file -Filepath $logfile -append
+    }
 }
 elseif ($proceed -eq '9')
 {
+    try{
     Get-CsOnlineUser -Identity "$UserPricipleName" | fl TeamsEmergencyCallRoutingPolicy  
     Get-CsTeamsEmergencyCallRoutingPolicy    |fl Identity
     $PolicyName=Read-Host "Please provide the Policy Name"
-
     Grant-CsTeamsEmergencyCallRoutingPolicy -identity "$UserPricipleName" -PolicyName  "$PolicyName"
+    }
+    catch{
+   $_.Exception.Message | out-file -Filepath $logfile -append
+    }
 }
 elseif ($proceed -eq '10')
 {
+    try{
     Get-CsOnlineUser -Identity "$UserPricipleName" | fl VoiceRoutingPolicy 
     Get-CsVoiceRoutingPolicy    | fl Identity
     $PolicyName=Read-Host "Please provide the Policy Name"
-
     Grant-CsVoiceRoutingPolicy -identity "$UserPricipleName" -PolicyName  "$PolicyName"
+    }
+    catch{
+   $_.Exception.Message | out-file -Filepath $logfile -append
+    }
 }
 elseif ($proceed -eq '11')
-{
+ {
+    try{
     Get-CsOnlineUser -Identity "$UserPricipleName" | fl TeamsAppPermissionPolicy  
     Get-CsTeamsAppPermissionPolicy   |fl Identity
     $PolicyName=Read-Host "Please provide the Policy Name"
-
     Grant-CsTeamsAppPermissionPolicy   -identity "$UserPricipleName" -PolicyName  "$PolicyName"
-}
+    }
+   catch{
+   $_.Exception.Message | out-file -Filepath $logfile -append
+    }
+ }
 
 elseif($proceed -eq '12')
-{
+  {
+    try{
     Get-CsOnlineUser -Identity "$UserPricipleName" | FL DialPlan  
     Get-CsDialPlan|fl Identity
     $PolicyName=Read-Host "Please provide the Policy Name"
-
     Grant-CsDialPlan -Identity "$UserPricipleName" -PolicyName  "$PolicyName"
-}                   
-          
+    }
+    catch{
+   $_.Exception.Message | out-file -Filepath $logfile -append
+    }
+   }           
 }
 
 do
@@ -156,3 +203,7 @@ if ($ProceedNext -eq "Y" )
     while($true); 
     }
         
+$end = [system.datetime]::Now
+$resultTime = $end - $start
+Write-Host "Execution took : $($resultTime.TotalSeconds) seconds." -ForegroundColor Cyan   
+$resultTime.TotalSeconds 
