@@ -1,7 +1,15 @@
+$logfile = "C:\TeamscreationRestrictionBulklog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
+Start-Transcript -Path $logfile -Append
+$start = [system.datetime]::Now
 
 
+try{
    $conDetails = Connect-AzureAD
    $tenantDomain = $conDetails.TenantDomain
+}
+catch{
+$_.Exception.Message | out-file -Filepath $logfile -append
+}
 
 #Declare the file path and sheet name
    $file = "D:\Input.xlsx"
@@ -25,22 +33,32 @@
    $GroupName = $sheet.Cells.Item($rowGroupName + $i, $colGroupName).text
     $AllowGroupCreation = $sheet.Cells.Item($rowAllowGroupCreation + $i, $colAllowGroupCreation).text
 
-
+$end = [system.datetime]::Now
+$resultTime = $end - $start
+Write-Host "Execution took : $($resultTime.TotalSeconds) seconds." -ForegroundColor Cyan
 $settingsObjectID = (Get-AzureADDirectorySetting | Where-object -Property Displayname -Value "Group.Unified" -EQ).id
 if(!$settingsObjectID)
-    {
+    {try{
 	  $template = Get-AzureADDirectorySettingTemplate | Where-object {$_.displayname -eq "group.unified"}
     $settingsCopy = $template.CreateDirectorySetting()
     New-AzureADDirectorySetting -DirectorySetting $settingsCopy
     $settingsObjectID = (Get-AzureADDirectorySetting | Where-object -Property Displayname -Value "Group.Unified" -EQ).id
+     }
+     catch{
+$_.Exception.Message | out-file -Filepath $logfile -append
+}
      }
 
     $settingsCopy = Get-AzureADDirectorySetting -Id $settingsObjectID
      $settingsCopy["EnableGroupCreation"] = $AllowGroupCreation
 
  if($GroupName)
-   {
+   {try{
 	$settingsCopy["GroupCreationAllowedGroupId"] = (Get-AzureADGroup -SearchString $GroupName).objectid
+     }
+     catch{
+$_.Exception.Message | out-file -Filepath $logfile -append
+}
      }
 
     Set-AzureADDirectorySetting -Id $settingsObjectID -DirectorySetting $settingsCopy
@@ -48,3 +66,7 @@ if(!$settingsObjectID)
     (Get-AzureADDirectorySetting -Id $settingsObjectID).Values
 }
 $objExcel.quit()
+$end = [system.datetime]::Now
+$resultTime = $end - $start
+Write-Host "Execution took : $($resultTime.TotalSeconds) seconds." -ForegroundColor Cyan
+stop-transcript
