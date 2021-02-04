@@ -1,4 +1,20 @@
-﻿Import-Module SkypeOnlineConnector
+﻿$logfile = "C:\DomainValidationlog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
+$start = [system.datetime]::Now
+
+ if(Get-Module -ListAvailable -Name SkypeOnlineConnector) 
+ { 
+ Write-Host "SkypeOnlineConnector Already Installed" 
+ } 
+ else { 
+ try {
+ Write-Host "Installing  SkypeOnlineConnector"
+ Install-Module -Name SkypeOnlineConnector
+ }
+ catch{
+        $_.Exception.Message | out-file -Filepath $logfile -append
+ }
+ }
+Import-Module SkypeOnlineConnector
 $sfbSession = New-CsOnlineSession 
 Import-PSSession $sfbSession -AllowClobber
 
@@ -45,4 +61,7 @@ $tempObj.ErrorMessage = $_.Exception.Message
      else{
      Write-Host "Overall status Ok" -BackgroundColor DarkGreen
      }
-     return $FinalResult|ft
+$end = [system.datetime]::Now
+$resultTime = $end - $start
+Write-Host "Execution took : $($resultTime.TotalSeconds) seconds." -ForegroundColor Cyan
+return $FinalResult|ft
