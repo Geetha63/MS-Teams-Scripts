@@ -1,5 +1,4 @@
 ﻿$logfile = "C:\GroupTeamsCreationRestrictionPolicylog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
- start
 $start = [system.datetime]::Now
 $Groupname = Read-host "Please provide group name"
 $AllowGroupCreation = Read-host "Please provide allow group creation yes or no"
@@ -34,6 +33,10 @@ $_.Exception.Message | out-file -Filepath $logfile -append
     catch{
 $_.Exception.Message | out-file -Filepath $logfile -append
 }}
+$end = [system.datetime]::Now
+$resultTime = $end - $start
+Write-Host "Execution took : $($resultTime.TotalSeconds) seconds." -ForegroundColor Cyan
+
 
     Set-AzureADDirectorySetting -Id $settingsObjectID -DirectorySetting $settingsCopy
 
