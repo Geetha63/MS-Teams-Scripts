@@ -1,9 +1,10 @@
 # CreateAndAssignAddressBookPolicy-EducationDomain
 
-
 # Description
 
 Script will create and assign the address lists, address book policies to users based on the attribute
+
+A log file will be generated with exceptions, errors along with script execution time
 
 # Inputs
 Global Administrator or ExchangeOnline Administrator credentials 
