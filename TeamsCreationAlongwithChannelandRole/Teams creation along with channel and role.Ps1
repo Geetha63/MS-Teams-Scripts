@@ -1,10 +1,12 @@
-﻿Connect-MicrosoftTeams
+﻿$logfile = "C:\TeamsCreationAlongWithChannelRolelog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
+$start = [system.datetime]::Now
+ Connect-MicrosoftTeams
 $Groups= Import-Csv Input.csv
 # $Groups
 
 foreach($Group in $Groups)
 {
-
+try{
 
 $Teams = New-team -DisplayName $Group.TeamName  -Owner $group.Owner -Visibility $Group.Visibility
 
@@ -25,6 +27,12 @@ if($Teams -ne $null)
 	        $file | add-member -MemberType NoteProperty -Name TeamMember $group.Member
             $file | export-csv output.csv  -NoTypeInformation -Append
             }
+	    }
+catch{
+$_.Exception.Message | out-file -Filepath $logfile -append
+}
 }
 
-
+$end = [system.datetime]::Now
+$resultTime = $end - $start
+Write-Host "Execution took : $($resultTime.TotalSeconds) seconds." -ForegroundColor Cyan
