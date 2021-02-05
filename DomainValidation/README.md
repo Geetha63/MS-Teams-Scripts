@@ -47,6 +47,8 @@ Accept pipeline input:	True
 Accept wildcard characters:	False
 
 # Output
+A log file will be generated with exceptions, errors along with script execution time
+
 Output contains
 
 Skip domains list 
