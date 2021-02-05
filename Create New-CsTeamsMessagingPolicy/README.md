@@ -38,4 +38,5 @@ Click Yes at the UAC prompt
 
 # Output
 AllowUserChat is set to False
+
 A log file will be generated with exceptions, errors along with script execution time 
