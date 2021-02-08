@@ -1,25 +1,24 @@
-﻿#Setting custom Attribute for students  
 $logfile = "C:\log_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
 $start = [system.datetime]::Now
-
 If(Get-Module -ListAvailable -Name AzureAD) 
  { 
  Write-Host "AzureAD Already Installed" 
  } 
  else { 
  try { Install-Module -Name AzureAD
- Write-Host "Installed AzureAD"
+ Write-Host "Installing AzureAD"
  }
  catch{
         $_.Exception.Message | out-file -Filepath $logfile -append
  }}
- If(Get-Module -ListAvailable -Name MicrosoftTeams) 
+  if(Get-Module -ListAvailable -Name ExchangeOnlineManagement) 
  { 
- Write-Host "MicrosoftTeams Already Installed" 
+ Write-Host "ExchangeOnlineManagement Already Installed" 
  } 
  else { 
- try { Install-Module -Name MicrosoftTeams
- Write-Host "Installed MicrosoftTeams"
+ try { 
+Install-Module -Name ExchangeOnlineManagement
+ Write-Host "ExchangeOnlineManagement is installing"
  }
  catch{
         $_.Exception.Message | out-file -Filepath $logfile -append
@@ -34,8 +33,6 @@ catch{
         $_.Exception.Message | out-file -Filepath $logfile -append
  }
  #Setting custom Attribute for Students
- 
-
 $group = Get-AzureADGroup -SearchString "Students of" -All $true
 foreach ($group in $group){
 $school= $group.displayname
