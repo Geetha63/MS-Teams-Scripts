@@ -30,3 +30,5 @@ Hit enter to continue
 
 # Output
 Script will provide the count of teachers who has the teacher license and count of teachers in Distribution List
+
+A log file will be generated with exceptions, errors along with script execution time
