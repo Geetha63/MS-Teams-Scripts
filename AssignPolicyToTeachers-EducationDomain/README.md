@@ -92,3 +92,5 @@ Hit enter to continue
 
 # Expected Output
 Policy types TeamsChannelsPolicy, TeamsMeetingPolicy, TeamsMessagingPolicy with policy name `All teachers` are assigned to **All Teachers** distribution list with rank 1
+
+A log file will be generated with exceptions, errors along with script execution time
