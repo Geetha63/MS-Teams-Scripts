@@ -1,11 +1,29 @@
 ﻿# This script will provide the teams details where user is owner for the team
-
-param(
-      [Parameter(Mandatory=$true)][System.String]$user
-      )
-
+ $logfile = "C:\CreateNew-CsTeamsMessagingPolicylog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
+$start = [system.datetime]::Now
+ 
+ If(Get-Module -ListAvailable -Name MicrosoftTeams) 
+ { 
+ Write-Host "MicrosoftTeams Already Installed" 
+ } 
+ else { 
+ try { Install-Module -Name MicrosoftTeams
+ Write-Host "Installed MicrosoftTeams"
+ }
+ catch{
+        $_.Exception.Message | out-file -Filepath $logfile -append
+ }
+ }
+     
 connect-microsoftteams
+$user = Read-host "Please provide User Principle Name"
+try{
 $Data = get-team -User "$user"
+}
+catch{
+        $_.Exception.Message | out-file -Filepath $logfile -append
+ }
+
 foreach ($teams in $Data) 
     {
 
@@ -24,8 +42,10 @@ foreach ($teams in $Data)
                     $file | add-member -MemberType NoteProperty -Name Teams_Groupid $groupid
                     $file | export-csv output.csv -NoTypeInformation -Append
                     }
-    
-    }
+        }
+$end = [system.datetime]::Now
+$resultTime = $end - $start
+Write-Host "Execution took : $($resultTime.TotalSeconds) seconds." -ForegroundColor Cyan
 
 
 
