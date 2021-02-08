@@ -2,7 +2,7 @@
 
 # Description
 
-The script will provide total stream count including audio, video, app sharing for provided start time and end time, CQD report of a given time
+Script will provide total stream count including audio, video, app sharing for provided start time and end time, CQD report of a given time
 
 PowerShell should be more than 3.0 version
 
@@ -81,3 +81,5 @@ For option 2
 ##### Example output
 
 ![Output](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/CQD-output.png)
+
+A log file will be generated with exceptions, errors along with script execution time
