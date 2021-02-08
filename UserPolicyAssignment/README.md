@@ -29,3 +29,5 @@ In the list of policies, provided input number 2 to apply TeamsMeetingPolicy to 
  
 # Output
 Custom policy assigned to the user
+
+A log file will be generated with exceptions, errors along with script execution time
