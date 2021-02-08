@@ -1,4 +1,4 @@
-$logfile = "C:\log_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
+$logfile = "C:\ABP-UpdateUsersAttributeslog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
 $start = [system.datetime]::Now
 If(Get-Module -ListAvailable -Name AzureAD) 
  { 
