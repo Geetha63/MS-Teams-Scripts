@@ -32,3 +32,5 @@ Click Yes at the UAC prompt
 
 # Expected output
 Custom policies are created 
+
+A log file will be generated with exceptions, errors along with script execution time
