@@ -1,7 +1,7 @@
 # Grant New-CsTeamsMessagingPolicy
 
 # Description
-The script will assign a Teams Messaging Policy at the per-user scope, to run the script please install the [SFB online connector](https://www.microsoft.com/en-us/download/details.aspx?id=39366)
+Script will assign a Teams Messaging Policy at the per-user scope, to run the script please install the [SFB online connector](https://www.microsoft.com/en-us/download/details.aspx?id=39366)
 - Import the module into Windows PowerShell 
 - Get the script from the 'Grant New-CsTeamsMessagingPolicy.ps1' file and paste it into windows PowerShell, then run the script
 
@@ -54,3 +54,5 @@ Click Yes at the UAC prompt
 
 # Output
 davidchew@contoso.com is being assigned the StudentMessagingPolicy
+
+A log file will be generated with exceptions, errors along with script execution time
