@@ -30,4 +30,4 @@ Provide the global administrator credentials or AzureAD admin credentials when i
 Hit enter to continue
 
 # Output
-Script will provide the count of teachers who has the teacher license and count of teachers in DL
+Script will provide the count of teachers who has the teacher license, count of teachers in DL and log file will be generated with exceptions, errors along with script execution time
