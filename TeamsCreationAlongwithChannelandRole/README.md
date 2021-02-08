@@ -94,3 +94,5 @@ After execution script will export the created Teams details of MicrosoftTeams i
 
 | TeamName |TeamId | ChannelName |ChannelId |TeamOwner | Team Member |
 |----------|-------|-------------|----------|----------|-------------|
+
+A log file will be generated with exceptions, errors along with script execution time
