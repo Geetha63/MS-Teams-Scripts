@@ -57,5 +57,5 @@ UserPrincipalName
 # Output
  The script will export details of user as the owner of MicrosoftTeams in your tenant with following details to an output.csv file.\
 |Team Owner| Team Displayname|Teamid|
-
+|----|---|---|
 A log file will be generated with exceptions, errors along with script execution time
