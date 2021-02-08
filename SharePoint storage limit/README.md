@@ -72,3 +72,5 @@ Applies to:	SharePoint Online
 # Output
 
  After executing the script storage quota is updated to 1500 megabytes and the storage quota warning level is updated to 1400 megabytes
+ 
+ A log file will be generated with exceptions, errors along with script execution time
