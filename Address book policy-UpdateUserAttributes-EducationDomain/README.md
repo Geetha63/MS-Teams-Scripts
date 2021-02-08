@@ -22,4 +22,5 @@ Hit enter to continue
 
 # Expected output
 User custom attributes are updated
+
 A log file will be generated with exceptions, errors along with script execution time
