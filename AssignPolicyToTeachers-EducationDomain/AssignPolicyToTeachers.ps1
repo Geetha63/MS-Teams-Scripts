@@ -9,6 +9,10 @@ $start = [system.datetime]::Now
  try { Install-Module -Name MicrosoftTeams
  Write-Host "Installed MicrosoftTeams"
  }
+ catch{
+        $_.Exception.Message | out-file -Filepath $logfile -append
+ }}
+ 
  If(Get-Module -ListAvailable -Name AzureAD) 
  { 
  Write-Host "AzureAD Already Installed" 
@@ -17,6 +21,9 @@ $start = [system.datetime]::Now
  try { Install-Module -Name AzureAD
  Write-Host "Installed AzureAD"
  }
+ catch{
+        $_.Exception.Message | out-file -Filepath $logfile -append
+ }}
  
  try{
  $credential= get-credential
