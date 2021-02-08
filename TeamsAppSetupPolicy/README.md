@@ -94,3 +94,5 @@ Provide the Administrator credentials
 # Output
 
 The policy will assign to respective users
+
+A log file will be generated with exceptions, errors along with script execution time
