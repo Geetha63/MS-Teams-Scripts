@@ -43,3 +43,5 @@ Script will export the **Channeloutput.csv** in the current folder
 Output contains 
 
 | TeamId | TeamDisplayname | ChannelName |
+
+A log file will be generated with exceptions, errors along with script execution time
