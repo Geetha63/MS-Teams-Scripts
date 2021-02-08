@@ -12,7 +12,7 @@ If(Get-Module -ListAvailable -Name AzureAD)
  }
  catch{
         $_.Exception.Message | out-file -Filepath $logfile -append
- }
+ }}
  If(Get-Module -ListAvailable -Name MicrosoftTeams) 
  { 
  Write-Host "MicrosoftTeams Already Installed" 
@@ -23,7 +23,7 @@ If(Get-Module -ListAvailable -Name AzureAD)
  }
  catch{
         $_.Exception.Message | out-file -Filepath $logfile -append
- }
+ }}
  
  try{
 $credential= get-credential
