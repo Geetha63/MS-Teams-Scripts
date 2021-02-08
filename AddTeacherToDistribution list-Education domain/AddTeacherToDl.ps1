@@ -1,7 +1,19 @@
 ﻿
-$logfile = "C:\TeamscreationRestrictionBulklog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
-Start-Transcript -Path $logfile -Append
+$logfile = "C:\log_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
 $start = [system.datetime]::Now
+
+If(Get-Module -ListAvailable -NameAzureAD) 
+ { 
+ Write-Host "AzureAD Already Installed" 
+ } 
+ else { 
+ try { Install-Module -Name AzureAD
+ Write-Host "Installed AzureAD"
+ }
+ catch{
+        $_.Exception.Message | out-file -Filepath $logfile -append
+ }
+ }
  try{
  $credential= get-credential
  Connect-AzureAD -Credential $credential
