@@ -1,8 +1,11 @@
 # Grant-CsTeamsAppPermissionPolicy
 
 # Description
-Grant-CsTeamsAppPermissionPolicy script assign custom policies to users based on jobtitle
-Users whose jobtitle conatins Manager will be assigned with Level1Policy and others will be assigned with UsersPolicy 
+Grant-CsTeamsAppPermissionPolicy script assign custom policies to users based on the job title
+
+Users whose job title contains Manager will be assigned with Level1Policy and others will be assigned with UsersPolicy 
+
+Script will auto check and install [SFB online connector](https://www.microsoft.com/en-us/download/details.aspx?id=39366) if the module is not available 
 
 # Parameters
 **`-Identity`**
@@ -21,7 +24,7 @@ Accept wildcard characters:	False
 
 **`-PolicyName`**
 
-The name of the custom policy that is being assigned to the user. To remove a specific assignment and fall back to the default tenant policy, you can assign to $Null.
+The name of the custom policy that is being assigned to the user. To remove a specific assignment and fall back to the default tenant policy, you can assign it to $Null.
 
 Type:	String
 * * *
@@ -33,14 +36,10 @@ Accept pipeline input:	False
 * * *
 Accept wildcard characters:	False
 
-# Prerequisite
-1)	Install [SFB online connector](https://www.microsoft.com/en-us/download/details.aspx?id=39366)
-
 # Inputs
-Provide SkypeOnline/Global Admin Credentials
+Skype for Business Online/Global Admin Credentials
 
-
-# Output
+# Sample Output
 
 Level1Policy assigned to Users whose job title contains Manager
 
