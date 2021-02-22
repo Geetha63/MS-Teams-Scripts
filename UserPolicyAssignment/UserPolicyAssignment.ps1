@@ -2,19 +2,18 @@
 $logfile = "C:\UserPolicyAssignmentlog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
 $start = [system.datetime]::Now
 
-Import-PSSession $sfbSession
 Import-Module SkypeOnlineConnector
 $sfbSession = New-CsOnlineSession 
 Import-PSSession $sfbSession -AllowClobber
 
-$Input = import-csv "Input.csv"
+$UserPrincipalNames = import-csv "Input.csv"
 $UserPricipleNames = $Input.UserPricipleName
 $count = $Input.Count
 write-host "Running the script for users:" $count
 
-foreach($UserPricipleName in $UserPricipleNames)
+foreach($UserPrincipalName in $UserPrincipalNames.UserPrincipalName)
 {
-Write-Host "To change the Applied Policy to user" $UserPricipleName
+Write-Host "To change the Applied Policy to user" $UserPrincipalName
 
 
         function Get-Result() {
@@ -30,16 +29,16 @@ Write-Host "To change the Applied Policy to user" $UserPricipleName
                       10-VoiceRoutingPolicy 
                       11-TeamsAppPermissionPolicy 
                       12-TeamsDailPlan"
-$proceed = Read-host "Please provide number which policy you want to proceed further" 
+$proceed = Read-host "Please provide the policy number to Grant and proceed further" 
 
 
 if ($proceed -eq '1')
 {
     try{
-    Get-CsOnlineUser -Identity "$UserPricipleName" | fl TeamsAppSetupPolicy 
+    Get-CsOnlineUser -Identity "$UserPrincipalName" | fl TeamsAppSetupPolicy 
     Get-CSTeamsAppsetuppolicy |fl Identity
     $PolicyName=Read-Host "Please provide the Policy Name"
-    Grant-CsTeamsAppSetupPolicy -identity "$UserPricipleName" -PolicyName  "$PolicyName"
+    Grant-CsTeamsAppSetupPolicy -identity "$UserPrincipalName" -PolicyName  "$PolicyName"
     }
     catch{
    $_.Exception.Message | out-file -Filepath $logfile -append
@@ -50,9 +49,9 @@ if ($proceed -eq '1')
 elseif ($proceed -eq '2')
 {
     try{
-    Get-CsOnlineUser -Identity "$UserPricipleName" | fl TeamsMeetingPolicy 
+    Get-CsOnlineUser -Identity "$UserPrincipalName" | fl TeamsMeetingPolicy 
     Get-CsTeamsMeetingPolicy  |fl Identity  
-    Grant-CsTeamsMeetingPolicy -identity "$UserPricipleName" -PolicyName "$PolicyName"
+    Grant-CsTeamsMeetingPolicy -identity "$UserPrincipalName" -PolicyName "$PolicyName"
     }
     catch{
    $_.Exception.Message | out-file -Filepath $logfile -append
@@ -62,10 +61,10 @@ elseif ($proceed -eq '2')
 elseif ($proceed -eq '3')
 {
 try{
-    Get-CsOnlineUser -Identity "$UserPricipleName" | fl TeamsCallingPolicy
+    Get-CsOnlineUser -Identity "$UserPrincipalName" | fl TeamsCallingPolicy
     Get-CsTeamsCallingPolicy  |fl Identity
     $PolicyName= Read-Host "Please provide the Policy Name"
-    Grant-CsTeamsCallingPolicy  -identity "$UserPricipleName" -PolicyName  "$PolicyName"
+    Grant-CsTeamsCallingPolicy  -identity "$UserPrincipalName" -PolicyName  "$PolicyName"
     }
     catch{
    $_.Exception.Message | out-file -Filepath $logfile -append
@@ -75,10 +74,10 @@ try{
 elseif ($proceed -eq '4')
 {
     try{
-    Get-CsOnlineUser -Identity "$UserPricipleName" | fl TeamsMessagingPolicy 
+    Get-CsOnlineUser -Identity "$UserPrincipalName" | fl TeamsMessagingPolicy 
     Get-CsTeamsMessagingPolicy |fl Identity
     $PolicyName = Read-Host "Please provide the Policy Name"
-    Grant-CsTeamsMessagingPolicy -identity "$UserPricipleName" -PolicyName  "$PolicyName"
+    Grant-CsTeamsMessagingPolicy -identity "$UserPrincipalName" -PolicyName  "$PolicyName"
     }
     catch{
    $_.Exception.Message | out-file -Filepath $logfile -append
@@ -89,10 +88,10 @@ elseif ($proceed -eq '4')
 elseif ($proceed -eq '5')
 {
     try{
-    Get-CsOnlineUser -Identity "$UserPricipleName" | fl BroadcastMeetingPolicy  
+    Get-CsOnlineUser -Identity "$UserPrincipalName" | fl BroadcastMeetingPolicy  
     Get-CsBroadcastMeetingPolicy   |fl Identity
     $PolicyName=Read-Host "Please provide the Policy Name"
-    Grant-CsBroadcastMeetingPolicy  -identity "$UserPricipleName" -PolicyName  "$PolicyName"
+    Grant-CsBroadcastMeetingPolicy  -identity "$UserPrincipalName" -PolicyName  "$PolicyName"
 }
 catch{
    $_.Exception.Message | out-file -Filepath $logfile -append
@@ -102,10 +101,10 @@ catch{
 elseif ($proceed -eq '6')
 {
     try{
-    Get-CsOnlineUser -Identity "$UserPricipleName" | fl TeamsCallParkPolicy
+    Get-CsOnlineUser -Identity "$UserPrincipalName" | fl TeamsCallParkPolicy
     Get-CsTeamsCallParkPolicy|fl Identity
     $PolicyName=Read-Host "Please provide the Policy Name"
-    Grant-CsTeamsCallParkPolicy   -identity "$UserPricipleName" -PolicyName  "$PolicyName"
+    Grant-CsTeamsCallParkPolicy   -identity "$UserPrincipalName" -PolicyName  "$PolicyName"
     }
     catch{
    $_.Exception.Message | out-file -Filepath $logfile -append
@@ -115,10 +114,10 @@ elseif ($proceed -eq '6')
 elseif ($proceed -eq '7')
 {
 try{
-    Get-CsOnlineUser -Identity "$UserPricipleName" | fl CallerIdPolicy 
+    Get-CsOnlineUser -Identity "$UserPrincipalName" | fl CallerIdPolicy 
     Get-CsTeamsCallerIdPolicy|fl Identity
     $PolicyName=Read-Host "Please provide the Policy Name"
-    Grant-CsTeamsCallerIdPolicy  -identity "$UserPricipleName" -PolicyName  "$PolicyName"
+    Grant-CsTeamsCallerIdPolicy  -identity "$UserPrincipalName" -PolicyName  "$PolicyName"
     }
     catch{
    $_.Exception.Message | out-file -Filepath $logfile -append
@@ -127,10 +126,10 @@ try{
 elseif ($proceed -eq '8')
 {
     try{
-    Get-CsOnlineUser -Identity "$UserPricipleName" | fl TeamsEmergencyCallingPolicy 
+    Get-CsOnlineUser -Identity "$UserPrincipalName" | fl TeamsEmergencyCallingPolicy 
     Get-CsTeamsEmergencyCallingPolicy    |fl Identity
     $PolicyName=Read-Host "Please provide the Policy Name"
-    Grant-CsTeamsEmergencyCallingPolicy   -identity "$UserPricipleName" -PolicyName  "$PolicyName"
+    Grant-CsTeamsEmergencyCallingPolicy   -identity "$UserPrincipalName" -PolicyName  "$PolicyName"
     }
     catch{
    $_.Exception.Message | out-file -Filepath $logfile -append
@@ -139,10 +138,10 @@ elseif ($proceed -eq '8')
 elseif ($proceed -eq '9')
 {
     try{
-    Get-CsOnlineUser -Identity "$UserPricipleName" | fl TeamsEmergencyCallRoutingPolicy  
+    Get-CsOnlineUser -Identity "$UserPrincipalName" | fl TeamsEmergencyCallRoutingPolicy  
     Get-CsTeamsEmergencyCallRoutingPolicy    |fl Identity
     $PolicyName=Read-Host "Please provide the Policy Name"
-    Grant-CsTeamsEmergencyCallRoutingPolicy -identity "$UserPricipleName" -PolicyName  "$PolicyName"
+    Grant-CsTeamsEmergencyCallRoutingPolicy -identity "$UserPrincipalName" -PolicyName  "$PolicyName"
     }
     catch{
    $_.Exception.Message | out-file -Filepath $logfile -append
@@ -151,10 +150,10 @@ elseif ($proceed -eq '9')
 elseif ($proceed -eq '10')
 {
     try{
-    Get-CsOnlineUser -Identity "$UserPricipleName" | fl VoiceRoutingPolicy 
+    Get-CsOnlineUser -Identity "$UserPrincipalName" | fl VoiceRoutingPolicy 
     Get-CsVoiceRoutingPolicy    | fl Identity
     $PolicyName=Read-Host "Please provide the Policy Name"
-    Grant-CsVoiceRoutingPolicy -identity "$UserPricipleName" -PolicyName  "$PolicyName"
+    Grant-CsVoiceRoutingPolicy -identity "$UserPrincipalName" -PolicyName  "$PolicyName"
     }
     catch{
    $_.Exception.Message | out-file -Filepath $logfile -append
@@ -163,10 +162,10 @@ elseif ($proceed -eq '10')
 elseif ($proceed -eq '11')
  {
     try{
-    Get-CsOnlineUser -Identity "$UserPricipleName" | fl TeamsAppPermissionPolicy  
+    Get-CsOnlineUser -Identity "$UserPrincipalName" | fl TeamsAppPermissionPolicy  
     Get-CsTeamsAppPermissionPolicy   |fl Identity
     $PolicyName=Read-Host "Please provide the Policy Name"
-    Grant-CsTeamsAppPermissionPolicy   -identity "$UserPricipleName" -PolicyName  "$PolicyName"
+    Grant-CsTeamsAppPermissionPolicy   -identity "$UserPrincipalName" -PolicyName  "$PolicyName"
     }
    catch{
    $_.Exception.Message | out-file -Filepath $logfile -append
@@ -176,10 +175,10 @@ elseif ($proceed -eq '11')
 elseif($proceed -eq '12')
   {
     try{
-    Get-CsOnlineUser -Identity "$UserPricipleName" | FL DialPlan  
+    Get-CsOnlineUser -Identity "$UserPrincipalName" | FL DialPlan  
     Get-CsDialPlan|fl Identity
     $PolicyName=Read-Host "Please provide the Policy Name"
-    Grant-CsDialPlan -Identity "$UserPricipleName" -PolicyName  "$PolicyName"
+    Grant-CsDialPlan -Identity "$UserPrincipalName" -PolicyName  "$PolicyName"
     }
     catch{
    $_.Exception.Message | out-file -Filepath $logfile -append
@@ -190,7 +189,7 @@ elseif($proceed -eq '12')
 do
 {
 
-$ProceedNext = Read-host "Do you want to apply any policy Y to continue"
+$ProceedNext = Read-host "Do you want to apply policy,press Y to continue"
 if ($ProceedNext -eq "Y" ) 
         { 
         Get-Result 
