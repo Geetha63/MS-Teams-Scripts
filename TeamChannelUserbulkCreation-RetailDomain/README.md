@@ -22,7 +22,7 @@ The script will generate the `output.csv` file which holds the details of create
 # Inputs
 
   |DisplayName| ChannelName| Owner| Member|
-  |---|---|---|---|---|----|
+  |---|---|---|---|
   |Team1;Team2|Channel;Channel2|admin@RetailM365.onmicrosoft.com;LidiaH@RetailM365.OnMicrosoft.com|admin@RetailM365.onmicrosoft.com;LidiaH@RetailM365.OnMicrosoft.com|
   
 # Parameters
