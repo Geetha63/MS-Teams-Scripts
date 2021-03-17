@@ -79,7 +79,7 @@ $ChannelID=[string]::Join("; ",$ChannelNames.ID)
             $file | add-member -MemberType NoteProperty -Name channelId $ChannelID
             $file | add-member -MemberType NoteProperty -Name Owner $Owner
 	        $file | add-member -MemberType NoteProperty -Name Member $Member
-            $file | export-csv RetailTeamsOutput.csv  -NoTypeInformation -Append
+            $file | export-csv Output.csv  -NoTypeInformation -Append
             }
             
 $end = [system.datetime]::Now
