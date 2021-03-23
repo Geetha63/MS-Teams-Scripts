@@ -1,6 +1,11 @@
-﻿$Tenantid= '5a962d0c-c0c6-4304-b671-93bd57ea2711'
-$client_Id = 'c7504706-787a-469f-a706-fbbebecb2ab0'
-$Client_Secret = 'H-Pr5oR5VVEUe.-xxRc.snbd64xdh9_v_5'
+﻿$logfile = "C:\log_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
+$start = [system.datetime]::Now
+
+     $Tenantid=read-host "Please provide tenant id"
+     $client_Id=Read-host "Please provide client id"
+     $Client_Secret=read-host "Please provide client secret"
+     $TeamName=read-host "Please provide TeamName"
+     $ChannelName=read-host "Please provide ChannelName"
 
 #Grant Adminconsent 
 $Grant= 'https://login.microsoftonline.com/common/adminconsent?client_id='
@@ -36,31 +41,49 @@ $newTabConfig = [ordered]@{
     configuration = @{
         contentUrl = $contentURL
         websiteUrl = $contentURL
+        
     }
 } | ConvertTo-Json
 
+try{
 $uri = ('https://graph.microsoft.com/v1.0/groups?$select=id,displayname,resourceProvisioningOptions')
-$ALLteams = (Invoke-RestMethod -Method Get -Uri $uri -Headers  $Header).Value | Where-Object {$_.resourceProvisioningOptions -contains 'Team'}
+#$ALLteams = (Invoke-RestMethod -Method Get -Uri $uri -Headers  $Header).Value | Where-Object {$_.resourceProvisioningOptions -contains 'Team'}
 
-$teams = (Invoke-RestMethod -Method Get -Uri $uri -Headers  $Header).Value | Where-Object {$_.DisplayName -match 'Test'}
-
+$teams = (Invoke-RestMethod -Method Get -Uri $uri -Headers  $Header).Value | Where-Object {$_.DisplayName -eq "$TeamName"}
+}
+Catch {
+    $_.Exception | Out-File $logfile -Append
+   }
 # Loop through all teams
 foreach ($team in $teams) {
-    # Get the General Channel properties
-    $channel = (Invoke-RestMethod -Method Get -Uri ("https://graph.microsoft.com/v1.0/teams/$($team.ID)/channels" + '?$filter=DisplayName eq ' + "'General'") -Headers $Header).Value
+    # Get the Channel properties
+try{
+    $channel = (Invoke-RestMethod -Method Get -Uri ("https://graph.microsoft.com/v1.0/teams/$($team.ID)/channels" + '?$filter=DisplayName eq ' + "'" + $ChannelName + "'") -Headers $Header).Value
+        #$channel = (Invoke-RestMethod -Method Get -Uri ("https://graph.microsoft.com/v1.0/teams/$($team.ID)/channels") -Headers $Header).Value
 
     # Check if the tab with the same value as the $tabName aleady exists
     $tab = (Invoke-RestMethod -Method Get -Uri ("https://graph.microsoft.com/v1.0/teams/$($team.ID)/channels/$($channel.ID)/tabs" + '?$filter=DisplayName eq ' + "'" + $tabName + "'") -Headers $Header).value
-
-    # Add the tab if the TAB does not exist in the General channel
+}
+Catch {
+    $_.Exception | Out-File $logfile -Append
+   }
+    # Add the tab if the TAB does not exist in the channel
     if (!$tab) {
-        Write-Output "ADD: '$tabName' in [$($team.displayName)\General]"
+        Write-Output "ADD: '$tabName' in [$($team.displayName)\'$ChannelName']"
+	try{
         Invoke-RestMethod -Method POST -Uri "https://graph.microsoft.com/v1.0/teams/$($team.ID)/channels/$($channel.ID)/tabs" -Headers $Header -Body $newTabConfig -ContentType application/json
+	}
+Catch {
+    $_.Exception | Out-File $logfile -Append
+   }
     }
-    # Skip the tab if the TAB already exist in the General channel to avoid duplication
+    # Skip the tab if the TAB already exist in the channel to avoid duplication
     else {
-        Write-Output "SKIP: '$tabName' in [$($team.displayName)\General]"
+        Write-Output "SKIP: '$tabName' in [$($team.displayName)\'$ChannelName']"
     }
 }
 
     }
+$end = [system.datetime]::Now
+$resultTime = $end - $start
+Write-Host "Execution took : $($resultTime.TotalSeconds) seconds." -ForegroundColor Cyan
