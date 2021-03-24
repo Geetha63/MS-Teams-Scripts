@@ -1,10 +1,11 @@
 ﻿# This script copies user from the tenant and the applications installed for those users in Teams into csv file.
 
-param(
-      [Parameter(Mandatory=$true)][System.String]$client_Id,
-      [Parameter(Mandatory=$true)][System.String]$Client_Secret,
-      [Parameter(Mandatory=$true)][System.String]$Tenantid
-     )
+$logfile = "C:\log_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
+$start = [system.datetime]::Now
+
+     $Tenantid=read-host "Please provide tenant id"
+     $client_Id=Read-host "Please provide client id"
+     $Client_Secret=read-host "Please provide client secret"
 
 #Grant Adminconsent 
 $Grant= 'https://login.microsoftonline.com/common/adminconsent?client_id='
@@ -26,8 +27,12 @@ if ($proceed -eq 'Y')
     } 
 
     $loginurl = "https://login.microsoftonline.com/" + "$Tenantid" + "/oauth2/v2.0/token"
+    try{
     $Token = Invoke-RestMethod -Uri "$loginurl" -Method POST -Body $ReqTokenBody -ContentType "application/x-www-form-urlencoded"
-
+      }
+      Catch {
+    $_.Exception | Out-File $logfile -Append
+   }
     $Header = @{
         Authorization = "$($token.token_type) $($token.access_token)"
     }
@@ -35,7 +40,12 @@ if ($proceed -eq 'Y')
     #getting users
     write-host "Getting Tenant users"
     $getusers = "https://graph.microsoft.com/v1.0/users" 
+    try{
     $users = Invoke-RestMethod -Headers $Header -Uri $getusers -Method get -ContentType 'application/json'
+    }
+    Catch {
+    $_.Exception | Out-File $logfile -Append
+   }
     $userdetails = $users.value
  
     $userdetails | Export-csv -path file.csv -Append -NoTypeInformation
@@ -49,8 +59,12 @@ if ($proceed -eq 'Y')
     $results = foreach($id in $userid)
         {
             $userapps = "https://graph.microsoft.com/beta/users/"+ "$id" +"/teamwork/installedApps?expand=teamsAppDefinition"
+            try{
             $usersap = Invoke-RestMethod -Headers $Header -Uri $userapps -Method get -ContentType 'application/json'
-
+            }
+            Catch {
+                $_.Exception | Out-File $logfile -Append
+               }
             $values = $usersap.value 
             $a = $values.teamsAppDefinition
             $Apps = $a | select displayName
@@ -94,3 +108,6 @@ else
 {
     write-host "You need to login admin consent in order to continue... " 
 }
+$end = [system.datetime]::Now
+$resultTime = $end - $start
+Write-Host "Execution took : $($resultTime.TotalSeconds) seconds." -ForegroundColor Cyan
