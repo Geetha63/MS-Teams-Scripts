@@ -1,15 +1,15 @@
 ﻿#this script will Delete the all teams except given job titles match
 #Provide job title phrases separate by , 
 #for best practice run the script quote delete cmdlet
-#keep the tenant id in info.json and save it in current folder.
 
-param(
-      [Parameter(Mandatory=$true)][System.String]$mailsender,
-      [Parameter(Mandatory=$true)][System.String]$client_Id,
-      [Parameter(Mandatory=$true)][System.String]$Client_Secret,
-      [Parameter(Mandatory=$true)][System.String]$Tenantid,
-      [Parameter(Mandatory=$true)][System.String]$KeepJobtitles
-     )
+$logfile = "C:\log_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
+$start = [system.datetime]::Now
+
+     $Tenantid=read-host "Please provide tenant id"
+     $client_Id=Read-host "Please provide client id"
+     $Client_Secret=read-host "Please provide client secret"
+     $mailsender = read-host "Please provide mailsender"
+     $KeepJobtitles = read-host "Please provide KeepJobtitles"
 
 #Grant Adminconsent 
 $Grant= 'https://login.microsoftonline.com/common/adminconsent?client_id='
@@ -31,8 +31,12 @@ if ($proceed -eq 'Y')
     }
 
     $loginurl = "https://login.microsoftonline.com/" + "$Tenantid" + "/oauth2/v2.0/token"
+    try{
     $Token = Invoke-RestMethod -Uri "$loginurl" -Method POST -Body $ReqTokenBody -ContentType "application/x-www-form-urlencoded"
-
+      }
+      Catch {
+    $_.Exception | Out-File $logfile -Append
+      }
     $Header = @{
         Authorization = "$($token.token_type) $($token.access_token)"
     }
@@ -41,7 +45,12 @@ if ($proceed -eq 'Y')
    write-host "Getting All teams"
 
    $getTeams = "https://graph.microsoft.com/beta/groups?filter=resourceProvisioningOptions/Any(x:x eq 'Team')" 
+   try{
    $Teams = Invoke-RestMethod -Headers $Header -Uri $getTeams -Method get -ContentType 'application/json'
+   }
+   Catch {
+    $_.Exception | Out-File $logfile -Append
+   }
    $values = $Teams.value
    $groupid = $values.id
    $displayname = $values | select displayName
@@ -55,8 +64,12 @@ if ($proceed -eq 'Y')
            write-host "Checking job title of users in $TeamName"
             
             $memberuri = "https://graph.microsoft.com/v1.0/groups/"+ "$id" +"/members"
+            try{
             $members = Invoke-RestMethod -Headers $Header -Uri $memberuri -Method get -ContentType 'application/json'
-            
+            }
+            Catch {
+             $_.Exception | Out-File $logfile -Append
+            }
             # for each member - check the designation
             $keepTeam = $false
                         
@@ -72,12 +85,21 @@ if ($proceed -eq 'Y')
              {      
                     $DeletedTeam = $team | select displayName
                     $deleteURL = "https://graph.microsoft.com/v1.0/groups/" + "$id" 
+                    try{
                     #$DeleteTeam = Invoke-RestMethod -Headers $Header -Uri $deleteURL -Method DELETE 
+                    }
+                    Catch {
+                      $_.Exception | Out-File $logfile -Append
+                     }
                     write-host "$Teamname has been deleted"
                     
                     $owneruri = "https://graph.microsoft.com/v1.0/groups/" + "$id" + "/owners"
+                    try{
                     $Teamowners = Invoke-RestMethod -Headers $Header -Uri $owneruri -Method Get
-                    
+                    }
+                    Catch {
+                      $_.Exception | Out-File $logfile -Append
+                     }
                     $Teamownervalues = $Teamowners.value 
                     $OwneruserPrincipalName = $Teamownervalues.userPrincipalName
                     $owners = [string]::Join(", ",$OwneruserPrincipalName) 
@@ -113,12 +135,19 @@ if ($proceed -eq 'Y')
   },
   "saveToSentItems": "True"
 }'
-
+try{
             $smtp = Invoke-RestMethod -Headers $Header -Uri $mailuri -body $body -Method post -ContentType application/json
-            
+            }
+            Catch {
+    $_.Exception | Out-File $logfile -Append
+   }
              }
    }
    
  } 
    
 else{ write-host Re run the script and press Y}
+$end = [system.datetime]::Now
+$resultTime = $end - $start
+Write-Host "Execution took : $($resultTime.TotalSeconds) seconds." -ForegroundColor Cyan
+

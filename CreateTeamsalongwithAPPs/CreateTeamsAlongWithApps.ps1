@@ -1,15 +1,14 @@
-﻿ #This script copies user from the tenant and the applications installed for those users in Teams into csv file.
-# Keep tenant id in info.json file
 
-param(
-      [Parameter(Mandatory=$true)][System.String]$Groupname,
-      [Parameter(Mandatory=$true)][System.String]$OwnerPrincipalName,
-      [Parameter(Mandatory=$true)][System.String]$AppName,    
-      [Parameter(Mandatory=$true)][System.String]$client_Id,
-      [Parameter(Mandatory=$true)][System.String]$Client_Secret,
-      [Parameter(Mandatory=$true)][System.String]$Tenantid     
-      )
-     
+$logfile = "C:\log_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
+$start = [system.datetime]::Now
+
+     $Tenantid = read-host "Please provide tenant id"
+     $client_Id = Read-host "Please provide client id"
+     $Client_Secret = read-host "Please provide client secret"
+     $AppName = read-host "Please provide AppName"
+     $OwnerPrincipalName = read-host "Please provice OwnerPrincipalName"
+     $Groupname = read-host "Please provide Groupname"
+           
 #Grant Adminconsent 
 $Grant= 'https://login.microsoftonline.com/common/adminconsent?client_id='
 $admin = '&state=12345&redirect_uri=https://localhost:1234'
@@ -30,8 +29,12 @@ if ($proceed -eq 'Y')
     } 
 
     $loginurl = "https://login.microsoftonline.com/" + "$Tenantid" + "/oauth2/v2.0/token"
+    try{
     $Token = Invoke-RestMethod -Uri "$loginurl" -Method POST -Body $ReqTokenBody -ContentType "application/x-www-form-urlencoded"
-
+      }
+      Catch {
+     $_.Exception | Out-File $logfile -Append
+      }
     $Header = @{
         Authorization = "$($token.token_type) $($token.access_token)"
     }
@@ -39,7 +42,12 @@ if ($proceed -eq 'Y')
 #create Group with owner
 write-host "Creating Group with owner"
 $ownerurl = "https://graph.microsoft.com/v1.0/users/" + "$OwnerPrincipalName"
+try{
 $owner = Invoke-RestMethod -Headers $Header -Uri $ownerurl  -Method get -ContentType 'application/json'
+}
+Catch {
+    $_.Exception | Out-File $logfile -Append
+   }
 $ownerid = $owner.id
 $groupbody = '{
   "description": "Group with designated owner and members",
@@ -57,7 +65,12 @@ $groupbody = '{
 
 
     $groupurl = "https://graph.microsoft.com/v1.0/groups" 
+    try{
     $Group = Invoke-RestMethod -Headers $Header -Uri $groupurl -body $groupbody -Method post -ContentType 'application/json'
+    }
+    Catch {
+    $_.Exception | Out-File $logfile -Append
+   }
     $id = $group.id
 
 #convert that Group to team
@@ -76,12 +89,22 @@ $teambody = '{
   }
 }'
     $teamuri = "https://graph.microsoft.com/v1.0/groups/" +$id+ "/team" 
+    try{
     $Team = Invoke-RestMethod -Headers $Header -Uri $teamuri -body $teambody -Method put -ContentType 'application/json'
+    }
+    Catch {
+    $_.Exception | Out-File $logfile -Append
+    }
 
 #add app to team
 
 $getappuri = "https://graph.microsoft.com/v1.0/appCatalogs/teamsApps?filter=name%20eq%20'$AppName'"
+try{
 $getapp = Invoke-RestMethod -Headers $Header -Uri $getappuri  -Method get -ContentType 'application/json'
+}
+Catch {
+    $_.Exception | Out-File $logfile -Append
+   }
 $Appid = $getapp.id
 
 write-host "Adding App to Team"
@@ -89,6 +112,15 @@ $Appbody = '{
    "teamsApp@odata.bind":"https://graph.microsoft.com/v1.0/appCatalogs/teamsApps/'+$Appid+'"
 }'
     $AddAppsuri = "https://graph.microsoft.com/v1.0/teams/" +$id+ "/installedApps"
+    try{
     Invoke-RestMethod -Headers $Header -Uri $AddAppsuri -body $Appbody -Method post -ContentType 'application/json'
+    }
+    Catch {
+    $_.Exception | Out-File $logfile -Append
+   }
 write-host "App has been added to team"
 }
+
+$end = [system.datetime]::Now
+$resultTime = $end - $start
+Write-Host "Execution took : $($resultTime.TotalSeconds) seconds." -ForegroundColor Cyan
