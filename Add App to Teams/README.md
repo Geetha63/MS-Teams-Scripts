@@ -50,7 +50,7 @@ Accept wildcard characters:	False
  
    To excute `Add App to Teams` download/copy and paste the script into powershell
    
-   Please provide the global administrator credentials or Teams administrator credentials to `Connect-microsoftteams`
+   Please provide the global administrator credentials or Teams administrator credentials to MicrosoftTeams module
         
    Provide the input parameters AppName,TeamId and hit enter to proceed further on the script
        
