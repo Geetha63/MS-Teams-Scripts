@@ -6,8 +6,12 @@ $start = [system.datetime]::Now
      $Client_Secret=read-host "Please provide client secret"
 
 #connect to teams
+try{
 Connect-MicrosoftTeams
-
+}
+Catch {
+    $_.Exception | Out-File $logfile -Append
+   }
 #Grant Adminconsent 
 $Grant= 'https://login.microsoftonline.com/common/adminconsent?client_id='
 $admin = '&state=12345&redirect_uri=https://localhost:1234'
