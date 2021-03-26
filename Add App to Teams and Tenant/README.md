@@ -114,8 +114,8 @@ Accept wildcard characters:	False
 
  ### Example 
  
-    To install Notepad, please provide app displayname: Notepad for parameter $AppName, Notepad will be installed after successful running of the script 
+    To install OneNote, please provide app displayname: OneNote for parameter $AppName, OneNote will be installed after successful running of the script 
     
 #### Expected Output
-Notepad has been installed  
+OneNote has been installed  
 
