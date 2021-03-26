@@ -1,18 +1,21 @@
-﻿
-param(    
-      [Parameter(Mandatory=$true)][System.String]$client_Id,
-      [Parameter(Mandatory=$true)][System.String]$Client_Secret,
-      [Parameter(Mandatory=$true)][System.String]$Tenantid     
-      )
+$logfile = "C:\log_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
+$start = [system.datetime]::Now
+
+     $Tenantid=read-host "Please provide tenant id"
+     $client_Id=Read-host "Please provide client id"
+     $Client_Secret=read-host "Please provide client secret"
 
 #Grant Adminconsent 
 $Grant= 'https://login.microsoftonline.com/common/adminconsent?client_id='
 $admin = '&state=12345&redirect_uri=https://localhost:1234'
 $Grantadmin = $Grant + $client_Id + $admin
 
+try{
 Connect-MicrosoftTeams
-
-
+}
+Catch {
+    $_.Exception | Out-File $logfile -Append
+   }
 start-process $Grantadmin
 write-host "login with your tenant login detials to proceed further"
 
@@ -28,8 +31,12 @@ if ($proceed -eq 'Y')
     } 
 
     $loginurl = "https://login.microsoftonline.com/" + "$Tenantid" + "/oauth2/v2.0/token"
+    try{
     $Token = Invoke-RestMethod -Uri "$loginurl" -Method POST -Body $ReqTokenBody -ContentType "application/x-www-form-urlencoded"
-
+      }
+      Catch {
+    $_.Exception | Out-File $logfile -Append
+   }
     $Header = @{
         Authorization = "$($token.token_type) $($token.access_token)"
     }
@@ -38,19 +45,32 @@ if ($proceed -eq 'Y')
     #Get Team details
          write-host "Getting Team details..."
          $getTeams = "https://graph.microsoft.com/beta/groups?filter=resourceProvisioningOptions/Any(x:x eq 'Team')" 
+         try{
          $Teams = Invoke-RestMethod -Headers $Header -Uri $getTeams -Method get -ContentType 'application/json'
-         
+         }
+         Catch {
+          $_.Exception | Out-File $logfile -Append
+         }
          do 
         {
 
       foreach($Team in $Teams.value.id)
       {
        $Tmembers ="https://graph.microsoft.com/v1.0/groups/" + $Team + "/members"
+       try{
         $members = Invoke-RestMethod -Headers $Header -Uri $Tmembers -Method get 
-
+            }
+            Catch {
+                $_.Exception | Out-File $logfile -Append
+               }
        #Get all team Owners
         $Teamowneruri ="https://graph.microsoft.com/v1.0/groups/" + $Team + "/owners"
+        try{
         $ownerresult = Invoke-RestMethod -Headers $Header -Uri $Teamowneruri -Method get
+        }
+        Catch {
+                $_.Exception | Out-File $logfile -Append
+               }
         $owners = $ownerresult.value.id 
 
         foreach($value in  $members.value)
@@ -60,8 +80,12 @@ if ($proceed -eq 'Y')
         $memberdisplayname = $value.displayName
 
        $licenseuri="https://graph.microsoft.com/v1.0/users/" + $member + "/licenseDetails"
+       try{
        $licenseresult=Invoke-RestMethod -Headers $Header -Uri $licenseuri -Method get
-
+            }
+            Catch {
+                $_.Exception | Out-File $logfile -Append
+               }
         $licensevalue = $licenseresult.value
         $license = $licensevalue.skuPartNumber
         
@@ -77,7 +101,12 @@ if ($proceed -eq 'Y')
                             "@odata.id": "https://graph.microsoft.com/beta/users/'+$member+'"
                             }'
                             $facultyuri ="https://graph.microsoft.com/beta/groups/" + "$Team" + "/owners/`$ref"
+                            try{
                             $output =Invoke-RestMethod -Headers $Header -Uri $facultyuri -Method Post -Body $facultybody -ContentType 'application/json'
+                            }
+                            Catch {
+                                  $_.Exception | Out-File $logfile -Append
+                                 }
                             write-host "Faculty Membership role has been changed to Owner for team"   $memberdisplayname 
                             
                             }
@@ -89,10 +118,20 @@ if ($proceed -eq 'Y')
             elseif(($license -eq "M365EDU_A5_STUDENT") -and ($owners -contains $member))
                     {
                      #add student as member
-                  Add-TeamUser -GroupId $Team -User $memberUPN -Role Member 
+                     try{
+                  Add-TeamUser -GroupId $Team -User $memberUPN -Role Member
+                  }
+                  Catch {
+                      $_.Exception | Out-File $logfile -Append
+                     }
                    #removing student as owner                                             
                 $removestudenturi="https://graph.microsoft.com/v1.0/groups/" +$Team+ "/owners/" +$member+ "/`$ref"
+                try{
                 $output2=Invoke-RestMethod -Headers $Header -Uri $removestudenturi -Method Delete -ContentType 'application/json'
+                }
+                Catch {
+                      $_.Exception | Out-File $logfile -Append
+                     }
                 write-host "student Membership role has been changed to member " $memberdisplayname
                 
                                                                                   
@@ -116,12 +155,19 @@ if ($proceed -eq 'Y')
         break 
         } 
         else 
-        { 
+        {
+        try{
         $group = Invoke-RestMethod -Headers $Header -Uri $group.'@odata.nextLink' -Method Get 
+        }
+        Catch {
+                $_.Exception | Out-File $logfile -Append
+               }
         } 
         }while($true); 
         }
-        
+      $end = [system.datetime]::Now
+$resultTime = $end - $start
+Write-Host "Execution took : $($resultTime.TotalSeconds) seconds." -ForegroundColor Cyan  
 
         else 
 {
