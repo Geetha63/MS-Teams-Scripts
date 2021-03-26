@@ -2,7 +2,7 @@
 
 # Description
 
-  Script is to add TeamsApp to Teams by providing the parameters TeamId and AppName 
+Script is to add TeamsApp to Teams by providing the parameters TeamId and AppName 
   
 # Prerequisites
 
@@ -44,20 +44,21 @@ Accept wildcard characters:	False
  
   AppName
   
-  TeamName
+  TeamId
     
 # Procedure to run the script
  
    To excute `Add App to Teams` download/copy and paste the script into powershell
-        
-   Provide the input parameters AppName,TeamId and hit enter to proceed further on the script
    
    Please provide the global administrator credentials or Teams administrator credentials to `Connect-microsoftteams`
         
+   Provide the input parameters AppName,TeamId and hit enter to proceed further on the script
+       
  ### Example 
  
-    To install OneNote app, please provide app displayname: OneNote for parameter $AppName, OneNote will be installed after successful running of the script 
+ To install OneNote app, please provide app displayname: OneNote for parameter $AppName, OneNote will be installed after successful running of the script 
     
 #### Expected Output
 OneNote has been installed  
 
+A log file will be generated with exceptions, errors along with script execution time
