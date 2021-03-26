@@ -7,6 +7,8 @@ Script is to add TeamsApp to Teams by providing the parameters TeamId and AppNam
 # Prerequisites
 
 Microsoft Teams PowerShell public preview
+
+[Reference link](https://docs.microsoft.com/en-us/microsoftteams/teams-powershell-install)
   
 # Parameters
  
@@ -50,7 +52,7 @@ Accept wildcard characters:	False
  
    To excute `Add App to Teams` download/copy and paste the script into powershell
    
-   Please provide the global administrator credentials or Teams administrator credentials to MicrosoftTeams module
+   Please provide the global administrator credentials or Teams administrator credentials to connect MicrosoftTeams module
         
    Provide the input parameters AppName,TeamId and hit enter to proceed further on the script
        
