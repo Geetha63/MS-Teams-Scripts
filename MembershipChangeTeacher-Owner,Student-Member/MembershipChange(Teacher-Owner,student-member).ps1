@@ -165,11 +165,11 @@ if ($proceed -eq 'Y')
         } 
         }while($true); 
         }
-      $end = [system.datetime]::Now
-$resultTime = $end - $start
-Write-Host "Execution took : $($resultTime.TotalSeconds) seconds." -ForegroundColor Cyan  
-
+     
         else 
 {
     write-host "You need to login admin consent in order to continue... " 
 }
+  $end = [system.datetime]::Now
+$resultTime = $end - $start
+Write-Host "Execution took : $($resultTime.TotalSeconds) seconds." -ForegroundColor Cyan
