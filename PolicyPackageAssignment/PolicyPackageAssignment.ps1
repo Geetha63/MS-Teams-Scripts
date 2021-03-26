@@ -133,8 +133,12 @@ if ($proceed -eq 'Y')
     $Header2 = @{
         Authorization = "$($token2.token_type) $($token2.access_token)"
     }
-     
+     try{
         $group = Invoke-RestMethod -Headers $Header2 -Uri $group.'@odata.nextLink' -Method Get 
+        }
+        Catch {
+                $_.Exception | Out-File $logfile -Append
+               }
         } 
         }while($true); 
         }
