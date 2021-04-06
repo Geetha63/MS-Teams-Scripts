@@ -17,3 +17,6 @@ foreach($UserPrincipalName in $UserPrincipalNames.UserPrincipalName)
           $_.Exception.Message | out-file -Filepath $logfile -append
     }
 }
+$end = [system.datetime]::Now
+$resultTime = $end - $start
+Write-Host "Execution took : $($resultTime.TotalSeconds) seconds." -ForegroundColor Cyan
