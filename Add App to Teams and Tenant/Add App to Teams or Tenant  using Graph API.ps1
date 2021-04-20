@@ -21,7 +21,7 @@ If(Get-Module -ListAvailable -Name MicrosoftTeams)
  }
  catch{
         $_.Exception.Message | out-file -Filepath $logfile -append
- }      
+ } }     
  try{
 Connect-MicrosoftTeams
 }
