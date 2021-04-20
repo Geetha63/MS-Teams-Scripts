@@ -1,10 +1,33 @@
-﻿$logfile = "C:\TeamsAppInstallationlog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
+# This script will add App to team using Teams powershell module cmdlets
+param(
+[Parameter(Mandatory=$true)][System.String]$AppName
+)
+$logfile = "C:\TeamsAppInstallationlog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
 $start = [system.datetime]::Now
 
-Connect-MicrosoftTeams
-$AppName=Read-Host "Please enter AppName"
+If(Get-Module -ListAvailable -Name MicrosoftTeams) 
+ { 
+ Write-Host "MicrosoftTeams Already Installed" 
+ } 
+ else { 
+ try {
+     Install-Module -Name MicrosoftTeams
+     Write-Host "Installed MicrosoftTeams"
+     }
+ catch{
+        $_.Exception.Message | out-file -Filepath $logfile -append
+     }
+  }
+ 
+     try{
+        Connect-MicrosoftTeams
+        }
+     catch{
+            $_.Exception.Message | out-file -Filepath $logfile -append
+         }
+
 try{
-$App=Get-TeamsApp -DisplayName "$AppName"
+$App = Get-TeamsApp -DisplayName "$AppName"
 $APP
 }
 catch{
