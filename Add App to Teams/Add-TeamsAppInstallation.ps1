@@ -1,6 +1,7 @@
 # This script will add App to team using Teams powershell module cmdlets
 param(
-[Parameter(Mandatory=$true)][System.String]$AppName
+[Parameter(Mandatory=$true)][System.String]$AppName,
+[Parameter(Mandatory=$true)][System.String]$TeamId
 )
 $logfile = "C:\TeamsAppInstallationlog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
 $start = [system.datetime]::Now
@@ -35,7 +36,7 @@ $_.Exception.Message | out-file -Filepath $logfile -append
 }
 
 $AppId =$App.Id
-$TeamId= Read-Host "Please enter TeamId"
+
 try{
 Add-TeamsAppInstallation -AppId $AppId -TeamId $TeamId
 }
