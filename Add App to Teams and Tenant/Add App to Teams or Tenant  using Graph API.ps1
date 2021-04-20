@@ -1,4 +1,4 @@
-#Use this script to add App to team or Tenant
+# This script will add App to team or Tenant using Graph api calling method.
 
 param(
       [Parameter(Mandatory=$true)][System.String]$OwnerPrincipalName,
