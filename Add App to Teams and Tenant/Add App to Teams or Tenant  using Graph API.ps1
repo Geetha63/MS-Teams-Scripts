@@ -1,4 +1,4 @@
-#This script will add app to team and tenant.
+#Use this script to add App to team or Tenant
 
 param(
       [Parameter(Mandatory=$true)][System.String]$OwnerPrincipalName,
