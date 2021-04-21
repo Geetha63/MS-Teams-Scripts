@@ -1,4 +1,4 @@
-# Add App to Teams or Tenant
+# Add App to Team
 
 # Description
 
