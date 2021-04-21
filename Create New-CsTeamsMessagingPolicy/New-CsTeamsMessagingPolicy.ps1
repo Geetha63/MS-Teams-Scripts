@@ -1,4 +1,4 @@
-# This script will create teams messaging policy(restricting peer - peer chat).
+# This script will create Microsoft Teams messaging policy (Restricting peer - peer chat) using PowerShell cmdlets.
 
 param(
       [Parameter(Mandatory=$true)][System.String]$PolicyName
