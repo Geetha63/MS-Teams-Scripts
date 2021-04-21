@@ -3,7 +3,7 @@ param(
 [Parameter(Mandatory=$true)][System.String]$AppName,
 [Parameter(Mandatory=$true)][System.String]$TeamId
 )
-$logfile = "C:\TeamsAppInstallationlog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
+$logfile = ".\TeamsAppInstallationlog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
 $start = [system.datetime]::Now
 
 If(Get-Module -ListAvailable -Name MicrosoftTeams) 
