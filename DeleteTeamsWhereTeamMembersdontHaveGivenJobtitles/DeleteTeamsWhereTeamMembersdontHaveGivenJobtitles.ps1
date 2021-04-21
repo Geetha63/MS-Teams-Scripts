@@ -2,14 +2,15 @@
 #Provide job title phrases separate by , 
 #for best practice run the script quote delete cmdlet
 
-$logfile = "C:\log_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
+param(
+      [Parameter(Mandatory=$true)][System.String]$mailsender,
+      [Parameter(Mandatory=$true)][System.String]$KeepJobtitles,
+      [Parameter(Mandatory=$true)][System.String]$Tenantid,
+      [Parameter(Mandatory=$true)][System.String]$client_Id,
+      [Parameter(Mandatory=$true)][System.String]$Client_Secret
+      )
+$logfile = ".\log_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
 $start = [system.datetime]::Now
-
-     $Tenantid=read-host "Please provide tenant id"
-     $client_Id=Read-host "Please provide client id"
-     $Client_Secret=read-host "Please provide client secret"
-     $mailsender = read-host "Please provide mailsender"
-     $KeepJobtitles = read-host "Please provide KeepJobtitles"
 
 #Grant Adminconsent 
 $Grant= 'https://login.microsoftonline.com/common/adminconsent?client_id='
@@ -150,4 +151,3 @@ else{ write-host Re run the script and press Y}
 $end = [system.datetime]::Now
 $resultTime = $end - $start
 Write-Host "Execution took : $($resultTime.TotalSeconds) seconds." -ForegroundColor Cyan
-
