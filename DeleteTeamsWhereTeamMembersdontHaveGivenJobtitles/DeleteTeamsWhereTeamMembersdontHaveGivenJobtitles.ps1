@@ -1,6 +1,8 @@
-﻿#this script will Delete the all teams except given job titles match
+﻿#This script will delete all Teams except given job titles match
 #Provide job title phrases separate by , 
-#for best practice run the script quote delete cmdlet
+#For best practice run the script quote delete cmdlet
+
+#Example :Script will delete HR Team if anyone of Team member job title does not match and the script will send an email to HR Team owner behalf of mailsender(admin@contoso.com)
 
 param(
       [Parameter(Mandatory=$true)][System.String]$mailsender,
@@ -87,7 +89,7 @@ if ($proceed -eq 'Y')
                     $DeletedTeam = $team | select displayName
                     $deleteURL = "https://graph.microsoft.com/v1.0/groups/" + "$id" 
                     try{
-                    #$DeleteTeam = Invoke-RestMethod -Headers $Header -Uri $deleteURL -Method DELETE 
+                    $DeleteTeam = Invoke-RestMethod -Headers $Header -Uri $deleteURL -Method DELETE 
                     }
                     Catch {
                       $_.Exception | Out-File $logfile -Append
