@@ -1,3 +1,10 @@
+# This script will create teams messaging policy(restricting peer - peer chat).
+
+param(
+      [Parameter(Mandatory=$true)][System.String]$PolicyName
+      )
+
+
 $logfile = "C:\CreateNew-CsTeamsMessagingPolicylog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
 $start = [system.datetime]::Now
 
@@ -5,7 +12,6 @@ Import-Module SkypeOnlineConnector
 $sfbSession = New-CsOnlineSession 
 Import-PSSession $sfbSession -AllowClobber
 
-$PolicyName = Read-Host "Please provide PolicyName"
  try{
 New-CsTeamsMessagingPolicy -Identity "$PolicyName" -AllowUserChat $false
 }
