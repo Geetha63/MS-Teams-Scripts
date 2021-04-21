@@ -4,8 +4,7 @@ param(
       [Parameter(Mandatory=$true)][System.String]$PolicyName
       )
 
-
-$logfile = "C:\CreateNew-CsTeamsMessagingPolicylog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
+$logfile = ".\CreateNew-CsTeamsMessagingPolicylog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
 $start = [system.datetime]::Now
 
 Import-Module SkypeOnlineConnector
