@@ -4,9 +4,8 @@
 Grant-CsTeamsAppPermissionPolicy script assign custom policies to users based on the job title
 
 Users whose job title contains Manager will be assigned with Level1Policy and others will be assigned with UsersPolicy 
-
-Script will auto check and install [SFB online connector](https://www.microsoft.com/en-us/download/details.aspx?id=39366) if the module is not available 
-
+# Prerequisite
+(MicrosoftTeams module)![https://www.powershellgallery.com/packages/MicrosoftTeams/2.2.0-preview]
 # Parameters
 **`-Identity`**
 
