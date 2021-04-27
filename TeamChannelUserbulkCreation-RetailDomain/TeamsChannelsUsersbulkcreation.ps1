@@ -1,17 +1,5 @@
 ﻿$logfile = "C:\Retailteamcreationlog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
 $start = [system.datetime]::Now
-If(Get-Module -ListAvailable -Name MicrosoftTeams) 
- { 
- Write-Host "MicrosoftTeams Already Installed" 
- } 
- else { 
- try { Install-Module -Name MicrosoftTeams
- Write-Host "Installed MicrosoftTeams"
- }
- catch{
-        $_.Exception.Message | out-file -Filepath $logfile -append
- }}
-
 Connect-MicrosoftTeams
 $Groups=Import-Csv Input.csv
 
