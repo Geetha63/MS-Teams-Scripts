@@ -5,7 +5,7 @@ Grant-CsTeamsAppPermissionPolicy script assign custom policies to users based on
 
 Users whose job title contains Manager will be assigned with Level1Policy and others will be assigned with UsersPolicy 
 # Prerequisite
-(MicrosoftTeams module)![https://www.powershellgallery.com/packages/MicrosoftTeams/2.2.0-preview]
+(MicrosoftTeams module)[https://www.powershellgallery.com/packages/MicrosoftTeams/2.2.0-preview]
 # Parameters
 **`-Identity`**
 
@@ -36,7 +36,7 @@ Accept pipeline input:	False
 Accept wildcard characters:	False
 
 # Inputs
-Skype for Business Online/Global Admin Credentials
+MicrosoftTeams Admin/Global Admin Credentials
 
 # Sample Output
 
