@@ -1,9 +1,6 @@
 ﻿$logfile = "C:\TeamsAppSetupPolicylog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
 $start = [system.datetime]::Now
-Import-Module SkypeOnlineConnector
-$sfbSession = New-CsOnlineSession 
-Import-PSSession $sfbSession -AllowClobber
-
+Connect-MicrosoftTeams
 $UserPrincipalNames=Import-Csv AppSetupPolicyInput.csv
 Get-CSTeamsAppsetuppolicy |fl Identity
 $PolicyName=Read-Host "Please provide the PolicyName"
