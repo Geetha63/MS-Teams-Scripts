@@ -4,7 +4,7 @@ param(
       [Parameter(Mandatory=$true)][System.String]$PolicyName         
       )
 $start = [system.datetime]::Now
-$logfile = "C:\Log_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
+$logfile = ".\Log_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
       try{
 
 #connecting to Skypeonline
