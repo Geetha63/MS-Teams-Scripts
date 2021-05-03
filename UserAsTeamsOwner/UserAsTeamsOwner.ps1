@@ -1,5 +1,5 @@
 ﻿# This script will provide the teams details where user is owner for the team
- $logfile = "C:\CreateNew-CsTeamsMessagingPolicylog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
+ $logfile = ".\CreateNew-CsTeamsMessagingPolicylog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
 $start = [system.datetime]::Now
  
  If(Get-Module -ListAvailable -Name MicrosoftTeams) 
