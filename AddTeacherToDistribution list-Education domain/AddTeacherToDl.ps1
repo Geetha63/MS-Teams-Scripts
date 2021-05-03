@@ -1,5 +1,5 @@
-﻿
-$logfile = "C:\log_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
+#This script will add Teachers to distribution list
+$logfile = ".\log_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
 $start = [system.datetime]::Now
 
 If(Get-Module -ListAvailable -NameAzureAD) 
