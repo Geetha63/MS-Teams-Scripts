@@ -1,4 +1,6 @@
-﻿$logfile = "C:\log_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
+# This Script will search for All Teachers distribution list in tenant and assign policy types TeamsChannelsPolicy, TeamsMeetingPolicy, TeamsMessagingPolicy with policy name AllTeachers to All Teachers distribution list
+
+$logfile = ".\log_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
 $start = [system.datetime]::Now
 
  If(Get-Module -ListAvailable -Name MicrosoftTeams) 
