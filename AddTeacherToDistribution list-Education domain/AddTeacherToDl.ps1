@@ -1,4 +1,4 @@
-#This script will add Teachers to distribution list
+#Script will search and filter teachers in a tenant using license parameter and adds to the All teachers distribution list
 $logfile = ".\log_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
 $start = [system.datetime]::Now
 
