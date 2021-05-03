@@ -1,4 +1,4 @@
-﻿# This script will provide the teams details where user is owner for the team
+﻿# This script will provide the Teams details where user is owner for the Team
  $logfile = ".\CreateNew-CsTeamsMessagingPolicylog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
 $start = [system.datetime]::Now
  
