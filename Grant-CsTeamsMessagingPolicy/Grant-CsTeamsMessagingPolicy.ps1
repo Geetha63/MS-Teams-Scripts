@@ -1,3 +1,4 @@
+#This script will assign teams messaging policy to user.
 param(
       [Parameter(Mandatory=$true)][System.String]$User,
       [Parameter(Mandatory=$true)][System.String]$PolicyName         
