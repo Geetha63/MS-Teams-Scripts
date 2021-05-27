@@ -1,7 +1,9 @@
-﻿$logfile = "C:\TeamsCreationAlongWithChannelRolelog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
+# This script is to create Teams along with channel and role by providing input data TeamName, ChannelName, Owner, Member and Visibility in TeamsCreationAlongWithChannelRole.csv file
+
+$logfile = ".\TeamsCreationAlongWithChannelRolelog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
 $start = [system.datetime]::Now
  Connect-MicrosoftTeams
-$Groups= Import-Csv Input.csv
+$Groups= Import-Csv ".\TeamsCreationAlongWithChannelRole.csv"
 # $Groups
 
 foreach($Group in $Groups)
@@ -25,7 +27,7 @@ if($Teams -ne $null)
             $file | add-member -MemberType NoteProperty -Name channelId $teamchannel.ID
             $file | add-member -MemberType NoteProperty -Name TeamOwner $group.Owner
 	        $file | add-member -MemberType NoteProperty -Name TeamMember $group.Member
-            $file | export-csv output.csv  -NoTypeInformation -Append
+            $file | export-csv Output.csv  -NoTypeInformation -Append
             }
 	    }
 catch{
