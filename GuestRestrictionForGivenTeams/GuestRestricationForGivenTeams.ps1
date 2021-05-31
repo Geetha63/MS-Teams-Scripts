@@ -154,7 +154,7 @@ if ($proceed -eq 'Y')
                       $file | add-member -MemberType NoteProperty -Name TeamsName $Teamdetails.displayName
                       $file | add-member -MemberType NoteProperty -Name Teamsid $Teams.Teamsid
                       $file | add-member -MemberType NoteProperty -Name AllowToAddGuests $status
-                      $file | export-csv output.csv -NoTypeInformation -Append
+                      $file | export-csv GuestRestricationForGivenTeamsOutput.csv -NoTypeInformation -Append
                       } 
           }
  else 
