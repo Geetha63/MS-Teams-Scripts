@@ -1,10 +1,12 @@
-$logfile = "C:\log_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
+#This script will check the user license, based on the assigned license(Teacher/Student), a policy package(Education Teacher/Education_SecondaryStudent) will be assigned
+$logfile = ".\log_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
 $start = [system.datetime]::Now
 
-     $Tenantid=read-host "Please provide tenant id"
-     $client_Id=Read-host "Please provide client id"
-     $Client_Secret=read-host "Please provide client secret"
-
+param(    
+      [Parameter(Mandatory=$true)][System.String]$client_Id,
+      [Parameter(Mandatory=$true)][System.String]$Client_Secret,
+      [Parameter(Mandatory=$true)][System.String]$Tenantid    
+      )
 #connect to teams
 try{
 Connect-MicrosoftTeams
@@ -150,3 +152,4 @@ if ($proceed -eq 'Y')
 $end = [system.datetime]::Now
 $resultTime = $end - $start
 Write-Host "Execution took : $($resultTime.TotalSeconds) seconds." -ForegroundColor Cyan
+#end of script
