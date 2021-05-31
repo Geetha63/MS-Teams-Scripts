@@ -1,8 +1,13 @@
-﻿$logfile = "C:\GroupTeamsCreationRestrictionPolicylog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
+#This script will restrict Office 365 group creation to the members of a particular security group 
+param(
+      [Parameter(Mandatory=$true)][System.String]$Groupname,
+      [Parameter(Mandatory=$true)][System.String]$AllowGroupCreation
+      )
+
+$logfile = ".\GroupTeamsCreationRestrictionPolicylog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
 $start = [system.datetime]::Now
-$Groupname = Read-host "Please provide group name"
-$AllowGroupCreation = Read-host "Please provide allow group creation yes or no"
-try{
+try
+{
 $conDetails = Connect-AzureAD
 $tenantDomain = $conDetails.TenantDomain
 }
@@ -27,17 +32,18 @@ $_.Exception.Message | out-file -Filepath $logfile -append
 	$settingsCopy["EnableGroupCreation"] = $AllowGroupCreation
 
  if($GroupName)
-   {try{
+   {
+   try{
 	$settingsCopy["GroupCreationAllowedGroupId"] = (Get-AzureADGroup -SearchString $GroupName).objectid
     }
     catch{
-$_.Exception.Message | out-file -Filepath $logfile -append
-}}
+        $_.Exception.Message | out-file -Filepath $logfile -append
+        }
+}
+   Set-AzureADDirectorySetting -Id $settingsObjectID -DirectorySetting $settingsCopy
+
+   (Get-AzureADDirectorySetting -Id $settingsObjectID).Values
 $end = [system.datetime]::Now
 $resultTime = $end - $start
 Write-Host "Execution took : $($resultTime.TotalSeconds) seconds." -ForegroundColor Cyan
-
-
-    Set-AzureADDirectorySetting -Id $settingsObjectID -DirectorySetting $settingsCopy
-
-    (Get-AzureADDirectorySetting -Id $settingsObjectID).Values
+#end of script
