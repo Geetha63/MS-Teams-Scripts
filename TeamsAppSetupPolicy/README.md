@@ -2,7 +2,7 @@
 
 # Description
 
-Creating a new Teams app setup policy and assigning a Teams app setup policy to users
+Creating a new custom Teams app setup policy and assigning a custom Teams app setup policy to user/users
 
 # Prerequisites
 
