@@ -1,12 +1,11 @@
-﻿# This script copies users from the tenant and the applications installed for those users in Teams, exports App list into .csv file
-
-$logfile = ".\InstalledAppslog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
-$start = [system.datetime]::Now
+﻿# This script copies users from the tenant and the applications installed for those users in Teams, exports App list into .csv file using Graph API
 param(    
       [Parameter(Mandatory=$true)][System.String]$client_Id,
       [Parameter(Mandatory=$true)][System.String]$Client_Secret,
       [Parameter(Mandatory=$true)][System.String]$Tenantid    
       )
+$logfile = ".\InstalledAppslog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
+$start = [system.datetime]::Now
 
 #Grant Adminconsent 
 $Grant= 'https://login.microsoftonline.com/common/adminconsent?client_id='
