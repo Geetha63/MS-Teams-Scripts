@@ -1,4 +1,4 @@
-#This script will assign Teams app setup policy to the user using PowerShell cmdlets
+#This script will assign custom Teams app setup policy to the user using PowerShell cmdlets
 param(
 [Parameter(Mandatory=$true)][System.String]$Policyname,
 [Parameter(Mandatory=$true)][System.String]$user
