@@ -1,12 +1,12 @@
-﻿#this script will take the input from current folder and create output in current folder (Teamslist.csv should have Teamid, AllowToAddGuests) 
-#this script will change the Given Teams groups AllowToAddGuests value to False
-
-$logfile = "C:\log_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
+﻿#This script will take the input from the current folder and create output in the current folder (input file *Teamslist.csv* should have Teamid, AllowToAddGuests) 
+#Script will change the Given Teams groups AllowToAddGuests parameter value to False
+param(    
+      [Parameter(Mandatory=$true)][System.String]$client_Id,
+      [Parameter(Mandatory=$true)][System.String]$Client_Secret,
+      [Parameter(Mandatory=$true)][System.String]$Tenantid    
+      )
+$logfile = ".\GuestRestricationForGivenTeamslog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
 $start = [system.datetime]::Now
-
-     $Tenantid=read-host "Please provide tenant id"
-     $client_Id=Read-host "Please provide client id"
-     $Client_Secret=read-host "Please provide client secret"
 
 #Grant Adminconsent 
 $Grant= 'https://login.microsoftonline.com/common/adminconsent?client_id='
@@ -164,3 +164,4 @@ if ($proceed -eq 'Y')
 $end = [system.datetime]::Now
 $resultTime = $end - $start
 Write-Host "Execution took : $($resultTime.TotalSeconds) seconds." -ForegroundColor Cyan    
+#end of script
