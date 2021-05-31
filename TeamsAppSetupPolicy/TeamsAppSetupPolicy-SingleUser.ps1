@@ -1,7 +1,11 @@
-$logfile = "C:\TeamsAppSetupPolicy-SingleUserlog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
+#This script will assign Teams app setup policy to the user using PowerShell cmdlets
+param(
+[Parameter(Mandatory=$true)][System.String]$Policyname,
+[Parameter(Mandatory=$true)][System.String]$user
+)
+$logfile = ".\TeamsAppSetupPolicy-SingleUserlog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
 $start = [system.datetime]::Now 
-
- If(Get-Module -ListAvailable -Name SkypeOnlineConnector) 
+If(Get-Module -ListAvailable -Name SkypeOnlineConnector) 
  { 
  Write-Host "SkypeOnlineConnector Already Installed" 
  } 
@@ -17,9 +21,6 @@ $start = [system.datetime]::Now
 Import-Module SkypeOnlineConnector
 $sfbSession = New-CsOnlineSession 
 Import-PSSession $sfbSession -AllowClobber
-
-$Policyname=Read-Host "Please enter PolicyName"
-$user=Read-Host "Please enter User Principal Name"
 try{
 
 Grant-CsTeamsAppsetupPolicy -policyname "$Policyname" -Identity  $user
