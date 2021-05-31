@@ -1,10 +1,13 @@
-$logfile = "C:\log_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
+#This script will change the Teams membership role(owner/member) based on the user license(Teacher/student)
+#If users don't have a MicrosoftTeams license it will export the user's list
+$logfile = ".\log_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
 $start = [system.datetime]::Now
-
-     $Tenantid=read-host "Please provide tenant id"
-     $client_Id=Read-host "Please provide client id"
-     $Client_Secret=read-host "Please provide client secret"
-
+param(    
+      [Parameter(Mandatory=$true)][System.String]$client_Id,
+      [Parameter(Mandatory=$true)][System.String]$Client_Secret,
+      [Parameter(Mandatory=$true)][System.String]$Tenantid   
+      )
+   
 #Grant Adminconsent 
 $Grant= 'https://login.microsoftonline.com/common/adminconsent?client_id='
 $admin = '&state=12345&redirect_uri=https://localhost:1234'
@@ -173,3 +176,4 @@ if ($proceed -eq 'Y')
   $end = [system.datetime]::Now
 $resultTime = $end - $start
 Write-Host "Execution took : $($resultTime.TotalSeconds) seconds." -ForegroundColor Cyan
+#end of script
