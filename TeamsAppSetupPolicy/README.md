@@ -59,7 +59,7 @@ Run the script, provide the inputs
   
    Example:apptest236
     
-  UserName 
+  User 
   
    Example:davidchew@contoso.com
 
@@ -75,7 +75,7 @@ It will assign the policy to the user
      ...................
                           
 For bulk users use `TeamsAppsetuppolicy - Bulk users`, 
-Provide the input in `Input.csv file`
+Provide the input in `AssignTeamsAppsetupPolicy.csv file`
 
 # Input
 
