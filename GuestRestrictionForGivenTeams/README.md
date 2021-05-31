@@ -70,9 +70,9 @@ Prepare `input.csv` file in below format and keep it in a current location where
 
  Now press Y to proceed further in the script
 
- Script will take the input from _input.csv_
+ Script will take the input from _Teamslist.csv_
 
- Once the script is executed below output.csv file will generate
+ Once the script is executed GuestRestricationForGivenTeamsOutput.csv file will generate
 
 # Output
 ##### Example
