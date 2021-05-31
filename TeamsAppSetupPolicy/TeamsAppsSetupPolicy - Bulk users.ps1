@@ -1,5 +1,9 @@
-﻿#Declare the file path and sheet name
-   $file = "D:\TeamsAppsetup.xlsx"
+﻿#This script will assign Teams app setup policy to the users using PowerShell cmdlets, declare the file path and sheet name
+
+$logfile = ".\TeamsAppSetupPolicy-BulkUserlog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
+$start = [system.datetime]::Now 
+
+   $file = ".\AssignTeamsAppsetupPolicy.xlsx"
    $sheetName = "Sheet1"
 
 #Create an instance of Excel.Application and Open Excel file
@@ -28,3 +32,6 @@ Grant-CsTeamsAppsetupPolicy -policyname "$Policyname" -Identity  $user
 get-csonlineuser -Identity "$user" |ft DisplayName,TeamsappsetupPolicy
 }
 $objExcel.quit()
+$end = [system.datetime]::Now
+$resultTime = $end - $start
+Write-Host "Execution took : $($resultTime.TotalSeconds) seconds." -ForegroundColor Cyan
