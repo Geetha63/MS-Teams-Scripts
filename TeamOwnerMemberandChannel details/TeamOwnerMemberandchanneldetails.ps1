@@ -1,5 +1,5 @@
-#Script will provide the Teams Member,Owner and channel details
-$logfile = "C:\TeamOwnerMemberandChanneldetailslog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
+#This script will provide the Teams Member, Owner, and Channel details using PowerShell cmdlets
+$logfile = ".\TeamOwnerMemberandChanneldetailslog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
 $start = [system.datetime]::Now 
 connect-microsoftteams
     function Get-Result(){
@@ -77,3 +77,4 @@ $end = [system.datetime]::Now
 $resultTime = $end - $start
 Write-Host "Execution took : $($resultTime.TotalSeconds) seconds." -ForegroundColor Cyan   
 $resultTime.TotalSeconds 
+#end of script
