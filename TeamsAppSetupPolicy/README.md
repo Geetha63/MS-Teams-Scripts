@@ -53,7 +53,7 @@ For single user use `TeamsAppsetuppolicy-SingleUser`
 
 Run the script, provide the inputs
 
-  # Inputs:
+  # Input
   
   PolicyName 
   
