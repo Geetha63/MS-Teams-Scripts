@@ -1,5 +1,5 @@
 #This script will check the user license, based on the assigned license(Teacher/Student), a policy package(Education Teacher/Education_SecondaryStudent) will be assigned
-$logfile = ".\log_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
+$logfile = ".\PolicyPackageAssignmentlog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
 $start = [system.datetime]::Now
 
 param(    
