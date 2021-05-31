@@ -1,4 +1,4 @@
-﻿#This script will take the input from the current folder and create output in the current folder (input file *Teamslist.csv should have Teamid, AllowToAddGuests) 
+﻿#This script will take the input from the current folder and create output in the current folder (input file ***Teamslist.csv*** should have Teamid, AllowToAddGuests) 
 #Script will change the Given Teams groups AllowToAddGuests parameter value to False
 param(    
       [Parameter(Mandatory=$true)][System.String]$client_Id,
