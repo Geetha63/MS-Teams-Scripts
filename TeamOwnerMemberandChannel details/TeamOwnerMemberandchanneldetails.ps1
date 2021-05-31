@@ -1,4 +1,4 @@
-#This script will provide the Teams Member, Owner, and Channel details using PowerShell cmdlets
+#This script returns owners, members of a Team, and channels of a Team by providing the required input 1 or 2
 $logfile = ".\TeamOwnerMemberandChanneldetailslog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
 $start = [system.datetime]::Now 
 connect-microsoftteams
