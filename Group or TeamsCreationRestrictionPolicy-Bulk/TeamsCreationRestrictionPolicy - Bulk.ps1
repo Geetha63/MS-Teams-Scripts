@@ -1,8 +1,6 @@
-$logfile = "C:\TeamscreationRestrictionBulklog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
-Start-Transcript -Path $logfile -Append
+#This script will restrict Office 365 group creation to the members of a particular security group 
+$logfile = ".\GroupTeamsCreationRestrictionPolicyBulklog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
 $start = [system.datetime]::Now
-
-
 try{
    $conDetails = Connect-AzureAD
    $tenantDomain = $conDetails.TenantDomain
@@ -12,7 +10,7 @@ $_.Exception.Message | out-file -Filepath $logfile -append
 }
 
 #Declare the file path and sheet name
-   $file = "D:\Input.xlsx"
+   $file = ".\GroupTeamsCreationRestrictionPolicyInput.xlsx"
    $sheetName = "Sheet1"
 
 #Create an instance of Excel.Application and Open Excel file
@@ -69,4 +67,4 @@ $objExcel.quit()
 $end = [system.datetime]::Now
 $resultTime = $end - $start
 Write-Host "Execution took : $($resultTime.TotalSeconds) seconds." -ForegroundColor Cyan
-stop-transcript
+#end of script
