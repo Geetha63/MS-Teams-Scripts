@@ -1,11 +1,12 @@
-﻿# This script copies user from the tenant and the applications installed for those users in Teams into csv file.
+﻿# This script copies users from the tenant and the applications installed for those users in Teams, exports App list into .csv file
 
-$logfile = "C:\log_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
+$logfile = ".\InstalledAppslog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
 $start = [system.datetime]::Now
-
-     $Tenantid=read-host "Please provide tenant id"
-     $client_Id=Read-host "Please provide client id"
-     $Client_Secret=read-host "Please provide client secret"
+param(    
+      [Parameter(Mandatory=$true)][System.String]$client_Id,
+      [Parameter(Mandatory=$true)][System.String]$Client_Secret,
+      [Parameter(Mandatory=$true)][System.String]$Tenantid    
+      )
 
 #Grant Adminconsent 
 $Grant= 'https://login.microsoftonline.com/common/adminconsent?client_id='
@@ -111,3 +112,4 @@ else
 $end = [system.datetime]::Now
 $resultTime = $end - $start
 Write-Host "Execution took : $($resultTime.TotalSeconds) seconds." -ForegroundColor Cyan
+#end of script
