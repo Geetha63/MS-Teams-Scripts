@@ -1,10 +1,14 @@
-﻿#this script will take the input from current folder and create output in current folder
+﻿#This script will check the user Teams license status and enables it, if it is in disable mode
+ #If the user doesn’t have any of Teams license it will print the user name in the output(Nolicense.csv) file
 
 param(    
       [Parameter(Mandatory=$true)][System.String]$client_Id,
       [Parameter(Mandatory=$true)][System.String]$Client_Secret,
       [Parameter(Mandatory=$true)][System.String]$Tenantid     
-      ) 
+      )
+      
+$logfile = ".\TeamsLicenseStatusForEachTenantUserlog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
+$start = [system.datetime]::Now 
 
 #Grant Adminconsent 
 $Grant= 'https://login.microsoftonline.com/common/adminconsent?client_id='
@@ -35,10 +39,7 @@ if ($proceed -eq 'Y')
 
     $uri = "https://graph.microsoft.com/v1.0/users"
     $group = Invoke-RestMethod -Headers $Header -Uri $uri  -Method Get
-
-    
-
-    do
+   do
     { 
         foreach($value in $group.value)
        { 
@@ -108,3 +109,7 @@ if ($group.'@odata.nextLink' -eq $null )
 {
     write-host "You need to login admin consent in order to continue... " 
 }
+$end = [system.datetime]::Now
+$resultTime = $end - $start
+Write-Host "Execution took : $($resultTime.TotalSeconds) seconds." -ForegroundColor Cyan
+#end of script
