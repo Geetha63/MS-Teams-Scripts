@@ -12,12 +12,12 @@ The system should have the AzureADPreview module [`Install-Module azure preview`
 Restricting HR group members from creating Teams or groups
 
 # Inputs
-Import _Input. xlsx_ file as an input which contains Groupname and AllowGroupCreation, Please refer example table
+Import _GroupTeamsCreationRestrictionPolicyInput.xlsx_ file as an input which contains Groupname and AllowGroupCreation, Please refer example table
 
  | Groupname    | AllowGroupCreation    |
  |--------------|--------------------   |
  | Group1       | True                  |
- | Group2       | False                 |
+ | HR       | False                 |
 
 # Parameters
 Groupname: The name of the created O365 security group
