@@ -5,8 +5,9 @@ param(
       [Parameter(Mandatory=$true)][System.String]$Client_Secret,
       [Parameter(Mandatory=$true)][System.String]$Tenantid   
       )
-$logfile = ".\log_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
+$logfile = ".\Membershiplog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
 $start = [system.datetime]::Now 
+
 #Grant Adminconsent 
 $Grant= 'https://login.microsoftonline.com/common/adminconsent?client_id='
 $admin = '&state=12345&redirect_uri=https://localhost:1234'
@@ -19,7 +20,7 @@ Catch {
     $_.Exception | Out-File $logfile -Append
    }
 start-process $Grantadmin
-write-host "login with your tenant login detials to proceed further"
+write-host "login with your tenant login details to proceed further"
 
 $proceed = Read-host " Press Y to continue "
 if ($proceed -eq 'Y')
@@ -145,7 +146,7 @@ if ($proceed -eq 'Y')
             $file = New-Object psobject
             $file | add-member -MemberType NoteProperty -Name UserName $memberUPN
             $file | add-member -MemberType NoteProperty -Name Userid $member
-            $file | export-csv output.csv -NoTypeInformation -Append
+            $file | export-csv -path output.csv -NoTypeInformation -Append
         }
     }
     }
