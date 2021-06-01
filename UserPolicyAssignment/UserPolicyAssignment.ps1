@@ -1,4 +1,4 @@
-# This script will assign policy to user using teams module cmdlets.
+# This script will assign policy to user using teams module cmdlets
 
 $logfile = ".\UserPolicyAssignmentlog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
 $start = [system.datetime]::Now
@@ -221,3 +221,4 @@ $end = [system.datetime]::Now
 $resultTime = $end - $start
 Write-Host "Execution took : $($resultTime.TotalSeconds) seconds." -ForegroundColor Cyan   
 $resultTime.TotalSeconds 
+#end of script
