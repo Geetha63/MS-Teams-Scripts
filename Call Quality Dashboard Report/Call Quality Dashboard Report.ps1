@@ -1,5 +1,6 @@
-﻿$start = [system.datetime]::Now
-$logfile = "C:\CQDLog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
+# This script will provide Total stream count and cqd report of given time using Teams powershell cqd module cmdlets
+$start = [system.datetime]::Now
+$logfile = ".\CQDLog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
  
 $proceed = Read-host " 
 Provide 1 For Total Steram count including Audio,video,Appsharing
