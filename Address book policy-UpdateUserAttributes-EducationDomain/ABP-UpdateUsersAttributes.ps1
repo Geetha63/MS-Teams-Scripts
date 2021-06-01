@@ -46,7 +46,6 @@ $group | Get-AzureADGroupMember | Get-EXOMailbox | Set-Mailbox -CustomAttribute1
         $_.Exception.Message | out-file -Filepath $logfile -append
  }}
 
-
 #Setting custom Attribute for teachers
 $group = Get-AzureADGroup -SearchString "teachers of" -All $true
 foreach ($group in $group){
@@ -63,3 +62,4 @@ catch{
 $end = [system.datetime]::Now
 $resultTime = $end - $start
 Write-Host "Execution took : $($resultTime.TotalSeconds) seconds." -ForegroundColor Cyan
+#end of script
