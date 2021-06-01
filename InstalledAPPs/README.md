@@ -66,8 +66,8 @@ If you have provided the correct credentials it will give the success status `ad
 
 Now press Y to proceed further in the script
 
-Script will create 3 files i.e file.csv, file1.csv, Apps.csv. file.csv and file1.csv will be used as input files to get the final output Apps.csv
-`Apps.csv` is the final output file having installed Teams applications for each user
+Script will create 3 files i.e Userdata.csv, UserApps.csv, UserInstalledTeamsApps.csv. Userdata.csv and UserApps.csv will be used as input files to get the final output UserInstalledTeamsApps.csv
+`UserInstalledTeamsApps.csv` is the final output file having installed Teams applications for each user
 
 # Output
 
