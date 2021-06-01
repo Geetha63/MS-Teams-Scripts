@@ -1,4 +1,5 @@
-$logfile = "C:\CreateAndAssignAddressbookPolicylog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
+# This script will create and assign addressbook policy.
+$logfile = ".\CreateAndAssignAddressbookPolicylog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
 $start = [system.datetime]::Now
 if(Get-Module -ListAvailable -Name ExchangeOnlineManagement) 
  { 
