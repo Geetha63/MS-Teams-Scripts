@@ -1,4 +1,5 @@
-$logfile = "C:\TeamsOwnerMembersdetailslog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
+# This script will provide Teams Owner and member details using teams module cmdlets.
+$logfile = ".\TeamsOwnerMembersdetailslog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
 $start = [system.datetime]::Now
 If(Get-Module -ListAvailable -Name MicrosoftTeams) 
  { 
