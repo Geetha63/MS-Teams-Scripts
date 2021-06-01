@@ -1,4 +1,5 @@
-$logfile = "C:\TeachersGroupUpdate-Education domainlog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
+#This script will update teachers group.
+$logfile = ".\TeachersGroupUpdate-Education domainlog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
 $start = [system.datetime]::Now
 if(Get-Module -ListAvailable -Name AzureAD) 
  { 
