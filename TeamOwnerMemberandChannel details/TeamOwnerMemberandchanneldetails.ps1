@@ -30,7 +30,7 @@ connect-microsoftteams
             $file | add-member -MemberType NoteProperty -Name TeamDisplayname $displayname
             $file | add-member -MemberType NoteProperty -Name Owner  $Owner
             $file | add-member -MemberType NoteProperty -Name Member $Members
-            $file | export-csv Teamoutput.csv -NoTypeInformation -Append
+            $file | export-csv -path ".\Teamoutput.csv" -NoTypeInformation -Append
        }     
     
     }
@@ -51,7 +51,7 @@ connect-microsoftteams
        $file | add-member -MemberType NoteProperty -Name Teamid $team.Groupid
        $file | add-member -MemberType NoteProperty -Name TeamDisplayname $team.displayname
        $file | add-member -MemberType NoteProperty -Name ChaneelName  $channels
-       $file | export-csv channeloutput.csv -NoTypeInformation -Append
+       $file | export-csv -path ".\channeloutput.csv" -NoTypeInformation -Append
     }
       }
     catch{
