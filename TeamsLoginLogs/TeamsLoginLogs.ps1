@@ -56,11 +56,8 @@ if ($proceed -eq 'Y')
          $deviceDetail = $AuditResult.deviceDetail
          $isInteractive = $AuditResult.isInteractive
          $deviceDetails = [string]::Join("* ",$deviceDetail)
-            }}
-            catch{
-        $_.Exception.Message | out-file -Filepath $logfile -append
-            }
-try{
+                       
+
 if((($AppDisplayName -eq "Microsoft Teams Web Client") -or ($AppDisplayName -eq "Microsoft Teams")) -and ($errorCode -eq "0") -and ($isInteractive -eq $True) -and ("Microsoft Teams Chat Aggregator", "Office 365 Exchange Online", "Skype Presence Service", "Microsoft Stream Service", "Call Recorder"  -notcontains $resourceDisplayName))                
 
 {
@@ -72,16 +69,19 @@ if((($AppDisplayName -eq "Microsoft Teams Web Client") -or ($AppDisplayName -eq 
                 $file | add-member -MemberType NoteProperty -Name deviceDetail $deviceDetails
                 $file | export-csv loginstatusoutput.csv -NoTypeInformation -Append
                  }
-                 }
-                 catch{
-        $_.Exception.Message | out-file -Filepath $logfile -append
-            }
-                 }
-            
+        
          else{ 
                 write-host ".."
-              }
-             
+              }}
+             }
+             catch{
+        $_.Exception.Message | out-file -Filepath $logfile -append
+            }
+            }
+            else 
+            {
+            write-host "re run the script and choose Y to proceed"
+            }
        
         
          
