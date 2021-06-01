@@ -22,9 +22,7 @@ Import-Module SkypeOnlineConnector
 $sfbSession = New-CsOnlineSession 
 Import-PSSession $sfbSession -AllowClobber
 try{
-
 Grant-CsTeamsAppsetupPolicy -policyname "$Policyname" -Identity  $user
-
 get-csonlineuser -Identity "$user" |ft TeamsappsetupPolicy,UserPrincipalName
 }
 catch{
@@ -34,3 +32,4 @@ catch{
 $end = [system.datetime]::Now
 $resultTime = $end - $start
 Write-Host "Execution took : $($resultTime.TotalSeconds) seconds." -ForegroundColor Cyan
+#end of script
