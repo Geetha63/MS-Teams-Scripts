@@ -1,5 +1,5 @@
-# This script will reset the policies
-$logfile = ".\log_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
+# This Script will create custom policies to set all access to teachers and restrict to students in an organization
+$logfile = ".\ResetPolicieslog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
 $start = [system.datetime]::Now
 
 If(Get-Module -ListAvailable -Name MicrosoftTeams) 
@@ -19,7 +19,6 @@ Connect-MicrosoftTeams
  catch{
         $_.Exception.Message | out-file -Filepath $logfile -append
  }  
-
 PolicyChoice = Read-host = "'please provide Number to reset policies
 1.Teams policies
 2.Meetings Policies
@@ -98,3 +97,4 @@ else
 $end = [system.datetime]::Now
 $resultTime = $end - $start
 Write-Host "Execution took : $($resultTime.TotalSeconds) seconds." -ForegroundColor Cyan
+#end of script
