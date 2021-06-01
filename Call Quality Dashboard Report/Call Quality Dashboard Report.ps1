@@ -6,15 +6,14 @@ $proceed = Read-host "
 Provide 1 For Total Steram count including Audio,video,Appsharing
 Provide 2 for CQD Report of Given time"
 if ($proceed -eq "1")
-{try{
+{
+try{
 write-host "Provide startDate and Enddate in MM/dd/yyyy H:mm(Ex:31-03-2020 4:34)"
 
 $StartDate = read-host "Please provide start date"
 $EndDate = read-host "please provide end date"
 
-
 $dimensions = "AllStreams.Date","AllStreams.Media Type","AllStreams.Second UPN" 
- 
 $measures = "Measures.Total Stream Count","Measures.Audio Stream Count","Measures.Video Stream Count","Measures.AppSharing Stream Count","Measures.VBSS Stream Count"
 #"Measures.Call Count","Measures.Audio Call Count","Measures.Video Call Count"
 
@@ -61,8 +60,8 @@ $_.Exception.Message | out-file -Filepath $logfile -append
     Else   {
     write-host "Please run the script again choose option 1 or 2"
     }
-    $end = [system.datetime]::Now
+$end = [system.datetime]::Now
 $resultTime = $end - $start
-Write-Host "Execution took : $($resultTime.TotalSeconds) seconds."
-
+Write-Host "Execution took : $($resultTime.TotalSeconds) seconds." -ForegroundColor Cyan
+#end of script
 
