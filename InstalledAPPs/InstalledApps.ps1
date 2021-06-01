@@ -48,12 +48,11 @@ if ($proceed -eq 'Y')
    }
     $userdetails = $users.value
  
-    $userdetails | Export-csv -path file.csv -Append -NoTypeInformation
+    $userdetails | Export-csv -path ".\Userdata.csv" -Append -NoTypeInformation
     $userdisplayname = $userdetails.displayName
     $useruserPrincipalName = $userdetails.userPrincipalName
     $userid = $userdetails.id
-
-
+    
     #getting installed apps
     write-host "installed apps for Tenant users"
     $results = foreach($id in $userid)
@@ -73,11 +72,11 @@ if ($proceed -eq 'Y')
             $file = New-Object psobject
             $file | add-member -MemberType NoteProperty -Name id $id
             $file | add-member -MemberType NoteProperty -Name InstalledApps $InstalledApps
-            $file | export-csv file1.csv -NoTypeInformation -Append
+            $file | export-csv ".\UserApps.csv" -NoTypeInformation -Append
         }
 
-     $userdata = Import-CSV -Path file.csv
-     $Appdata = import-csv -path file1.csv
+     $userdata = Import-CSV -Path ".\Userdata.csv"
+     $Appdata = import-csv -path ".\UserApps.csv"
  
     $matchcounter = 0
 
@@ -98,7 +97,7 @@ if ($proceed -eq 'Y')
             
                                    
                     Write-Host "Match Found Orders " "$matchCounter"
-                    $obj | Export-Csv -Path Apps.csv -Append -NoTypeInformation
+                    $obj | Export-Csv -Path ".\UserInstalledTeamsApps.csv" -Append -NoTypeInformation
                 }
             }
         }
