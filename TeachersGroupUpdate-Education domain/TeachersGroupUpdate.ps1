@@ -1,4 +1,4 @@
-#This script will update teachers group.
+#This script will update All teachers distributation list based on teacher license 
 $logfile = ".\TeachersGroupUpdate-Education domainlog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
 $start = [system.datetime]::Now
 if(Get-Module -ListAvailable -Name AzureAD) 
