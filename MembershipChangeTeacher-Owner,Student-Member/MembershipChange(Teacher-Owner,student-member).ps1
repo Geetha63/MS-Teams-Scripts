@@ -1,13 +1,12 @@
 #This script will change the Teams membership role(owner/member) based on the user license(Teacher/student)
 #If users don't have a MicrosoftTeams license it will export the user's list
-$logfile = ".\log_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
-$start = [system.datetime]::Now
 param(    
       [Parameter(Mandatory=$true)][System.String]$client_Id,
       [Parameter(Mandatory=$true)][System.String]$Client_Secret,
       [Parameter(Mandatory=$true)][System.String]$Tenantid   
       )
-   
+$logfile = ".\log_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
+$start = [system.datetime]::Now 
 #Grant Adminconsent 
 $Grant= 'https://login.microsoftonline.com/common/adminconsent?client_id='
 $admin = '&state=12345&redirect_uri=https://localhost:1234'
