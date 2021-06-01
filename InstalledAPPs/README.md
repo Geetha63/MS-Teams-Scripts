@@ -2,7 +2,7 @@
 
 # Description
 
-   Script retrieves the list of apps installed in the personal scope of the specified user
+   Script retrieves the list of apps installed for users in tenant
    
  # Prerequisites  
    
