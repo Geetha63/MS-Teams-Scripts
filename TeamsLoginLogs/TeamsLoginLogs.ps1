@@ -67,7 +67,7 @@ if((($AppDisplayName -eq "Microsoft Teams Web Client") -or ($AppDisplayName -eq 
                 $file | add-member -MemberType NoteProperty -Name AppDisplayName $AppDisplayName
                 $file | add-member -MemberType NoteProperty -Name isInteractive $isInteractive
                 $file | add-member -MemberType NoteProperty -Name deviceDetail $deviceDetails
-                $file | export-csv loginstatusoutput.csv -NoTypeInformation -Append
+                $file | export-csv -path ".\loginstatusoutput.csv" -NoTypeInformation -Append
                  }
         
          else{ 
@@ -88,3 +88,4 @@ if((($AppDisplayName -eq "Microsoft Teams Web Client") -or ($AppDisplayName -eq 
 $end = [system.datetime]::Now
 $resultTime = $end - $start
 Write-Host "Execution took : $($resultTime.TotalSeconds) seconds." -ForegroundColor Cyan
+#end of script
