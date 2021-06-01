@@ -1,6 +1,6 @@
 ﻿#This script will assign custom Teams app setup policy to the users using PowerShell cmdlets, declare the file path and sheet name
 
-$logfile = ".\TeamsAppSetupPolicy_BulkUserlog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
+$logfile = ".\TeamsAppSetupPolicyBulkUserlog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
 $start = [system.datetime]::Now 
 
    $file = ".\AssignTeamsAppsetupPolicy.xlsx"
