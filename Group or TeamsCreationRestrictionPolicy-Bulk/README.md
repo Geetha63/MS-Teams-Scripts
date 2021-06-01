@@ -12,7 +12,7 @@ The system should have the AzureADPreview module [`Install-Module azure preview`
 Restricting HR group members from creating Teams or groups
 
 # Inputs
-Import _GroupTeamsCreationRestrictionPolicyInput.xlsx_ file as an input which contains Groupname and AllowGroupCreation, Please refer example table
+Import _GroupTeamsCreationRestrictionPolicy.xlsx_ file as an input which contains Groupname and AllowGroupCreation, Please refer example table
 
  | Groupname    | AllowGroupCreation    |
  |--------------|--------------------   |
