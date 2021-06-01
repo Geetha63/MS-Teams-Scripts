@@ -1,4 +1,5 @@
-$logfile = "C:\ABP-UpdateUsersAttributeslog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
+# This script will update address book policy by user attributes
+$logfile = ".\ABP-UpdateUsersAttributeslog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
 $start = [system.datetime]::Now
 If(Get-Module -ListAvailable -Name AzureAD) 
  { 
