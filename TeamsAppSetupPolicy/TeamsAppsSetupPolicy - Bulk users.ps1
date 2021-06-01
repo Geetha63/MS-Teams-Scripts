@@ -1,6 +1,6 @@
 ﻿#This script will assign custom Teams app setup policy to the users using PowerShell cmdlets, declare the file path and sheet name
 
-$logfile = ".\TeamsAppSetupPolicy-BulkUserlog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
+$logfile = ".\TeamsAppSetupPolicy_BulkUserlog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
 $start = [system.datetime]::Now 
 
    $file = ".\AssignTeamsAppsetupPolicy.xlsx"
@@ -26,12 +26,21 @@ Import-PSSession $sfbSession
 
    $User = $sheet.Cells.Item($rowUser + $i, $colUser).text
     $Policyname = $sheet.Cells.Item($rowPolicyname + $i, $colPolicyname).text
-
-Grant-CsTeamsAppsetupPolicy -policyname "$Policyname" -Identity  $user
-
+    try{
+     Grant-CsTeamsAppsetupPolicy -policyname "$Policyname" -Identity  $user
+    }
+Catch {
+        $_.Exception | Out-File $logfile -Append
+       }
+       try{
 get-csonlineuser -Identity "$user" |ft DisplayName,TeamsappsetupPolicy
+}
+Catch {
+                $_.Exception | Out-File $logfile -Append
+               }
 }
 $objExcel.quit()
 $end = [system.datetime]::Now
 $resultTime = $end - $start
 Write-Host "Execution took : $($resultTime.TotalSeconds) seconds." -ForegroundColor Cyan
+#end of script
