@@ -1,4 +1,4 @@
-# This script will provide Teams Owner and member details using teams module cmdlets.
+# This script will provide Teams Owner and member details using teams module cmdlets
 $logfile = ".\TeamsOwnerMembersdetailslog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
 $start = [system.datetime]::Now
 If(Get-Module -ListAvailable -Name MicrosoftTeams) 
@@ -24,16 +24,13 @@ foreach ($team in $Teams)
         $TeamOwner = get-teamuser -GroupId "$groupid" -Role Owner
         $Members = [string]::Join("; ",$Teammember.User)
         $Owner = [string]::Join("; ",$TeamOwner.User)
-        #$groupid
-        #$Memebrs
-        #Owner
- 
+       
             $file = New-Object psobject
             $file | add-member -MemberType NoteProperty -Name Teamid $groupid
             $file | add-member -MemberType NoteProperty -Name TeamDisplayname $displayname
             $file | add-member -MemberType NoteProperty -Name Owner  $Owner
             $file | add-member -MemberType NoteProperty -Name Member $Members
-            $file | export-csv Teamoutput.csv -NoTypeInformation -Append
+            $file | export-csv -path ".\Teamoutput.csv" -NoTypeInformation -Append
       }
       }
         catch{
@@ -43,3 +40,4 @@ foreach ($team in $Teams)
 $end = [system.datetime]::Now
 $resultTime = $end - $start
 Write-Host "Execution took : $($resultTime.TotalSeconds) seconds." -ForegroundColor Cyan   
+#end of script
