@@ -1,8 +1,11 @@
-﻿param(    
+# This script will filter microsoft teams login logs.
+param(    
       [Parameter(Mandatory=$true)][System.String]$client_Id,
       [Parameter(Mandatory=$true)][System.String]$Client_Secret,
       [Parameter(Mandatory=$true)][System.String]$Tenantid     
       )
+$logfile = ".\Teamsloginlog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
+$start = [system.datetime]::Now      
       
 #Grant Adminconsent 
 $Grant= 'https://login.microsoftonline.com/common/adminconsent?client_id='
@@ -24,15 +27,24 @@ if ($proceed -eq 'Y')
     } 
     
     $loginurl = "https://login.microsoftonline.com/" + "$Tenantid" + "/oauth2/v2.0/token"
+    try{
     $Token = Invoke-RestMethod -Uri "$loginurl" -Method POST -Body $ReqTokenBody -ContentType "application/x-www-form-urlencoded"
-    
+    }
+    catch{
+        $_.Exception.Message | out-file -Filepath $logfile -append
+     }
     $Header = @{
         Authorization = "$($token.token_type) $($token.access_token)"
     }
   
          $Audits="https://graph.microsoft.com/v1.0/auditLogs/signIns"
+         try{
          $AuditResults = Invoke-RestMethod -Headers $Header -Uri $Audits -Method get -ContentType 'application/json'
-                 
+          }
+          catch{
+        $_.Exception.Message | out-file -Filepath $logfile -append
+            }
+            try{
          foreach($AuditResult in $AuditResults.value)
          {
          $AppDisplayName =$AuditResult.appDisplayName
@@ -44,8 +56,11 @@ if ($proceed -eq 'Y')
          $deviceDetail = $AuditResult.deviceDetail
          $isInteractive = $AuditResult.isInteractive
          $deviceDetails = [string]::Join("* ",$deviceDetail)
-
-
+            }}
+            catch{
+        $_.Exception.Message | out-file -Filepath $logfile -append
+            }
+try{
 if((($AppDisplayName -eq "Microsoft Teams Web Client") -or ($AppDisplayName -eq "Microsoft Teams")) -and ($errorCode -eq "0") -and ($isInteractive -eq $True) -and ("Microsoft Teams Chat Aggregator", "Office 365 Exchange Online", "Skype Presence Service", "Microsoft Stream Service", "Call Recorder"  -notcontains $resourceDisplayName))                
 
 {
@@ -57,10 +72,19 @@ if((($AppDisplayName -eq "Microsoft Teams Web Client") -or ($AppDisplayName -eq 
                 $file | add-member -MemberType NoteProperty -Name deviceDetail $deviceDetails
                 $file | export-csv loginstatusoutput.csv -NoTypeInformation -Append
                  }
+                 }
+                 catch{
+        $_.Exception.Message | out-file -Filepath $logfile -append
+            }
+                 }
             
          else{ 
                 write-host ".."
               }
+             
        
-        }
-         }
+        
+         
+$end = [system.datetime]::Now
+$resultTime = $end - $start
+Write-Host "Execution took : $($resultTime.TotalSeconds) seconds." -ForegroundColor Cyan
