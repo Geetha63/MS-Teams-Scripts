@@ -2,7 +2,7 @@
 
 # Description
 
-   Script retrieves the list of apps installed for users in tenant
+   Script retrieves the list of Teams apps installed for users in tenant
    
  # Prerequisites  
    
