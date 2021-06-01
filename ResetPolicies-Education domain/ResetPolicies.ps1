@@ -1,10 +1,24 @@
-$logfile = "C:\log_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
+# This script will reset the policies
+$logfile = ".\log_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
 $start = [system.datetime]::Now
 
-$credential= get-credential
-Import-Module SkypeOnlineConnector 
-$sfboSession = New-CsOnlineSession -Credential  $credential
-Import-PSSession $sfboSession -AllowClobber
+If(Get-Module -ListAvailable -Name MicrosoftTeams) 
+ { 
+ Write-Host "MicrosoftTeams Already Installed" 
+ } 
+ else { 
+ try { Install-Module -Name MicrosoftTeams
+ Write-Host "Installed MicrosoftTeams"
+ }
+ catch{
+        $_.Exception.Message | out-file -Filepath $logfile -append
+ } }     
+ try{
+Connect-MicrosoftTeams
+}
+ catch{
+        $_.Exception.Message | out-file -Filepath $logfile -append
+ }  
 
 PolicyChoice = Read-host = "'please provide Number to reset policies
 1.Teams policies
