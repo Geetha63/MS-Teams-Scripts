@@ -1,4 +1,4 @@
-#This script will restrict Office 365 group creation to the members of a particular security group 
+#This script will restrict Office 365 group creation to the members of a particular security groups using AzureAD PowerShell cmdlets 
 $logfile = ".\GroupTeamsCreationRestrictionPolicyBulklog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
 $start = [system.datetime]::Now
 try{
@@ -10,7 +10,7 @@ $_.Exception.Message | out-file -Filepath $logfile -append
 }
 
 #Declare the file path and sheet name
-   $file = ".\GroupTeamsCreationRestrictionPolicyInput.xlsx"
+   $file = ".\GroupTeamsCreationRestrictionPolicy.xlsx"
    $sheetName = "Sheet1"
 
 #Create an instance of Excel.Application and Open Excel file
