@@ -117,7 +117,7 @@ if ($proceed -eq 'Y')
             $file = New-Object psobject
             $file | add-member -MemberType NoteProperty -Name UserName $UPN
             $file | add-member -MemberType NoteProperty -Name Userid $id
-            $file | export-csv license.csv -NoTypeInformation -Append
+            $file | export-csv -path ".\license.csv" -NoTypeInformation -Append
          }
           }
    if ($group.'@odata.nextLink' -eq $null ) 
