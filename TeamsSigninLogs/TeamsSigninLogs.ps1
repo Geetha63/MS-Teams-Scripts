@@ -73,7 +73,7 @@ if((($AppDisplayName -eq "Microsoft Teams Web Client") -or ($AppDisplayName -eq 
                 $file | add-member -MemberType NoteProperty -Name AppDisplayName $AppDisplayName
                 $file | add-member -MemberType NoteProperty -Name isInteractive $isInteractive
                 $file | add-member -MemberType NoteProperty -Name deviceDetail $deviceDetails
-                $file | export-csv Signinoutput.csv -NoTypeInformation -Append
+                $file | export-csv -path ".\Signinoutput.csv" -NoTypeInformation -Append
                  }
             
          else{ 
@@ -91,9 +91,7 @@ if((($AppDisplayName -eq "Microsoft Teams Web Client") -or ($AppDisplayName -eq 
             write-host "re run the script and choose Y to proceed"
             }
 
-
 $end = [system.datetime]::Now
 $resultTime = $end - $start
 Write-Host "Execution took : $($resultTime.TotalSeconds) seconds." -ForegroundColor Cyan
-
 #end of script
