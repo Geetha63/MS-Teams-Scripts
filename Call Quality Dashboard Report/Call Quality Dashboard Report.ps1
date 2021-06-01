@@ -43,7 +43,7 @@ $_.Exception.Message | out-file -Filepath $logfile -append
 if ($proceed -eq "2")
     {
     try{
-    $cqd_List = Import-Csv "CQD_Input.csv"
+    $cqd_List = Import-Csv -path ".\CQD_data.csv"
 
 
 Foreach ($cqd in $cqd_List)
