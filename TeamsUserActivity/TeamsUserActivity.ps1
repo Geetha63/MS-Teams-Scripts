@@ -1,4 +1,4 @@
-# This script will filter microsoft teams user activity.
+# This script will filter microsoft teams user activity for period value: D7, D30, D90, and D180
 param(
       [Parameter(Mandatory=$true)][System.String]$client_Id,
       [Parameter(Mandatory=$true)][System.String]$Client_Secret,
@@ -91,3 +91,4 @@ if ($ProceedNext -eq "Y" )
 $end = [system.datetime]::Now
 $resultTime = $end - $start
 Write-Host "Execution took : $($resultTime.TotalSeconds) seconds." -ForegroundColor Cyan
+#end of script
