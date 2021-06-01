@@ -1,5 +1,4 @@
-﻿#This script will take the input from the current folder and create output in the current folder (input file Teamslist.csv should have Teamid, AllowToAddGuests) 
-#Script will change the Given Teams groups AllowToAddGuests parameter value to False
+#This script will restrict the guest users in Teams by changing the O365 group AllowToAddGuests parameter value to false
 param(    
       [Parameter(Mandatory=$true)][System.String]$client_Id,
       [Parameter(Mandatory=$true)][System.String]$Client_Secret,
@@ -39,7 +38,7 @@ if ($proceed -eq 'Y')
     }
 
  #Getting Team details
-    $TeamsList = Import-Csv "Teamslist.csv"
+    $TeamsList = Import-Csv -path ".\Teamslist.csv"
     foreach($Teams in $TeamsList){
   
                         $uri = "https://graph.microsoft.com/v1.0/groups/" + $Teams.Teamsid
