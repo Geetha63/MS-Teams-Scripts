@@ -1,14 +1,29 @@
+# This script will assign policy to user using teams module cmdlets.
 
-$logfile = "C:\UserPolicyAssignmentlog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
+$logfile = ".\UserPolicyAssignmentlog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
 $start = [system.datetime]::Now
 
-Import-Module SkypeOnlineConnector
-$sfbSession = New-CsOnlineSession 
-Import-PSSession $sfbSession -AllowClobber
+If(Get-Module -ListAvailable -Name MicrosoftTeams) 
+ { 
+ Write-Host "MicrosoftTeams Already Installed" 
+ } 
+ else { 
+ try { Install-Module -Name MicrosoftTeams
+ Write-Host "Installed MicrosoftTeams"
+ }
+ catch{
+        $_.Exception.Message | out-file -Filepath $logfile -append
+ } }     
+ try{
+Connect-MicrosoftTeams
+}
+ catch{
+        $_.Exception.Message | out-file -Filepath $logfile -append
+ }  
 
-$UserPrincipalNames = import-csv "Input.csv"
-$UserPricipleNames = $Input.UserPricipleName
-$count = $Input.Count
+$UserPrincipalNames = import-csv -path ".\PolicyAssignment.csv"
+$UserPricipleNames = $PolicyAssignment.UserPricipleName
+$count = $PolicyAssignment.Count
 write-host "Running the script for users:" $count
 
 foreach($UserPrincipalName in $UserPrincipalNames.UserPrincipalName)
