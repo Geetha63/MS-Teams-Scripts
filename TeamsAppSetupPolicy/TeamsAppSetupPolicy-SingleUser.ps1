@@ -3,7 +3,7 @@ param(
 [Parameter(Mandatory=$true)][System.String]$Policyname,
 [Parameter(Mandatory=$true)][System.String]$user
 )
-$logfile = ".\TeamsAppSetupPolicy-SingleUserlog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
+$logfile = ".\TeamsAppSetupPolicySingleUserlog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
 $start = [system.datetime]::Now 
 If(Get-Module -ListAvailable -Name SkypeOnlineConnector) 
  { 
