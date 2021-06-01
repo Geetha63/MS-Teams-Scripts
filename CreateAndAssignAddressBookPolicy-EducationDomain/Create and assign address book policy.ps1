@@ -1,4 +1,4 @@
-# This script will create and assign addressbook policy.
+# This script will create and assign addressbook policy
 $logfile = ".\CreateAndAssignAddressbookPolicylog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
 $start = [system.datetime]::Now
 if(Get-Module -ListAvailable -Name ExchangeOnlineManagement) 
@@ -38,3 +38,4 @@ $_.Exception.Message | out-file -Filepath $logfile -append
 $end = [system.datetime]::Now
 $resultTime = $end - $start
 Write-Host "Execution took : $($resultTime.TotalSeconds) seconds." -ForegroundColor Cyan
+#end of script
