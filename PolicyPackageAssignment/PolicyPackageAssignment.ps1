@@ -1,12 +1,12 @@
 #This script will check the user license, based on the assigned license(Teacher/Student), a policy package(Education Teacher/Education_SecondaryStudent) will be assigned
-$logfile = ".\PolicyPackageAssignmentlog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
-$start = [system.datetime]::Now
 
 param(    
       [Parameter(Mandatory=$true)][System.String]$client_Id,
       [Parameter(Mandatory=$true)][System.String]$Client_Secret,
       [Parameter(Mandatory=$true)][System.String]$Tenantid    
       )
+$logfile = ".\PolicyPackageAssignmentlog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
+$start = [system.datetime]::Now
 #connect to teams
 try{
 Connect-MicrosoftTeams
