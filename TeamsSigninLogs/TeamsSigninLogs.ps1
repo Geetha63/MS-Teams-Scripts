@@ -1,8 +1,11 @@
-﻿param(    
+# This script will filter microsoft teams signin logs.
+param(    
       [Parameter(Mandatory=$true)][System.String]$client_Id,
       [Parameter(Mandatory=$true)][System.String]$Client_Secret,
       [Parameter(Mandatory=$true)][System.String]$Tenantid     
       )
+$logfile = ".\Teamssigninlog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
+$start = [system.datetime]::Now
 
 #Grant Adminconsent 
 $Grant= 'https://login.microsoftonline.com/common/adminconsent?client_id='
@@ -26,8 +29,12 @@ if ($proceed -eq 'Y')
  
 
     $loginurl = "https://login.microsoftonline.com/" + "$Tenantid" + "/oauth2/v2.0/token"
+    try{
     $Token = Invoke-RestMethod -Uri "$loginurl" -Method POST -Body $ReqTokenBody -ContentType "application/x-www-form-urlencoded"
-
+      }
+      catch{
+        $_.Exception.Message | out-file -Filepath $logfile -append
+         } 
  
 
     $Header = @{
@@ -35,8 +42,14 @@ if ($proceed -eq 'Y')
     }
   
          $Audits="https://graph.microsoft.com/v1.0/auditLogs/signIns"
+         try{
          $AuditResults = Invoke-RestMethod -Headers $Header -Uri $Audits -Method get -ContentType 'application/json'
-                 
+          }
+          catch{
+        $_.Exception.Message | out-file -Filepath $logfile -append
+         } 
+         
+         try{
          foreach($AuditResult in $AuditResults.value)
          {
          $AppDisplayName =$AuditResult.appDisplayName
@@ -68,4 +81,19 @@ if((($AppDisplayName -eq "Microsoft Teams Web Client") -or ($AppDisplayName -eq 
               }
        
         }
+        }
+        catch{
+        $_.Exception.Message | out-file -Filepath $logfile -append
+            }
          }
+          else 
+            {
+            write-host "re run the script and choose Y to proceed"
+            }
+
+
+$end = [system.datetime]::Now
+$resultTime = $end - $start
+Write-Host "Execution took : $($resultTime.TotalSeconds) seconds." -ForegroundColor Cyan
+
+#end of script
