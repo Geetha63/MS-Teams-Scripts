@@ -31,14 +31,24 @@ if ($proceed -eq 'Y')
     } 
 
     $loginurl = "https://login.microsoftonline.com/" + "$Tenantid" + "/oauth2/v2.0/token"
+    try{
     $Token = Invoke-RestMethod -Uri "$loginurl" -Method POST -Body $ReqTokenBody -ContentType "application/x-www-form-urlencoded"
+    }
+     Catch {
+               $_.Exception | Out-File $logfile -Append
+            }
 
     $Header = @{
         Authorization = "$($token.token_type) $($token.access_token)"
     }
 
     $uri = "https://graph.microsoft.com/v1.0/users"
+    try{
     $group = Invoke-RestMethod -Headers $Header -Uri $uri  -Method Get
+    }
+     Catch {
+                $_.Exception | Out-File $logfile -Append
+               }
    do
     { 
         foreach($value in $group.value)
@@ -48,7 +58,12 @@ if ($proceed -eq 'Y')
 
     #Check if user is assigned any license
         $licenseuri = "https://graph.microsoft.com/v1.0/users/" + "$id" + "/licenseDetails"
+        try{
         $licenseresult = Invoke-RestMethod -Headers $Header -Uri $licenseuri  -Method Get
+        }
+         Catch {
+                $_.Exception | Out-File $logfile -Append
+               }
         $licensevalue = $licenseresult.value
         $skuids = $licensevalue.skuId
         $licenses = $licensevalue.skuPartNumber
@@ -59,39 +74,43 @@ if ($proceed -eq 'Y')
         #$fulllicense = [string]::Join(", ",$license)
         
         $useruri = "https://graph.microsoft.com/v1.0/users/" + $id
+        try{
         $userresult = Invoke-RestMethod -Headers $Header -Uri $useruri  -Method Get
-
+          }
+         Catch {
+                $_.Exception | Out-File $logfile -Append
+               }
         if((!$licensevalue) -or (!$TeamslicenseStatus)){
                             write-host "user dont have license" 
                             $file = New-Object psobject
                             $file | add-member -MemberType NoteProperty -Name userid $id
                             $file | add-member -MemberType NoteProperty -Name UserName $userresult.displayname
                             $file | add-member -MemberType NoteProperty -Name Status "No"
-                            $file | export-csv Nolicense.csv -NoTypeInformation -Append
+                            $file | export-csv -path ".\Nolicense.csv" -NoTypeInformation -Append
 
                               }
 
                 elseif($provisioningStatus -eq 'Success')
-                         { write-host "This user having valid Teams license-" $value.userPrincipalName
-                                $MSlicense = "Enable"
+                         { 
+                         write-host "This user having valid Teams license-" $value.userPrincipalName
+                         $MSlicense = "Enable"
                          }   
                           else{
                                 
                                 $a = Get-MsolUser -UserPrincipalName $UPN | select -ExpandProperty licenses
                                 $b = $a.AccountSkuId
-
-
                                 foreach($x in $b){
                                 #$license_service_plans = New-MsolLicenseOptions -AccountSkuId "M365EDU032767:M365EDU_A5_FACULTY"
                                 $license_service_plans = New-MsolLicenseOptions -AccountSkuId "$x"
+                                try{
                                 Set-MsolUserLicense -UserPrincipalName "$UPN" -LicenseOptions $license_service_plans
+                                }
+                                Catch {
+                                  $_.Exception | Out-File $logfile -Append
+                                       }
                                 write-host "MicrosoftTeams licence has been enabled for user" $UPN
                                 }
-                          
-                         
-                             
-                              }
-        
+                                   }  
         }
  
 if ($group.'@odata.nextLink' -eq $null ) 
