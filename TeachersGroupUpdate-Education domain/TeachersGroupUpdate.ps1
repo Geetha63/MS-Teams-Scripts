@@ -39,3 +39,4 @@ Get-AzureADSubscribedSku | ft  *skupart*,*consu*
 $end = [system.datetime]::Now
 $resultTime = $end - $start
 Write-Host "Execution took : $($resultTime.TotalSeconds) seconds." -ForegroundColor Cyan
+#end of script
