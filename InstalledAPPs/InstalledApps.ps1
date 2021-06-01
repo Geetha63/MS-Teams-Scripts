@@ -1,4 +1,4 @@
-﻿# This script will fetch the users from the tenant and list of installed applications for users in Teams, exports Apps list into UserInstalledTeamsApps.csv file using Graph API
+﻿# This script will provide list of installed applications for users in Teams using Graph API
 param(    
       [Parameter(Mandatory=$true)][System.String]$client_Id,
       [Parameter(Mandatory=$true)][System.String]$Client_Secret,
