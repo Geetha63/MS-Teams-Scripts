@@ -1,9 +1,12 @@
-﻿param(    
+# This script will send notification to selected Audience using Graph api calling method.
+param(    
       [Parameter(Mandatory=$true)][System.String]$client_Id,
       [Parameter(Mandatory=$true)][System.String]$Client_Secret,
       [Parameter(Mandatory=$true)][System.String]$Tenantid     
       )
-      
+$logfile = ".\SendNotificationlog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
+$start = [system.datetime]::Now 
+
 #Grant Adminconsent 
 $Grant= 'https://login.microsoftonline.com/common/adminconsent?client_id='
 $admin = '&state=12345&redirect_uri=https://localhost:1234'
@@ -24,8 +27,12 @@ if ($proceed -eq 'Y')
     } 
     
     $loginurl = "https://login.microsoftonline.com/" + "$Tenantid" + "/oauth2/v2.0/token"
+    try{
     $Token = Invoke-RestMethod -Uri "$loginurl" -Method POST -Body $ReqTokenBody -ContentType "application/x-www-form-urlencoded"
-    
+    }
+    catch{
+        $_.Exception.Message | out-file -Filepath $logfile -append
+         } 
     $Header = @{
         Authorization = "$($token.token_type) $($token.access_token)"
     }
@@ -64,9 +71,12 @@ $body1 = '{
             ]
           }'
 
-    
+    try{
     $SendNotificationCall1 = Invoke-RestMethod -Uri $uri1 -Headers $Header -Body $body1 -Method Post -ContentType "application/json"
-
+      }
+      catch{
+        $_.Exception.Message | out-file -Filepath $logfile -append
+         } 
     }
   
 if($inputmethod -eq 2){
@@ -96,9 +106,12 @@ $body2 ='
         }
     ]
 }'
-
+try{
 $SendNotificationCall2 = Invoke-RestMethod -Uri $uri2 -Headers $Header -Body $body2 -Method Post -ContentType "application/json"
-
+}
+catch{
+        $_.Exception.Message | out-file -Filepath $logfile -append
+         } 
 
 }
 
@@ -123,9 +136,12 @@ $body3 ='
         }
     ]
 }'
-
+try{
 $SendNotificationCall3 = Invoke-RestMethod -Uri $uri3 -Headers $Header -Body $body3 -Method Post -ContentType "application/json"
-
+}
+catch{
+        $_.Exception.Message | out-file -Filepath $logfile -append
+         } 
 
 }
 
@@ -135,9 +151,12 @@ $appid4 = read-host "Please provide application id"
 $DL = read-host "please provide distribution list id"
 $DLuri = "https://graph.microsoft.com/v1.0/groups/"+$DL+"/members"
 #$DLuri = 'https://graph.microsoft.com/v1.0/groups/?$filter=mail'+ "eq" +'email@domain.onmicrosoft.com'+'&$expand=members$select=members/displayName'
-
+try{
 $DLmembers = Invoke-RestMethod -Uri $DLuri -Headers $Header -Method Get -ContentType "application/json"
-
+}
+catch{
+        $_.Exception.Message | out-file -Filepath $logfile -append
+        } 
 $userdetails = $DLmembers.value
 $userids = $userdetails.id
 foreach($userid4 in $userids){
@@ -159,8 +178,12 @@ $body4 ='
         }
     ]
 }'
-
+try{
 $SendNotificationCall4 = Invoke-RestMethod -Uri $uri4 -Headers $Header -Body $body4 -Method Post -ContentType "application/json"
+}
+catch{
+        $_.Exception.Message | out-file -Filepath $logfile -append
+      } 
 }
 }
 if($inputmethod -eq 5){
@@ -187,8 +210,13 @@ $appid5 = read-host "Please provide application id"
         }
     ]
 }'
-
+try{
 $SendNotificationCall5 = Invoke-RestMethod -Uri $uri5 -Headers $Header -Body $body5 -Method Post -ContentType "application/json"
+}
+catch{
+        $_.Exception.Message | out-file -Filepath $logfile -append
+         } 
+
 }
 
 }
@@ -196,8 +224,8 @@ $SendNotificationCall5 = Invoke-RestMethod -Uri $uri5 -Headers $Header -Body $bo
  if($inputmethod -eq 6){
 
  $userid6 = read-host = "please provide user id"
- $appid6 = read-host = please provide app id for application
- $tabid6 = read-host = please provide tab id 
+ $appid6 = read-host = "please provide app id for application"
+ $tabid6 = read-host = "please provide tab id "
 
  $uri6 = "https://graph.microsoft.com/beta/users/" + "$userid6" + "/teamwork/sendActivityNotification"
 $body6 ='
@@ -220,10 +248,20 @@ $body6 ='
 }'
 
 
-
+try{
  $SendNotificationCall6 = Invoke-RestMethod -Uri $uri6 -Headers $Header -Body $body6 -Method Post -ContentType "application/json"
+}
+catch{
+        $_.Exception.Message | out-file -Filepath $logfile -append
+         } 
 }
 
 }
 
 else{write-host "please rerun the script login with created graphapi application credentials"}
+
+$end = [system.datetime]::Now
+$resultTime = $end - $start
+Write-Host "Execution took : $($resultTime.TotalSeconds) seconds." -ForegroundColor Cyan
+
+#end of script
