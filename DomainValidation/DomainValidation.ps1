@@ -1,4 +1,7 @@
-﻿$logfile = "C:\DomainValidationlog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
+#Script fetches the SIP enabled domains from Tenant,does a DNS name query resolution for Lync discover records and validate if they are pointing to webdir.online.lync.com
+#If all the domains are pointing to Webdir.online.lync.com script displays the Overall status is Ok, if not displays the overall status is not Ok message
+
+$logfile = ".\DomainValidationlog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
 $start = [system.datetime]::Now
 
  if(Get-Module -ListAvailable -Name SkypeOnlineConnector) 
@@ -65,3 +68,4 @@ $end = [system.datetime]::Now
 $resultTime = $end - $start
 Write-Host "Execution took : $($resultTime.TotalSeconds) seconds." -ForegroundColor Cyan
 return $FinalResult|ft
+#End of script
