@@ -6,7 +6,7 @@ This script will download school data sync files from canvas
  Based on https://canvas.instructure.com/doc/api/index.html
 #>
 
-$logfile = ".\Canvaslog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
+$logfile = ".\CanvasSynclog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
 $start = [system.datetime]::Now
 #region Base Canvas API Methods
 function Get-CanvasCredentials()
@@ -129,7 +129,7 @@ Catch {
     $_.Exception | Out-File $logfile -Append
    }
 $results | convertto-Csv -NoTypeInformation
-$results | Export-csv ".\Accounts.csv" -Append -NoTypeInformation
+$results | Export-csv -path  ".\Accounts.csv" -Append -NoTypeInformation
 
  $acc = import-csv -path .\Accounts.csv
  $xyz = $acc.id
@@ -282,9 +282,9 @@ foreach ($order1 in $user){
 Catch {
     $_.Exception | Out-File $logfile -Append
    }
-Import-Csv -Path .\usernew.csv | ? role -eq 'StudentEnrollment' | select 'Section SIS ID', 'SIS ID' | sort 'Section SIS ID', 'SIS ID' | Export-Csv studentEnrollment.csv -NoTypeInformation
+Import-Csv -Path .\usernew.csv | ? role -eq 'StudentEnrollment' | select 'Section SIS ID', 'SIS ID' | sort 'Section SIS ID', 'SIS ID' | Export-Csv .\studentEnrollment.csv -NoTypeInformation
 
-Import-Csv -Path .\usernew.csv | ? role -eq 'TeacherEnrollment' | select 'Section SIS ID', 'SIS ID' | sort 'Section SIS ID', 'SIS ID' | Export-Csv teacherroster.csv -NoTypeInformation
+Import-Csv -Path .\usernew.csv | ? role -eq 'TeacherEnrollment' | select 'Section SIS ID', 'SIS ID' | sort 'Section SIS ID', 'SIS ID' | Export-Csv .\teacherroster.csv -NoTypeInformation
 
 try{
 $results = Get-CanvasApiResult -Uri "/api/v1/accounts/1/users" -Method GET
@@ -337,9 +337,9 @@ Catch {
     $_.Exception | Out-File $logfile -Append
    }
 try{
-Import-Csv -Path .\usersall.csv | ? role -eq 'StudentEnrollment' | sort 'SIS ID', 'School SIS ID' -Unique | Export-Csv student.csv -NoTypeInformation
+Import-Csv -Path .\usersall.csv | ? role -eq 'StudentEnrollment' | sort 'SIS ID', 'School SIS ID' -Unique | Export-Csv .\student.csv -NoTypeInformation
 
-Import-Csv -Path .\usersall.csv | ? role -eq 'TeacherEnrollment' | sort 'SIS ID', 'School SIS ID' -Unique | Export-Csv teacher.csv -NoTypeInformation
+Import-Csv -Path .\usersall.csv | ? role -eq 'TeacherEnrollment' | sort 'SIS ID', 'School SIS ID' -Unique | Export-Csv .\teacher.csv -NoTypeInformation
 }
 Catch {
     $_.Exception | Out-File $logfile -Append
