@@ -1,5 +1,4 @@
 <#
- https://github.com/v-karapa/CANVAS_SDS_SCRIPT
  Use at your own risk and stuff
  This project contains the main methods for the Canvas APIs as well
  as a number of test methods. See the method generator for more potential.
@@ -117,7 +116,7 @@ Catch {
     $_.Exception | Out-File $logfile -Append
    }
 $results | convertto-Csv -NoTypeInformation
-$results | Export-csv ".\Accounts.csv" -Append -NoTypeInformation
+$results | Export-csv -path ".\Accounts.csv" -Append -NoTypeInformation
 
 try{
 $results = Get-CanvasApiResult -Uri "/api/v1/accounts/1/sub_accounts" -Method GET
