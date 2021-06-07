@@ -1,14 +1,17 @@
-﻿##########Canfile Upload##########
+#This script will create syncprofile and upload files to sds
 #check configuration file is available or not
 
 
-if (-not (test-path conf.json))
+if (-not (test-path ".\conf.json"))
 {
 param(
       [Parameter(Mandatory=$true)][System.String]$Username,
       [Parameter(Mandatory=$true)][System.String]$Password,
       [Parameter(Mandatory=$true)][System.String]$SyncprofileName
       )
+
+$logfile = ".\CanvasFileUPloadlog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
+$start = [system.datetime]::Now
 
 #connect AzureAD
 $secpasswd = ConvertTo-SecureString $Password -AsPlainText -Force
@@ -93,7 +96,10 @@ $conf | ConvertTo-Json | Out-File -FilePath conf.json
 
 else
   {
-    $conffile = get-content conf.json | ConvertFrom-Json
+  
+    $logfile = ".\CanvasFileUPloadlog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
+    $start = [system.datetime]::Now
+    $conffile = get-content ".\conf.json" | ConvertFrom-Json
   
     $SyncprofileName= $conffile.SyncprofileName
     $client_Id     = $conffile.client_Id
@@ -117,7 +123,13 @@ else
     Scope         = "https://graph.microsoft.com/.default"
 } 
 
+try{
 $Token = Invoke-RestMethod -Uri "$loginurl" -Method POST -Body $ReqTokenBody
+}
+
+Catch {
+    $_.Exception | Out-File $logfile -Append
+   }
 
 
 # Create header
@@ -173,17 +185,24 @@ $body = '{
 }'
 
 
-
+try{
 $createdprofile = Invoke-RestMethod -Headers $Header -Uri 'https://graph.microsoft.com/beta/education/synchronizationProfiles' -Body $body -Method Post -ContentType 'application/json'
-
+}
+Catch {
+    $_.Exception | Out-File $logfile -Append
+   }
 $NewsyncID = $createdprofile.id
 
 
 #create upload url
 write-host "creating upload url"
 $Uri1 = "https://graph.microsoft.com/beta/education/synchronizationProfiles/" + "$NewsyncID" + "/uploadurl"
+try{
 $uploadurl = Invoke-RestMethod -Uri $Uri1 -Headers $Header -Method Get -ContentType "application/json"
-
+}
+Catch {
+    $_.Exception | Out-File $logfile -Append
+   }
 
 $b = $uploadurl.value
  
@@ -198,20 +217,32 @@ remove-item sastoken.cmd
 $u >sastoken.cmd
 
 #run azcopy file and upload files using azcopy
-start-process -FilePath sastoken.cmd
+start-process -FilePath ".\sastoken.cmd"
 
 
 write-host "Starting sync"
 #Run start sync profile
 $UriStart = "https://graph.microsoft.com/beta/education/synchronizationProfiles/" + "$NewsyncID" + "/start"
+try{
 $start = Invoke-RestMethod -Uri $UriStart -Headers $Header -Method Post -ContentType "application/json"
+}
+Catch {
+    $_.Exception | Out-File $logfile -Append
+   }
 $start
 }
 
 else{
 write-host "getting sync status"
 $Uri1 = "https://graph.microsoft.com/beta/education/synchronizationProfiles/" + "$NewsyncID"
+try{
 $status = Invoke-RestMethod -Uri $Uri1 -Headers $Header -Method Get -ContentType "application/json"
+}
+Catch {
+    $_.Exception | Out-File $logfile -Append
+   }
 $status
 }
-
+$end = [system.datetime]::Now
+$resultTime = $end - $start
+Write-Host "Execution took : $($resultTime.TotalSeconds) seconds." -ForegroundColor Cyan
