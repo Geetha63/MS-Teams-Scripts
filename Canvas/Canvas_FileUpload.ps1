@@ -1,4 +1,4 @@
-#This script will create syncprofile and upload files to sds
+#This script will create syncprofile and upload files to SchoolDataSync
 #check configuration file is available or not
 
 
@@ -210,8 +210,8 @@ $a = '\azcopy.exe azcopy cp "\*.csv" "'
 $c = '" --recursive=true --check-length=false'
 
 $u = "$a" + "$b" + "$c"
-if(test-path sastoken.cmd){
-remove-item sastoken.cmd
+if(test-path .\sastoken.cmd){
+remove-item .\sastoken.cmd
 }
 
 $u >sastoken.cmd
@@ -246,3 +246,4 @@ $status
 $end = [system.datetime]::Now
 $resultTime = $end - $start
 Write-Host "Execution took : $($resultTime.TotalSeconds) seconds." -ForegroundColor Cyan
+#End of script
