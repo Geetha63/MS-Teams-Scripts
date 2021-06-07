@@ -1,26 +1,22 @@
-#Script fetches the SIP enabled domains from Tenant,does a DNS name query resolution for Lync discover records and validate if they are pointing to webdir.online.lync.com
-#If all the domains are pointing to Webdir.online.lync.com script displays the Overall status is Ok, if not displays the overall status is not Ok message
+#Script do a DNS query, if all the domains are pointing to Webdir.online.lync.com script displays the Overall status is Ok, if not displays the overall status is not Ok message
 
 $logfile = ".\DomainValidationlog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
 $start = [system.datetime]::Now
 
- if(Get-Module -ListAvailable -Name SkypeOnlineConnector) 
+ if(Get-Module -ListAvailable -Name MicrosoftTeams) 
  { 
- Write-Host "SkypeOnlineConnector Already Installed" 
+ Write-Host "MicrosoftTeams module Already Installed" 
  } 
  else { 
  try {
- Write-Host "Installing  SkypeOnlineConnector"
- Install-Module -Name SkypeOnlineConnector
+ Write-Host "Installing  MicrosoftTeams"
+ Install-Module -Name MicrosoftTeams
  }
  catch{
         $_.Exception.Message | out-file -Filepath $logfile -append
  }
  }
-Import-Module SkypeOnlineConnector
-$sfbSession = New-CsOnlineSession 
-Import-PSSession $sfbSession -AllowClobber
-
+Connect-MicrosoftTeams
 $Namelist=(Get-CsOnlineSipDomain -DomainStatus Enabled)
 $FinalResult = @()
 foreach ($Name in $NameList) 
