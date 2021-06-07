@@ -1,12 +1,12 @@
-﻿<#
- https://github.com/v-karapa/CANVAS_SDS_SCRIPT
+<#
+This script will download school data sync files from canvas
  Use at your own risk and stuff
-
  This project contains the main methods for the Canvas APIs as well
  as a number of test methods. See the method generator for more potential.
-
  Based on https://canvas.instructure.com/doc/api/index.html
 #>
+
+$logfile = ".\Canvaslog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
 $start = [system.datetime]::Now
 #region Base Canvas API Methods
 function Get-CanvasCredentials()
@@ -97,9 +97,12 @@ function Get-CanvasApiResult(){
         
                 #Write-Progress
                 Write-Host $nextUri
-        
+                try{
                 $Results = Invoke-WebRequest -Uri $nextUri -Headers $headers -Method Get -Body $RequestParameters -ContentType "multipart/form-data" `
-    
+                }
+                Catch {
+                    $_.Exception | Out-File $logfile -Append
+                   }
                 $JsonResults.AddRange(($Results.Content | ConvertFrom-Json))
             }
         }
@@ -110,38 +113,57 @@ function Get-CanvasApiResult(){
 
 write-host "creating school.csv file"
 #accounts 
+try{
 $results = Get-CanvasApiResult -Uri "/api/v1/accounts" -Method GET
+}
+Catch {
+    $_.Exception | Out-File $logfile -Append
+   }
 $results | convertto-Csv -NoTypeInformation
-$results | Export-csv "Accounts.csv" -Append -NoTypeInformation
+$results | Export-csv ".\Accounts.csv" -Append -NoTypeInformation
 
-
+try{
 $results = Get-CanvasApiResult -Uri "/api/v1/accounts/1/sub_accounts" -Method GET
+}
+Catch {
+    $_.Exception | Out-File $logfile -Append
+   }
 $results | convertto-Csv -NoTypeInformation
-$results | Export-csv "Accounts.csv" -Append -NoTypeInformation
+$results | Export-csv ".\Accounts.csv" -Append -NoTypeInformation
 
-$acc = import-csv "Accounts.csv"
-    $xyz = $acc.id
-    $count = $acc.Count
+ $acc = import-csv -path .\Accounts.csv
+ $xyz = $acc.id
+ $count = $acc.Count
 foreach($x in $xyz)
 {
     $uri0 = "/api/v1/accounts/"+ "$x" +"/sub_accounts"
+    try{
     $results = Get-CanvasApiResult -Uri $uri0 -Method GET
+    }
+    Catch {
+    $_.Exception | Out-File $logfile -Append
+   }
     $results | convertto-Csv -NoTypeInformation 
-    $results | Export-csv "Accounts.csv" -Append -NoTypeInformation
+    $results | Export-csv ".\Accounts.csv" -Append -NoTypeInformation
 }
 
-$tempCSV = Import-Csv Accounts.csv -Header "SIS ID","Name","workflow_state","parent_account_id","root_account_id","uuid","default_storage_quota_mb","default_user_storage_quota_mb","default_group_storage_quota_mb","default_time_zone" | select -skip 1 | sort 'SIS ID','Name' -Unique
-$tempCSV | Export-CSV school.csv -NoTypeInformation 
+$tempCSV = Import-Csv .\Accounts.csv -Header "SIS ID","Name","workflow_state","parent_account_id","root_account_id","uuid","default_storage_quota_mb","default_user_storage_quota_mb","default_group_storage_quota_mb","default_time_zone" | select -skip 1 | sort 'SIS ID','Name' -Unique
+$tempCSV | Export-CSV .\school.csv -NoTypeInformation 
 
 
 #courses details
+    try{
     $results = Get-CanvasApiResult -Uri "/api/v1/accounts/1/courses" -Method GET
+    }
+    Catch {
+    $_.Exception | Out-File $logfile -Append
+   }
     $results | convertto-Csv -NoTypeInformation
     $results | Export-csv "courses.csv" -NoTypeInformation
     $courses = import-csv "courses.csv"
 if (Test-Path Sync.csv)
 {    
-$Sync = import-csv "Sync.csv" -Header id |select -skip 1
+$Sync = import-csv ".\Sync.csv" -Header id |select -skip 1
 
 $id = $Sync.id
 write-host "creating Section.csv file"  
@@ -149,13 +171,18 @@ write-host "creating Section.csv file"
 foreach($i in $id)
 {
     $uri1 = "/api/v1/courses/" + "$i" + "/sections"
+    try{
     $results = Get-CanvasApiResult -Uri $uri1 -Method GET
+    }
+    Catch {
+    $_.Exception | Out-File $logfile -Append
+   }
     $results | convertto-Csv -NoTypeInformation
-    $results | Export-csv "sectionTemp.csv" -Append -NoTypeInformation
+    $results | Export-csv ".\sectionTemp.csv" -Append -NoTypeInformation
 }
- 
- $OrdersA = Import-CSV -Path sectionTemp.csv
- 
+
+try{ 
+$OrdersA = Import-CSV -Path .\sectionTemp.csv
 $matchcounter = 0
 
 foreach ($order1 in $OrdersA){
@@ -182,28 +209,39 @@ foreach ($order1 in $OrdersA){
             $obj.'School SIS ID' = $order2.'account_id'
                        
             Write-Host "Match Found Orders " "$matchCounter"
-            $obj | Export-Csv -Path section.csv -Append -NoTypeInformation
+            $obj | Export-Csv -Path .\section.csv -Append -NoTypeInformation
         }
     }
 }
-
+}
+Catch {
+    $_.Exception | Out-File $logfile -Append
+   }
 write-host "creating student.csv"
-  
+  try{
   $tempsection = import-csv sectionTemp.csv
   $secid = $tempsection.id
 #user Details
 foreach($s in $secid)
 {
     $uri2 = "/api/v1/sections/" + "$s" + "/enrollments"
+    try{
     $results = Get-CanvasApiResult -Uri $uri2 -Method GET
+    }
+    Catch {
+    $_.Exception | Out-File $logfile -Append
+   }
     $results | convertto-Csv -NoTypeInformation
-    $results | Export-csv "users.csv" -Append -NoTypeInformation
-}
+    $results | Export-csv -path ".\users.csv" -Append -NoTypeInformation
+}}
+Catch {
+    $_.Exception | Out-File $logfile -Append
+   }
 #if you want user data with in section details run below code#
-
+try{
 $matchcounter = 0
-$user= import-csv users.csv
-$Section = import-csv section.csv
+$user= import-csv .\users.csv
+$Section = import-csv .\section.csv
 
 foreach ($order1 in $user){
     $matched = $false
@@ -240,20 +278,27 @@ foreach ($order1 in $user){
         }
     }
 }
+}
+Catch {
+    $_.Exception | Out-File $logfile -Append
+   }
+Import-Csv -Path .\usernew.csv | ? role -eq 'StudentEnrollment' | select 'Section SIS ID', 'SIS ID' | sort 'Section SIS ID', 'SIS ID' | Export-Csv studentEnrollment.csv -NoTypeInformation
 
-Import-Csv -Path 'usernew.csv' | ? role -eq 'StudentEnrollment' | select 'Section SIS ID', 'SIS ID' | sort 'Section SIS ID', 'SIS ID' | Export-Csv studentEnrollment.csv -NoTypeInformation
+Import-Csv -Path .\usernew.csv | ? role -eq 'TeacherEnrollment' | select 'Section SIS ID', 'SIS ID' | sort 'Section SIS ID', 'SIS ID' | Export-Csv teacherroster.csv -NoTypeInformation
 
-Import-Csv -Path 'usernew.csv' | ? role -eq 'TeacherEnrollment' | select 'Section SIS ID', 'SIS ID' | sort 'Section SIS ID', 'SIS ID' | Export-Csv teacherroster.csv -NoTypeInformation
-
-
+try{
 $results = Get-CanvasApiResult -Uri "/api/v1/accounts/1/users" -Method GET
+}
+Catch {
+    $_.Exception | Out-File $logfile -Append
+   }
 $results | convertto-Csv -NoTypeInformation
-$results | Export-csv "Fulluser.csv" -Append -NoTypeInformation
+$results | Export-csv -path .\Fulluser.csv -Append -NoTypeInformation
 
+try{
 $matchcounter = 0
-$Fulluser = import-csv Fulluser.csv
-$user1= import-csv usernew.csv
-
+$Fulluser = import-csv .\Fulluser.csv
+$user1= import-csv .\usernew.csv
 
 foreach ($order1 in $Fulluser){
     $matched = $false
@@ -283,55 +328,62 @@ foreach ($order1 in $Fulluser){
             $obj.'User Details' = $order2.'user'
                        
             Write-Host "Match Found Orders " "$matchCounter"
-            $obj | Export-Csv -Path usersall.csv -Append -NoTypeInformation
+            $obj | Export-Csv -Path .\usersall.csv -Append -NoTypeInformation
         }
     }
 }
+}
+Catch {
+    $_.Exception | Out-File $logfile -Append
+   }
+try{
+Import-Csv -Path .\usersall.csv | ? role -eq 'StudentEnrollment' | sort 'SIS ID', 'School SIS ID' -Unique | Export-Csv student.csv -NoTypeInformation
 
-Import-Csv -Path 'usersall.csv' | ? role -eq 'StudentEnrollment' | sort 'SIS ID', 'School SIS ID' -Unique | Export-Csv student.csv -NoTypeInformation
-
-Import-Csv -Path 'usersall.csv' | ? role -eq 'TeacherEnrollment' | sort 'SIS ID', 'School SIS ID' -Unique | Export-Csv teacher.csv -NoTypeInformation
-
+Import-Csv -Path .\usersall.csv | ? role -eq 'TeacherEnrollment' | sort 'SIS ID', 'School SIS ID' -Unique | Export-Csv teacher.csv -NoTypeInformation
+}
+Catch {
+    $_.Exception | Out-File $logfile -Append
+   }
 <#
 #if you want details with courses run below script
 #Teacher details
 foreach($i in $id)
 {
     $uri3 = "/api/v1/courses/"+"$i"+"/users?enrollment_type[]=teacher&include[]=enrollments"
+    try{
     $results = Get-CanvasApiResult -Uri $uri3 -Method GET
+    }
+    Catch {
+    $_.Exception | Out-File $logfile -Append
+    }
     $results | convertto-Csv -NoTypeInformation
-    $results | Export-csv "Teacher1.csv" -Append -NoTypeInformation
+    $results | Export-csv .\Teacher1.csv -Append -NoTypeInformation
 }
-
 #student details
 foreach($i in $id)
 {
 write-host "$i"
-    $uri4 = "/api/v1/courses/"+ "$i" +"/users?enrollment_type[]=student&include[]=enrollments"
-
+$uri4 = "/api/v1/courses/"+ "$i" +"/users?enrollment_type[]=student&include[]=enrollments"
+try{
 $results = Get-CanvasApiResult -Uri $uri4 -Method GET
-$results | convertto-Csv -NoTypeInformation
-$results | Export-csv "Student1.csv" -Append -NoTypeInformation
 }
-
-
-import-csv Teacher1.csv | sort id -Unique | export-csv Teacher2.csv -NoTypeInformation
-$tempCSV = Import-Csv Teacher2.csv -Header "SIS ID","Username","created_at","sortable_name","short_name","sis_user_id","integration_id","sis_import_id","login_id","enrollments","email","School SIS ID" | select -skip 1
-$tempCSV | Export-CSV Teacher2.csv -NoTypeInformation
-
-
-import-csv Student1.csv | sort id -Unique | export-csv Student2.csv -NoTypeInformation
-$tempCSV = Import-Csv Student2.csv -Header "SIS ID","Username","created_at","sortable_name","short_name","sis_user_id","integration_id","sis_import_id","login_id","enrollments","email","School SIS ID" | select -skip 1
-$tempCSV | Export-CSV Student2.csv -NoTypeInformation
-
-
-
+Catch {
+    $_.Exception | Out-File $logfile -Append
+   }
+$results | convertto-Csv -NoTypeInformation
+$results | Export-csv .\Student1.csv -Append -NoTypeInformation
+}
+import-csv .\Teacher1.csv | sort id -Unique | export-csv .\Teacher2.csv -NoTypeInformation
+$tempCSV = Import-Csv .\Teacher2.csv -Header "SIS ID","Username","created_at","sortable_name","short_name","sis_user_id","integration_id","sis_import_id","login_id","enrollments","email","School SIS ID" | select -skip 1
+$tempCSV | Export-CSV .\Teacher2.csv -NoTypeInformation
+import-csv .\Student1.csv | sort id -Unique | export-csv .\Student2.csv -NoTypeInformation
+$tempCSV = Import-Csv .\Student2.csv -Header "SIS ID","Username","created_at","sortable_name","short_name","sis_user_id","integration_id","sis_import_id","login_id","enrollments","email","School SIS ID" | select -skip 1
+$tempCSV | Export-CSV .\Student2.csv -NoTypeInformation
 $matchcounter = 0
-$student = import-csv Student2.csv
-$teacher = import-csv Teacher2.csv
-$user1= import-csv usernew.csv
-
-
+$student = import-csv .\Student2.csv
+$teacher = import-csv .\Teacher2.csv
+$user1= import-csv .\usernew.csv
+try{
 foreach ($order1 in $student){
     $matched = $false
     foreach ($order2 in $user1)
@@ -360,17 +412,20 @@ foreach ($order1 in $student){
             $obj.'User Details' = $order2.'user'
                        
             Write-Host "Match Found Orders " "$matchCounter"
-            $obj | Export-Csv -Path Student0.csv -Append -NoTypeInformation
+            $obj | Export-Csv -Path .\Student0.csv -Append -NoTypeInformation
         }
     }
 }
-
+}
+Catch {
+    $_.Exception | Out-File $logfile -Append
+   }
+try{
 foreach ($order1 in $teacher){
     $matched = $false
     foreach ($order2 in $user1)
     {
          $obj = "" | select "SIS ID","course_id","Username","First Name","Last Name","Password","Section SIS ID","School SIS ID","role","login_id","Email","sis_course_id","sis_section_id","sis_user_id","html_url","User Details"
-
         if($order1.'SIS ID' -eq $order2.'SIS ID' )
         {
             $matchCounter++
@@ -393,27 +448,31 @@ foreach ($order1 in $teacher){
             $obj.'User Details' = $order2.'user'
                        
             Write-Host "Match Found Orders " "$matchCounter"
-            $obj | Export-Csv -Path Teacher0.csv -Append -NoTypeInformation
+            $obj | Export-Csv -Path .\Teacher0.csv -Append -NoTypeInformation
         }
     }
 }
-
-Import-Csv -Path 'Teacher0.csv'| sort 'SIS ID' -Unique | Export-Csv Teacher10.csv -NoTypeInformation
-
-Import-Csv -Path 'student0.csv'| sort 'SIS ID' -Unique | Export-Csv Student10.csv -NoTypeInformation
-
-Import-Csv -Path 'Teacher0.csv' | select 'Section SIS ID', 'SIS ID' | sort 'Section SIS ID', 'SIS ID' -Unique | Export-Csv StudentEnrollment1.csv -NoTypeInformation
-
-Import-Csv -Path 'student0.csv' | select 'Section SIS ID', 'SIS ID' | sort 'Section SIS ID', 'SIS ID' -Unique | Export-Csv Teacherroster1.csv -NoTypeInformation
-
+}
+Catch {
+    $_.Exception | Out-File $logfile -Append
+   }
+Import-Csv -Path '.\Teacher0.csv'| sort 'SIS ID' -Unique | Export-Csv .\Teacher10.csv -NoTypeInformation
+Import-Csv -Path '.\student0.csv'| sort 'SIS ID' -Unique | Export-Csv .\Student10.csv -NoTypeInformation
+Import-Csv -Path '.\Teacher0.csv' | select 'Section SIS ID', 'SIS ID' | sort 'Section SIS ID', 'SIS ID' -Unique | Export-Csv .\StudentEnrollment1.csv -NoTypeInformation
+Import-Csv -Path '.\student0.csv' | select 'Section SIS ID', 'SIS ID' | sort 'Section SIS ID', 'SIS ID' -Unique | Export-Csv .\Teacherroster1.csv -NoTypeInformation
 #>
-remove-item Accounts.csv
-remove-item sectionTemp.csv
-remove-item Fulluser.csv
-remove-item usersall.csv
-remove-item usernew.csv
-remove-item users.csv
-remove-item courses.csv
+try{
+remove-item .\Accounts.csv
+remove-item .\sectionTemp.csv
+remove-item .\Fulluser.csv
+remove-item .\usersall.csv
+remove-item .\usernew.csv
+remove-item .\users.csv
+remove-item .\courses.csv
+}
+Catch {
+    $_.Exception | Out-File $logfile -Append
+   }
 }
 else {
 write-host "You need to provide sync.csv in order to continue..." 
@@ -421,9 +480,7 @@ write-host "You need to provide sync.csv in order to continue..."
 
 $end = [system.datetime]::Now
 $resultTime = $end - $start
-Write-Host "Execution took : $($resultTime.TotalSeconds) seconds."
-
+Write-Host "Execution took : $($resultTime.TotalSeconds) seconds." -ForegroundColor Cyan
 
 #endregion
-
 
