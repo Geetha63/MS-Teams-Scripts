@@ -37,5 +37,6 @@ Click Yes at the UAC prompt
  The details of each Team will stores in a .csv file with below details 
  
  |Team Name| Team id|Team Owner|Team member|
+ |---|---|---|---|
  
  A log file will be generated with exceptions, errors along with script execution time
