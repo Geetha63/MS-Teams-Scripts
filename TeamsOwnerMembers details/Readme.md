@@ -4,7 +4,7 @@
 The script will fetch the Teams owner and members details
 
 # Prerequisite
-   [Install-Module MicrosoftTeams](https://www.powershellgallery.com/packages/MicrosoftTeams/1.0.6)
+MicrosoftTeams module. Reference[Microsoft Teams PowerShell Release Notes](https://docs.microsoft.com/en-us/microsoftteams/teams-powershell-release-notes)
 
 # Procedure
 
