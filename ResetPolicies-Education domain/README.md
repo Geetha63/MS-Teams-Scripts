@@ -18,7 +18,7 @@ Script is to create below custom policies to set all access to teachers and rest
   Apps
 
 # Prerequisite
-1)	Install [SFB online connector](https://www.microsoft.com/en-us/download/details.aspx?id=39366)
+1)	Install [MicrosoftTeams module](https://www.powershellgallery.com/packages/MicrosoftTeams/2.0.0)
 
 # Inputs
 Global Administrator or Skype for Business Online administrator account name and password, and then select OK
