@@ -6,9 +6,7 @@
  
 # Prerequisite 
 
- MicrosoftTeams module
- 
- [Refer the document](https://docs.microsoft.com/en-us/microsoftteams/teams-powershell-release-notes)
+ MicrosoftTeams module. Reference-[Microsoft Teams PowerShell Release Notes](https://docs.microsoft.com/en-us/microsoftteams/teams-powershell-release-notes)
  
 # Procedure
 
