@@ -6,7 +6,9 @@
  
 # Prerequisite 
 
- [Install-Module MicrosoftTeams](https://www.powershellgallery.com/packages/MicrosoftTeams/1.0.6)
+ Install MicrosoftTeams module
+ 
+ [reference link](https://www.powershellgallery.com/packages/MicrosoftTeams/1.0.6)
  
 # Procedure
 
