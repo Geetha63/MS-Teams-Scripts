@@ -7,7 +7,7 @@ If all the domains are pointing to Webdir.online.lync.com script displays the **
 # Prerequisite
  MicrosoftTeams module. Reference-[Microsoft Teams PowerShell Release Notes](https://docs.microsoft.com/en-us/microsoftteams/teams-powershell-release-notes)
 # Input
-Global Administrator or Skype for Business Online administrator account user principal name and password, and then select OK
+Global Administrator or MicrosoftTeams administrator account user principal name and password, and then select OK
 # Examples
 ##### Example 1
 If domain resolving to webdir.online.lync.com 
