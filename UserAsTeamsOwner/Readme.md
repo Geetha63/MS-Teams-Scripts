@@ -8,7 +8,7 @@
 
  MicrosoftTeams module
  
- Reference [link](https://www.powershellgallery.com/packages/MicrosoftTeams/1.0.6)
+ [Refer the document](https://docs.microsoft.com/en-us/microsoftteams/teams-powershell-release-notes)
  
 # Procedure
 
