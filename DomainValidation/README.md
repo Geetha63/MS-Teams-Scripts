@@ -56,6 +56,7 @@ Skip domains list
 Overall Tenant status - Ok/Not Ok
 
 |Domain Name |Status |ErrorMessage|
+|---|---|---|
 
 #### Example
 ![Sample Output](https://github.com/Geetha63/MS-Teams-Scripts/blob/master/Images/DomainValidation.jpg)
