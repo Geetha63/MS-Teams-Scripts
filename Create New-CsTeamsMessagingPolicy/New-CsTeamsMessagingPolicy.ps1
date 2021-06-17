@@ -7,10 +7,23 @@ param(
 $logfile = ".\CreateNew-CsTeamsMessagingPolicylog_$(get-date -format `"yyyyMMdd_hhmmsstt`").txt"
 $start = [system.datetime]::Now
 
-Import-Module SkypeOnlineConnector
-$sfbSession = New-CsOnlineSession 
-Import-PSSession $sfbSession -AllowClobber
-
+If(Get-Module -ListAvailable -Name MicrosoftTeams) 
+ { 
+ Write-Host "MicrosoftTeams Already Installed" 
+ } 
+ else { 
+ try { Install-Module -Name MicrosoftTeams
+ Write-Host "Installed MicrosoftTeams"
+ }
+ catch{
+        $_.Exception.Message | out-file -Filepath $logfile -append
+ } }     
+ try{
+Connect-MicrosoftTeams
+}
+ catch{
+        $_.Exception.Message | out-file -Filepath $logfile -append
+ } 
  try{
 New-CsTeamsMessagingPolicy -Identity "$PolicyName" -AllowUserChat $false
 }
